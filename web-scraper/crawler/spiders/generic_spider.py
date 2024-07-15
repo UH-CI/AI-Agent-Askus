@@ -1,4 +1,3 @@
-from typing import Any
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from bs4 import BeautifulSoup
@@ -9,7 +8,12 @@ class ManoaSpider(scrapy.Spider):
     allow_domains = ("www.hawaii.edu",)
     link_extractor = LinkExtractor(allow_domains=allow_domains, canonicalize=True)
     start_urls = ["https://www.hawaii.edu/"]
-    h = html2text.HTML2Text()
+
+    def __init__(self):
+        super().__init__(self.name)
+        self.h = html2text.HTML2Text()
+        self.h.ignore_images = True
+        self.h.ignore_mailto_links = True
 
     def extract_text(self, html):
         soup = BeautifulSoup(html, 'lxml')
@@ -18,8 +22,7 @@ class ManoaSpider(scrapy.Spider):
         if not main_tag:
             return ""
 
-        return self.h.handle(str(main_tag))
-    
+        return self.h.handle(str(main_tag))    
 
     def parse(self, response):
         extracted_text = self.extract_text(response.body)
