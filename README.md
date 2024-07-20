@@ -3,6 +3,7 @@
 ## Conda Environment
 ```bash
 conda env create --name ai-agent-askus --file environment.yml
+conda activate ai-agent-askus
 ```
 
 ## Run Web Scraper
@@ -12,15 +13,7 @@ scrapy crawl manoa -O data/urls.json
 ```
 
 ## LLM
-Qwen/Qwen2-72B-Instruct
+gemma2-9b
 
 ## Embedding Model
-infgrad/stella_en_1.5B_v5/2_Dense_1024
-
-## Manoa News
-https://manoa.hawaii.edu/news/archive.php
-
-## TODO
-FAQ Database
-General Database
-Live Data
+dunzhang/stella_en_400M_v5
