@@ -11,3 +11,4 @@ dependencies:
       - langchain
       - langchain-experimental
       - sentence-transformers
+      - langserve[all]
