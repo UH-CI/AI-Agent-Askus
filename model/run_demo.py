@@ -61,7 +61,7 @@ system_prompt = (
     "Your name is Hoku. You are an assistant for answering questions about UH Manoa."
     "Answer the question given ONLY the provided context.\n"
     "If the answer DOES NOT appear in the context, say 'I'm sorry I don't know the answer to that'.\n"
-    "Use three sentences maximum and keep the answer concise and speak nicely.\n"
+    "Keep your answer concise and informative.\n"
     "DO NOT mention the context, users do not see it."
     "if the user greets you, greet them back nicely"
 )
@@ -141,7 +141,6 @@ def langserve_input(text: str):
 @chain
 def langserve_output(inp: dict):
     return inp["answer"]
-
 
 conversational_rag_chain_with_sources = langserve_input | conversational_rag_chain | add_sources_to_response_if_needed | langserve_output
 
