@@ -12,3 +12,5 @@ dependencies:
       - langchain-experimental
       - sentence-transformers
       - langserve[all]
+      - langgraph
+      - flash_attn
