@@ -5,6 +5,10 @@
 conda env create --name ai-agent-askus --file environment.yml
 conda activate ai-agent-askus
 ```
+## Conda Update Environment
+```bash
+conda env update --file environment.yml --prune
+```
 
 ## Run Web Scraper
 ```bash

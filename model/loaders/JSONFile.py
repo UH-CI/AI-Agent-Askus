@@ -4,9 +4,15 @@ from typing import Iterator
 import json
 
 class JSONFileLoader(BaseLoader):
-    def __init__(self, json_path: str, json_parser):
+    def __init__(self, json_path: str, json_parser=None):
         self.json_path = json_path
+
         self.json_parser = json_parser
+        if not json_parser:
+            self.json_parser = lambda x: x
+
+    def _json_parser(obj):
+        return obj
 
     def lazy_load(self) -> Iterator[Document]:
         with open(self.json_path, "r") as f:
