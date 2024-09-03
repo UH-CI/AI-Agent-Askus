@@ -9,8 +9,5 @@ dependencies:
   - ipykernel
   - pip:
       - langchain
-      - langchain-experimental
-      - sentence-transformers
       - langserve[all]
       - langgraph
-      - flash_attn
