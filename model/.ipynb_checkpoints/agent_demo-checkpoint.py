@@ -15,10 +15,10 @@ from datasets import load_dataset
 from sklearn.linear_model import LogisticRegression
 import numpy as np
 from langchain.retrievers import EnsembleRetriever
-from fastapi.middleware.cors import CORSMiddleware
 
 with open("config.yml", "r") as f:
     config = yaml.safe_load(f)
+
 
 class AgentState(TypedDict):
     messages: Annotated[Sequence[BaseMessage], operator.add]
@@ -34,7 +34,7 @@ embedding_model = HuggingFaceEmbeddings(
 
 vector_store = Chroma(
     collection_name="its_faq",
-    persist_directory="./db",
+    persist_directory="db",
     embedding_function=embedding_model,
     collection_metadata={"hnsw:space": "cosine"}
 )
@@ -45,7 +45,7 @@ retriever = vector_store.as_retriever(
 
 vector_store_policies = Chroma(
     collection_name="uh_policies",
-    persist_directory="./db",
+    persist_directory="db",
     embedding_function=embedding_model,
     collection_metadata={"hnsw:space": "cosine"}
 )
@@ -178,8 +178,10 @@ def needs_source(state: AgentState):
 def greeting_agent(state: AgentState):
     system_prompt = (
         "Your name is Hoku. You are an assistant for answering questions about UH Manoa.\n"
+        "You were initially created during the Hawaii Annual Code Challenge by team DarkMode.\n"
+        "You are currently under development.\n"
         "Only respond with information given here.\n"
-        "Answer consicely.\n"
+        "Answer nicely.\n"
     )
 
     qa_prompt = ChatPromptTemplate.from_messages(
@@ -202,8 +204,6 @@ def greeting_agent(state: AgentState):
     })
     
     return {"messages": state["messages"] + [response]}
-    # response = chain.invoke({"query": state["messages"]})
-    # return {"messages": [response]}
 
 
 
@@ -271,7 +271,7 @@ workflow.add_conditional_edges(START, is_prompt_injection, {"prompt_injection": 
 
 checkpointer = MemorySaver()
 
-agent = workflow.compile()
+agent = workflow.compile(checkpointer=checkpointer)
 
 from fastapi import FastAPI
 from langserve import add_routes
@@ -280,16 +280,6 @@ app = FastAPI(
     title="AI Agent AskUs",
     version="1.1",
     description="A simple api server using Langchain's Runnable interfaces",
-)
-
-origins = ["*"]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
 )
 
 add_routes(
