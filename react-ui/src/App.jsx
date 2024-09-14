@@ -2,51 +2,79 @@ import "./App.css";
 import { useState } from "react";
 import axios from "axios";
 
-function parseRequestResponse(res) {
-  return res.data;
-}
-
-function createRequestBody(messages) {
-  return {
+async function getAnswer(messages) {
+  const body = {
     input: {
-      messages: messages,
+      messages,
     },
   };
+
+  try {
+    const response = await axios.post(
+      "http://localhost:8000/askus/invoke",
+      body
+    );
+
+    const sources = response.data.output.sources;
+    const message = response.data.output.message;
+
+    return {
+      type: message.type,
+      content: message.content,
+      sources,
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      type: "ai",
+      content: "Something went wrong.",
+    };
+  }
 }
 
-async function addAiMessage() {}
-async function addUserMessage() {}
-
-function AIMessage(response) {
+function AIMessageView(message) {
   return (
     <div className="flex">
       <div className="whitespace-pre-wrap bg-gray-300 text-black p-2 rounded-lg max-w-xs">
-        {response}
+        {message.content}
+        {message.sources.length > 0 && (
+          <div>
+            <br></br>
+            For more information, check out these links.
+          </div>
+        )}
+        {message.sources.map((source, i) => (
+          <>
+            <a
+              className="block text-blue-700 overflow-x-hidden hover:text-blue-900"
+              target="_blank"
+              href={source}
+              key={i}
+            >
+              {source}
+            </a>
+          </>
+        ))}
       </div>
     </div>
   );
 }
 
-function HumanMessage(response) {
+function HumanMessageView(message) {
   return (
     <div className="flex justify-end">
       <div className="whitespace-pre-wrap bg-blue-200 text-black p-2 rounded-lg max-w-xs">
-        {response}
+        {message.content}
       </div>
     </div>
   );
-}
-
-async function answer(body) {
-  const response = await axios.post("http://localhost:8000/askus/invoke", body);
-  const messages = response.data.output.messages;
-  return messages[messages.length - 1].content.trim();
 }
 
 function Test() {
   // const [chatOpen, setChatOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className="bg-gray-100 h-screen flex flex-col max-w-lg mx-auto shadow-lg">
@@ -230,11 +258,13 @@ function Test() {
         <div className="flex flex-col space-y-2">
           {messages.map((message) => {
             if (message.type === "human") {
-              return HumanMessage(message.content);
+              return HumanMessageView(message);
             } else {
-              return AIMessage(message.content);
+              return AIMessageView(message);
             }
           })}
+          {loading &&
+            AIMessageView({ type: "ai", content: ". . .", sources: [] })}
         </div>
       </div>
       <div className="bg-white p-4 flex items-center">
@@ -262,12 +292,13 @@ function Test() {
             e.preventDefault();
             if (input.trim() === "") return;
             const m = [...messages, { type: "human", content: input }];
+            setLoading(true);
             setMessages(m);
             setInput("");
-            setMessages([
-              ...m,
-              { type: "ai", content: await answer(createRequestBody(m)) },
-            ]);
+            getAnswer(m).then((res) => {
+              setLoading(false);
+              setMessages([...m, res]);
+            });
           }}
           className="bg-blue-500 text-white rounded-full p-2 ml-2 hover:bg-blue-600 focus:outline-none"
         >

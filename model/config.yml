@@ -1,6 +1,6 @@
 ---
 # Config for ITS RAG
 embedding: "dunzhang/stella_en_400M_v5"
-llm: "gemma2:9b"
-# llm: "mistral-nemo:latest"
+# llm: "gemma2:9b"
+llm: "mistral-nemo:latest"
 # llm: "phi3:14b"
