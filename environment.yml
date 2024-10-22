@@ -1,13 +1,16 @@
 name: ai-agent-askus
 channels:
   - defaults
-  - forge
+  - conda-forge
 dependencies:
   - scrapy
   - beautifulsoup4
   - lxml
   - ipykernel
-  - pip:
-      - langchain
-      - langserve[all]
-      - langgraph
+  - langgraph
+  - langchain
+  - langchain-chroma
+  - langchain-community
+  - scikit-learn
+  - datasets
+  - sentence-transformers
