@@ -46,7 +46,6 @@ vector_store_policies = Chroma(
     collection_metadata={"hnsw:space": "cosine"}
 )
 
-
 # Create Retriever
 retriever = vector_store.as_retriever(
     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
@@ -56,6 +55,7 @@ policy_retriever = vector_store_policies.as_retriever(
     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 )
 
+print(retriever.invoke("what is laulima?"))
 # lotr = EnsembleRetriever(retrievers=[retriever, policy_retriever], search_kwargs={"k": 2})
 # lotr = EnsembleRetriever(retrievers=[retriever], search_kwargs={"k": 2})
 
@@ -82,8 +82,7 @@ llm = ChatOllama(model=config['llm'], temperature=0)
 
 # Create State
 
-class AgentState(TypedDict):
-    messages: Annotated[Sequence[BaseMessage], operator.add]
+class AgentState(MessagesState):
     retriever: str
 
 class ReformulatedOutputState(AgentState):
@@ -177,7 +176,6 @@ def reformulate_query(state: AgentState) -> ReformulatedOutputState:
     chain = contextualize_q_prompt | llm
     reformulated = chain.invoke({"chat_history": state["messages"]}).content
     return {"reformulated": reformulated}
-
 
 def get_documents(state: ReformulatedOutputState) -> GetDocumentsOutputState:
     reformulated = state["reformulated"]
