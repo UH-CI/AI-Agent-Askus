@@ -45,7 +45,16 @@ export default function Home() {
             key={index}
             className={`my-2 ${msg.type === "ai" ? "text-blue-600" : "text-green-600"}`}
           >
-            <strong>{msg.type === "ai" ? "AI" : "You"}:</strong> {msg.content}
+            <strong>{msg.type === "ai" ? "AI" : "You"}:</strong>
+            {msg.content.split(" ").map((word, i) =>
+              word.match(/https?:\/\/[^\s]+/) ? (
+              <a key={i} href={word.replace(/.*http/g, "http").replace(/[<>]/g, "")} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+                {word}
+              </a>
+              ) : (
+              <span key={i}>{word} </span>
+              )
+            )}
           </div>
         ))}
         {loading && (
