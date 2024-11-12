@@ -107,7 +107,7 @@ def call_model(state: AgentInputState) -> AgentOutputState:
         "Do not mention the context in your response.\n\n"
         "Context:\n{context}"
     )
-
+    print(state["messages"][-1].content)
     qa_prompt = ChatPromptTemplate.from_messages(
         [
             ("system", system_prompt),
