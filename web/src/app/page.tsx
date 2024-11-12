@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { api } from "~/trpc/react";
 
 type ChatMessages = {
@@ -15,6 +15,15 @@ export default function Home() {
   const [messages, setMessages] = useState<ChatMessages>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, loading]);
 
   const chat = api.chat.response.useMutation({
     onSuccess: (data) => {
@@ -69,11 +78,10 @@ export default function Home() {
               className={`flex ${msg.message.type === "ai" ? "justify-start" : "justify-end"}`}
             >
               <div
-                className={`max-w-[80%] rounded-2xl px-4 py-2 ${
-                  msg.message.type === "ai"
-                    ? "bg-blue-100 text-blue-900"
-                    : "bg-green-100 text-green-900"
-                }`}
+                className={`max-w-[80%] rounded-2xl px-4 py-2 ${msg.message.type === "ai"
+                  ? "bg-blue-100 text-blue-900"
+                  : "bg-green-100 text-green-900"
+                  }`}
               >
                 <div className="mb-1 text-sm font-semibold">
                   {msg.message.type === "ai" ? "Hoku" : "You"}
@@ -115,6 +123,7 @@ export default function Home() {
               </div>
             </div>
           )}
+          <div ref={messagesEndRef} />
         </div>
       </div>
       <div className="relative">
@@ -127,7 +136,7 @@ export default function Home() {
           className="w-full rounded-full border-2 border-gray-300 bg-white px-6 py-3 pr-12 text-sm shadow-sm transition-all focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
         />
         <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
-          ⌘↵
+          ↵
         </div>
       </div>
     </div>
