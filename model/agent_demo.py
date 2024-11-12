@@ -30,7 +30,6 @@ embedding_model = HuggingFaceEmbeddings(
     model_kwargs=model_kwargs,
 )
 
-
 # Load Vector Store
 vector_store = Chroma(
     collection_name="its_faq",
