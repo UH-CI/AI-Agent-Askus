@@ -101,12 +101,12 @@ class AgentOutputState(TypedDict):
 # Create Agent
 def call_model(state: AgentInputState) -> AgentOutputState:
     system_prompt = (
-        "You are an assistant for answering questions about UH Manoa."
-        "Fully answer the question given ONLY the provided context.\n"
-        "If the answer DOES NOT appear in the context, say 'I'm sorry I don't know the answer to that'.\n"
-        "Keep your answer concise and informative.\n"
-        "DO NOT mention the context, users do not see it.\n\n"
-        "context\n{context}"
+        "You are an AI assistant specialized in answering questions about UH Manoa."
+        "Provide complete answers based solely on the given context.\n"
+        "If the information is not available in the context, respond with 'I'm sorry, I don't know the answer to that'.\n"
+        "Ensure your responses are concise and informative.\n"
+        "Do not mention the context in your response.\n\n"
+        "Context:\n{context}"
     )
 
     qa_prompt = ChatPromptTemplate.from_messages(
@@ -136,11 +136,10 @@ def call_model(state: AgentInputState) -> AgentOutputState:
 
 def greeting_agent(state: AgentState):
     system_prompt = (
-        "Your name is Hoku. You are an assistant for answering questions about UH Manoa.\n"
-        "You were initially created during the Hawaii Annual Code Challenge by team DarkMode.\n"
-        "You are currently under development.\n"
-        "Respond ONLY with information given here. If you do not see the answer here say I'm sorry I do not know the answer to that.\n"
-        "Answer concisely and polite.\n"
+        "You are Hoku, an assistant for answering questions about UH Manoa.\n"
+        "Provide accurate and concise answers based solely on the given context.\n"
+        "If the information is not available in the context, respond with 'I'm sorry, I don't know the answer to that'.\n"
+        "Answer politely and concisely.\n"
     )
 
     qa_prompt = ChatPromptTemplate.from_messages(
@@ -159,11 +158,11 @@ def reformulate_query(state: AgentState) -> ReformulatedOutputState:
         return {"reformulated": state["messages"][0].content}
     
     contextualize_q_system_prompt = (
-        "Given a chat history and the latest user question "
-        "which might reference context in the chat history, "
-        "formulate a standalone question which can be understood "
-        "without the chat history. Do NOT answer the question. "
-        "just reformulate it if needed and otherwise return it as is. "
+        "Given the chat history and the latest user question, "
+        "rephrase the question to be self-contained and clear without relying on the chat history. "
+        "Ensure the reformulated question retains the original intent and context. "
+        "Do NOT answer the question. "
+        "Only return the reformulated question if needed, otherwise return it as is."
     )
 
     contextualize_q_prompt = ChatPromptTemplate.from_messages(
