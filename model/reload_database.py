@@ -8,6 +8,8 @@ from loaders.HTMLDirectory import HTMLDirectoryLoader
 import re
 import yaml
 
+BATCH_SIZE = 20  # Adjust this value based on your GPU memory
+
 with open("config.yml", "r") as f:
     config = yaml.safe_load(f)
 
@@ -65,8 +67,7 @@ faq_html_loader = HTMLDirectoryLoader("../web-scraper/faq-archive", faq_html_par
 faq_documents = list(faq_html_loader.lazy_load())
 faq_split_documents = text_splitter.split_documents(faq_documents)
 
-batch_size = 20  # Adjust this value based on your GPU memory
-for i in range(0, len(faq_split_documents), batch_size):
-    print(f"Adding batch {i + 1} to {i + batch_size}")
-    batch = faq_split_documents[i:i + batch_size]
+for i in range(0, len(faq_split_documents), BATCH_SIZE):
+    print(f"Adding batch {i + 1} to {i + BATCH_SIZE}")
+    batch = faq_split_documents[i:i + BATCH_SIZE]
     vector_store_faq.add_documents(batch)
