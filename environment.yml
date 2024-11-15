@@ -3,7 +3,9 @@ channels:
   - defaults
   - conda-forge
   - akode
+  - xformers
 dependencies:
+  - python=3.10  
   - scrapy
   - beautifulsoup4
   - lxml
@@ -17,3 +19,6 @@ dependencies:
   - sentence-transformers
   - langchain-text-splitters
   - html2text
+  - langchain-huggingface
+  - xformers
+  - pytorch-gpu

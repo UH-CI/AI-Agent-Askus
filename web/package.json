@@ -7,7 +7,7 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start -H localhost"
+    "start": "next start"
   },
   "dependencies": {
     "@langchain/core": "^0.3.13",
