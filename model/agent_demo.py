@@ -31,7 +31,18 @@ vector_store = Chroma(
     collection_metadata={"hnsw:space": "cosine"}
 )
 
+vector_store_policies = Chroma(
+    collection_name="uh_policies",
+    persist_directory="db",
+    embedding_function=embedding_model,
+    collection_metadata={"hnsw:space": "cosine"}
+)
+
 retriever = vector_store.as_retriever(
+    search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
+)
+
+retriever_policies = vector_store_policies.as_retriever(
     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 )
 
@@ -178,8 +189,8 @@ def get_documents(state: ReformulatedOutputState) -> GetDocumentsOutputState:
 
     if state["retriever"] == "askus":
         relevant_docs = retriever.invoke(reformulated)
-    # elif state["retriever"] == "policies":
-    #     relevant_docs = policy_retriever.invoke(reformulated)
+    elif state["retriever"] == "policies":
+        relevant_docs = retriever_policies.invoke(reformulated)
     else:
         relevant_docs = []
 
