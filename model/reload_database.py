@@ -1,3 +1,4 @@
+import argparse
 from bs4 import BeautifulSoup
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -7,67 +8,97 @@ from html2text import HTML2Text
 from loaders.HTMLDirectory import HTMLDirectoryLoader
 import re
 import yaml
+from loaders.JSONFile import JSONFileLoader
 
-BATCH_SIZE = 20  # Adjust this value based on your GPU memory
+def setup_embeddings():
+    with open("config.yml", "r") as f:
+        config = yaml.safe_load(f)
 
-with open("config.yml", "r") as f:
-    config = yaml.safe_load(f)
+    model_name = config["embedding"]
+    model_kwargs = {'device': 'cuda', "trust_remote_code": True}
 
-model_name = config["embedding"]
-model_kwargs = {'device': 'cuda', "trust_remote_code": True}
+    return HuggingFaceEmbeddings(
+        model_name=model_name,
+        model_kwargs=model_kwargs,
+    )
 
-embedding_model = HuggingFaceEmbeddings(
-    model_name=model_name,
-    model_kwargs=model_kwargs,
-)
+def reload_faq(embedding_model, batch_size):
+    vector_store_faq = Chroma(
+        collection_name="its_faq",
+        persist_directory="db",
+        embedding_function=embedding_model,
+        collection_metadata={"hnsw:space": "cosine"}
+    )
+    vector_store_faq.reset_collection()
 
-vector_store_faq = Chroma(
-    collection_name="its_faq",
-    persist_directory="db",
-    embedding_function=embedding_model,
-    collection_metadata={"hnsw:space": "cosine"}
-)
+    text_splitter = CharacterTextSplitter(
+        separator="\n",
+        chunk_size=8000,
+        chunk_overlap=100
+    )
 
-vector_store_policies = Chroma(
-    collection_name="uh_policies",
-    persist_directory="db",
-    embedding_function=embedding_model,
-    collection_metadata={"hnsw:space": "cosine"}
-)
+    h = HTML2Text()
+    h.ignore_images = True
 
-vector_store_faq.reset_collection()
-vector_store_policies.reset_collection()
+    def faq_html_parser(html):
+        soup = BeautifulSoup(html, features="lxml")
+        question = soup.find(id="kb_article_question")
+        answer = soup.find(id="kb_article_text")
 
-text_splitter = CharacterTextSplitter(
-    separator="\n",
-    chunk_size=8000,
-    chunk_overlap=100
-)
+        if not question or not answer:
+            return None
+        
+        question = h.handle(str(question))
+        answer = h.handle(str(answer))
 
-h = HTML2Text()
-h.ignore_images = True
+        qa = f"{question}\n{answer}"
+        removed_repeating_newlines = re.sub(r'\n{2,}', '\n', qa)
 
-def faq_html_parser(html):
-    soup = BeautifulSoup(html, features="lxml")
-    question = soup.find(id="kb_article_question")
-    answer = soup.find(id="kb_article_text")
+        return removed_repeating_newlines
 
-    if not question or not answer:
-        return None
+    faq_html_loader = HTMLDirectoryLoader("../web-scraper/faq-archive", faq_html_parser)
+    faq_documents = list(faq_html_loader.lazy_load())
+    faq_split_documents = text_splitter.split_documents(faq_documents)
+
+    for i in range(0, len(faq_split_documents), batch_size):
+        print(f"Adding FAQ batch {i + 1} to {i + batch_size}")
+        batch = faq_split_documents[i:i + batch_size]
+        vector_store_faq.add_documents(batch)
+
+def reload_policies(embedding_model, batch_size):
+    vector_store_policies = Chroma(
+        collection_name="uh_policies",
+        persist_directory="db",
+        embedding_function=embedding_model,
+        collection_metadata={"hnsw:space": "cosine"}
+    )
+    vector_store_policies.reset_collection()
+
+    policy_docs = list(JSONFileLoader("data/policies.json").lazy_load())
+
+    for i in range(0, len(policy_docs), batch_size):
+        print(f"Adding policies batch {i + 1} to {i + batch_size}")
+        batch = policy_docs[i:i + batch_size]
+        vector_store_policies.add_documents(batch)
+
+def main():
+    parser = argparse.ArgumentParser(description='Reload vector databases for FAQ and policies')
+    parser.add_argument('--faq', action='store_true', help='Reload the FAQ database')
+    parser.add_argument('--policies', action='store_true', help='Reload the policies database')
+    parser.add_argument('--batch-size', type=int, default=20, help='Batch size for processing documents')
     
-    question = h.handle(str(question))
-    answer = h.handle(str(answer))
+    args = parser.parse_args()
+    
+    if not (args.faq or args.policies):
+        parser.error("At least one of --faq or --policies must be specified")
 
-    qa = f"{question}\n{answer}"
-    removed_repeating_newlines = re.sub(r'\n{2,}', '\n', qa)
+    embedding_model = setup_embeddings()
+    
+    if args.faq:
+        reload_faq(embedding_model, args.batch_size)
+    
+    if args.policies:
+        reload_policies(embedding_model, args.batch_size)
 
-    return removed_repeating_newlines
-
-faq_html_loader = HTMLDirectoryLoader("../web-scraper/faq-archive", faq_html_parser)
-faq_documents = list(faq_html_loader.lazy_load())
-faq_split_documents = text_splitter.split_documents(faq_documents)
-
-for i in range(0, len(faq_split_documents), BATCH_SIZE):
-    print(f"Adding batch {i + 1} to {i + BATCH_SIZE}")
-    batch = faq_split_documents[i:i + BATCH_SIZE]
-    vector_store_faq.add_documents(batch)
+if __name__ == "__main__":
+    main()
