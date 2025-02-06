@@ -43,11 +43,22 @@ npm install
 npm run dev
 ```
 
-## Run Web Scraper
+# Scrapy Spider Setup Tutorial
+
+This guide will help you set up a Python virtual environment, install the required packages, and run your Scrapy spider that extracts text from both HTML and PDF pages.
+
+## Step 1: Create a Virtual Environment
+
+Open your terminal and run the following command to create a virtual environment named `.venv`:
+
 ```bash
-cd web-scraper
-scrapy crawl manoa -O data/urls.json
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+scrapy crawl policy_spider -o ./data/results.json -s LOG_LEVEL=INFO
 ```
+
+## Step 2: Activate the Virtual Environment
 
 ## Starting Neo4j Docker Container
 ```
