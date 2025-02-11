@@ -6,6 +6,7 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langgraph.graph import END, StateGraph, START, MessagesState
 from langchain_ollama import ChatOllama
+from langchain_neo4j import Neo4jGraph
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from datasets import load_dataset
 from sklearn.linear_model import LogisticRegression
@@ -191,6 +192,8 @@ def get_documents(state: ReformulatedOutputState) -> GetDocumentsOutputState:
         relevant_docs = retriever.invoke(reformulated)
     elif state["retriever"] == "policies":
         relevant_docs = retriever_policies.invoke(reformulated)
+    elif state["retriever"] == "graphdb":
+        relevant_docs = []
     else:
         relevant_docs = []
 
@@ -209,7 +212,7 @@ def is_prompt_injection(state: AgentState):
     return "prompt_injection" if is_injection else "safe"
 
 def handle_error(state) -> AgentOutputState:
-    message = "Iʻm sorry, I cannot fulfill that request."
+    message = "I'm sorry, I cannot fulfill that request."
     return {"message": message, "sources": []}
 
 def should_use_rag(state: ChatHistoryCheckState):
