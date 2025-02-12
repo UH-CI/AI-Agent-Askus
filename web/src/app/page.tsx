@@ -43,6 +43,7 @@ export default function Home() {
         },
       ]);
       setLoading(false);
+      console.error(error)
     },
   });
 

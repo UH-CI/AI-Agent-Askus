@@ -3,6 +3,7 @@ from embeddings import convert
 from openai import OpenAI
 from langchain_chroma import Chroma
 from langchain_ollama import ChatOllama
+from langchain_openai import ChatOpenAI
 from chromadb import HttpClient
 from prompts.promp_injection import load
 from retrievers.graphdb import GraphVectorRetriever
@@ -11,7 +12,7 @@ import neo4j
 
 
 from typing import Sequence
-from langchain_core.messages import BaseMessage
+from langchain_core.messages import BaseMessage, AIMessage
 from typing import TypedDict
 from langchain_chroma import Chroma
 from langgraph.graph import END, StateGraph, START, MessagesState
@@ -62,7 +63,9 @@ vector_retriever = VectorRetriever(
 
 graph_retriever = GraphVectorRetriever(retriever=vector_retriever)
 
-llm = ChatOllama(model=os.getenv("OLLAMA_MODEL"), base_url=os.getenv("OLLAMA_HOST"))
+# llm = ChatOllama(model=os.getenv("OLLAMA_MODEL"), base_url=os.getenv("OLLAMA_HOST"))
+llm = ChatOpenAI(model="gpt-4o")
+
 
 prompt_injection_classifier = load(embedder=embedder, load_path="data/prompt_injection_model/injection_model.joblib")
 
@@ -216,7 +219,7 @@ def is_prompt_injection(state: AgentState):
     return "prompt_injection" if is_injection else "safe"
 
 def handle_error(state) -> AgentOutputState:
-    message = "I'm sorry, I cannot fulfill that request."
+    message = AIMessage(content="I'm sorry, I cannot fulfill that request.")
     return {"message": message, "sources": []}
 
 def should_use_rag(state: ChatHistoryCheckState):
@@ -239,7 +242,7 @@ workflow.add_conditional_edges(
     is_prompt_injection,
     {
         "prompt_injection": "handle_error",
-        "safe": "check_chat_history"
+        "safe": "check_chat_history",
     }
 )
 
@@ -248,7 +251,7 @@ workflow.add_conditional_edges(
     should_use_rag,
     {
         "history": "answer_from_history",
-        "rag": "reformulate_query"
+        "rag": "reformulate_query",
     }
 )
 
