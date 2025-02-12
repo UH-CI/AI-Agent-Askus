@@ -15,7 +15,7 @@ export default function Home() {
   const [messages, setMessages] = useState<ChatMessages>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [retriever, setRetriever] = useState<"askus" | "policies">("askus");
+  const [retriever, setRetriever] = useState<"askus" | "policies" | "graphdb">("askus");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -78,7 +78,7 @@ export default function Home() {
               type="radio"
               value="askus"
               checked={retriever === "askus"}
-              onChange={(e) => setRetriever(e.target.value as "askus" | "policies")}
+              onChange={(e) => setRetriever(e.target.value as "askus" | "policies" | "graphdb")}
               className="h-4 w-4 text-blue-600 focus:ring-blue-500"
             />
             <span className="text-sm font-medium text-gray-700">AskUs</span>
@@ -88,10 +88,20 @@ export default function Home() {
               type="radio"
               value="policies"
               checked={retriever === "policies"}
-              onChange={(e) => setRetriever(e.target.value as "askus" | "policies")}
+              onChange={(e) => setRetriever(e.target.value as "askus" | "policies" | "graphdb")}
               className="h-4 w-4 text-blue-600 focus:ring-blue-500"
             />
             <span className="text-sm font-medium text-gray-700">Policies</span>
+          </label>
+          <label className="flex items-center space-x-2">
+            <input
+              type="radio"
+              value="graphdb"
+              checked={retriever === "graphdb"}
+              onChange={(e) => setRetriever(e.target.value as "askus" | "policies" | "graphdb")}
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+            />
+            <span className="text-sm font-medium text-gray-700">GraphDB</span>
           </label>
         </div>
       </div>

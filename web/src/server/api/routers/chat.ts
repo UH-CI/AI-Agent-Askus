@@ -10,7 +10,7 @@ export const chatRouter = createTRPCRouter({
         input: z.array(
           z.object({ type: z.enum(["human", "ai"]), content: z.string() }),
         ),
-        retriever: z.enum(["default", "askus", "policies"]).default("default"),
+        retriever: z.enum(["default", "askus", "policies", "graphdb"]).default("default"),
       }),
     )
     .output(
