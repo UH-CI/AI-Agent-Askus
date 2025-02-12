@@ -6,6 +6,7 @@ channels:
   - xformers
 dependencies:
   - python=3.10  
+  - neo4j-python-driver
   - scrapy
   - beautifulsoup4
   - lxml

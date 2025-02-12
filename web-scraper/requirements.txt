@@ -1,0 +1,5 @@
+scrapy
+beautifulsoup4
+lxml
+html2text
+pdfminer.six

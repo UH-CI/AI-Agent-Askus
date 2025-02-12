@@ -22,6 +22,10 @@ def setup_embeddings():
         model_kwargs=model_kwargs,
     )
 
+def reload_db(name, loader, embedder, splitter=None, batch_size=10):
+    # vector_store = Chroma.
+    pass
+
 def reload_faq(embedding_model, batch_size):
     vector_store_faq = Chroma(
         collection_name="its_faq",
@@ -72,6 +76,8 @@ def reload_policies(embedding_model, batch_size):
         embedding_function=embedding_model,
         collection_metadata={"hnsw:space": "cosine"}
     )
+    
+    Chroma()
     vector_store_policies.reset_collection()
 
     policy_docs = list(JSONFileLoader("data/policies.json").lazy_load())
