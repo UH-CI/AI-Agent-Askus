@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from parsers.base import Parser
+from manoa_agent.parsers.base import Parser
 from html2text import HTML2Text
 
 class HTMLParser(Parser):

@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 from langchain_huggingface import HuggingFaceEmbeddings
 import numpy as np
 
-from embeddings import convert
-from embeddings.base import Embedder
+from manoa_agent.embeddings import convert
+from manoa_agent.embeddings.base import Embedder
 
 def cosine_similarity(a, b):
     """Compute the cosine similarity between two vectors."""

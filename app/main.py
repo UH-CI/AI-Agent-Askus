@@ -1,12 +1,12 @@
 from dotenv import load_dotenv
 from langchain_huggingface import HuggingFaceEmbeddings
-from embeddings import convert
+from manoa_agent.embeddings import convert
 from openai import OpenAI
 from langchain_chroma import Chroma
 from langchain_openai import ChatOpenAI
 from chromadb import HttpClient
-from prompts.promp_injection import load
-from retrievers.graphdb import GraphVectorRetriever
+from manoa_agent.prompts.promp_injection import load
+from manoa_agent.retrievers.graphdb import GraphVectorRetriever
 from neo4j_graphrag.retrievers import VectorRetriever
 import neo4j
 

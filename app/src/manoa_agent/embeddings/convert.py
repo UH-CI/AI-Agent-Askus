@@ -1,4 +1,4 @@
-from embeddings.base import Embedder
+from manoa_agent.embeddings.base import Embedder
 from langchain_huggingface import HuggingFaceEmbeddings
 from openai import OpenAI
 from openai.types import CreateEmbeddingResponse

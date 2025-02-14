@@ -1,6 +1,6 @@
 import unittest
 from dotenv import load_dotenv
-from loaders.html import HtmlDirectoryLoader
+from manoa_agent.loaders.html import HtmlDirectoryLoader
 
 
 class TestAskUsHtmlDirectoryLoader(unittest.TestCase):

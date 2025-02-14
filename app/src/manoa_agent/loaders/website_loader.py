@@ -3,7 +3,7 @@ import requests
 from langchain_core.documents import Document
 from langchain_core.document_loaders import BaseLoader
 from typing import Iterator, List
-from parsers.html_parser import HTMLParser
+from manoa_agent.parsers.html_parser import HTMLParser
 
 class WebLoader(BaseLoader):
     """
