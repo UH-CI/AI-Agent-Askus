@@ -53,6 +53,7 @@ class TestAdapters(unittest.TestCase):
         embedding_client = HuggingFaceEmbeddings(
             model_name="dunzhang/stella_en_1.5B_v5", model_kwargs=model_kwargs
         )
+        
         embedder = convert.from_hugging_face(embedding_client)
         self.run_embedding_test(embedder)
 

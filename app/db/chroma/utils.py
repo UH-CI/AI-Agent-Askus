@@ -1,42 +1,52 @@
 from langchain_core.document_loaders import BaseLoader
 from langchain.text_splitter import TextSplitter
-from embeddings.base import Embedder
 from langchain_chroma import Chroma
 from chromadb.api import API
+from tqdm import tqdm  # progress bar
 
 def upload(
     chroma: Chroma,
     loader: BaseLoader,
     splitter: TextSplitter = None,
-    batch_size: int = 10,
+    batch_size: int = -1,
     reset: bool = False,
 ) -> list[str]:
     """
-    Upload documents into a ChromaDB collection after optional splitting and embedding.
+    Upload documents into a ChromaDB collection after optional splitting
+    and embedding.
 
     Args:
-        name (str): The name of the collection.
+        chroma (Chroma): An instance of the ChromaDB wrapper.
         loader (BaseLoader): Loader to load documents.
-        embedder (Embedder): Embedder providing an embedding function.
-        splitter (TextSplitter, optional): Text splitter for splitting document text.
-        batch_size (int): The number of documents per upload batch.
+        splitter (TextSplitter, optional): Text splitter for splitting document 
+            text.
+        batch_size (int): The number of documents per upload batch. Use -1 for 
+            no batching.
         reset (bool): If True, clear the collection before uploading.
+    Returns:
+        list[str]: A list of document IDs after upload.
     """
- 
-    # If reset is True, delete all documents in the collection.
+
+    # If reset is True, clear the collection.
     if reset:
         chroma.reset_collection()
 
-    # Load documents. If a splitter is provided, call loader.load_and_split,
-    # otherwise fallback to loader.load.
+    # Load documents. If a splitter is provided, use loader.load_and_split,
+    # otherwise, fallback to loader.load.
     docs = loader.load_and_split(splitter) if splitter else loader.load()
 
-    # Upload documents in batches.
-    total_docs = len(docs)
-    ids: list[str] = []
-    for i in range(0, total_docs, batch_size):
-        batch = docs[i : i + batch_size]
-        batch_ids = chroma.add_documents(batch)
-        ids += batch_ids
-    
-    return ids
+    # Upload documents by batches.
+    if batch_size > 0:
+        total_docs = len(docs)
+        ids: list[str] = []
+        # Wrap the loop with tqdm to create a progress bar.
+        for i in tqdm(range(0, total_docs, batch_size),
+                      desc="Uploading documents in batches"):
+            batch = docs[i : i + batch_size]
+            batch_ids = chroma.add_documents(batch)
+            ids.extend(batch_ids)
+        return ids
+
+    # If batch_size is -1, upload all documents at once.
+    if batch_size == -1:
+        return chroma.add_documents(docs)

@@ -3,25 +3,30 @@ from langchain_core.document_loaders import BaseLoader
 from typing import Iterator
 import json
 
+
 class JSONFileLoader(BaseLoader):
-    def __init__(self, json_path: str, json_parser=None):
+    """
+    A JSON file loader that parses a file with the following format:
+    [
+        {
+            "url": "https://example.com",
+            "extracted": "Extracted text from the page..."
+        },
+        ...
+    ]
+    It creates a Document for each entry, using "extracted" as the content and
+    "url" as metadata.
+    """
+
+    def __init__(self, json_path: str):
         self.json_path = json_path
-
-        self.json_parser = json_parser
-        if not json_parser:
-            self.json_parser = lambda x: x
-
-    def _json_parser(obj):
-        return obj
 
     def lazy_load(self) -> Iterator[Document]:
         with open(self.json_path, "r") as f:
             json_data = json.load(f)
-        
-        for d in json_data:
-            parsed = self.json_parser(d)
 
+        for doc in json_data:
             yield Document(
-                page_content=parsed["page_content"],
-                metadata=parsed["metadata"]
+                page_content=doc["extracted"],
+                metadata={"source": doc["url"]}
             )

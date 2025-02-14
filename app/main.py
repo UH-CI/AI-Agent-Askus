@@ -1,8 +1,8 @@
 from dotenv import load_dotenv
+from langchain_huggingface import HuggingFaceEmbeddings
 from embeddings import convert
 from openai import OpenAI
 from langchain_chroma import Chroma
-from langchain_ollama import ChatOllama
 from langchain_openai import ChatOpenAI
 from chromadb import HttpClient
 from prompts.promp_injection import load
@@ -29,6 +29,14 @@ neo4j_driver = neo4j.GraphDatabase.driver(
     auth=(os.getenv('NEO4J_USERNAME'), os.getenv('NEO4J_PASSWORD'))
 )
 
+# model_kwargs = {"device": "cuda", "trust_remote_code": True}
+
+# embedding_client = HuggingFaceEmbeddings(
+#     model_name="dunzhang/stella_en_1.5B_v5", model_kwargs=model_kwargs
+# )
+
+# embedder = convert.from_hugging_face(embedding_client)
+
 embedder = convert.from_open_ai(OpenAI(), "text-embedding-3-large")
 http_client = HttpClient(os.getenv("CHROMA_HOST"), os.getenv("CHROMA_PORT"))
 
@@ -47,11 +55,13 @@ policies_collection = Chroma(
 )
 
 faq_retriever = its_faq_collection.as_retriever(
-    search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
+    search_type="similarity", search_kwargs={"k": 2}
+    # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 )
 
 policies_retriever = policies_collection.as_retriever(
-    search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
+    search_type="similarity", search_kwargs={"k": 2}
+    # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 )
 
 vector_retriever = VectorRetriever(
@@ -65,6 +75,7 @@ graph_retriever = GraphVectorRetriever(retriever=vector_retriever)
 
 # llm = ChatOllama(model=os.getenv("OLLAMA_MODEL"), base_url=os.getenv("OLLAMA_HOST"))
 llm = ChatOpenAI(model="gpt-4o")
+# llm = ChatGoogleGenerativeAI(api_key=os.getenv("GEMINI_API_KEY"), model="gemini-2.0-flash")
 
 
 prompt_injection_classifier = load(embedder=embedder, load_path="data/prompt_injection_model/injection_model.joblib")

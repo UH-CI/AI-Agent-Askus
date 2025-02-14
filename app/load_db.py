@@ -1,0 +1,42 @@
+from embeddings import convert
+from openai import OpenAI
+from db.chroma import utils
+from chromadb import HttpClient
+from langchain_chroma import Chroma
+from loaders.html import HtmlDirectoryLoader
+from loaders.json_loader import JSONFileLoader
+from langchain.text_splitter import CharacterTextSplitter
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv(override=True)
+
+embedder = convert.from_open_ai(OpenAI(), "text-embedding-3-large")
+http_client = HttpClient(host=os.getenv("CHROMA_HOST"), port=os.getenv("CHROMA_PORT"))
+
+its_faq_collection = Chroma(
+    collection_name="its_faq",
+    client=http_client,
+    embedding_function=embedder,
+    collection_metadata={"hnsw:space": "cosine"}
+)
+
+policies_collection = Chroma(
+    collection_name="uh_policies",
+    client=http_client,
+    embedding_function=embedder,
+    collection_metadata={"hnsw:space": "cosine"}
+)
+
+text_splitter = CharacterTextSplitter(
+    separator="\n",
+    chunk_size=8000,
+    chunk_overlap=100
+)
+
+faq_loader = HtmlDirectoryLoader("data/askus")
+utils.upload(its_faq_collection, faq_loader, text_splitter, reset=True, batch_size=30)
+
+json_loader = JSONFileLoader("data/json/policies.json")
+utils.upload(policies_collection, json_loader, text_splitter, reset=True, batch_size=30)

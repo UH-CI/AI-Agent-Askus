@@ -9,7 +9,7 @@ from langchain_core.documents import Document
 from langchain_core.document_loaders import BaseLoader
 
 
-class AskUsHtmlDirectoryLoader(BaseLoader):
+class HtmlDirectoryLoader(BaseLoader):
     """
     Loader for HTML files in a directory that contain FAQ content.
     
