@@ -114,7 +114,7 @@ export default function Home() {
               className={`flex ${msg.message.type === "ai" ? "justify-start" : "justify-end"}`}
             >
               <div
-                className={`max-w-[80%] rounded-2xl px-4 py-2 ${msg.message.type === "ai"
+                className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm ${msg.message.type === "ai"
                   ? "bg-blue-100 text-blue-900"
                   : "bg-green-100 text-green-900"
                   }`}
@@ -122,21 +122,25 @@ export default function Home() {
                 <div className="mb-1 text-sm font-semibold">
                   {msg.message.type === "ai" ? "Hoku" : "You"}
                 </div>
-                <div className="text-sm">{msg.message.content}</div>
+                <div>{msg.message.content}</div>
                 {msg.sources.length > 0 && (
-                  <div className="mt-2 space-y-1">
-                    {msg.sources.map((link, i) => (
-                      <a
-                        key={i}
-                        className="block text-xs text-blue-600 hover:text-blue-800 hover:underline"
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {link}
-                      </a>
-                    ))}
-                  </div>
+                  <>
+                    <br></br>
+                    <div className="">For more information check out these links: </div>
+                    <div className="mt-2 space-y-1">
+                      {msg.sources.map((link, i) => (
+                        <a
+                          key={i}
+                          className="block text-xs text-blue-600 hover:text-blue-800 hover:underline"
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link}
+                        </a>
+                      ))}
+                    </div>
+                  </>
                 )}
               </div>
             </div>
