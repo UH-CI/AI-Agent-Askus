@@ -6,6 +6,8 @@ from langchain_core.messages import AIMessage
 from typing import Dict
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from manoa_agent.agent.states import *
+from typing import Optional
+from pydantic import BaseModel
 
 import logging
 
@@ -75,14 +77,7 @@ class ReformulateNode:
         reformulated = chain.invoke({"chat_history": state["messages"]}).content
         logger.info(f"Reformulating message to :'{reformulated}'")
         return {"reformulated": reformulated}
-
-class ChoiceNode:
-    def __init__(self, llm = BaseChatModel):
-        self.llm = llm
-    
-    def __call__(self, state: DocumentsState) -> DocumentsState:
-        pass
-
+        
 class DocumentsNode:    
     def __init__(self, retrievers: Dict[str, BaseRetriever]):
         self.retrievers = retrievers
@@ -96,8 +91,6 @@ class DocumentsNode:
         
         return {"relevant_docs": retriever.invoke(state["reformulated"])}
         
-from typing import Optional
-from pydantic import BaseModel
 
 class GeneralAgentNode:
     def __init__(self, llm: BaseChatModel):
@@ -156,7 +149,7 @@ class AgentNode:
                     """Context: {context}\n End Context\n\n
 {input}\n
 Provide complete answers based solely on the given context.
-If the information is not available in the context, respond with 'I'm sorry I don't know the answer to that.'.
+If the information is not available in the context, respond with 'I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.'.
 Ensure your responses are concise and informative.
 Do not respond with markdown.
 Do not mention the context in your response."""
@@ -172,4 +165,4 @@ Do not mention the context in your response."""
             return {"message": response, "sources": sources}
         else:
             logger.info("No relevant documents available; returning answer as None.")
-            return {"message": AIMessage("I'm sorry I don't have the answer to that question."), "sources": []}
+            return {"message": AIMessage("I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain."), "sources": []}

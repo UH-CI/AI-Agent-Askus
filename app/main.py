@@ -5,6 +5,7 @@ from langchain_chroma import Chroma
 
 from chromadb import HttpClient
 from langchain_openai import ChatOpenAI
+from langchain_google_genai import GoogleGenerativeAI
 from manoa_agent.prompts.promp_injection import load
 from manoa_agent.retrievers.graphdb import GraphVectorRetriever
 from neo4j_graphrag.retrievers import VectorRetriever
@@ -39,6 +40,13 @@ policies_collection = Chroma(
     collection_metadata={"hnsw:space": "cosine"}
 )
 
+general_collection = Chroma(
+    collection_name="general_faq",
+    client=http_client,
+    embedding_function=embedder,
+    collection_metadata={"hnsw:space": "cosine"}
+)
+
 predefined_collection = Chroma(
     collection_name="predefined",
     client=http_client,
@@ -51,13 +59,18 @@ faq_retriever = its_faq_collection.as_retriever(
     # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 )
 
-policies_retriever = policies_collection.as_retriever(
-    search_type="similarity", search_kwargs={"k": 2}
-    # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
-)
+# policies_retriever = policies_collection.as_retriever(
+#     search_type="similarity", search_kwargs={"k": 2}
+#     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
+# )
 
 policies_retriever = policies_collection.as_retriever(
     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
+)
+
+general_retriever = general_collection.as_retriever(
+    search_type="similarity", search_kwargs={"k": 2}
+    # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 )
 
 predefined_retriever = predefined_collection.as_retriever(
@@ -76,12 +89,14 @@ graph_retriever = GraphVectorRetriever(retriever=vector_retriever)
 retrievers = {
     "askus": faq_retriever,
     "policies": policies_retriever,
-    "graphdb": graph_retriever
+    "graphdb": graph_retriever,
+    "general": general_retriever
 }
 
-
-# llm = ChatOllama(model=os.getenv("OLLAMA_MODEL"), base_url=os.getenv("OLLAMA_HOST"))
 llm = ChatOpenAI(model="gpt-4o")
+# llm = ChatOllama(model=os.getenv("OLLAMA_MODEL"), base_url=os.getenv("OLLAMA_HOST"))
+# llm = ChatOpenAI(model="gemini-2.0-flash", api_key=os.getenv("GEMINI_API_KEY"), base_url=os.getenv("GEMINI_BASE_URL"))
+# llm = GoogleGenerativeAI(model="gemini-2.0-flash", api_key=os.getenv("GEMINI_API_KEY"))
 
 
 prompt_injection_classifier = load(embedder=embedder, load_path="data/prompt_injection_model/injection_model.joblib")
@@ -122,7 +137,7 @@ def rag_agent_condition(state: GeneralAgentState):
 
 workflow = StateGraph(AgentState, output=AgentOutputState)
 
-workflow.add_node("predefined", PredefinedNode(retriever=faq_retriever))
+workflow.add_node("predefined", PredefinedNode(retriever=predefined_retriever))
 workflow.add_node("prompt_injection", PromptInjectionNode(prompt_injection_classifier))
 workflow.add_node("reformulate", ReformulateNode(llm = llm))
 workflow.add_node("get_documents", DocumentsNode(retrievers=retrievers))

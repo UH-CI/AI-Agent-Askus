@@ -16,24 +16,17 @@ conda activate ai-agent-askus
 conda env update --file environment.yml --prune
 ```
 
-## Config File
-```yml
-# Config for ITS RAG
-embedding: "dunzhang/stella_en_1.5B_v5" # Hugging Face embedding model, additional libraries may need to be installed to use other models
-llm: "gemma2:27b" # Ollama model https://ollama.com/search
-```
-
 ## Load Database
 This may take a while depending on which embedding model you use.
 ```bash
 cd model
-python reload_database.py
+python load_db.py
 ```
 
 ## Start Langgraph API
 ```bash
-cd model
-python agent_demo.py
+cd app
+python main.py
 ```
 
 ## Start Webserver
@@ -57,8 +50,6 @@ source .venv/bin/activate
 pip install -r requirements.txt
 scrapy crawl policy_spider -o ./data/results.json -s LOG_LEVEL=INFO
 ```
-
-## Step 2: Activate the Virtual Environment
 
 ## Starting Neo4j Docker Container
 ```
