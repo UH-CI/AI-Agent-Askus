@@ -1,10 +1,10 @@
-from db.chroma import utils
+from manoa_agent.db.chroma import utils
 import unittest
 from dotenv import load_dotenv
 from chromadb import HttpClient
-from embeddings import convert
+from manoa_agent.embeddings import convert
 from openai import OpenAI
-from loaders.html import AskUsHtmlDirectoryLoader
+from manoa_agent.loaders.html import HtmlDirectoryLoader
 from langchain_chroma import Chroma
 
 import os
@@ -19,7 +19,7 @@ class TestChromaUtils(unittest.TestCase):
         http_client = HttpClient(os.getenv("CHROMA_HOST"), os.getenv("CHROMA_PORT"))
         chroma = Chroma(collection_name="test", embedding_function=embedder, client=http_client, collection_metadata={"hnsw:space": "cosine"})
         
-        loader = AskUsHtmlDirectoryLoader("data/askus")
+        loader = HtmlDirectoryLoader("tests/data/html")
 
         utils.upload(chroma, loader, reset=True)
         self.assertEqual(len(chroma.get(where={})["ids"]), 9)

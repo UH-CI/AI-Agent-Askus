@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 from langchain_huggingface import HuggingFaceEmbeddings
 import numpy as np
 
-from embeddings import convert
-from embeddings.base import Embedder
+from manoa_agent.embeddings import convert
+from manoa_agent.embeddings.base import Embedder
 
 def cosine_similarity(a, b):
     """Compute the cosine similarity between two vectors."""
@@ -53,6 +53,7 @@ class TestAdapters(unittest.TestCase):
         embedding_client = HuggingFaceEmbeddings(
             model_name="dunzhang/stella_en_1.5B_v5", model_kwargs=model_kwargs
         )
+        
         embedder = convert.from_hugging_face(embedding_client)
         self.run_embedding_test(embedder)
 
