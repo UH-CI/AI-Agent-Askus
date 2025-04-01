@@ -1,4 +1,0 @@
----
-# Config for ITS RAG
-embedding: "dunzhang/stella_en_1.5B_v5"
-llm: "gemma2:27b"

@@ -5,10 +5,10 @@ from langchain_chroma import Chroma
 
 from chromadb import HttpClient
 from langchain_openai import ChatOpenAI
-from langchain_google_genai import GoogleGenerativeAI
+# from langchain_google_genai import GoogleGenerativeAI
 from manoa_agent.prompts.promp_injection import load
-from manoa_agent.retrievers.graphdb import GraphVectorRetriever
-from neo4j_graphrag.retrievers import VectorRetriever
+# from manoa_agent.retrievers.graphdb import GraphVectorRetriever
+# from neo4j_graphrag.retrievers import VectorRetriever
 import neo4j
 from langchain_chroma import Chroma
 from langgraph.graph import END, StateGraph, START
@@ -18,10 +18,10 @@ import os
 
 load_dotenv(override=True)
 
-neo4j_driver = neo4j.GraphDatabase.driver(
-    os.getenv('NEO4J_URI'),
-    auth=(os.getenv('NEO4J_USERNAME'), os.getenv('NEO4J_PASSWORD'))
-)
+# neo4j_driver = neo4j.GraphDatabase.driver(
+#     os.getenv('NEO4J_URI'),
+#     auth=(os.getenv('NEO4J_USERNAME'), os.getenv('NEO4J_PASSWORD'))
+# )
 
 embedder = convert.from_open_ai(OpenAI(), "text-embedding-3-large")
 http_client = HttpClient(os.getenv("CHROMA_HOST"), os.getenv("CHROMA_PORT"))
@@ -77,19 +77,18 @@ predefined_retriever = predefined_collection.as_retriever(
     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.95}
 )
 
-vector_retriever = VectorRetriever(
-   neo4j_driver,
-   index_name="text_embeddings",
-   embedder=embedder,
-   return_properties=["text"]
-)
+# vector_retriever = VectorRetriever(
+#    neo4j_driver,
+#    index_name="text_embeddings",
+#    embedder=embedder,
+#    return_properties=["text"]
+# )
 
-graph_retriever = GraphVectorRetriever(retriever=vector_retriever)
+# graph_retriever = GraphVectorRetriever(retriever=vector_retriever)
 
 retrievers = {
     "askus": faq_retriever,
     "policies": policies_retriever,
-    "graphdb": graph_retriever,
     "general": general_retriever
 }
 

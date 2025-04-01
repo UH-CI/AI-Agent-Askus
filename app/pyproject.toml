@@ -5,6 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "manoa_agent"
 version = "0.1.0"
+dependencies = [
+    "langchain"
+]
 
 [tool.setuptools]
 package-dir = { "" = "src" }
