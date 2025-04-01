@@ -2,7 +2,7 @@
 
 <img width="2032" alt="Screenshot 2024-11-15 at 7 32 59 AM" src="https://github.com/user-attachments/assets/fe4ebd50-dbcb-4de6-9124-c3d11d778f26">
 
-![66f78880-7e9a-4407-b691-83cede70a444_480](https://github.com/user-attachments/assets/c4e614a8-78e7-463e-b4e1-403980022ad2)
+![39c0cf43-9aec-4f2d-b614-12ae275538e2](https://github.com/user-attachments/assets/c04e0775-9e3e-4eb6-a1db-6ee3c1cdbb97)
 
 
 ## Conda Environment
