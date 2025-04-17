@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e398f9fc-c898-4457-b7cd-4800604ad509" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AI-Agent-Askus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AI-Agent-Askus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e398f9fc-c898-4457-b7cd-4800604ad509" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +62,7 @@
       <workItem from="1744785019370" duration="390000" />
       <workItem from="1744785439605" duration="1086000" />
       <workItem from="1744786541947" duration="428000" />
+      <workItem from="1744929771418" duration="205000" />
     </task>
     <servers />
   </component>
