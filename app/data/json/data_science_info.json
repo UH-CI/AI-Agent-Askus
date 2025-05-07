@@ -1,0 +1,2321 @@
+[
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "IT 310 DATA ANALYTICS AND MACHINE LEARNING",
+    "description": "Helps learners develop skills with services that are critical for machine learning and conducting analysis of big data problems.",
+    "link": "https://catalog.byuh.edu/course/it-310-data-analytics-and-machine-learning"
+  },
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "MATH 121 PRINCIPLES OF STATISTICS",
+    "description": " Descriptive statistics",
+    "link": " elementary probability"
+  },
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "MATH 343 ELEMENTARY LINEAR ALGEBRA",
+    "description": " Linear systems",
+    "link": " matrices"
+  },
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "MATH 311 INTRODUCTION TO NUMERICAL METHODS",
+    "description": " Interpolation",
+    "link": " curve fitting"
+  },
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "MATH 421 MATHEMATICAL STATISTICS",
+    "description": " Probability",
+    "link": " random variables"
+  },
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "MATH 441 INTRODUCTION TO ANALYSIS I",
+    "description": " Elementary topological aspects of the real numbers",
+    "link": " metric properties"
+  },
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "MATH 442 INTRODUCTION TO ANALYSIS II",
+    "description": " Series in one real variable",
+    "link": " sequences and series of functions"
+  },
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "ACCT 186 INTRODUCTION TO FINANCIAL COMPUTING",
+    "description": " Introduction to quantitative reasoning skills with an emphasis on time value of money",
+    "link": " interest"
+  },
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "PSYC 405 MULTIVARIATE STATISTICS",
+    "description": " This computer based course is intended to give students a background in a wide variety of advanced statistical techniques (e.g.",
+    "link": " ANCOVA"
+  },
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "IS 435 ADVANCED CONCEPTS IN ENTERPRISE RESOURCE PLANNING (ERP) SYSTEMS",
+    "description": " Students learn advanced concepts related to enterprise resource planning (ERP) systems such as data warehousing",
+    "link": " business intelligence and business process management. Students will complete several hands-on exercises using the SAP ERP system and other related software tools. "
+  },
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "BUSM 410 ADVANCED ANALYTICS AND BIG DATA",
+    "description": " Students learn advanced tools and techniques in business analytics. This includes topics in big data technologies",
+    "link": " statistics and basic programming. No previous programming experience is required. "
+  },
+  {
+    "organization": "BYU Hawaii",
+    "department": "",
+    "title": "CHEM 326 ANALYTICAL BIOCHEMISTRY",
+    "description": " Principles of chemical and modern chemical analysis. This course is an involved hands-on laboratory/lecture mixture that allows the student to become familiar with multiple methods to quantitatively characterize chemical systems. In the process",
+    "link": " students are trained to use state of the art instrumentation including HPLC"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "School of Natural Sciences and Mathematics",
+    "title": " B.S. Data Science",
+    "description": " Analytics and Visualization ",
+    "link": " The Data Science"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "School of Natural Sciences and Mathematics",
+    "title": " Data Science",
+    "description": " Analytics and Visualization (Minor) ",
+    "link": " The Data Science"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "The data revolution is just beginning – and it’s poised to change the world around us in fundamental ways. Businesses",
+    "department": " the healthcare industry",
+    "title": " government and nonprofits – to name a few – are already using data in innovative ways to improve their services and better meet the needs of clients. And data science is already one of the nation’s fastest-growing sectors. ",
+    "description": "https://chaminade.edu/nsm/data-science-minor/"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "CS 200 SQL and Relational Databases",
+    "description": " This course is an introduction to Database used in data science that will cover topics on database systems and a related data science database language called SQL. This course will include lectures",
+    "link": " discussions"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "CS 201 Programming in R",
+    "description": " This course is an introduction to R that will cover the R topics and language. This course will include lectures",
+    "link": " discussions"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "CS 202 Programming in Python",
+    "description": " This course is an introduction to Python that will cover the python topics and language. This course will include lectures",
+    "link": " discussions"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "CS 203L Machine Learning and AI Lab",
+    "description": " This course is a machine learning and AI lab. This course will include lectures",
+    "link": " discussions"
+  },
+  {
+    "organization": "experiences",
+    "department": " and a project. The goal of the course will prepare and provide students with machine learning and AI"
+  },
+  {
+    "organization": "knowledge",
+    "department": " techniques",
+    "title": " skills",
+    "description": " and a data science mindset. Students in this course will learn Python and various machine"
+  },
+  {
+    "organization": "learning algorithms",
+    "department": " such as trees",
+    "title": " models",
+    "description": " clustering",
+    "link": " and networks."
+  },
+  {
+    "organization": "Prerequisites: CS 201 or CS 202 ",
+    "department": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "CS 204L Visualization and Analytics Lab",
+    "description": " This course is a visualization and analytics lab. This course will include lectures",
+    "link": " discussions"
+  },
+  {
+    "organization": "Prerequisites: CS 201 or CS 202 ",
+    "department": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "DS 300 Ethics Seminar",
+    "description": " Seminar course following on and further developing concepts and skills in DS 200. Students will perform a service project in data ethics."
+  },
+  {
+    "organization": "Prerequisites: DS 200 ",
+    "department": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "DS 301 Community-Engaged Computing: Decision Support & Stakeholder Engagement",
+    "description": " Lecture course addressing the use of data analytics",
+    "link": " visualization and visualization for evidence- based decision support across diverse organizations"
+  },
+  {
+    "organization": "Prerequisites: EN 102",
+    "department": " COM 101",
+    "title": " DS 200 ",
+    "description": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "DS 302 Data Journalism",
+    "description": " Lecture course addressing the use and misuse of data and statistics in media. Data inputs into",
+    "link": " and impact upon"
+  },
+  {
+    "organization": "Prerequisites: EN 102",
+    "department": " COM 101",
+    "title": " DS 200 and MA 331 ",
+    "description": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "DS 303 Modeling for Prediction",
+    "description": " This course provides an overview of the modeling and prediction process",
+    "link": " including definition of goals for prediction"
+  },
+  {
+    "organization": "Prerequisites: EN 102",
+    "department": " COM 101",
+    "title": " CS 201 or CS 202",
+    "description": " MA 210",
+    "link": " and MA 331 "
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "DS 400 Bayesian Statistics",
+    "description": " This course will introduce the Bayesian approach to data analysis (including choice of prior distributions and calculation of posterior distributions) with an emphasis on practical applications. Topics to be discussed include: Bayes’ Theorem; prior distributions; inferences for discrete random variables and binomial proportion; inferences for continuous random variable and normal means; linear regression; analysis of variance; MCMC/Gibbs sampler; and model evaluation/comparison."
+  },
+  {
+    "organization": "Prerequisites: EN 102",
+    "department": " COM 101",
+    "title": " MA 331 ",
+    "description": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "DS 401 Healthcare Informatics and Analytics",
+    "description": " This course examines foundations of health informatics including in terms of its context within the modern health care system and also an understanding of the competencies in relation to health informatics project management. Topics covered include the role of health informatics and analytics in relation to the Affordable Care Act",
+    "link": " accountable care organizations"
+  },
+  {
+    "organization": "Prerequisites: EN 102",
+    "department": " COM 101",
+    "title": " CS 201 or CS 202",
+    "description": " MA 331 ",
+    "link": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": " DS 402 Business Informatics",
+    "description": " Marketing and Forecasting ",
+    "link": " Business analytics uses data and models to explain the performance of a business and how it can be improved. This course discusses the benefits of employing analytics and a structured approach to problem-solving in management situations. Topics to be covered include data manipulation"
+  },
+  {
+    "organization": "Prerequisites: EN 102",
+    "department": " COM 101",
+    "title": " CS 201 or CS 202",
+    "description": " MA 331 ",
+    "link": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "DS 403 Digital Humanities",
+    "description": " This course will explore emerging forms of humanities scholarly production and digital methodologies",
+    "link": " such as digital exhibits"
+  },
+  {
+    "organization": "Prerequisites: EN 102",
+    "department": " COM 101",
+    "title": " DS 100 or DS 101 and CS 201 or CS 202"
+  },
+  {
+    "organization": "OR 2 or more of the following: EID 200",
+    "department": " EID 217",
+    "title": " EN 201",
+    "description": " HI 151",
+    "link": " HI 152"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "DS 404 Geo-Tagging and GIS",
+    "description": " Overview of Geographical Information Systems and geo-coded data and applications across natural and social sciences",
+    "link": " humanities"
+  },
+  {
+    "organization": "Prerequisites: EN 102",
+    "department": " COM 101",
+    "title": " DS 100 or DS 101 and CS 201 or CS 202 ",
+    "description": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "DS 405 Advanced R",
+    "description": " Advanced skills and packages in R statistical analysis software."
+  },
+  {
+    "organization": "Prerequisites: EN 102",
+    "department": " COM 101",
+    "title": " CS 201 ",
+    "description": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "DS 406 Advanced Python",
+    "description": " Advanced programming and applications of the Python programming language."
+  },
+  {
+    "organization": "Prerequisites: EN 102",
+    "department": " COM101",
+    "title": " CS 202 ",
+    "description": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "DS 407 Data Science for Environmental Sciences",
+    "description": " Lecture and project-based course addressing applications of data science",
+    "link": " data analytics and visualization to the environmental sciences. Decision support"
+  },
+  {
+    "organization": "Prerequisites: EN 102",
+    "department": " COM 101",
+    "title": " DS 100 or DS 101 and CS 201 or CS 202",
+    "description": " OR ENV 100 and ENV 201 ",
+    "link": "https://catalog.chaminade.edu/course/ds"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "MA 331 Introduction to Probability and Statistics",
+    "description": " Samples space",
+    "link": " random variables"
+  },
+  {
+    "organization": "Chaminade University of Honolulu",
+    "department": "",
+    "title": "MA 401 Linear Algebra",
+    "description": " Matrices",
+    "link": " elementary row operations"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Data Science Fellows Research Showcase – Spring 2023",
+    "description": " Join the hybrid Hawai‘i Data Science Fellows Research Showcase featuring this year’s cohort of graduate fellows who will present on their current research projects in areas including artificial intelligence",
+    "link": " machine learning"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "This event will be an opportunity to learn more about the Hawaiʻi EPSCoR Change Hawaiʻi project and the interdisciplinary data and climate research efforts. ",
+    "department": "https://datascience.hawaii.edu/event/data-science-fellows-research-showcase-spring-2023/"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "National Science Foundation Forum at UHM",
+    "description": " The NSF Faculty Forum sessions will have ASL interpreter and a live captioner."
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "Student Meeting with Dr. Moore III",
+    "department": " NSF Directorate for STEM Education"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "Join the head of the U.S. National Science Foundation’s Directorate for STEM Education",
+    "department": " James L. Moore III",
+    "title": " for an informal meeting where Dr. Moore will get to know students and learn about their experiences and aspirations. Undergraduate and graduate students are welcome. ",
+    "description": "https://datascience.hawaii.edu/event/national-science-foundation-forum-at-uhm/"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Women in Data Science Hawai‘i 2023",
+    "description": " Women in Data Science (WiDS) aims to inspire and educate data scientists worldwide",
+    "link": " regardless of gender"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "A virtual lunch is provided to participants in the form of a coupon book to McDonalds. The coupon book supports Ronald McDonald House Charities of Hawai‘i and can only be used in Hawai‘i. A pizza lunch is also possible for K-12 classrooms with a teacher sponsor who will show WiDS during lunch. Registration must be completed by April 17 to receive the RMHC-Hawai‘i or pizza virtual lunch ",
+    "department": ""
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Data Wrangling with Computational Notebooks",
+    "description": "Introduction to understanding how to utilize Jupyter Notebooks to create reproducible computational workflows. Learn how to build notebooks that contain a combination of explanatory markdown formatted text and python code.",
+    "link": "https://ci.its.hawaii.edu/portal/workshops/hidsi-workshop-series/data-wrangling-with-computational-notebooks/"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Machine Learning Approaches in Climate Science",
+    "description": " Introduce the basics of time-series and geospatial data modeling using modern data science software tools: Jupyter notebooks",
+    "link": " ScikitLearn"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Data Visualization",
+    "description": " Vision is the primary channel through which humans interpret most of the information in the world. So it isn’t surprising that half of the human brain is dedicated to processing visual imagery. Visualization is particularly important in the age of Big Data",
+    "link": " Data Science and Artificial Intelligence"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Creative Thinking Workshop",
+    "description": " Introduction to what science informs us about creativity. Drawing from the science and the experience of creative practitioners such as animators and comedians",
+    "link": " the workshop will then describe conditions and activities that can help as well as hurt creativity. "
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Scientific Workflows and Gateways",
+    "description": "Introduce gateways and workflows to foster a collaborative environment for research and scientific reproducibility. Learn to navigate HydroShare tools and resources to create data resources that can be used in collaboration. Use existing workflow to demonstrate ease of community-developed tools.",
+    "link": "https://ci.its.hawaii.edu/portal/workshops/hidsi-workshop-series/scientific-gateways-and-workflows/"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": " Data Movement",
+    "description": " Dissemination and Archiving ",
+    "link": " This workshop will be an introduction to understanding the challenges and options in moving scientific data over the network. In particular"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": " FAIR Data Management",
+    "description": " Security and Ethics ",
+    "link": " This workshop focuses on introducing FAIR data management practices -- FAIR stands for Findability"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "High Performance Computing",
+    "description": " This FREE workshop is sponsored by the University of Hawaiʻi Information Technology Service Cyberinfrastructure group and Hawaii Data Science Institute (HI-DSI)"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "This workshop focuses on Utilization of High performance Computing (HPC) clusters",
+    "department": " such as Mana",
+    "title": " for deep learning tasks as well as the benefits of understanding the different types of file systems available on HPC clusters and basic ways one would stage data from slower file systems to faster file systems."
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "Attendees will learn how to use Jupyter Lab on Mana via Open OnDemand",
+    "department": " the benefits of using GPUs over just CPUs for deep learning applications and how staging data the correct file system can improve performance of deep learning jobs. ",
+    "title": "https://ci.its.hawaii.edu/portal/workshops/hidsi-workshop-series/hpc/"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Justice in Data Science Teaching and Practice",
+    "description": " Justice",
+    "link": " Diversity"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Machine Learning Approaches in Climate Science",
+    "description": " This workshop will focus on machine learning for timeseries data with the most popular data science packages: Jupyter",
+    "link": " Scikit-Learn"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Recognizing Data Biases",
+    "description": " Recognizing that many algorithmic biases stem from biased data",
+    "link": " this workshop will help participants recognize potential biases in their own data. Case studies ranging from egregious errors to effective mitigation steps will be presented and discussed. Participants will begin to write and critique their own algorithm impact statements as a first step to reducing their own potential algorithmic biases. "
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Scientific Gateways and Workflows",
+    "description": " Sciences are becoming more data intensive and thus managing",
+    "link": " handling and exploring data are becoming more prevalent issues in research. Using these data sets to drive discovery presents new issues in researchers' efforts to organize"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "In this workshop",
+    "department": " discussions will include an introduction to scientific gateways and workflows. Attendees will learn how gateways and workflows may benefit their research and about some existing gateways that may be suitable for their scientific interests. For the hands-on portion",
+    "title": " attendees will access and use HydroShare",
+    "description": " a gateway built for water-resource sciences. Activities will include navigating HydroShare and its available tools and web apps and creating a data resource which can be used for collaboration with others in the scientific community. Attendees will also use an existing workflow to perform computational tasks on some data to demonstrate the ease and benefits of using community-developed tools for data analysis. ",
+    "link": "https://ci.its.hawaii.edu/portal/workshops/hidsi-workshop-series/scientific-gateways-and-workflows/"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Scientific Software Basics",
+    "description": " This FREE workshop is sponsored by the University of Hawai‘i Information Technology Service Cyberinfrastructure group and Hawai‘i Data Science Institute (HI-DSI)"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "This workshop focuses on foundations and essentials of scientific software."
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "Attendees will learn how to use the Unix command line for navigating Linux environments like Mana",
+    "department": " command line git and GitHub for software version control and GitHub pages for sharing your science. ",
+    "title": "https://ci.its.hawaii.edu/portal/workshops/hidsi-workshop-series/ssb/"
+  },
+  {
+    "organization": "Hawaii Data Science Institute",
+    "department": "",
+    "title": "Smart Data Collection for Sensor Networks",
+    "description": " This workshop will cover the usage of the Tapis Streams API for representing sensor networks and streaming/processing real-time data. Participants will set up a Jupyter notebook instance on Mana and run through a notebook demonstrating how to implement a mock sensor station for recording climatological data via tapipy",
+    "link": " a python library for interacting with Tapis. The user will then user Abaco containers to execute some analysis of the mock sensor data. "
+  },
+  {
+    "organization": "Hawai'i Pacific University",
+    "department": "",
+    "title": "Graduate Certificate in Business Analytics",
+    "description": " The Graduate Certificate in Business Analytics provides students with the knowledge and skills needed for contemporary Business Analytics. Business Analytics is the combination of skills",
+    "link": " technologies"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "As a student in the program",
+    "department": " you will learn how to prepare and analyze data to detect trends",
+    "title": " predict the most-likely scenarios",
+    "description": " and make better business decisions. The curriculum combines concepts and theories",
+    "link": " modern technologies"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "The certificate is geared towards entry- to middle-level business and technology professionals. Additionally",
+    "department": " the certificate courses act as a gateway and can be shared towards the Master of Science in Business Analytics & Information Security conditional upon application and admission to the MS program. ",
+    "title": "https://catalog.hpu.edu/online/certificate-programs/certgrba"
+  },
+  {
+    "organization": "Hawai'i Pacific University",
+    "department": "",
+    "title": " CSCI 1534 Data Analysis and Visualization - the Good",
+    "description": " the Bad",
+    "link": " the Ugly "
+  },
+  {
+    "organization": "Hawai'i Pacific University",
+    "department": "",
+    "title": "CSCI 2651 Python for the Sciences",
+    "description": " Prerequisite: MATH 1140 or MATH 1150 or equivalent placement"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "The goal of this course is to develop Python programming competency for students in the Sciences and Engineering. Students will learn to write code using the basic constructs of selection",
+    "department": " looping",
+    "title": " functions",
+    "description": " and list handling. They will work with key packages to support scientific computing: numpy",
+    "link": " scipy"
+  },
+  {
+    "organization": "Hawai'i Pacific University",
+    "department": "",
+    "title": "CSCI 3242 Modeling and Simulation",
+    "description": " Prerequisite: CS 2911; CSCI 2301; MATH 1123; MATH 1140 or 1150; and consent of instructor."
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "This course introduces concepts of analytic modeling and computer simulation. It encompasses mathematical techniques",
+    "department": " algorithms",
+    "title": " and applications available to assist and improve decision making and understanding of various types of systems. Sample topics include discrete event simulation",
+    "description": " mathematical and computational modeling",
+    "link": " virtual reality"
+  },
+  {
+    "organization": "Hawai'i Pacific University",
+    "department": "",
+    "title": "3301 Database Technologies",
+    "description": " Prerequisite: CSCI 2911. Recommended: CSCI 3201 or MIS 2000."
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "An introduction to the design",
+    "department": " development",
+    "title": " and implementation of database management systems (DBMS). Topics include conceptual data modeling",
+    "description": " logical and physical design",
+    "link": " the relational model"
+  },
+  {
+    "organization": "Hawai'i Pacific University",
+    "department": "",
+    "title": "CSCI 3302 Machine Learning and Knowledge Discovery",
+    "description": " Prerequisite: CSCI 2913; CSCI 2301; MATH 1123; MATH 3305."
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "Machine learning is the science of data mining and knowledge discovery using algorithms that enable computers to develop knowledge from empirical data. In the past decade",
+    "department": " machine learning methodologies have successfully enabled computers to recognize speech and hand-written characters",
+    "title": " to convert spoken words to text",
+    "description": " to effectively search for information",
+    "link": " and to recommend products"
+  },
+  {
+    "organization": "Hawai'i Pacific University",
+    "department": "",
+    "title": "CSCI 3771 Python",
+    "description": " Prerequisite: CSCI 2911 and 2912."
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "An introduction to programming in the popular Python programming language. Topics include data types",
+    "department": " simple statements",
+    "title": " control structures",
+    "description": " strings",
+    "link": " functions"
+  },
+  {
+    "organization": "Hawai'i Pacific University",
+    "department": "",
+    "title": "CSCI 4706 Deep Learning",
+    "description": " Prerequisite: CSCI 3302",
+    "link": " CSCI 3771"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "An introduction to deep learning",
+    "department": " a branch of machine learning concerned with the development and application of modern neural networks. Deep learning algorithms extract layered high-level representations of data in a way that maximizes performance on a given task. Deep learning is behind many recent advances in AI",
+    "title": " including Siri’s speech recognition",
+    "description": " Facebook’s tag suggestions",
+    "link": " and self-driving cars. The main topics in this course include: basic neural networks"
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "",
+    "title": "Data Science Certificate",
+    "description": " The Certificate in Data Science allows students to develop skills relating to the acquiring",
+    "link": " archiving"
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 171 Data Science Fundamentals in R",
+    "description": " Introduction to the field of data science. Focus on communicating"
+  },
+  {
+    "organization": "narratives regarding the underlying patterns in the data",
+    "department": " i.e. storytelling"
+  },
+  {
+    "organization": "with data. Topics include R programming fundamentals",
+    "department": " data properties",
+    "title": ""
+  },
+  {
+    "organization": "visualization",
+    "department": " importing",
+    "title": " cleaning",
+    "description": " and transforming data. No prior"
+  },
+  {
+    "organization": "programming experience required. Pre: C or better in MATH 135T or"
+  },
+  {
+    "organization": "higher",
+    "department": " or placement into MATH 140 or higher. (Same as DATA 171)"
+  },
+  {
+    "organization": "(Attributes: GQ) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 172 Python for Data Analysis",
+    "description": " Fundamentals of"
+  },
+  {
+    "organization": "Python programming for the analysis of real-world datasets. Topics"
+  },
+  {
+    "organization": "include writing scripts and programs in Python and tools for cleaning",
+    "department": ""
+  },
+  {
+    "organization": "manipulating",
+    "department": " and visualizing data. Introduction to intelligent analysis"
+  },
+  {
+    "organization": "techniques. Properties of domain-specific datasets. No prior"
+  },
+  {
+    "organization": "programming experience required. Pre: C or better in MATH 135T or"
+  },
+  {
+    "organization": "higher",
+    "department": " or placement into MATH 140 or higher. (Same as DATA 172)"
+  },
+  {
+    "organization": "(Attributes: GQ) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 272 Machine Learning for Data Sci",
+    "description": " How to use data to"
+  },
+  {
+    "organization": "automatically understand the world",
+    "department": " make complex decisions",
+    "title": " and even"
+  },
+  {
+    "organization": "predict the future. Focuses on helping students do more with data by"
+  },
+  {
+    "organization": "understanding and using a wide variety of machine learning tools."
+  },
+  {
+    "organization": "Taught in Python. Pre: CS/DATA 172 and MATH 241",
+    "department": " which may be taken"
+  },
+  {
+    "organization": "concurrently. (Same as DATA 272) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "MATH 271 Applied Statistics with R",
+    "description": " Introduction to probability"
+  },
+  {
+    "organization": "and statistics",
+    "department": " with an emphasis on applied use of the R statistical"
+  },
+  {
+    "organization": "computing system. Topics include categorical and quantitative random"
+  },
+  {
+    "organization": "variables",
+    "department": " probability distributions",
+    "title": " descriptive statistics",
+    "description": " estimation",
+    "link": ""
+  },
+  {
+    "organization": "hypothesis testing",
+    "department": " and linear regression. Pre: C or better in MATH 135T"
+  },
+  {
+    "organization": "or higher",
+    "department": " or placement into MATH 140 or higher. Recommended: C or"
+  },
+  {
+    "organization": "better in CS 171 or computer programming experience. (Same as DATA"
+  },
+  {
+    "organization": "271) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "ASTR/PHYS 260 Computational Physics & Astronomy",
+    "description": " Computational"
+  },
+  {
+    "organization": "techniques in physics and astronomy",
+    "department": " with an emphasis on fundamental"
+  },
+  {
+    "organization": "algorithms and development of code in high-level languages. Topics"
+  },
+  {
+    "organization": "include least squares",
+    "department": " interpolation",
+    "title": " random number generators and"
+  },
+  {
+    "organization": "numerical integration of differential equations. Pre: CS 150 or CS 172 and"
+  },
+  {
+    "organization": "MATH 242 and PHYS 272 (PHYS 272 may be taken concurrently). (Same"
+  },
+  {
+    "organization": "as PHYS 260) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "ASTR/PHYS 260L Computational Phys & Astr Lab",
+    "description": " Will offer an"
+  },
+  {
+    "organization": "introduction to unix command language and programming skills relevant"
+  },
+  {
+    "organization": "to Astronomy. Emphasis on writing algorithms and code programming in"
+  },
+  {
+    "organization": "Python",
+    "department": " C ++",
+    "title": " or Fortran. Some elements of IDL and IRAF are covered."
+  },
+  {
+    "organization": "Problems will come from physics and astrophysics that will be solved"
+  },
+  {
+    "organization": "using numerical methods and mathematical algorithms presents in the"
+  },
+  {
+    "organization": "PHYS 260 lecture. Topics covered are integration methods",
+    "department": " interpolation",
+    "title": ""
+  },
+  {
+    "organization": "error estimation",
+    "department": " eigenvalues and eigenvectors",
+    "title": " linear and non-linear equations",
+    "description": " Fourier methods",
+    "link": " random numbers and Monte Carlo methods."
+  },
+  {
+    "organization": "Pre: CS 150 or CS 172 and MATH 242 and PHYS 272 (PHYS 272 may be"
+  },
+  {
+    "organization": "taken concurrently) and PHYS/ASTR 260 (PHYS/ASTR 260 may be taken"
+  },
+  {
+    "organization": "concurrently). (Same as ASTR 260L) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "ASTR 350L Stellar Astrophysics Lab",
+    "description": " A laboratory course in"
+  },
+  {
+    "organization": "experimental astrophysics where students obtain data of stars",
+    "department": " star"
+  },
+  {
+    "organization": "clusters",
+    "department": " and star-forming regions with small",
+    "title": " portable telescopes and UH"
+  },
+  {
+    "organization": "Hilo telescope on Maunakea. Data acquisition takes place throughout the"
+  },
+  {
+    "organization": "semester whereby students learn how to troubleshoot equipment and"
+  },
+  {
+    "organization": "develop technical skills. Weekly laboratory projects use data obtained"
+  },
+  {
+    "organization": "with telescopes",
+    "department": " cameras",
+    "title": " and spectrographs and solidify theoretical"
+  },
+  {
+    "organization": "concepts presented in ASTR 350 Stellar Astrophysics. Pre: ASTR 250",
+    "department": ""
+  },
+  {
+    "organization": "ASTR 250L",
+    "department": " and ASTR 350 which can be taken concurrently. ",
+    "title": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "ASTR 351L Galactic & Extragal Astr Lab",
+    "description": " A laboratory"
+  },
+  {
+    "organization": "course in experimental astrophysics where students obtain data of"
+  },
+  {
+    "organization": "galactic components",
+    "department": " nearby and distant galaxies",
+    "title": " galaxies of different"
+  },
+  {
+    "organization": "morphological types",
+    "department": " and extragalactic star-forming regions active"
+  },
+  {
+    "organization": "galactic nuclei",
+    "department": " lensed galaxies",
+    "title": " and cluster of galaxies using the 0.7m"
+  },
+  {
+    "organization": "UH Hilo telescope and the 2.2m telescope. Data acquisition takes place"
+  },
+  {
+    "organization": "throughout the semester whereby students further improve their"
+  },
+  {
+    "organization": "observational techniques and technical skills learning how to acquire faint and extended sources. Weekly laboratory projects use data"
+  },
+  {
+    "organization": "obtained with a wide range of telescopes",
+    "department": " cameras",
+    "title": " and spectrographs"
+  },
+  {
+    "organization": "and solidify theoretical concepts presented in ASTR 351 Galactic &"
+  },
+  {
+    "organization": "Extragal Astrophysics. Pre: ASTR 350L; and ASTR 351 which can be taken"
+  },
+  {
+    "organization": "concurrently. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "BIOL 280 Biostatistics",
+    "description": " Statistical analysis as applied to research in"
+  },
+  {
+    "organization": "the Biological Sciences. Theory and applications of statistics;"
+  },
+  {
+    "organization": "experimental design; basic statistical concepts; hypothesis testing;"
+  },
+  {
+    "organization": "parametric and non-parametric analyses. Group and independent"
+  },
+  {
+    "organization": "projects",
+    "department": " computer analysis of data. ",
+    "title": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "BIOL 481L Trop Island Ecology & Evol Lab",
+    "description": " Intensive fieldlaboratory"
+  },
+  {
+    "organization": "supporting BIOL 481. Research topics selected from current"
+  },
+  {
+    "organization": "fields of active research within tropical island ecology and evolution."
+  },
+  {
+    "organization": "Develop research hypotheses",
+    "department": " gather data from field sites",
+    "title": " analyze and"
+  },
+  {
+    "organization": "interpret data and write reports in the style of scientific papers. Pre:"
+  },
+  {
+    "organization": "concurrent enrollment in BIOL 481 required. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "BIOL 482H Honors Appl Of Ecol & Evol",
+    "description": " Practical experience in"
+  },
+  {
+    "organization": "performing research projects in Ecology",
+    "department": " Evolution and Conservation"
+  },
+  {
+    "organization": "Biology. Students will submit project proposals for evaluation and"
+  },
+  {
+    "organization": "approval",
+    "department": " do a thorough literature review",
+    "title": " develop an experimental"
+  },
+  {
+    "organization": "design",
+    "department": " and collect and analyze data. Students will also prepare a final"
+  },
+  {
+    "organization": "written report and give a 15-minute seminar presentation on their"
+  },
+  {
+    "organization": "projects. Pre: BIOL 443L",
+    "department": " BIOL 481 and 481L; 3.5 GPA or consent of"
+  },
+  {
+    "organization": "instructor with departmental approval. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CHEM 274L Princ Analytical Chem Lab",
+    "description": " Principles of data"
+  },
+  {
+    "organization": "analysis and calibration of electroanalytical",
+    "department": " spectroscopic",
+    "title": ""
+  },
+  {
+    "organization": "chromatographic",
+    "department": " gravimetric",
+    "title": " and volumetric methods. Pre: C or better"
+  },
+  {
+    "organization": "in CHEM 162L. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CHEM 350L Phys Chem for Life Sci Lab",
+    "description": " Laboratory"
+  },
+  {
+    "organization": "techniques in Physical Chemistry with emphasis in the life sciences. Pre:"
+  },
+  {
+    "organization": "CHEM 162L and CHEM 350 which may be taken concurrently. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CHEM 351L Physical Chem I Lab",
+    "description": " Laboratory techniques in"
+  },
+  {
+    "organization": "physical chemistry at macroscopic level. Pre: CHEM 351",
+    "department": " which may be"
+  },
+  {
+    "organization": "taken concurrently. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CHEM 352L Physical Chem II Lab",
+    "description": " Laboratory techniques in"
+  },
+  {
+    "organization": "physical chemistry at the microscopic level. Pre: CHEM 352",
+    "department": " which may"
+  },
+  {
+    "organization": "be taken concurrently. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CHEM 431L Instrumental Analysis Lab",
+    "description": " Introductory"
+  },
+  {
+    "organization": "instrumental analysis for chemistry majors but recommended for other"
+  },
+  {
+    "organization": "natural science majors. Pre: CHEM 274L with C or better grade or"
+  },
+  {
+    "organization": "instructor's consent. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 370 Data Management",
+    "description": " Fundamentals of relational database"
+  },
+  {
+    "organization": "usage and management from a data science perspective. Topics include"
+  },
+  {
+    "organization": "properties of multi-table data",
+    "department": " the entity- relationship data model",
+    "title": " SQL"
+  },
+  {
+    "organization": "for single and multiple table queries and updates",
+    "department": " and communicating"
+  },
+  {
+    "organization": "with databases using R. Pre: C or better in CS/DATA 171. (Same as DATA"
+  },
+  {
+    "organization": "370) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 373 Data Security & Privacy",
+    "description": " This course studies the numerous"
+  },
+  {
+    "organization": "privacy and security issues that arise when gathering",
+    "department": " storing",
+    "title": " analyzing",
+    "description": ""
+  },
+  {
+    "organization": "and distributing data. This course will teach students about the"
+  },
+  {
+    "organization": "fundamental underpinnings of security & privacy as well as give"
+  },
+  {
+    "organization": "practical",
+    "department": " hands-on experience designed to help data scientists identify"
+  },
+  {
+    "organization": "and resolve real-world issues. Topics include differential privacy",
+    "department": ""
+  },
+  {
+    "organization": "database security",
+    "department": " server security",
+    "title": " data ethics",
+    "description": " machine learning safety",
+    "link": ""
+  },
+  {
+    "organization": "and data integrity. Primarily taught in Python. Pre: C or better in CS/DATA"
+  },
+  {
+    "organization": "172. (Same as DATA 373) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 421 Database Systems Design",
+    "description": " Data models: hierarchical",
+    "link": ""
+  },
+  {
+    "organization": "network",
+    "department": " relational",
+    "title": " object oriented. Relational database management"
+  },
+  {
+    "organization": "systems. Database design. Client/server systems. Web access to"
+  },
+  {
+    "organization": "databases. Database administration and security. Transaction"
+  },
+  {
+    "organization": "management. Database programming. Pre: CS 420. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 422 Database Analytics",
+    "description": " Further study of database design."
+  },
+  {
+    "organization": "Administrative and user capabilities of a modern database management"
+  },
+  {
+    "organization": "system. Database security. Transaction management. Database"
+  },
+  {
+    "organization": "programming: client and server. Two and three-tier client server"
+  },
+  {
+    "organization": "systems. Web services and mobile applications. Data transformation."
+  },
+  {
+    "organization": "XML as a data transport",
+    "department": " and storage mechanism. Pre: CS 421. ",
+    "title": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 435 Ethical Hacking",
+    "description": "   To beat a hacker",
+    "link": " you need to think like a"
+  },
+  {
+    "organization": "hacker  . This course will provide hands-on training to students to"
+  },
+  {
+    "organization": "become information security professionals while learning tools and"
+  },
+  {
+    "organization": "techniques used by attackers. Students will get training to become"
+  },
+  {
+    "organization": "ethical hackers to defend against cyber-attacks through the five phases"
+  },
+  {
+    "organization": "of Ethical Hacking: Reconnaissance",
+    "department": " Gaining Access",
+    "title": " Enumeration",
+    "description": ""
+  },
+  {
+    "organization": "Maintaining Access",
+    "department": " and Covering Tracks. Pre: CS 150 ",
+    "title": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 440 Artificial Intelligence",
+    "description": " Fundamental concepts of artificial"
+  },
+  {
+    "organization": "intelligence including problem solving",
+    "department": " heuristic search and knowledge"
+  },
+  {
+    "organization": "representation. Discussion of applications such as game playing",
+    "department": ""
+  },
+  {
+    "organization": "theorem proving",
+    "department": " and knowledge based expert system. Pre: CS 321. ",
+    "title": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 475 Data Visualization",
+    "description": " This team-taught course provides an"
+  },
+  {
+    "organization": "interdisciplinary framework for learning cutting-edge techniques in data"
+  },
+  {
+    "organization": "visualization. Students from various disciplines will collaborate on"
+  },
+  {
+    "organization": "projects that refine and visualize complex data for interactive",
+    "department": ""
+  },
+  {
+    "organization": "educational presentations. Students are taught hands-on-skills for"
+  },
+  {
+    "organization": "creating effective data visualization products and tools that can be"
+  },
+  {
+    "organization": "applied to a broad range of scientific disciplines",
+    "department": " education",
+    "title": " humanities",
+    "description": ""
+  },
+  {
+    "organization": "and the community. Pre: Junior or Senior standing. CS 150 or ART 112"
+  },
+  {
+    "organization": "are recommended prior to the course. (Same as ART 475) (Attributes:"
+  },
+  {
+    "organization": "GCC) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 480 Digital Image Processing",
+    "description": " This course provides introduces"
+  },
+  {
+    "organization": "digital image processing fundamentals and the software principles used"
+  },
+  {
+    "organization": "in their implementation. Topics include intensity transformations",
+    "department": " spatial"
+  },
+  {
+    "organization": "filtering",
+    "department": " compression",
+    "title": " geometric transforms",
+    "description": " registration",
+    "link": " wavelets"
+  },
+  {
+    "organization": "segmentation",
+    "department": " and edge detection. This course reinforces theory through"
+  },
+  {
+    "organization": "a hands-on programming approach. Prerequisite: CS 321 ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 483 Computer Vision",
+    "description": " A survey of the field of computer vision."
+  },
+  {
+    "organization": "Covers both classic as well as deep learning approaches to analyzing"
+  },
+  {
+    "organization": "images and video. Topics covered include keypoint features",
+    "department": " object"
+  },
+  {
+    "organization": "detection",
+    "department": " multi-object tracking",
+    "title": " and interacting with humans. Pre: MATH"
+  },
+  {
+    "organization": "241",
+    "department": " and any of the following: CS/DATA 272",
+    "title": " CS321",
+    "description": " or CS440. (Same as"
+  },
+  {
+    "organization": "DATA 483) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "CS 485 Social Network Analysis",
+    "description": " Covers the six degrees of"
+  },
+  {
+    "organization": "separation",
+    "department": " models of the small world",
+    "title": " page rank",
+    "description": " network effects",
+    "link": " P2P"
+  },
+  {
+    "organization": "networks",
+    "department": " network evolution",
+    "title": " spectral graph theory",
+    "description": " virus/news"
+  },
+  {
+    "organization": "propagation",
+    "department": " core-periphery",
+    "title": " link prediction",
+    "description": " power-laws",
+    "link": " scale free networks"
+  },
+  {
+    "organization": "information cascades",
+    "department": " influence maximization Pre: CS 151 ",
+    "title": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Business and Economics (COBE)",
+    "title": "ECON 390 Econometrics",
+    "description": " Use of mathematical and statistical"
+  },
+  {
+    "organization": "techniques to model and test the reality of economic theory",
+    "department": " tests of"
+  },
+  {
+    "organization": "hypotheses and forecasting. Pre: MATH 115 or QBA 260. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Business and Economics (COBE)",
+    "title": "ECON 430 Quantitative Forecasting",
+    "description": " Introductory level of"
+  },
+  {
+    "organization": "forecasting for business and economics with an emphasis on Hilo and"
+  },
+  {
+    "organization": "Hawaiʻi economies and businesses. Topics include time series"
+  },
+  {
+    "organization": "techniques",
+    "department": " linear regression forecasts",
+    "title": " several miscellaneous"
+  },
+  {
+    "organization": "forecasting models",
+    "department": " and forecasting evaluation. Pre: QBA 260 or MATH"
+  },
+  {
+    "organization": "115 or instructor's consent. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Arts and Sciences (CAS)",
+    "title": "GEOG 480 Geog Info Sys & Visualization",
+    "description": " Introduction to basic concepts and skills for using Geographic"
+  },
+  {
+    "organization": "Information Systems (GIS) to analyze and visualize geospatial data."
+  },
+  {
+    "organization": "Topics covered include: computer representation of geographic"
+  },
+  {
+    "organization": "information",
+    "department": " construction of GIS databases",
+    "title": " geospatial analysis and"
+  },
+  {
+    "organization": "applications. Additional focus on visualization skills including"
+  },
+  {
+    "organization": "cartographic principles and techniques. Pre: GEOG 201 or instructor's"
+  },
+  {
+    "organization": "consent. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Arts and Sciences (CAS)",
+    "title": "GEOG 481 Advance Geo-Spatial Techniques",
+    "description": " GEOG 481 is an"
+  },
+  {
+    "organization": "advanced course in spatial analysis and modeling specific to Geospatial"
+  },
+  {
+    "organization": "Information Science. This course will emphasize the application of"
+  },
+  {
+    "organization": "Geospatial software tools along with the underlying theories and"
+  },
+  {
+    "organization": "practices to analyze",
+    "department": " model and visualize data. A focus on concepts and"
+  },
+  {
+    "organization": "techniques utilized in GIS provides numerous opportunities for applied"
+  },
+  {
+    "organization": "learning in terrain modeling",
+    "department": " suitability modeling",
+    "title": " predictive ecosystem"
+  },
+  {
+    "organization": "mapping and data visualization. Further knowledge and skills will be"
+  },
+  {
+    "organization": "developed by customization of GIS applications through interface. This"
+  },
+  {
+    "organization": "course is dual listed with CBES 681. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Arts and Sciences (CAS)",
+    "title": "GEOG 470 Remote Sensing/Air Photo",
+    "description": " Analysis of film and digital"
+  },
+  {
+    "organization": "images of the Earth's surface collected from cameras and sensors aboard"
+  },
+  {
+    "organization": "aircraft and satellites. Applications to resource planning",
+    "department": " forestry",
+    "title": ""
+  },
+  {
+    "organization": "hydrology and geology. Pre: GEOG 201 or consent of instructor. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "",
+    "title": "GEOG 488 Advanced Geostatistics",
+    "description": " This class is about"
+  },
+  {
+    "organization": "understanding the uncertainty inherent in predictions made from spatial"
+  },
+  {
+    "organization": "data. Probability theory",
+    "department": " spatial analysis",
+    "title": " variogram analysis",
+    "description": " kriging",
+    "link": " and"
+  },
+  {
+    "organization": "stochastic simulations (conditional and unconditional). Our focus will be"
+  },
+  {
+    "organization": "on the theory and application of geostatistical interpolation techniques to"
+  },
+  {
+    "organization": "address real geographic and environmental problems using real data."
+  },
+  {
+    "organization": "Pre: GEOG 280",
+    "department": " GEOG 480 ",
+    "title": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "GEOL 445 GIS for Geology",
+    "description": " Introduction to the use of"
+  },
+  {
+    "organization": "Geographical Information Systems for storing",
+    "department": " displaying",
+    "title": " and analyzing"
+  },
+  {
+    "organization": "geospatial data. Theories",
+    "department": " applications in earth and environmental"
+  },
+  {
+    "organization": "sciences",
+    "department": " databases",
+    "title": " and data analysis. Pre: GEOL 111 and upper"
+  },
+  {
+    "organization": "division standing or consent of instructor. Basic computer skills are"
+  },
+  {
+    "organization": "strongly recommended. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "GEOL 450 Geological Remote Sensing",
+    "description": " Application"
+  },
+  {
+    "organization": "of remote sensing to volcanic hazards",
+    "department": " global change",
+    "title": " and geologic"
+  },
+  {
+    "organization": "mapping. Exploration of both satellite and airborne sensor imagery with"
+  },
+  {
+    "organization": "laboratory exercises focused on modern remote sensing visualization"
+  },
+  {
+    "organization": "tools and interpretation of optical",
+    "department": " thermal and thematic data suites. Pre:"
+  },
+  {
+    "organization": "any lower division geology class. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "GEOL 472 Volcano Seismology & Geodesy",
+    "description": " Investigation of"
+  },
+  {
+    "organization": "seismotectonic processes of active volcanoes including sources of"
+  },
+  {
+    "organization": "earthquakes",
+    "department": " volcanic tremor",
+    "title": " seismic tomography",
+    "description": " and seismic methods"
+  },
+  {
+    "organization": "for volcanic monitoring. Geodetic Investigations of volcanic processes"
+  },
+  {
+    "organization": "including both earth and space-based methods",
+    "department": " data analysis and"
+  },
+  {
+    "organization": "modeling. Pre: GEOL 111",
+    "department": " 111L and MATH 125 or MATH 241 or consent of"
+  },
+  {
+    "organization": "instructor. Field trips are sometimes conducted outside of class hours. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "MARE 250 Statistical Apps in Marine Science",
+    "description": " Hands-on approach to designing field experiments",
+    "link": " collection of ecological data"
+  },
+  {
+    "organization": "data on computers using statistical methods",
+    "department": " and presentation of results."
+  },
+  {
+    "organization": "Requires completion of a project using data collected in the field followed"
+  },
+  {
+    "organization": "by the preparation of both written and oral reports. Pre: MARE/BIOL 171"
+  },
+  {
+    "organization": "or MARE 201",
+    "department": " or instructor's consent. (Attributes: GQ) ",
+    "title": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "MARE 375 Applied Informatics",
+    "description": " Introduction to the theory and"
+  },
+  {
+    "organization": "application of informatics tools used in Marine and Natural Sciences."
+  },
+  {
+    "organization": "Students will learn the fundamentals of data management",
+    "department": " data"
+  },
+  {
+    "organization": "analytics",
+    "department": " ecoinformatics",
+    "title": " bioinformatics",
+    "description": " and data visualization. Pre: C or"
+  },
+  {
+    "organization": "better in CS 171 or CS 172",
+    "department": " C or better in MATH 271 or MARE 250 or"
+  },
+  {
+    "organization": "Instructor's Consent. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "MATH 371 Multivariate Modeling with R",
+    "description": " Multivariate statistical"
+  },
+  {
+    "organization": "methods and model selection using R. Topics include the multivariate"
+  },
+  {
+    "organization": "normal distribution and covariances",
+    "department": " multiple regression",
+    "title": " analysis of"
+  },
+  {
+    "organization": "variance",
+    "department": " principal component analysis",
+    "title": " logistic regression",
+    "description": " and decision"
+  },
+  {
+    "organization": "trees. The course will emphasize model selection and techniques such as"
+  },
+  {
+    "organization": "validation sets to address the problem of overfitting. Pre: C or better in"
+  },
+  {
+    "organization": "MATH 271. (Same as DATA 371) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "MATH 421 Elem Probability Theory",
+    "description": " Sets",
+    "link": " sample spaces"
+  },
+  {
+    "organization": "combinatorial probability",
+    "department": " random variables",
+    "title": " mathematical expectation",
+    "description": ""
+  },
+  {
+    "organization": "classical distributions applications. Pre: C or better MATH 242 ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "MATH 422 Elementary Math Statistics",
+    "description": " Statistical inference",
+    "link": ""
+  },
+  {
+    "organization": "estimation",
+    "department": " hypothesis testing",
+    "title": " regression",
+    "description": " correlation",
+    "link": " introduction to"
+  },
+  {
+    "organization": "analysis of variance. Pre: C or better in MATH 421 and one of the"
+  },
+  {
+    "organization": "following: MATH 115; or MATH 271; or instructor's consent. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Business and Economics (COBE)",
+    "title": "QBA 260 Business Statistics",
+    "description": " Application of statistics to business."
+  },
+  {
+    "organization": "Includes an introduction to probability and sampling; descriptive"
+  },
+  {
+    "organization": "statistics",
+    "department": " inference",
+    "title": " regression and one-way analysis of variance. Pre:"
+  },
+  {
+    "organization": "One MATH course numbered 125 or higher (may be taken concurrently)."
+  },
+  {
+    "organization": "(Attributes: GQ) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Business and Economics (COBE)",
+    "title": "QBA 362 Business Analytics",
+    "description": " Fundamentals of Business Analytics."
+  },
+  {
+    "organization": "This course aims to teach students to analyze",
+    "department": " formulate",
+    "title": " and solve"
+  },
+  {
+    "organization": "managerial decision-making problems using quantitative models and"
+  },
+  {
+    "organization": "techniques. Pre: C or better in QBA 200 or QBA 260. (Same as DATA 362) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Business and Economics (COBE)",
+    "title": "QBA 367 Applied Business Analytics",
+    "description": " This is an advanced course"
+  },
+  {
+    "organization": "in business analytics with applications. It provides the advanced"
+  },
+  {
+    "organization": "concepts and tools to understand the role of business analytics in"
+  },
+  {
+    "organization": "organizations",
+    "department": " how to apply business analysis tools",
+    "title": " communicate"
+  },
+  {
+    "organization": "effectively",
+    "department": " and use and interpret analytical models in real world settings."
+  },
+  {
+    "organization": "This course focuses on applying business analytics tools and techniques such as predictive models",
+    "department": " statistical analysis",
+    "title": " and operations research"
+  },
+  {
+    "organization": "on real-world problems and datasets for managerial decision-making."
+  },
+  {
+    "organization": "Pre: C+ or better in QBA 260 or QBA 300 or QBA 362 or MATH 115",
+    "department": " or"
+  },
+  {
+    "organization": "MATH 271. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Business and Economics (COBE)",
+    "title": "QBA 465 Social Media Analytics for Business",
+    "description": " Fundamentals of Social"
+  },
+  {
+    "organization": "Media and Text Analytics. Provides the concepts to understand the role"
+  },
+  {
+    "organization": "of Social Media/Text Analytics for business decision-making. Pre: C or"
+  },
+  {
+    "organization": "better in QBA/DATA 200",
+    "department": " QBA/DATA 362",
+    "title": " CS/DATA 172 or instructor's"
+  },
+  {
+    "organization": "consent. (Same as DATA 465) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Arts and Sciences (CAS)",
+    "title": "SOC 280 Statistical Reasoning",
+    "description": " An introduction to basic"
+  },
+  {
+    "organization": "descriptive",
+    "department": " correlational",
+    "title": " and inferential statistics used in the social"
+  },
+  {
+    "organization": "sciences and education. Pre: concurrent enrollment with SOC 280L."
+  },
+  {
+    "organization": "(Attributes: DS",
+    "department": " GQ) ",
+    "title": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Arts and Sciences (CAS)",
+    "title": "SOC 280L Lab in Statistical Reasoning",
+    "description": " An introduction to"
+  },
+  {
+    "organization": "the techniques and usage of statistical applications involving"
+  },
+  {
+    "organization": "computation and interpretation of statistics. (Attributes: DS",
+    "department": " GQ) ",
+    "title": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "DATA 200 Intro to Business Analytics",
+    "description": " An introduction to"
+  },
+  {
+    "organization": "quantitative modeling and data-driven decision-making used in Business"
+  },
+  {
+    "organization": "Analytics. Includes the basic concepts and mathematical tools to"
+  },
+  {
+    "organization": "understand the role of quantitative analytics in organizations; application"
+  },
+  {
+    "organization": "of analysis tools and interpretations of model outputs for effective"
+  },
+  {
+    "organization": "communication. (Same as QBA 200) ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii at Hilo",
+    "department": "College of Natural and Health Sciences (CNHS)",
+    "title": "DATA 474 Applied Informatics",
+    "description": " Introduction to the theory and"
+  },
+  {
+    "organization": "application of informatics tools used in Marine and Natural Sciences."
+  },
+  {
+    "organization": "Students will learn the fundamentals of data management",
+    "department": " data"
+  },
+  {
+    "organization": "analytics",
+    "department": " ecoinformatics",
+    "title": " bioinformatics",
+    "description": " and data visualization. Pre: C or"
+  },
+  {
+    "organization": "better in CS 171 or CS 172",
+    "department": " C or better in MATH 271 or MARE 250 or"
+  },
+  {
+    "organization": "Instructor's Consent. This course is dual listed with CBES 674. (Previously"
+  },
+  {
+    "organization": "offered as DATA 375). ",
+    "department": ""
+  },
+  {
+    "organization": "University of Hawaii Maui College",
+    "department": "",
+    "title": "Data Science and Machine Learning @ABIT Certificate of Competence (CO)",
+    "description": "The Applied Business and Information Technology (ABIT) Bachelor in Applied Science (BAS) program provides students an opportunity to specialize in Data Science and Machine Learning. These new fields are in high demand by employers.",
+    "link": "https://maui.hawaii.edu/abit"
+  },
+  {
+    "organization": "University of Hawaii Maui College",
+    "department": "",
+    "title": "MATH 115 : Introduction to Statistics and Probability",
+    "description": " Utilizes basic statistical topics including measures of central tendency and dispersion",
+    "link": " classification of variables"
+  },
+  {
+    "organization": "University of Hawaii Maui College",
+    "department": "",
+    "title": "ICS 173 : Introduction to Data Science",
+    "description": " Introduces the fundamentals of data science",
+    "link": " using Python"
+  },
+  {
+    "organization": "University of Hawaii Maui College",
+    "department": "",
+    "title": "ICS 320 : Introduction to Information Systems & E-Commerce",
+    "description": " Introduces general concepts of information systems and e-commerce. Includes key business applications",
+    "link": " e-commerce"
+  },
+  {
+    "organization": "University of Hawaii Maui College",
+    "department": "",
+    "title": "BUS 310 : Statistical Analysis for Business Decisions",
+    "description": " Emphasizes problem recognition",
+    "link": " formulation"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "Information and Computer Sciences",
+    "title": "Bachelor of Science in Computer Science: Data Science Track",
+    "description": " The Bachelor of Science in Computer Science – Data Science track offers a solid foundation in computer science with a focus in data modeling",
+    "link": " visualization"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "Students must complete the following courses for the BS CS (Data Science) degree (54 credits",
+    "department": " total of 17 courses):"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "ICS 111",
+    "department": " ICS 211",
+    "title": " ICS 212",
+    "description": " ICS 235",
+    "link": " ICS 311"
+  },
+  {
+    "organization": "ICS 434",
+    "department": " ICS 435",
+    "title": " ICS 438",
+    "description": " ICS 484"
+  },
+  {
+    "organization": "MATH 301",
+    "department": " MATH 307",
+    "title": " and MATH 372"
+  },
+  {
+    "organization": "The Data Science track also requires three upper-level (400+) elective courses that must be approved by a Data Science Faculty Advisor. These electives may be courses taken in other departments that include a significant data modeling component. This enables students to apply their skills to applications that interest them. Below is a list of suggested elective courses. To request approval for a course",
+    "department": " contact Mahdi Belcaid or Peter Sadowski."
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "ICS 496: Capstone Project"
+  },
+  {
+    "organization": "ICS 422: Network Science Methodology"
+  },
+  {
+    "organization": "ICS 483: Computer Vision"
+  },
+  {
+    "organization": "ICS 475 Introduction to Bioinformatics Sequences and Genomes Analysis"
+  },
+  {
+    "organization": "BIOL483/MBBE483: Bioinformatics"
+  },
+  {
+    "organization": "ATMO/CEE/SUST 449: Climate Modeling",
+    "department": " Data Analysis & Applications"
+  },
+  {
+    "organization": "ECON 425: Introduction to Econometrics"
+  },
+  {
+    "organization": "ECON 427: Economic Forecasting"
+  },
+  {
+    "organization": "MATH 407: Numerical Analysis"
+  },
+  {
+    "organization": "MATH 471: Probability"
+  },
+  {
+    "organization": "MATH 472: Statistical Inference ",
+    "department": "https://www.ics.hawaii.edu/academics/undergraduate-programs/bs/"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "Information and Computer Sciences",
+    "title": "Data Science Certificate",
+    "description": " The undergraduate Data Science Certificate (DSC) program provides students and industry professionals with training in modern computational tools for manipulating",
+    "link": " visualizing"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "The DSC is offered by the Department of Information and Computer Sciences (ICS)",
+    "department": " in collaboration with the Hawaii Data Science Institute and other data-intensive departments at UH Manoa. ",
+    "title": "https://www.ics.hawaii.edu/academics/undergraduate-programs/data-science-certificate/"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ICS 102 Introduction to Data Science",
+    "description": " Overview of the field of data science. Introduction to subjects such as data format",
+    "link": " processing"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ICS 235 Machine Learning Methods",
+    "description": " Introduction to contemporary mathematical methods for empirical inference",
+    "link": " data modeling"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ICS 422 Network Science Methodology",
+    "description": " Computational and statistical methods for analyzing network models of social",
+    "link": " technological"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ICS 434 Data Science Fundamentals",
+    "description": "Introduction to critical statistical and probabilistic concepts that underlie data science as well as tools that play a central role in the daily work of a data scientist. A-F only. Pre: 211 or consent. (Cross-listed as DATA 434)",
+    "link": "https://manoa.hawaii.edu/catalog/courses/ics-434-data-science-fundamentals-3/"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ICS 435 Machine Learning Fundamentals",
+    "description": " Introduction to machine learning concepts with a focus on relevant ideas from computational neuroscience. Information processing and learning in the nervous system. Neural networks. Supervised and unsupervised learning. Basics of statistical learning theory. Pre: 235",
+    "link": " or consent. Recommended: MATH 307. (Once a year) (Cross-listed as DATA 435) "
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ICS 438 Big Data Analytics",
+    "description": " Concepts",
+    "link": " tools"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ICS 475 Introduction to Bioinformatics Sequences and Genome Analysis",
+    "description": " Introduction to bioinformatics to computer sciences students by focusing on how computer sciences techniques can be used for the storage",
+    "link": " analysis"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ICS 483 Computer Vision",
+    "description": " Introductory course in computer vision. Topics include image formation",
+    "link": " image processing and filtering"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ICS 484 Data Visualization",
+    "description": " Introduction to data visualization through practical techniques for turning data into images to produce insight. Topics include: information visualization",
+    "link": " geospatial visualization"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": " ATMO 449 Climate Modeling",
+    "description": " Data Analysis",
+    "link": " and Applications "
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ERTH 413 Introduction to Statistics and Data Analysis",
+    "description": " Exploratory data analysis",
+    "link": " error propagation"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "BIOL 483 Introduction to Bioinformatics Topics for Biologists",
+    "description": " Focuses on the use of computational tools and approaches to analyze the enormous amount of biological data (DNA",
+    "link": " RNA"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "PHYS 305 Computational Physics",
+    "description": " (3 Lec",
+    "link": " 1 3-hr. Lab) Analysis of physical systems and problem solving using computers and numerical methods. Pre: 152 or 272 or 272A"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "EE 345 Linear Algebra and Machine Learning",
+    "description": " (3 Lec",
+    "link": " 1 3-hr Lab) Mathematical and algorithmic fundamentals of linear algebra and their applications and illustrations to machine learning. Lab introduces programming with data and uses machine learning libraries for an introduction to commonly used technologies. MATH"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "MATH 371 Elementary Probability Theory",
+    "description": " Sets",
+    "link": " discrete sample spaces"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "MATH 372 Elementary Probability and Statisitcs",
+    "description": " Problem-oriented introduction to the basic concepts of probability and statistics",
+    "link": " providing a foundation for applications and further study. Pre: 216 or 242 or 252A or consent. "
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "MATH 407Numerical Analysis",
+    "description": " Numerical solution of equations",
+    "link": " interpolation"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ECON 425 Introduction to Econometrics",
+    "description": " Regression analysis",
+    "link": " analysis of variance"
+  },
+  {
+    "organization": "University of Hawaii at Manoa",
+    "department": "",
+    "title": "ECON 427 Economic Forecasting",
+    "description": " Forecasting methods for business and economics with applications to the U.S.",
+    "link": " Asian"
+  },
+  {
+    "organization": "University of Hawaii West Oahu",
+    "department": "",
+    "title": " Bachelor of Arts in Business Administration"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "Data Analytics ",
+    "department": " This program prepares students for roles as data analysts who help businesses use data to make better decisions. Data analysts play key roles in businesses as they use analytical platforms and apply multidisciplinary skills to provide timely insight into broad business objectives. Business data analysts contribute to constructing data sets and use them to find meaningful patterns and visualizations to help organizations make data-driven decisions."
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "This concentration provides students with a thorough understanding of the discipline from building an understanding of data governance and the ethical use of data",
+    "department": " through understanding the data analytics workflow: beginning with identifying valid sources of data",
+    "title": " the process of extract",
+    "description": " transform",
+    "link": " load (ETL)"
+  },
+  {
+    "organization": "University of Hawaii West Oahu",
+    "department": "",
+    "title": " Bachelor of Science in Natural Science"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "Applied Mathematics ",
+    "department": " Students in the Applied Mathematics concentration will learn to apply and connect mathematical concepts and methods to various subjects to discover real-world solutions and make a global impact. Students work with faculty members to conduct research in areas such as a mathematical model for the potential of a Zika outbreak in Oʻahu",
+    "title": " a mathematical model of the Dengue Outbreak in Hawaiʻi",
+    "description": " and responding to the challenges of climate change by enhancing the opportunities for clean energy usage. Applied Mathematics will complete courses such as mathematical modeling",
+    "link": " linear algebra"
+  },
+  {
+    "organization": ""
+  },
+  {
+    "organization": "The Applied Mathematics concentration falls under the Bachelor of Science in Natural Science",
+    "department": " the first STEM degree offered at UH West Oʻahu. ",
+    "title": "https://westoahu.hawaii.edu/academics/degrees/natural-science/applied-mathematics/"
+  },
+  {
+    "organization": "University of Hawaii West Oahu",
+    "department": "",
+    "title": "MATH 115 Statistics",
+    "description": " Pre: Grade of C or better in MATH 25 or MATH 82",
+    "link": " or higher within the past two years; placement into MATH 100; or consent of instructor. This course encompasses an introduction to topics in statistics"
+  },
+  {
+    "organization": "University of Hawaii West Oahu",
+    "department": "",
+    "title": "MATH 361 Applied Probability Theory",
+    "description": " Pre: MATH 242; or consent of instructor. This course covers sets",
+    "link": " discrete sample spaces"
+  },
+  {
+    "organization": "University of Hawaii West Oahu",
+    "department": "",
+    "title": "MATH 461 Applied Statistics",
+    "description": " Pre: MATH 361; or consent of instructor. Expands on the material from MATH 361 and overviews sampling distributions",
+    "link": " properties of point estimators"
+  },
+  {
+    "organization": "University of Hawaii West Oahu",
+    "department": "",
+    "title": "BUSA 320 Statistics for Decision-Making",
+    "description": " Pre: MATH 103 or MATH 115 or equivalent course with a grade of C- or better; or placement into MATH 135 or higher. Statistical application to business processes and decisions. Topics include: descriptive statistics probability",
+    "link": " random variables"
+  },
+  {
+    "organization": "University of Hawaii West Oahu",
+    "department": "",
+    "title": "BUSA 348 Data Analytics for Business",
+    "description": "Pre: BUSA 320 or PUBA 341 or SSCI 210 or MATH 361; or instructor approval. This hands-on course provides students opportunities to use R to analyze problems and make decisions. Students will present their assignments in class.",
+    "link": ""
+  },
+  {
+    "organization": "University of Hawaii West Oahu",
+    "department": "",
+    "title": "BUSA 349 Data Analytics on the Cloud",
+    "description": " Recommended: Prior exposure to or very strong interest in data analytics. Beginning with relational databases and structured query language (SQL)",
+    "link": " this course provides students with hands-on examples and assignments with the data analytics workflow on the cloud. "
+  },
+  {
+    "organization": "University of Hawaii West Oahu",
+    "department": "",
+    "title": "BUSA 436 Machine Learning in Practice",
+    "description": " Pre: ICS 111 or ITS 148 or equivalent; and BUSA 320 or PUBA 341 or SSCI 210 or equivalent; or consent of instructor. Recommended: ICS 129",
+    "link": " ICS 211"
+  },
+  {
+    "organization": "University of Hawaii West Oahu",
+    "department": "",
+    "title": "BUSA 448 Methods for Data Analytics",
+    "description": " Pre: BUSA 320 or instructor approval."
+  },
+  {
+    "organization": "Recommended: BUSA 348."
+  },
+  {
+    "organization": "This hands-on course introduces students to the data analytics"
+  },
+  {
+    "organization": "workflow. Beginning with methods for extract",
+    "department": " transform",
+    "title": " load (ETL)",
+    "description": " the course continues with analytical methods based on"
+  },
+  {
+    "organization": "linear regression. The course discusses assumptions for regression",
+    "department": ""
+  },
+  {
+    "organization": "and examines violations of those assumptions",
+    "department": " such as"
+  },
+  {
+    "organization": "heteroskedasticity",
+    "department": " and introduces students to methods for time"
+  },
+  {
+    "organization": "series analysis. The course also stresses completing the data"
+  },
+  {
+    "organization": "analytics workflow by presenting findings. ",
+    "department": ""
+  },
+  {
+    "organization": "University of Guam",
+    "department": "",
+    "title": "MA-387 STATISTICS FOR SCIENCES",
+    "description": " The topics include exploring data in graphs and in numerical values",
+    "link": " introducing basic probability theory for statistics"
+  },
+  {
+    "organization": "University of Guam",
+    "department": "",
+    "title": "MA-387L STATISTICS FOR SCIENCE LABORATORY",
+    "description": " MA387L is the laboratory part of MA387and MUST be taken concurrently. The purpose of lab is to reinforce concepts learned in lecture",
+    "link": " with an emphasis on translating familiar statistical problems into SPSS tasks. It emphasizes the principles and criteria for selecting the appropriate statistical techniques as well as making proper conclusions. Students will get hands-on experience applying the topics covered to real datasets. Corequisite: Must take MA387 concurrently. "
+  }
+]
