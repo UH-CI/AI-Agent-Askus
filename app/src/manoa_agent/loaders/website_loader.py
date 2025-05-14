@@ -26,7 +26,4 @@ class WebLoader(BaseLoader):
             # Use the provided HTMLParser to process the HTML
             parsed_content = self.html_parser.parse(html_content)
 
-            yield Document(
-                page_content=parsed_content,
-                metadata={"source": url}
-            )
+            yield Document(page_content=parsed_content, metadata={"source": url})

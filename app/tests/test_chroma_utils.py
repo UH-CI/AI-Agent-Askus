@@ -1,13 +1,15 @@
-from manoa_agent.db.chroma import utils
-import unittest
-from dotenv import load_dotenv
-from chromadb import HttpClient
-from manoa_agent.embeddings import convert
-from openai import OpenAI
-from manoa_agent.loaders.html import HtmlDirectoryLoader
-from langchain_chroma import Chroma
-
 import os
+import unittest
+
+from chromadb import HttpClient
+from dotenv import load_dotenv
+from langchain_chroma import Chroma
+from openai import OpenAI
+
+from manoa_agent.db.chroma import utils
+from manoa_agent.embeddings import convert
+from manoa_agent.loaders.html import HtmlDirectoryLoader
+
 
 class TestChromaUtils(unittest.TestCase):
     def setUp(self):

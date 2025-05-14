@@ -1,14 +1,15 @@
-from manoa_agent.embeddings.convert import OpenAIEmbeddingAdapter
-from openai import OpenAI
-from manoa_agent.db.chroma import utils
+import os
+
 from chromadb import HttpClient
+from dotenv import load_dotenv
+from langchain.text_splitter import CharacterTextSplitter
 from langchain_chroma import Chroma
+from openai import OpenAI
+
+from manoa_agent.db.chroma import utils
+from manoa_agent.embeddings.convert import OpenAIEmbeddingAdapter
 from manoa_agent.loaders.html import HtmlDirectoryLoader
 from manoa_agent.loaders.json_loader import JSONFileLoader
-from langchain.text_splitter import CharacterTextSplitter
-
-from dotenv import load_dotenv
-import os
 
 load_dotenv(override=True)
 
