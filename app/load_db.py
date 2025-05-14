@@ -20,14 +20,12 @@ general_collection = Chroma(
     collection_name="general_faq",
     client=http_client,
     embedding_function=embedder,
-    collection_metadata={"hnsw:space": "cosine"}
+    collection_metadata={"hnsw:space": "cosine"},
 )
 
 
 text_splitter = CharacterTextSplitter(
-    separator="\n",
-    chunk_size=8000,
-    chunk_overlap=100
+    separator="\n", chunk_size=8000, chunk_overlap=100
 )
 
 faq_loader = HtmlDirectoryLoader("data/askus")
@@ -35,9 +33,6 @@ utils.upload(general_collection, faq_loader, text_splitter, reset=False, batch_s
 
 json_loader = JSONFileLoader("data/json/policies.json")
 utils.upload(general_collection, json_loader, text_splitter, reset=False, batch_size=30)
-
-
-
 
 
 # its_faq_collection = Chroma(
