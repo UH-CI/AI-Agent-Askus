@@ -22,7 +22,9 @@ class PromptInjectionClassifier:
         return bool(prediction)
 
 
-def train(embedder: Embedder, csv_path: str, save_path: str = "") -> PromptInjectionClassifier:
+def train(
+    embedder: Embedder, csv_path: str, save_path: str = ""
+) -> PromptInjectionClassifier:
     """
     Train a PromptInjectionClassifier using the deepset/prompt-injections dataset combined with
     additional data from a CSV file. The CSV file should have a header with columns "label" and "text".
@@ -43,7 +45,7 @@ def train(embedder: Embedder, csv_path: str, save_path: str = "") -> PromptInjec
 
     # Load additional data from CSV file.
     if csv_path and os.path.exists(csv_path):
-        with open(csv_path, newline='', encoding='utf-8') as csvfile:
+        with open(csv_path, newline="", encoding="utf-8") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 text = row["text"]

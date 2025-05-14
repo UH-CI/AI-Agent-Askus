@@ -28,6 +28,5 @@ class JSONFileLoader(BaseLoader):
 
         for doc in json_data:
             yield Document(
-                page_content=doc["extracted"],
-                metadata={"source": doc["url"]}
+                page_content=doc["extracted"], metadata={"source": doc["url"]}
             )

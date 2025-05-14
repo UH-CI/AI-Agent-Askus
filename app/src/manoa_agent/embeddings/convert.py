@@ -16,9 +16,7 @@ class OpenAIEmbeddingAdapter(Embedder):
         return response.data[0].embedding
 
     def embed_documents(self, texts):
-        response = self.client.embeddings.create(
-            input=texts, model=self.model
-        )
+        response = self.client.embeddings.create(input=texts, model=self.model)
         return [d.embedding for d in response.data]
 
 

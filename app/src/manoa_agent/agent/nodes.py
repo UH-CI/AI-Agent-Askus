@@ -29,7 +29,11 @@ class PredefinedNode:
             predefined = doc.metadata.get("predefined", "")
             if predefined:
                 logger.info(f"Message '{message}' is predefined to: {predefined}")
-                return {"is_predefined": True, "message": AIMessage(content=predefined), "sources": []}
+                return {
+                    "is_predefined": True,
+                    "message": AIMessage(content=predefined),
+                    "sources": [],
+                }
 
         logger.info(f"Message: '{message}' is not predefined")
         return {"is_predefined": False}
@@ -44,8 +48,13 @@ class PromptInjectionNode:
         message = state["messages"][-1].content
         if self.classifier.is_prompt_injection(message):
             logger.info(f"Message: '{message}' is a prompt injection")
-            return {"is_prompt_injection": True,
-                    "message": AIMessage(content="I'm sorry, I cannot fulfill that request."), "sources": []}
+            return {
+                "is_prompt_injection": True,
+                "message": AIMessage(
+                    content="I'm sorry, I cannot fulfill that request."
+                ),
+                "sources": [],
+            }
         else:
             logger.info(f"Message: '{message}' is not a prompt injection")
             return {"is_prompt_injection": False}
@@ -114,22 +123,30 @@ class GeneralAgentNode:
             "If the answer can be answered using ONLY the chat history, return the answer. If you are unsure if the question can be answered from the chat history. DO NOT return an answer."
         )
 
-        general_prompt = ChatPromptTemplate.from_messages([
-            ("system", system_prompt),
-            MessagesPlaceholder("chat_history"),
-            # ("human", "{input}")
-        ])
+        general_prompt = ChatPromptTemplate.from_messages(
+            [
+                ("system", system_prompt),
+                MessagesPlaceholder("chat_history"),
+                # ("human", "{input}")
+            ]
+        )
 
         chain_general = general_prompt | self.llm.with_structured_output(SystemAnswer)
-        result = chain_general.invoke({
-            "chat_history": state["messages"],
-            # "input": state["reformulated"]
-        })
+        result = chain_general.invoke(
+            {
+                "chat_history": state["messages"],
+                # "input": state["reformulated"]
+            }
+        )
         logger.info(f"System prompt chain returned: {result}")
 
         if result.answer is not None:
             logger.info("System prompt provided an answer; returning system answer.")
-            return {"message": AIMessage(content=result.answer), "sources": [], "should_call_rag": False}
+            return {
+                "message": AIMessage(content=result.answer),
+                "sources": [],
+                "should_call_rag": False,
+            }
         return {"should_call_rag": True}
 
 
@@ -141,37 +158,51 @@ class AgentNode:
         relevant_docs = state["relevant_docs"]
         if len(relevant_docs) > 2:
             relevant_docs = relevant_docs[:2]
-        sources = [doc.metadata["source"] for doc in relevant_docs if "source" in doc.metadata]
+        sources = [
+            doc.metadata["source"] for doc in relevant_docs if "source" in doc.metadata
+        ]
         context = "\n\n".join(d.page_content for d in relevant_docs)
         if context == "":
             context = "No relevant documents found"
         # logger.info(f"Constructed context from documents: {context}")
 
         if relevant_docs:
-            qa_prompt = ChatPromptTemplate.from_messages([
-                ("system", "You are Hoku, an AI assistant specialized in answering questions about UH Manoa."),
-                MessagesPlaceholder("chat_history"),
-                (
-                    "human",
-                    """Context: {context}\n End Context\n\n
+            qa_prompt = ChatPromptTemplate.from_messages(
+                [
+                    (
+                        "system",
+                        "You are Hoku, an AI assistant specialized in answering questions about UH Manoa.",
+                    ),
+                    MessagesPlaceholder("chat_history"),
+                    (
+                        "human",
+                        """Context: {context}\n End Context\n\n
 {input}\n
 Provide complete answers based solely on the given context.
 If the information is not available in the context, respond with 'I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.'.
 Ensure your responses are concise and informative.
 Do not respond with markdown.
-Do not mention the context in your response."""
-                ),
-            ])
+Do not mention the context in your response.""",
+                    ),
+                ]
+            )
             chain_docs = qa_prompt | self.llm
-            response = chain_docs.invoke({
-                "chat_history": state["messages"],
-                "context": context,
-                "input": state["reformulated"]
-            })
-            logger.info("Documents chain returned an answer from the relevant documents.")
+            response = chain_docs.invoke(
+                {
+                    "chat_history": state["messages"],
+                    "context": context,
+                    "input": state["reformulated"],
+                }
+            )
+            logger.info(
+                "Documents chain returned an answer from the relevant documents."
+            )
             return {"message": response, "sources": sources}
         else:
             logger.info("No relevant documents available; returning answer as None.")
-            return {"message": AIMessage(
-                "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain."),
-                    "sources": []}
+            return {
+                "message": AIMessage(
+                    "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain."
+                ),
+                "sources": [],
+            }
