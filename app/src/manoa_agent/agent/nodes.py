@@ -1,23 +1,25 @@
-from langchain_core.vectorstores import VectorStoreRetriever
-from langchain_core.retrievers import BaseRetriever
-from manoa_agent.prompts.promp_injection import PromptInjectionClassifier
+import logging
+from typing import Dict
+from typing import Optional
+
 from langchain_core.language_models import BaseChatModel
 from langchain_core.messages import AIMessage
-from typing import Dict
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from manoa_agent.agent.states import *
-from typing import Optional
+from langchain_core.retrievers import BaseRetriever
+from langchain_core.vectorstores import VectorStoreRetriever
 from pydantic import BaseModel
 
-import logging
+from manoa_agent.agent.states import *
+from manoa_agent.prompts.promp_injection import PromptInjectionClassifier
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
 class PredefinedNode:
     def __init__(self, retriever: VectorStoreRetriever):
         self.retriever = retriever
-        
+
     def __call__(self, state: PredefinedState) -> PredefinedState:
         logger.info("Entering PredefinedNode.__call__")
         message = state["messages"][-1].content
@@ -28,28 +30,31 @@ class PredefinedNode:
             if predefined:
                 logger.info(f"Message '{message}' is predefined to: {predefined}")
                 return {"is_predefined": True, "message": AIMessage(content=predefined), "sources": []}
-        
+
         logger.info(f"Message: '{message}' is not predefined")
         return {"is_predefined": False}
+
 
 class PromptInjectionNode:
     def __init__(self, classifier: PromptInjectionClassifier):
         self.classifier = classifier
-    
+
     def __call__(self, state: PromptInjectionState) -> PromptInjectionState:
         logger.info("Entering PromptInjectionNode.__call__")
         message = state["messages"][-1].content
         if self.classifier.is_prompt_injection(message):
             logger.info(f"Message: '{message}' is a prompt injection")
-            return {"is_prompt_injection": True, "message": AIMessage(content="I'm sorry, I cannot fulfill that request."), "sources": []}
+            return {"is_prompt_injection": True,
+                    "message": AIMessage(content="I'm sorry, I cannot fulfill that request."), "sources": []}
         else:
             logger.info(f"Message: '{message}' is not a prompt injection")
             return {"is_prompt_injection": False}
 
+
 class ReformulateNode:
     def __init__(self, llm: BaseChatModel):
         self.llm = llm
-    
+
     def __call__(self, state: AgentState) -> ReformulateState:
         logger.info("Entering ReformulateNode.__call__")
         logger.info("Reformuate Node Called")
@@ -57,7 +62,7 @@ class ReformulateNode:
             ref = state["messages"][0].content
             logger.info(f"Only one message not reformulating: reforumated = '{ref}'")
             return {"reformulated": ref}
-        
+
         contextualize_q_system_prompt = (
             "Given the chat history and the latest user question, "
             "rephrase the question to be self-contained and clear without relying on the chat history. "
@@ -72,25 +77,26 @@ class ReformulateNode:
                 MessagesPlaceholder("chat_history"),
             ]
         )
-        
+
         chain = contextualize_q_prompt | self.llm
         reformulated = chain.invoke({"chat_history": state["messages"]}).content
         logger.info(f"Reformulating message to :'{reformulated}'")
         return {"reformulated": reformulated}
-        
-class DocumentsNode:    
+
+
+class DocumentsNode:
     def __init__(self, retrievers: Dict[str, BaseRetriever]):
         self.retrievers = retrievers
-    
+
     def __call__(self, state: ReformulateState) -> DocumentsState:
         logger.info("Entering DocumentsNode.__call__")
         logger.info("Get Documents Node called")
         retriever = self.retrievers.get(state["retriever"], None)
         if not retriever:
             return {"relevant_docs": []}
-        
+
         return {"relevant_docs": retriever.invoke(state["reformulated"])}
-        
+
 
 class GeneralAgentNode:
     def __init__(self, llm: BaseChatModel):
@@ -125,7 +131,8 @@ class GeneralAgentNode:
             logger.info("System prompt provided an answer; returning system answer.")
             return {"message": AIMessage(content=result.answer), "sources": [], "should_call_rag": False}
         return {"should_call_rag": True}
-    
+
+
 class AgentNode:
     def __init__(self, llm: BaseChatModel):
         self.llm = llm
@@ -165,4 +172,6 @@ Do not mention the context in your response."""
             return {"message": response, "sources": sources}
         else:
             logger.info("No relevant documents available; returning answer as None.")
-            return {"message": AIMessage("I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain."), "sources": []}
+            return {"message": AIMessage(
+                "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain."),
+                    "sources": []}

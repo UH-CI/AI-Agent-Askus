@@ -6,7 +6,15 @@ build-backend = "setuptools.build_meta"
 name = "manoa_agent"
 version = "0.1.0"
 dependencies = [
-    "langchain"
+    "chromadb>=0.6.3",
+    "langchain",
+    "langchain-chroma>=0.2.3",
+    "langchain-openai>=0.3.16",
+    "langgraph>=0.4.3",
+    "langserve>=0.3.1",
+    "neo4j>=5.28.1",
+    "openai>=1.78.1",
+    "python-dotenv>=1.1.0",
 ]
 
 [tool.setuptools]

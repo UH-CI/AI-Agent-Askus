@@ -1,7 +1,9 @@
-from langchain_core.documents import Document
-from langchain_core.document_loaders import BaseLoader
-from typing import Iterator
 import json
+from typing import Iterator
+
+from langchain_core.document_loaders import BaseLoader
+from langchain_core.documents import Document
+
 
 class JSONFileLoader(BaseLoader):
     """

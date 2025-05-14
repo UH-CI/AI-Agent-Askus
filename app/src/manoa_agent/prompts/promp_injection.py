@@ -1,10 +1,13 @@
-from manoa_agent.embeddings.base import Embedder
-from sklearn.linear_model import LogisticRegression
-from datasets import load_dataset
-import numpy as np
-import joblib  # Used for saving and loading the model
-import os
 import csv
+import os
+
+import joblib  # Used for saving and loading the model
+import numpy as np
+from datasets import load_dataset
+from sklearn.linear_model import LogisticRegression
+
+from manoa_agent.embeddings.base import Embedder
+
 
 class PromptInjectionClassifier:
     def __init__(self, model: LogisticRegression, embedder: Embedder):

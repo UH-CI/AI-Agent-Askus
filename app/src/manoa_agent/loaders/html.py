@@ -4,9 +4,8 @@ from typing import Iterator
 
 from bs4 import BeautifulSoup
 from html2text import HTML2Text
-
-from langchain_core.documents import Document
 from langchain_core.document_loaders import BaseLoader
+from langchain_core.documents import Document
 
 
 class HtmlDirectoryLoader(BaseLoader):
