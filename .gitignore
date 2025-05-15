@@ -3,3 +3,4 @@
 model/db
 .env
 .venv
+.idea

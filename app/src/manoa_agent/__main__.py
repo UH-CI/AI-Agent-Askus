@@ -197,7 +197,12 @@ add_routes(
     path="/askus",
 )
 
-if __name__ == "__main__":
+
+def main():
     import uvicorn
 
     uvicorn.run(app, host="localhost", port=8000)
+
+
+if __name__ == "__main__":
+    main()

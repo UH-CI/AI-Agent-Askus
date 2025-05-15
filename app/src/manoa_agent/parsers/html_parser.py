@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
-from manoa_agent.parsers.base import Parser
 from html2text import HTML2Text
+
+from manoa_agent.parsers.base import Parser
+
 
 class HTMLParser(Parser):
     def __init__(self, html2text: HTML2Text, ids: list[str] = [], tags: list[str] = []):

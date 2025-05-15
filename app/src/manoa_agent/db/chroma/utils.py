@@ -1,8 +1,8 @@
-from langchain_core.document_loaders import BaseLoader
 from langchain.text_splitter import TextSplitter
 from langchain_chroma import Chroma
-from chromadb.api import API
+from langchain_core.document_loaders import BaseLoader
 from tqdm import tqdm  # progress bar
+
 
 def upload(
     chroma: Chroma,
@@ -18,9 +18,9 @@ def upload(
     Args:
         chroma (Chroma): An instance of the ChromaDB wrapper.
         loader (BaseLoader): Loader to load documents.
-        splitter (TextSplitter, optional): Text splitter for splitting document 
+        splitter (TextSplitter, optional): Text splitter for splitting document
             text.
-        batch_size (int): The number of documents per upload batch. Use -1 for 
+        batch_size (int): The number of documents per upload batch. Use -1 for
             no batching.
         reset (bool): If True, clear the collection before uploading.
     Returns:
@@ -40,8 +40,9 @@ def upload(
         total_docs = len(docs)
         ids: list[str] = []
         # Wrap the loop with tqdm to create a progress bar.
-        for i in tqdm(range(0, total_docs, batch_size),
-                      desc="Uploading documents in batches"):
+        for i in tqdm(
+            range(0, total_docs, batch_size), desc="Uploading documents in batches"
+        ):
             batch = docs[i : i + batch_size]
             batch_ids = chroma.add_documents(batch)
             ids.extend(batch_ids)

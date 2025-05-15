@@ -4,15 +4,14 @@ from typing import Iterator
 
 from bs4 import BeautifulSoup
 from html2text import HTML2Text
-
-from langchain_core.documents import Document
 from langchain_core.document_loaders import BaseLoader
+from langchain_core.documents import Document
 
 
 class HtmlDirectoryLoader(BaseLoader):
     """
     Loader for HTML files in a directory that contain FAQ content.
-    
+
     Each HTML file is expected to have elements with IDs:
     - "kb_article_question" for the question
     - "kb_article_text" for the answer
@@ -56,7 +55,7 @@ class HtmlDirectoryLoader(BaseLoader):
 
         combined_text = f"{question_text}\n{answer_text}"
         # Clean up extra newlines and whitespace.
-        cleaned_text = re.sub(r'\n{2,}', '\n', combined_text.strip())
+        cleaned_text = re.sub(r"\n{2,}", "\n", combined_text.strip())
 
         return cleaned_text
 
