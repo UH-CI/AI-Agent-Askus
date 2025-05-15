@@ -1,0 +1,58 @@
+Abbreviations
+
+BA	bachelor of arts
+BBA	bachelor of business administration
+BEd	bachelor of education
+BEnvD	bachelor of environmental design
+BFA	bachelor of fine arts
+BMus	bachelor of music
+BS	bachelor of science
+BSW	bachelor of social work
+DArch	doctor of architecture
+DNP	doctor of nursing practice
+DrPH	doctor of public health
+EdD	doctor of education
+JD	juris doctor
+LLM	master of laws
+MA	master of arts
+MAcc	master of accounting
+MArch	master of architecture
+MAIA	master of Asian international affairs
+MBA	master of business administration
+MD	doctor of medicine
+MEd	master of education
+MEdT	master of education in teaching
+MEM	master of environmental management
+MFA	master of fine arts
+MHRM	master of human resource management
+MLA	master of landscape architecture
+MLISc	master of library and information science
+MMus	master of music
+MPA	master of public administration
+MPH	master of public health
+MS	master of science
+MSW	master of social work
+MURP	master of urban and regional planning
+PhD	doctor of philosophy
+PBC	post-baccalaureate certificate
+SJD	doctor of juridical science
+
+
+College/School
+ARCH—School of Architecture
+BUS—Shidler College of Business
+CALL—College of Arts, Languages & Letters
+CNS—College of Natural Sciences
+CSS—College of Social Sciences
+CTAHR—College of Tropical Agriculture and Human Resources
+EDUC—College of Education
+ENGR—College of Engineering
+IP—Interdisciplinary Programs
+ISRSU—Instructional Support, Research & Service Unit
+LAW—William S. Richardson School of Law
+MED—John A. Burns School of Medicine
+NAWSON—Nancy Atmospera-Walch School of Nursing
+SHK—Hawai‘inuiākea School of Hawaiian Knowledge
+SOEST—School of Ocean and Earth Science and Technology
+SW—Thompson School of Social Work & Public Health
+UED—Undergraduate Education
