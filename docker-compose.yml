@@ -1,0 +1,17 @@
+services:
+  hoku-app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: hoku-app
+    working_dir: /app
+    command: start-hoku
+    ports:
+      - "8000:8000"
+    # Optional: expose ports, set env vars, mount volumes
+    # ports:
+    #   - "8000:8000"
+    # environment:
+    #   - ENV_VAR=value
+    # volumes:
+    #   - ./app:/app
