@@ -25,14 +25,21 @@ dependencies = [
     "sse-starlette>=2.3.5",
 ]
 
+[project.scripts]
+start-hoku = "manoa_agent.__main__:main"
+
 [tool.setuptools]
 package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.isort]
+profile = "black"
+
 [dependency-groups]
 dev = [
     "black>=25.1.0",
+    "flake8>=7.2.0",
     "pytest>=8.3.5",
 ]
