@@ -1,0 +1,206 @@
+Undergraduate	Graduate
+Field of Study	College/School	Degree	Minor	Certificate	Master’s	Doctorate	Certificate
+Accounting	BUS	BBA	Minor		MAcc
+Agribusiness Management	CTAHR			Cert.(1)
+American Studies	CALL	BA	Minor		MA	PhD
+Animal Sciences	CTAHR	BS			MS
+Anthropology	CSS	BA	Minor		MA	PhD
+Architecture	ARCH				MArch	DArch
+Art	CALL	BA(2), BFA	Minor		MFA
+Art History	CALL	BA(2)	Minor		MA
+Asian International Affairs	CALL				MAIA
+Asian Studies	CALL	BA	Minor		MA(3)		x
+Astronomy	CNS, IFA	BA	Minor		MS	PhD
+Astrophysics	CNS, IFA	BS	Minor
+Athletic Training	EDUC				MS(4)
+Atmospheric Sciences	SOEST	BS	Minor		MS	PhD
+Biochemistry	CNS	BA, BS
+Biological Engineering	CTAHR	BS
+Biology	CNS	BA, BS	Minor
+Biomedical Sciences (Tropical Medicine)	MED				MS	PhD	x
+Botany	CNS	BA, BS	Minor		MS	PhD
+Business Administration	BUS		Minor		MBA	PhD
+Cell and Molecular Biology	IP				MS	PhD
+Chemistry	CNS	BA, BS	Minor		MS	PhD
+Chinese	CALL	BA(5)	Minor	Cert.
+Chinese Studies	CALL						x
+Cinematic Arts	CALL	BA
+Civil Engineering	ENGR	BS			MS	PhD
+Classics	CALL			Cert.
+Clinical Psychology	CSS						x
+Clinical Research	MED						x
+Communication	CSS	BA			MA
+Communication and Information Sciences	IP					PhD
+Communication Sciences and Disorders	MED				MS
+Communicology	CSS	BA	Minor		MA
+Computer Engineering	ENGR	BS
+Computer Science	CNS	BS	Minor		MS	PhD
+Conflict Resolution	CSS						x
+Construction Engineering	ENGR	BS
+Creative Computational Media	CNS	BA, BS		Cert.
+Curriculum and Instruction	EDUC					PhD(6)
+Curriculum Studies	EDUC				MEd		x(13)
+Data Science	CNS			Cert.
+Dental Hygiene	NAWSON	BS
+Developmental and Reproductive Biology	MED				MS	PhD
+Dietetics	CTAHR	BS
+Disability and Diversity Studies	EDUC						x
+Disaster Management and Humanitarian Assistance	CSS						x
+Early Childhood Education	EDUC				MEd		x
+Earth and Planetary Exploration Technology	SOEST			Cert.
+Earth and Planetary Sciences	SOEST				MS	PhD
+Earth Sciences	SOEST	BS(7)	Minor
+East Asian Languages and Literatures	CALL				MA(8)	PhD(8)
+Economics	CSS	BA	Minor		MA	PhD
+Education	EDUC		Minor			PhD(6)
+Educational Administration	EDUC				MEd	PhD(6)
+Educational Foundations	EDUC				MEd	PhD(6)
+Educational Policy Studies	EDUC					PhD(6)
+Educational Psychology	EDUC				MEd	PhD
+Electrical Engineering	ENGR	BS
+Electrical and Computer Engineering	ENGR				MS	PhD
+Elementary Education	EDUC	BEd	Minor	PBC(15)
+Engineering Science	ENGR	BS
+English	CALL	BA	Minor		MA	PhD
+Entomology	CTAHR				MS	PhD
+Entrepreneurship	BUS	BBA					x
+Environmental Design	ARCH	BEnvD
+Environmental Earth Science	SOEST	BA(7)
+Environmental Management	CTAHR				MEM
+Environmental Studies	IP	BA(7)		Cert.
+Epidemiology	SW					PhD
+Ethnic Studies	CSS	BA		Cert.
+Ethnomathematics	EDUC						x(13)
+Exceptionalities	EDUC					PhD(6)
+Expanded Function Dental Hygiene in Pediatrics	NAWSON			Cert.
+Fashion Design and Merchandising	CTAHR	BS	Minor
+Filipino	CALL		Minor	Cert.(9)
+Finance	BUS	BBA			MS
+Food Science	CTAHR				MS
+Food Science and Human Nutrition	CTAHR	BS
+French	CALL		Minor	Cert.	MA(24)
+General Business	BUS	BBA
+Geography and Environment	CSS	BA	Minor		MA	PhD
+Geospatial Information Science	CSS			Cert.
+German	CALL		Minor	Cert.
+Global Environmental Science	SOEST	BS
+Hawaiian	HSHK	BA	Minor	Cert.	MA
+Hawaiian Language Immersion Education	HSHK		Minor
+Hawaiian Studies	HSHK	BA	Minor		MA
+Hindi	CALL	BA(9)		Cert.(9)
+Historic Preservation	CALL						x
+History	CALL	BA	Minor		MA	PhD
+Human Development and Family Studies	CTAHR	BS
+Human Resource Management	BUS	BBA			MHRM
+Ilokano	CALL		Minor	Cert.(9)
+Indonesian	CALL			Cert.(9)
+Indo-Pacific Languages	CALL			Cert.(9)
+Information and Computer Sciences	CNS	BA
+Information Systems	BUS				MS
+Interdisciplinary Studies	IP	BA(10)
+International Business	BUS	BBA
+Islamic Studies	CALL			Cert.
+Japanese	CALL	BA	Minor	Cert.
+Japanese Studies	CALL						x
+Journalism	CSS	BA
+Juridical Science	LAW					SJD
+Khmer (Cambodian)	CALL	BA(9)		Cert.(9)
+Kinesiology and Rehabilitation Science	EDUC	BS(4)			MS(4)	PhD(6)
+Korean	CALL	BA(5)	Minor	Cert.(5)
+Korean Studies	CALL						x
+Ku ʻOkoʻa-ʻĀina Based Leadership	SHK						x
+Landscape Architecture	ARCH				MLA
+Languages & Literatures of Europe & the Americas	CALL	BA(12)
+Latin America and Iberian Studies	CALL		Minor
+Law	LAW				LLM	JD
+Law and Society	CSS			Cert.
+Learning Design and Technology	EDUC				MEd	PhD	x
+Library and Information Science	CSS				MLISc		x
+Linguistics	CALL	BA(10)	Minor		MA	PhD
+Literacy Leader	EDUC						x(13)
+Management	BUS	BBA
+Management Information Systems	BUS	BBA
+Marine Biology	CNS, SOEST	BA, BS			MS(14)	PhD(14)
+Marine Option Program	CNS			Cert.
+Marketing	BUS	BBA
+Marketing Management	BUS				MS
+Mathematical Biology	CNS			Cert.
+Mathematics	CNS	BA, BS	Minor		MA	PhD
+Measurement & Statistics	EDUC						x
+Mechanical Engineering	ENGR	BS			MS	PhD
+Medical Anthropology	CSS		Minor
+Medical Technology	MED	BS		PBC(15)
+Medicine	MED					MD
+Merchandising	CTAHR		Minor
+Microbiology	CNS	BA, BS	Minor		MS	PhD
+Molecular Biosciences and Bioengineering	CTAHR				MS	PhD
+Molecular Biosciences and Biotechnology	CTAHR	BS
+Molecular Cell Biology	CNS	BS
+Museum Studies	CALL						x
+Music	CALL	BA, BEd(16), BMUS	Minor	Cert.	MA, MMus	PhD
+Multilingual Multicultural Professional Practice	EDUC						x
+Natural Resources and Environmental Management	CTAHR	BS			MS, MEM	PhD
+Nursing	NAWSON	BS			MS	PhD	x
+Nursing Practice	NAWSON					DNP
+Nutritional Sciences	CTAHR				MS	PhD
+Ocean and Resources Engineering	SOEST				MS	PhD
+Ocean Policy	CSS						x(17)
+Oceanography	SOEST				MS	PhD
+Online Learning and Teaching	EDUC						x
+Pacific Islands Studies	CALL	BA			MA		x
+Peace Studies	CSS			Cert.
+Philippine Language and Culture	CALL	BA
+Philippine Studies	CALL						x
+Philosophy	CALL	BA	Minor		MA	PhD
+Philosophy for Children	CALL		Minor				x
+Physical Education	EDUC	BS(4)
+Physics	CNS	BA, BS	Minor		MS	PhD
+PK3	EDUC						x(24)
+Planning Studies	CSS						x
+Plant Production and Management	CTAHR		Minor
+Political Science	CSS	BA	Minor		MA	PhD
+Program Evaluation	EDUC						x
+Pre-Health	UED		Minor
+Professional Educational Practice	EDUC					EdD
+Psychology	CSS	BA, BS	Minor		MA	PhD
+Public Administration	CSS				MPA		x(18)
+Public Health	SW	BA	Minor		MPH, MS	PhD
+Public Policy	CSS						x
+Quantitative Health and Clinical Research	MED				MS
+Queer Studies	CSS			Cert.
+Religious Traditions & Ancient Civilizations	CALL	BA(22)	Minor
+Religious Traditions of Asia and the Pacific	CALL				MA
+Renewable Energy and Island Sustainability	ENGR, CSS						x
+Resource Management	IP						x
+Russian	CALL			Cert.
+Samoan	CALL	BA(9)		Cert.(9)
+Sanskrit	CALL	BA(9)		Cert.(9)
+School Counseling	EDUC				MEd
+Second Language Studies	CALL	BA	Minor(19)		MA	PhD	x(19)
+Second Language Teaching	CALL		Minor
+Secondary Education	EDUC	BEd	Minor	PBC(15)
+Social Welfare	SW					PhD(20)
+Social Work	SW	BSW			MSW
+Sociology	CSS	BA	Minor		MA	PhD
+Sophomore Honors	UED			Cert.
+South Asian Studies	CALL						x
+Southeast Asian Studies	CALL						x
+Spanish	CALL		Minor	Cert.	MA
+Special Education	EDUC	BEd		PBCS(15)	MEd
+Sustainability	EDUC			Cert.
+Sustainability & Resilience Education	EDUC						x
+Sustainable Tourism	BUS			Cert.
+Tahitian	CALL			Cert.(9)
+Teacher Leader	EDUC						x(13)
+Teaching	EDUC				MEdT
+Telecommunications Information Resource Management	CSS						x
+Thai	CALL			Cert.(9)
+Theatre and Dance	CALL	BA, BFA(23)	Minor(23)		MA, MFA(23)	PhD(23)
+Travel Industry Management	BUS	BS		Cert.	MS
+Tropical Agriculture and the Environment	CTAHR	BS
+Tropical Plant and Soil Sciences	CTAHR				MS	PhD
+Tropical Plant Pathology	CTAHR				MS	PhD
+Urban and Regional Planning	CSS				MURP	PhD	x
+Vietnamese	CALL			Cert.(9)
+Women, Gender, and Sexuality Studies	CSS	BA		Cert.			x
+Zoology	CNS				MS	PhD

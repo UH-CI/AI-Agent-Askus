@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from langchain_google_vertexai import ChatVertexAI
 from langchain_neo4j import Neo4jGraph
 
+
 load_dotenv(override=True)
 
 graph = Neo4jGraph(database="neo4j")
@@ -32,10 +33,10 @@ llm4 = ChatOpenAI(
     base_url=os.getenv("GEMINI_BASE_URL"),
 )
 
-llm5 = ChatVertexAI(model_name="gemini-2.5-pro-preview-05-06", temperature=0)
+llm5 = ChatVertexAI(model_name="gemini-2.0-flash", temperature=0)
 
 llm_transformer = LLMGraphTransformer(
-    ignore_tool_usage=False,
+    ignore_tool_usage=True,
     llm=llm5,
     allowed_nodes=[
         "Course",
@@ -55,23 +56,23 @@ llm_transformer = LLMGraphTransformer(
         "CROSS_LISTED_AS",  # Course ↔ Course
         "REPEATABLE_UP_TO",  # Course → Course (max repeats)
     ],
-    node_properties=[
-        # for Course, Subject, Program, College
-        "title",
-        "description",
-        "credits",
-        "course_number",
-        "metadata",
-        # for Degree/Certificate
-        "full_name",
-        # for Abbreviation
-        "code",  # e.g. “BA”, “JD”, “CTAHR”
-    ],
-    relationship_properties=[
-        "min_grade",  # PRE: requirements
-        "max_repeats",  # how many times repeatable
-        "cross_list_code",  # e.g. “ES 450” ↔ “WGSS 450”
-    ],
+    # node_properties=[
+    #     # for Course, Subject, Program, College
+    #     "title",
+    #     "description",
+    #     "credits",
+    #     "course_number",
+    #     "metadata",
+    #     # for Degree/Certificate
+    #     "full_name",
+    #     # for Abbreviation
+    #     "code",  # e.g. “BA”, “JD”, “CTAHR”
+    # ],
+    # relationship_properties=[
+    #     "min_grade",  # PRE: requirements
+    #     "max_repeats",  # how many times repeatable
+    #     "cross_list_code",  # e.g. “ES 450” ↔ “WGSS 450”
+    # ],
 )
 
 
@@ -88,14 +89,20 @@ catalog_docs = [Document(page_content=chunk) for chunk in chunks]
 
 with open("../data/course-data/abbreviation.txt", "r") as f:
     abbreviations = f.read()
+with open("../data/course-data/degrees.txt", "r") as f:
+    degrees = f.read()
 
-documents = [Document(page_content=abbreviations)] + catalog_docs[:2]
+documents = (
+    [Document(page_content=abbreviations)]
+    + catalog_docs
+    + [Document(page_content=degrees)]
+)
 
 
 async def main():
     graph_documents = await llm_transformer.aconvert_to_graph_documents(documents)
-    # graph.add_graph_documents(graph_documents)
-    print(graph_documents)
+    graph.add_graph_documents(graph_documents)
+    # print(graph_documents)
 
 
 if __name__ == "__main__":
