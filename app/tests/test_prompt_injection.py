@@ -36,6 +36,7 @@ class TestPromptInjection(unittest.TestCase):
             os.remove(self.csv_path)
 
     def test_prompt_injection_train(self):
+        load_dotenv(override=True)
         print("Testing Prompt Injection Classifier (training)")
         embedder = convert.from_open_ai(OpenAI(), "text-embedding-3-large")
         # Supply the CSV path to train the classifier.

@@ -6,7 +6,11 @@ build-backend = "setuptools.build_meta"
 name = "manoa_agent"
 version = "0.1.0"
 dependencies = [
+    "beautifulsoup4>=4.13.4",
     "chromadb>=0.6.3",
+    "datasets>=3.6.0",
+    "html2text>=2025.4.15",
+    "joblib>=1.5.0",
     "langchain",
     "langchain-chroma>=0.2.3",
     "langchain-openai>=0.3.16",
@@ -15,6 +19,7 @@ dependencies = [
     "neo4j>=5.28.1",
     "openai>=1.78.1",
     "python-dotenv>=1.1.0",
+    "scikit-learn>=1.6.1",
 ]
 
 [tool.setuptools]
@@ -26,4 +31,5 @@ where = ["src"]
 [dependency-groups]
 dev = [
     "black>=25.1.0",
+    "pytest>=8.3.5",
 ]

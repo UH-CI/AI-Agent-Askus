@@ -23,7 +23,7 @@ load_dotenv(override=True)
 # )
 
 embedder = convert.from_open_ai(OpenAI(), "text-embedding-3-large")
-http_client = HttpClient(os.getenv("CHROMA_HOST"), os.getenv("CHROMA_PORT"))
+http_client = HttpClient(os.getenv("CHROMA_HOST"), int(os.getenv("CHROMA_PORT")))
 
 its_faq_collection = Chroma(
     collection_name="its_faq",

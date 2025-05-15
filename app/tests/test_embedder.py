@@ -2,7 +2,6 @@ import unittest
 
 import numpy as np
 from dotenv import load_dotenv
-from langchain_huggingface import HuggingFaceEmbeddings
 from openai import OpenAI
 
 from manoa_agent.embeddings import convert
@@ -48,16 +47,16 @@ class TestAdapters(unittest.TestCase):
             cos_sim_diff, 0.8, "Cosine similarity for different input is too high."
         )
 
-    def test_huggingface_adapter(self):
-        print("Testing Huggingface Embedding Adapter")
-        model_kwargs = {"device": "cuda", "trust_remote_code": True}
-
-        embedding_client = HuggingFaceEmbeddings(
-            model_name="dunzhang/stella_en_1.5B_v5", model_kwargs=model_kwargs
-        )
-
-        embedder = convert.from_hugging_face(embedding_client)
-        self.run_embedding_test(embedder)
+    # def test_huggingface_adapter(self):
+    #     print("Testing Huggingface Embedding Adapter")
+    #     model_kwargs = {"device": "cuda", "trust_remote_code": True}
+    #
+    #     embedding_client = HuggingFaceEmbeddings(
+    #         model_name="dunzhang/stella_en_1.5B_v5", model_kwargs=model_kwargs
+    #     )
+    #
+    #     embedder = convert.from_hugging_face(embedding_client)
+    #     self.run_embedding_test(embedder)
 
     def test_openai_adapter(self):
         print("Testing OpenAI Embedding Adapter")

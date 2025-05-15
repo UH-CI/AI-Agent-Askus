@@ -1,4 +1,3 @@
-from chromadb.api import API
 from langchain.text_splitter import TextSplitter
 from langchain_chroma import Chroma
 from langchain_core.document_loaders import BaseLoader
