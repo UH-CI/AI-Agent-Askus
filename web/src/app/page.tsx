@@ -14,7 +14,8 @@ type ChatMessage = {
 const default_message: ChatMessage = {
   message: {
     type: "ai",
-    content: "Aloha! my name is Hoku! I can assist you with UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+    content:
+      "Aloha! my name is Hoku! I can assist you with UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
   },
   sources: [],
 };
@@ -23,7 +24,9 @@ export default function Home() {
   const [messages, setMessages] = useState<ChatMessage[]>([default_message]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [retriever, setRetriever] = useState<"general" | "askus" | "policies" | "graphdb">("general");
+  const [retriever] = useState<"general" | "askus" | "policies" | "graphdb">(
+    "general",
+  );
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -51,7 +54,7 @@ export default function Home() {
         },
       ]);
       setLoading(false);
-      console.error(error)
+      console.error(error);
     },
   });
 
@@ -80,40 +83,6 @@ export default function Home() {
 
   return (
     <div className="flex h-screen flex-col bg-gray-50 p-4">
-      <div className="mb-4">
-        <div className="flex justify-center space-x-6">
-          <label className="flex items-center space-x-2">
-            <input
-              type="radio"
-              value="general"
-              checked={retriever === "general"}
-              onChange={(e) => setRetriever(e.target.value as "askus" | "policies" | "graphdb" | "general")}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-            />
-            <span className="text-sm font-medium text-gray-700">General</span>
-          </label>
-          <label className="flex items-center space-x-2">
-            <input
-              type="radio"
-              value="askus"
-              checked={retriever === "askus"}
-              onChange={(e) => setRetriever(e.target.value as "askus" | "policies" | "graphdb" | "general")}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-            />
-            <span className="text-sm font-medium text-gray-700">AskUs</span>
-          </label>
-          <label className="flex items-center space-x-2">
-            <input
-              type="radio"
-              value="policies"
-              checked={retriever === "policies"}
-              onChange={(e) => setRetriever(e.target.value as "askus" | "policies" | "graphdb" | "general")}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-            />
-            <span className="text-sm font-medium text-gray-700">Policies</span>
-          </label>
-        </div>
-      </div>
       <div className="mb-4 flex-1 overflow-y-auto rounded-lg bg-white p-4 shadow-lg">
         <div className="space-y-4">
           {messages.map((msg, index) => (
@@ -122,10 +91,11 @@ export default function Home() {
               className={`flex ${msg.message.type === "ai" ? "justify-start" : "justify-end"}`}
             >
               <div
-                className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm ${msg.message.type === "ai"
-                  ? "bg-blue-100 text-blue-900"
-                  : "bg-green-100 text-green-900"
-                  }`}
+                className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm ${
+                  msg.message.type === "ai"
+                    ? "bg-blue-100 text-blue-900"
+                    : "bg-green-100 text-green-900"
+                }`}
               >
                 <div className="mb-1 text-sm font-semibold">
                   {msg.message.type === "ai" ? "Hoku" : "You"}
@@ -134,7 +104,9 @@ export default function Home() {
                 {msg.sources.length > 0 && (
                   <>
                     <br></br>
-                    <div className="">For more information check out these links: </div>
+                    <div className="">
+                      For more information check out these links:
+                    </div>
                     <div className="mt-2 space-y-1">
                       {msg.sources.map((link, i) => (
                         <a
