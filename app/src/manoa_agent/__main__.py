@@ -15,7 +15,8 @@ from manoa_agent.embeddings import convert
 # from langchain_google_genai import GoogleGenerativeAI
 from manoa_agent.prompts.promp_injection import load
 
-load_dotenv(override=True)
+# Load .env file but don't override existing environment variables
+load_dotenv(override=False)
 
 # neo4j_driver = neo4j.GraphDatabase.driver(
 #     os.getenv('NEO4J_URI'),
@@ -23,7 +24,13 @@ load_dotenv(override=True)
 # )
 
 embedder = convert.from_open_ai(OpenAI(), "text-embedding-3-large")
-http_client = HttpClient(host=os.getenv("CHROMA_HOST"), port=os.getenv("CHROMA_PORT"))
+
+# Get environment variables with defaults - Docker env vars take precedence
+chroma_host = os.getenv("CHROMA_HOST", "localhost")
+chroma_port = int(os.getenv("CHROMA_PORT", "8000"))
+
+print(f"Connecting to Chroma at {chroma_host}:{chroma_port}")
+http_client = HttpClient(host=chroma_host, port=chroma_port)
 
 its_faq_collection = Chroma(
     collection_name="its_faq",

@@ -38,7 +38,10 @@ class PolicySpider(scrapy.Spider):
         The links can be found under <td> -> <ul> -> <li> elements.
         """
         links = response.xpath("//td//ul/li//a/@href").getall()
-        for url in links:
+        unique_links = set(links)  # Remove duplicate URLs
+        self.logger.info("Found %d total links, %d unique links", len(links), len(unique_links))
+        
+        for url in unique_links:
             absolute_url = response.urljoin(url)
             self.logger.info("Following policy link: %s", absolute_url)
             yield scrapy.Request(absolute_url, callback=self.parse_policy)

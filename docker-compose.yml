@@ -7,7 +7,12 @@ services:
     working_dir: /app
     command: start-hoku
     ports:
-      - "8000:8000"
+      - "8080:8000"
+    environment:
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
+    depends_on:
+      - chromadb
     # Optional: expose ports, set env vars, mount volumes
     # ports:
     #   - "8000:8000"
@@ -15,3 +20,17 @@ services:
     #   - ENV_VAR=value
     # volumes:
     #   - ./app:/app
+
+  chromadb:
+    image: ghcr.io/chroma-core/chroma:0.4.13
+    container_name: chromadb
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma-data:/chroma/chroma
+    environment:
+      - ALLOW_RESET=true
+
+volumes:
+  chroma-data:
+    driver: local
