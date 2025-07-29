@@ -1,4 +1,7 @@
 import logging
+import json
+import os
+import datetime
 from typing import Dict, List, Set
 from collections import defaultdict
 
@@ -11,18 +14,61 @@ from sentence_transformers import CrossEncoder
 
 from manoa_agent.agent.states import DocumentsState, ReformulateState
 
+# Set up console logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Set up file logging
+log_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 'logs')
+os.makedirs(log_dir, exist_ok=True)
+
+# Create a file handler for detailed logs
+file_logger = logging.getLogger('detailed_logs')
+file_logger.setLevel(logging.INFO)
+file_handler = logging.FileHandler(os.path.join(log_dir, 'rerank_logs.jsonl'), mode='a')
+file_handler.setFormatter(logging.Formatter('%(message)s'))
+file_logger.addHandler(file_handler)
+file_logger.propagate = False  # Don't send to root logger
+
+cross_encoder = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+
+
+def log_to_file(data):
+    """Log structured data to a file in JSON format"""
+    try:
+        # Add timestamp
+        data['timestamp'] = datetime.datetime.now().isoformat()
+        
+        # Convert Document objects to dictionaries
+        if 'unranked_chunks' in data:
+            data['unranked_chunks'] = [
+                {
+                    'content': doc.page_content,
+                    'metadata': doc.metadata
+                } for doc in data['unranked_chunks']
+            ]
+        
+        if 'reranked_chunks' in data:
+            data['reranked_chunks'] = [
+                {
+                    'content': doc.page_content,
+                    'metadata': doc.metadata,
+                    'score': doc.metadata.get('rerank_score', 0.0)
+                } for doc in data['reranked_chunks']
+            ]
+            
+        # Log as JSON
+        file_logger.info(json.dumps(data))
+    except Exception as e:
+        logger.error(f"Error logging data to file: {e}")
 
 class EnhancedDocumentsNode:
-    """Enhanced DocumentsNode that retrieves chunks but returns unique full documents."""
+    """Enhanced DocumentsNode that retrieves chunks directly for reranking."""
     
     def __init__(self, retrievers: Dict[str, BaseRetriever]):
         self.retrievers = retrievers
 
     def __call__(self, state: ReformulateState) -> DocumentsState:
-        logger.info("Entering EnhancedDocumentsNode.__call__")
         logger.info("Enhanced Get Documents Node called")
         retriever = self.retrievers.get(state["retriever"], None)
         if not retriever:
@@ -30,26 +76,15 @@ class EnhancedDocumentsNode:
 
         # Get chunk-level documents from retriever
         chunk_docs = retriever.invoke(state["reformulated"])
+        logger.info(f"Retrieved {len(chunk_docs)} chunks for reranking")
         
-        # Extract unique full documents using doc_id
-        unique_docs = {}
-        for chunk_doc in chunk_docs:
-            doc_id = chunk_doc.metadata.get("doc_id")
-            full_content = chunk_doc.metadata.get("full_document")
-            
-            if doc_id and full_content and doc_id not in unique_docs:
-                # Create a new document with full content
-                full_doc = Document(
-                    page_content=full_content,
-                    metadata=chunk_doc.metadata.copy()
-                )
-                unique_docs[doc_id] = full_doc
+        # Store the doc_id with each chunk for tracking sources
+        for chunk in chunk_docs:
+            if "doc_id" not in chunk.metadata and "full_document" in chunk.metadata:
+                # If doc_id is missing but we have a full document, generate a simple hash
+                chunk.metadata["doc_id"] = str(hash(chunk.metadata["full_document"][:100]))[:8]
         
-        # Convert to list
-        unique_doc_list = list(unique_docs.values())
-        logger.info(f"Retrieved {len(chunk_docs)} chunks, reduced to {len(unique_doc_list)} unique documents")
-        
-        return {"relevant_docs": unique_doc_list}
+        return {"relevant_docs": chunk_docs}
 
 
 class EnhancedAgentNode:
@@ -57,64 +92,49 @@ class EnhancedAgentNode:
     
     def __init__(self, llm: BaseChatModel, cross_encoder_model: str = 'cross-encoder/ms-marco-MiniLM-L-6-v2'):
         self.llm = llm
-        self.cross_encoder = CrossEncoder(cross_encoder_model)
         logger.info(f"Initialized cross-encoder model: {cross_encoder_model}")
 
-    def _split_into_sentences(self, text: str) -> List[str]:
-        """Split text into sentences using period as delimiter."""
-        # Split by period and filter out empty sentences
-        sentences = [s.strip() for s in text.split('.') if s.strip()]
-        # Add period back to each sentence for better context
-        sentences = [s + '.' for s in sentences]
-        return sentences
-
-    def _rerank_sentences(self, query: str, sentences: List[str], sources: Dict[str, str], top_k: int = 5) -> List[Document]:
-        """Rerank sentences using cross-encoder and return top_k as Documents."""
-        if not sentences:
+    def _rerank_chunks(self, query: str, chunks: List[Document], top_k: int = 3) -> List[Document]:
+        """Rerank chunks using cross-encoder and return top_k chunks."""
+        if not chunks:
             return []
             
-        # Prepare input pairs (query, sentence)
-        pairs = [(query, sentence) for sentence in sentences]
+        # Prepare input pairs (query, chunk_content)
+        # Show the entire chunk to the cross-encoder model
+        pairs = [(query, chunk.page_content) for chunk in chunks]
         
         # Get relevance scores from cross-encoder
-        scores = self.cross_encoder.predict(pairs)
+        scores = cross_encoder.predict(pairs)
         
         # Rank by score (higher is better)
-        scored_sentences = list(zip(sentences, scores))
-        reranked = sorted(scored_sentences, key=lambda x: x[1], reverse=True)
+        scored_chunks = list(zip(chunks, scores))
+        reranked = sorted(scored_chunks, key=lambda x: x[1], reverse=True)
         
         # Log reranking results
-        logger.info("Cross-encoder sentence-level reranking results:")
-        for i, (sentence, score) in enumerate(reranked[:top_k]):
-            logger.info(f"  {i+1}. Score: {score:.3f} - Sentence: {sentence[:50]}...")
+        logger.info("Cross-encoder chunk-level reranking results:")
+        for i, (chunk, score) in enumerate(reranked[:top_k]):
+            source = chunk.metadata.get("source", "Unknown")
+            doc_id = chunk.metadata.get("doc_id", "Unknown")
+            content_preview = chunk.page_content[:100].replace('\n', ' ')
+            logger.info(f"  {i+1}. Score: {score:.3f} - DocID: {doc_id} - Content: {content_preview}...")
         
-        # Convert top sentences back to Documents
-        top_sentences = reranked[:top_k]
-        top_docs = []
-        
-        for sentence, score in top_sentences:
-            # Try to find which source document this sentence came from
-            source = "Unknown"
-            for doc_content, doc_source in sources.items():
-                if sentence in doc_content:
-                    source = doc_source
-                    break
-                    
-            # Create a Document for each top sentence
-            doc = Document(
-                page_content=sentence,
-                metadata={
-                    "source": source,
-                    "rerank_score": score
-                }
-            )
-            top_docs.append(doc)
+        # Add rerank scores to metadata and return top chunks
+        top_chunks = []
+        for chunk, score in reranked[:top_k]:
+            # Create a copy with rerank score added to metadata
+            new_metadata = chunk.metadata.copy()
+            new_metadata["rerank_score"] = float(score)
             
-        return top_docs
+            reranked_chunk = Document(
+                page_content=chunk.page_content,
+                metadata=new_metadata
+            )
+            top_chunks.append(reranked_chunk)
+            
+        return top_chunks
 
     def __call__(self, state: DocumentsState) -> DocumentsState:
         relevant_docs = state["relevant_docs"]
-        
         if not relevant_docs:
             logger.info("No relevant documents available; returning default message.")
             return {
@@ -124,40 +144,35 @@ class EnhancedAgentNode:
                 "sources": [],
             }
         
-        query = state["reformulated"]
+        query = state["message"]
         logger.info(f"Processing query: {query}")
-        logger.info(f"Found {len(relevant_docs)} unique full documents")
+        logger.info(f"Found {len(relevant_docs)} chunks to rerank")
         
-        # Extract all sentences from all documents
-        all_sentences = []
-        doc_sources = {}
-        for doc in relevant_docs:
-            # Store mapping of document content to source for later reference
-            doc_sources[doc.page_content] = doc.metadata.get("source", "Unknown")
+        # Log unranked chunks
+        logger.info("Logging unranked chunks for inspection")
+        
+        # Rerank chunks using cross-encoder and get top 5
+        reranked_chunks = self._rerank_chunks(query, relevant_docs, top_k=10)
+        
+        # Extract sources from reranked chunks
+        sources = []
+        for chunk in reranked_chunks:
+            source = chunk.metadata.get("source", "Unknown")
+            # Also try url field as backup for source
+            if source == "Unknown" and "url" in chunk.metadata:
+                source = chunk.metadata["url"]
+            sources.append(source)
             
-            # Split document into sentences
-            sentences = self._split_into_sentences(doc.page_content)
-            all_sentences.extend(sentences)
-            
-        logger.info(f"Extracted {len(all_sentences)} total sentences from all documents")
-        
-        # Rerank sentences and get top 5
-        reranked_sentence_docs = self._rerank_sentences(query, all_sentences, doc_sources, top_k=5)
-        
-        # Use reranked sentences for context
-        sources = [
-            doc.metadata["source"] for doc in reranked_sentence_docs if "source" in doc.metadata
-        ]
         # Remove duplicates but preserve order
         unique_sources = []
         for source in sources:
             if source not in unique_sources:
                 unique_sources.append(source)
         
-        # Join sentences for context
-        context = "\n\n".join(d.page_content for d in reranked_sentence_docs)
+        # Join reranked chunks for context
+        context = "\n\n".join(chunk.page_content for chunk in reranked_chunks)
         
-        logger.info(f"Using top {len(reranked_sentence_docs)} reranked sentences for context from {len(unique_sources)} sources")
+        logger.info(f"Using top {len(reranked_chunks)} reranked chunks for context from {len(unique_sources)} sources")
         
         qa_prompt = ChatPromptTemplate.from_messages(
             [
@@ -184,9 +199,20 @@ Do not mention the context in your response.""",
             {
                 "chat_history": state["messages"],
                 "context": context,
-                "input": state["reformulated"],
+                "input": state["message"],
             }
         )
         
-        logger.info("Enhanced documents chain returned an answer using the top reranked sentences.")
-        return {"message": response, "sources": unique_sources}
+        # Log everything to file
+        log_data = {
+            'query': query,
+            'unranked_chunks': relevant_docs,
+            'reranked_chunks': reranked_chunks,
+            'sources': unique_sources,
+            'answer': response.content,
+            'prompt_context': context
+        }
+        # log_to_file(log_data)
+        
+        logger.info("Enhanced documents chain returned an answer using the top reranked chunks.")
+        return {"message": response, "sources": unique_sources[:2]}

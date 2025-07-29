@@ -81,9 +81,9 @@ general_retriever = general_collection.as_retriever(
     # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 )
 
-predefined_retriever = predefined_collection.as_retriever(
-    search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.95}
-)
+# predefined_retriever = predefined_collection.as_retriever(
+#     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.95}
+# )
 
 # vector_retriever = VectorRetriever(
 #    neo4j_driver,
@@ -150,7 +150,7 @@ def rag_agent_condition(state: GeneralAgentState):
 
 workflow = StateGraph(AgentState, output=AgentOutputState)
 
-workflow.add_node("predefined", PredefinedNode(retriever=predefined_retriever))
+# workflow.add_node("predefined", PredefinedNode(retriever=predefined_retriever))
 workflow.add_node("prompt_injection", PromptInjectionNode(prompt_injection_classifier))
 workflow.add_node("reformulate", ReformulateNode(llm=llm))
 workflow.add_node("get_documents", EnhancedDocumentsNode(retrievers=retrievers))

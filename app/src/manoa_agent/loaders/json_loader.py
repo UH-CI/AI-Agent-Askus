@@ -1,4 +1,5 @@
 import json
+import uuid
 from typing import Iterator
 
 from langchain_core.document_loaders import BaseLoader
@@ -27,6 +28,15 @@ class JSONFileLoader(BaseLoader):
             json_data = json.load(f)
 
         for doc in json_data:
+            # Generate a unique document ID for each policy
+            doc_id = str(uuid.uuid4())
+            
+            # Store the full document content and unique ID in metadata
             yield Document(
-                page_content=doc["extracted"], metadata={"source": doc["url"]}
+                page_content=doc["extracted"], 
+                metadata={
+                    "source": doc["url"],
+                    "doc_id": doc_id,
+                    "full_document": doc["extracted"]
+                }
             )

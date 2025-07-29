@@ -22,6 +22,7 @@ class PromptInjectionState(AgentState, AgentOutputState):
 
 
 class ReformulateState(AgentState, AgentOutputState):
+    message: str
     reformulated: str
 
 

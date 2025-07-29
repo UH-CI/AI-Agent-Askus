@@ -1,4 +1,5 @@
 import re
+import uuid
 from pathlib import Path
 from typing import Iterator
 
@@ -82,5 +83,15 @@ class HtmlDirectoryLoader(BaseLoader):
             # Derive the source URL from the file name.
             # `Path.stem` automatically removes the file extension.
             source = f"https://www.hawaii.edu/askus/{html_file_path.stem}"
+            
+            # Generate a unique document ID for each FAQ
+            doc_id = str(uuid.uuid4())
 
-            yield Document(page_content=extracted, metadata={"source": source})
+            yield Document(
+                page_content=extracted, 
+                metadata={
+                    "source": source,
+                    "doc_id": doc_id,
+                    "full_document": extracted
+                }
+            )
