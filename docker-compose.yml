@@ -7,10 +7,12 @@ services:
     working_dir: /app
     command: start-hoku
     ports:
-      - "8080:8000"
+      - "8001:8001"
     environment:
       - CHROMA_HOST=chromadb
       - CHROMA_PORT=8000
+      - OPENAI_API_KEY=sk-svcacct-IHGi5JoNd8p3S-rVYYDpbpI40Q-Rz80oVBZI6j0j_oCCDOg…
+      - GEMINI_API_KEY=AIzaSyAdmHIhoIPCg9gdWCfjTBMVetVy4xgAGLw
     depends_on:
       - chromadb
     # Optional: expose ports, set env vars, mount volumes

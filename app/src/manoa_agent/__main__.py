@@ -1,3 +1,4 @@
+
 import os
 
 from chromadb import HttpClient
@@ -15,7 +16,6 @@ from manoa_agent.embeddings import convert
 # from langchain_google_genai import GoogleGenerativeAI
 from manoa_agent.prompts.promp_injection import load
 
-# Load .env file but don't override existing environment variables
 load_dotenv(override=False)
 
 # neo4j_driver = neo4j.GraphDatabase.driver(
@@ -24,7 +24,6 @@ load_dotenv(override=False)
 # )
 
 embedder = convert.from_open_ai(OpenAI(), "text-embedding-3-large")
-
 # Get environment variables with defaults - Docker env vars take precedence
 chroma_host = os.getenv("CHROMA_HOST", "localhost")
 chroma_port = int(os.getenv("CHROMA_PORT", "8000"))
@@ -32,19 +31,19 @@ chroma_port = int(os.getenv("CHROMA_PORT", "8000"))
 print(f"Connecting to Chroma at {chroma_host}:{chroma_port}")
 http_client = HttpClient(host=chroma_host, port=chroma_port)
 
-its_faq_collection = Chroma(
-    collection_name="its_faq",
-    client=http_client,
-    embedding_function=embedder,
-    collection_metadata={"hnsw:space": "cosine"},
-)
+# its_faq_collection = Chroma(
+#     collection_name="its_faq",
+#     client=http_client,
+#     embedding_function=embedder,
+#     collection_metadata={"hnsw:space": "cosine"},
+# )
 
-policies_collection = Chroma(
-    collection_name="uh_policies",
-    client=http_client,
-    embedding_function=embedder,
-    collection_metadata={"hnsw:space": "cosine"},
-)
+# policies_collection = Chroma(
+#     collection_name="uh_policies",
+#     client=http_client,
+#     embedding_function=embedder,
+#     collection_metadata={"hnsw:space": "cosine"},
+# )
 
 general_collection = Chroma(
     collection_name="general_faq",
@@ -60,30 +59,30 @@ predefined_collection = Chroma(
     collection_metadata={"hnsw:space": "cosine"},
 )
 
-faq_retriever = its_faq_collection.as_retriever(
-    search_type="similarity",
-    search_kwargs={"k": 2},
-    # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
-)
+# faq_retriever = its_faq_collection.as_retriever(
+#     search_type="similarity",
+#     search_kwargs={"k": 3},
+#     # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
+# )
 
 # policies_retriever = policies_collection.as_retriever(
 #     search_type="similarity", search_kwargs={"k": 2}
 #     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 # )
 
-policies_retriever = policies_collection.as_retriever(
-    search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
-)
+# policies_retriever = policies_collection.as_retriever(
+#     search_type="similarity", search_kwargs={"k": 15}
+# )
 
 general_retriever = general_collection.as_retriever(
     search_type="similarity",
-    search_kwargs={"k": 2},
+    search_kwargs={"k": 15},
     # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 )
 
-# predefined_retriever = predefined_collection.as_retriever(
-#     search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.95}
-# )
+predefined_retriever = predefined_collection.as_retriever(
+    search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.95}
+)
 
 # vector_retriever = VectorRetriever(
 #    neo4j_driver,
@@ -95,12 +94,11 @@ general_retriever = general_collection.as_retriever(
 # graph_retriever = GraphVectorRetriever(retriever=vector_retriever)
 
 retrievers = {
-    "askus": faq_retriever,
-    "policies": policies_retriever,
+
     "general": general_retriever,
 }
 
-llm = ChatOpenAI(model="gpt-4o")
+llm = ChatOpenAI(model="gpt-4o-mini")
 # llm = ChatOllama(model=os.getenv("OLLAMA_MODEL"), base_url=os.getenv("OLLAMA_HOST"))
 # llm = ChatOpenAI(model="gemini-2.0-flash", api_key=os.getenv("GEMINI_API_KEY"), base_url=os.getenv("GEMINI_BASE_URL"))
 # llm = GoogleGenerativeAI(model="gemini-2.0-flash", api_key=os.getenv("GEMINI_API_KEY"))
@@ -111,8 +109,7 @@ prompt_injection_classifier = load(
 )
 
 from manoa_agent.agent.nodes import *
-from manoa_agent.agent.enhanced_nodes import EnhancedDocumentsNode, EnhancedAgentNode
-
+from manoa_agent.agent.enhanced_nodes import *
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -150,9 +147,11 @@ def rag_agent_condition(state: GeneralAgentState):
 
 workflow = StateGraph(AgentState, output=AgentOutputState)
 
-# workflow.add_node("predefined", PredefinedNode(retriever=predefined_retriever))
+workflow.add_node("predefined", PredefinedNode(retriever=predefined_retriever))
 workflow.add_node("prompt_injection", PromptInjectionNode(prompt_injection_classifier))
 workflow.add_node("reformulate", ReformulateNode(llm=llm))
+# workflow.add_node("get_documents", DocumentsNode(retrievers=retrievers))
+# workflow.add_node("rag_agent", AgentNode(llm=llm))
 workflow.add_node("get_documents", EnhancedDocumentsNode(retrievers=retrievers))
 workflow.add_node("rag_agent", EnhancedAgentNode(llm=llm))
 workflow.add_node("general_agent", GeneralAgentNode(llm=llm))
@@ -205,12 +204,7 @@ add_routes(
     path="/askus",
 )
 
-
-def main():
+if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="localhost", port=8000)
-
-
-if __name__ == "__main__":
-    main()
+    uvicorn.run(app, host="localhost", port=8001)
