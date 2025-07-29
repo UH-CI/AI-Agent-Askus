@@ -111,6 +111,7 @@ prompt_injection_classifier = load(
 )
 
 from manoa_agent.agent.nodes import *
+from manoa_agent.agent.enhanced_nodes import EnhancedDocumentsNode, EnhancedAgentNode
 
 import logging
 
@@ -152,8 +153,8 @@ workflow = StateGraph(AgentState, output=AgentOutputState)
 workflow.add_node("predefined", PredefinedNode(retriever=predefined_retriever))
 workflow.add_node("prompt_injection", PromptInjectionNode(prompt_injection_classifier))
 workflow.add_node("reformulate", ReformulateNode(llm=llm))
-workflow.add_node("get_documents", DocumentsNode(retrievers=retrievers))
-workflow.add_node("rag_agent", AgentNode(llm=llm))
+workflow.add_node("get_documents", EnhancedDocumentsNode(retrievers=retrievers))
+workflow.add_node("rag_agent", EnhancedAgentNode(llm=llm))
 workflow.add_node("general_agent", GeneralAgentNode(llm=llm))
 
 workflow.add_edge(START, "predefined")

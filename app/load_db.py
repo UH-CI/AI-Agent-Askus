@@ -25,11 +25,15 @@ general_collection = Chroma(
 
 
 text_splitter = CharacterTextSplitter(
-    separator="\n", chunk_size=8000, chunk_overlap=100
+    separator="\n", chunk_size=8000, chunk_overlap=200
 )
 
 faq_loader = HtmlDirectoryLoader("data/askus")
 utils.upload(general_collection, faq_loader, text_splitter, reset=False, batch_size=30)
+
+text_splitter = CharacterTextSplitter(
+    separator="\n", chunk_size=500, chunk_overlap=200
+)
 
 json_loader = JSONFileLoader("data/json/policies.json")
 utils.upload(general_collection, json_loader, text_splitter, reset=False, batch_size=30)

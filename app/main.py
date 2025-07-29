@@ -60,7 +60,7 @@ predefined_collection = Chroma(
 
 faq_retriever = its_faq_collection.as_retriever(
     search_type="similarity",
-    search_kwargs={"k": 2},
+    search_kwargs={"k": 3},
     # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 )
 
@@ -75,7 +75,7 @@ policies_retriever = policies_collection.as_retriever(
 
 general_retriever = general_collection.as_retriever(
     search_type="similarity",
-    search_kwargs={"k": 2},
+    search_kwargs={"k": 3},
     # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 )
 

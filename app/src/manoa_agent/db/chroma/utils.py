@@ -2,6 +2,7 @@ from langchain.text_splitter import TextSplitter
 from langchain_chroma import Chroma
 from langchain_core.document_loaders import BaseLoader
 from tqdm import tqdm  # progress bar
+import uuid
 
 
 def upload(
@@ -31,9 +32,37 @@ def upload(
     if reset:
         chroma.reset_collection()
 
-    # Load documents. If a splitter is provided, use loader.load_and_split,
-    # otherwise, fallback to loader.load.
-    docs = loader.load_and_split(splitter) if splitter else loader.load()
+    # Load documents first without splitting to get full documents
+    full_docs = loader.load()
+    
+    # Create a mapping of full documents with unique IDs
+    doc_id_mapping = {}
+    for doc in full_docs:
+        doc_id = str(uuid.uuid4())
+        doc_id_mapping[doc.page_content] = {
+            "doc_id": doc_id,
+            "full_content": doc.page_content,
+            "metadata": doc.metadata
+        }
+    
+    # Now split documents if splitter is provided
+    if splitter:
+        docs = loader.load_and_split(splitter)
+        # Add full document content and unique ID to each chunk's metadata
+        for doc in docs:
+            # Find the original full document this chunk came from
+            for full_content, doc_info in doc_id_mapping.items():
+                if doc.page_content in full_content:
+                    doc.metadata["doc_id"] = doc_info["doc_id"]
+                    doc.metadata["full_document"] = doc_info["full_content"]
+                    break
+    else:
+        docs = full_docs
+        # Add unique IDs to non-split documents
+        for doc in docs:
+            doc_info = doc_id_mapping[doc.page_content]
+            doc.metadata["doc_id"] = doc_info["doc_id"]
+            doc.metadata["full_document"] = doc.page_content
 
     # Upload documents by batches.
     if batch_size > 0:
