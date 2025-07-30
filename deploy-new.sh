@@ -45,16 +45,6 @@ if [ ! -f "web/package.json" ]; then
     exit 1
 fi
 
-# Function to cleanup on exit
-cleanup() {
-    echo "🧹 Cleaning up..."
-    $DOCKER_COMPOSE_CMD down 2>/dev/null || true
-    if [ ! -z "$FRONTEND_PID" ]; then
-        kill $FRONTEND_PID 2>/dev/null || true
-    fi
-}
-trap cleanup EXIT INT TERM
-
 # Use docker compose (newer syntax) or docker-compose (legacy)
 if command -v "docker compose" > /dev/null 2>&1; then
     DOCKER_COMPOSE_CMD="docker compose"
@@ -65,8 +55,18 @@ else
     exit 1
 fi
 
-echo "Using: $DOCKER_COMPOSE_CMD"
-$DOCKER_COMPOSE_CMD up -d
+# Function to cleanup on exit
+cleanup() {
+    echo "🧹 Cleaning up..."
+    $DOCKER_COMPOSE_CMD down 2>/dev/null || true
+    if [ -n "$FRONTEND_PID" ]; then
+        kill $FRONTEND_PID 2>/dev/null || true
+    fi
+    if [ -n "$BACKEND_PID" ]; then
+        docker rm -f hoku-app 2>/dev/null || true
+    fi
+}
+trap cleanup EXIT INT TERM
 
 # Clean up Docker to free space
 echo "🧹 Cleaning up Docker to free space..."
@@ -75,17 +75,8 @@ docker system prune -f > /dev/null 2>&1 || true
 # Start ChromaDB only
 echo "🚀 Starting ChromaDB service..."
 $DOCKER_COMPOSE_CMD up -d chromadb
-sleep 10
 
-# Start the backend with main.py
-echo "🚀 Starting backend with main.py..."
-$DOCKER_COMPOSE_CMD run -d --name hoku-app -p 8001:8001 -e HOST=0.0.0.0 -e PORT=8001 hoku-app python /app/main.py
-
-# Wait for services to be ready
-echo "⏳ Waiting for backend services to be ready..."
-sleep 10
-
-# Check if ChromaDB is ready
+# Wait for ChromaDB to be ready
 echo "🔍 Checking ChromaDB connection..."
 for i in {1..30}; do
     if curl -s http://localhost:8000/api/v1/heartbeat > /dev/null; then
@@ -101,15 +92,21 @@ done
 
 # Load database data into ChromaDB
 echo "🗄️ Loading data into ChromaDB (this may take a while)..."
-docker compose run --rm hoku-app python /app/load_db.py || {
+cd app
+$DOCKER_COMPOSE_CMD run --rm -e CHROMA_HOST=chromadb -e CHROMA_PORT=8000 hoku-app python /app/load_db.py || {
     echo "❌ Failed to load database data"
+    cd ..
     exit 1
 }
+cd ..
 echo "✅ Database loaded successfully"
 
-# Stop and remove the hoku-app container if it's running
-$DOCKER_COMPOSE_CMD stop hoku-app
-$DOCKER_COMPOSE_CMD rm -f hoku-app
+# Start the backend with main.py
+echo "🚀 Starting backend with main.py..."
+docker stop hoku-app 2>/dev/null || true
+docker rm -f hoku-app 2>/dev/null || true
+$DOCKER_COMPOSE_CMD run -d --name hoku-app -p 8001:8001 -e HOST=0.0.0.0 -e PORT=8001 -e CHROMA_HOST=chromadb -e CHROMA_PORT=8000 hoku-app python /app/main.py
+BACKEND_PID=$!
 
 # Check if Python backend is ready
 echo "🔍 Checking Python backend connection..."
@@ -125,44 +122,25 @@ for i in {1..30}; do
     sleep 2
 done
 
-# Install frontend dependencies if node_modules doesn't exist
-if [ ! -d "web/node_modules" ]; then
-    echo "📦 Installing frontend dependencies..."
-    cd web
-    if command -v pnpm > /dev/null; then
-        pnpm install
-    elif command -v npm > /dev/null; then
-        npm install
-    else
-        echo "❌ Neither pnpm nor npm found. Please install Node.js and npm/pnpm."
-        exit 1
-    fi
-    cd ..
-fi
-
-# Build the frontend for production
-echo "🏗️  Building frontend for production..."
+# Install frontend dependencies and build
+echo "🏗️ Installing frontend dependencies and building..."
 cd web
-if command -v pnpm > /dev/null; then
-    pnpm build
+if command -v pnpm > /dev/null 2>&1; then
+    PACKAGE_MANAGER="pnpm"
 else
-    npm run build
+    PACKAGE_MANAGER="npm"
 fi
+$PACKAGE_MANAGER install
+$PACKAGE_MANAGER run build
 
-# Start the frontend on port 3000
-echo "🌐 Starting frontend on port 3000..."
-if command -v pnpm > /dev/null; then
-    pnpm start --port 3000 --hostname 0.0.0.0 &
-else
-    npm start -- --port 3000 --hostname 0.0.0.0 &
-fi
+# Start the frontend
+echo "🚀 Starting frontend on port 3000..."
+$PACKAGE_MANAGER start -- -H 0.0.0.0 -p 3000 &
 FRONTEND_PID=$!
 cd ..
 
 # Wait for frontend to be ready
-echo "⏳ Waiting for frontend to be ready..."
-sleep 5
-
+echo "🔍 Checking frontend connection..."
 for i in {1..30}; do
     if curl -s http://localhost:3000 > /dev/null; then
         echo "✅ Frontend is ready"
@@ -175,18 +153,20 @@ for i in {1..30}; do
     sleep 2
 done
 
+# Print success message
 echo ""
-echo "🎉 Deployment successful!"
+echo "✅ AI-Agent-Askus is now running!"
+echo "   - ChromaDB is running on port 8000"
+echo "   - Python backend is running on port 8001"
+echo "   - Frontend is running on port 3000"
 echo ""
-echo "Services running:"
-echo "  📊 ChromaDB:      http://localhost:8000"
-echo "  🐍 Python API:   http://localhost:8001"
-echo "  🌐 Frontend:     http://localhost:3000"
+echo "📱 You can access the application at:"
+echo "   http://localhost:3000"
 echo ""
-echo "🌍 Access the application at: http://localhost:3000"
-echo "   (Replace 'localhost' with your server's IP address when accessing remotely)"
+echo "🔍 To access the API docs, visit:"
+echo "   http://localhost:8001/docs"
 echo ""
-echo "Press Ctrl+C to stop all services..."
+echo "🛑 To stop all services, press Ctrl+C"
 
-# Keep the script running
-wait $FRONTEND_PID
+# Keep script running until Ctrl+C
+wait

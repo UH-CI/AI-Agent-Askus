@@ -204,7 +204,16 @@ add_routes(
     path="/askus",
 )
 
-if __name__ == "__main__":
+def main():
     import uvicorn
+    import os
+    
+    # Use 0.0.0.0 for Docker compatibility, localhost for local development
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", "8001"))
+    
+    print(f"Starting server on {host}:{port}")
+    uvicorn.run(app, host=host, port=port)
 
-    uvicorn.run(app, host="localhost", port=8001)
+if __name__ == "__main__":
+    main()

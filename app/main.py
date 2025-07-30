@@ -207,4 +207,8 @@ add_routes(
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="localhost", port=8001)
+    # Use 0.0.0.0 for Docker compatibility, localhost for local development
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", "8001"))
+    print(f"Starting server on {host}:{port}")
+    uvicorn.run(app, host=host, port=port)
