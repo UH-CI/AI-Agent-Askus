@@ -1,0 +1,32 @@
+[
+  {
+    "query": "What are the minimum credit hour requirements for an academic major and an academic minor, respectively?",
+    "document": "Minors generally contain fifteen \nto eighteen hours of coursework with at least nine hours of upper-division coursework \nwithin a specific academic major",
+    "score": 3.5877063274383545
+  },
+  {
+    "query": "What are the minimum credit hour requirements for an academic major and an academic minor, respectively?",
+    "document": "Academic Minor: Recognition of work completed in select credit courses as a student\u2019s secondary declared academic field of study",
+    "score": 0.24933379888534546
+  },
+  {
+    "query": "What are the minimum credit hour requirements for an academic major and an academic minor, respectively?",
+    "document": "Academic Minor: Recognition of work completed in select credit courses as a student\u2019s secondary declared academic field of study",
+    "score": 0.24933379888534546
+  },
+  {
+    "query": "According to section II. Definitions, what distinguishes a \"concentration\" from an \"academic major\"?",
+    "document": "Concentration: A focus or specific area of emphasis within a specific academic major of an associate, baccalaureate or graduate degree",
+    "score": 3.391995429992676
+  },
+  {
+    "query": "According to section II. Definitions, what distinguishes a \"concentration\" from an \"academic major\"?",
+    "document": "Academic Major: An area of inquiry that leads to a degree through coursework that represents cohesive and extensive study in a subject area in which a student develops depth of knowledge, competency, and understanding",
+    "score": 1.1038076877593994
+  },
+  {
+    "query": "According to section II. Definitions, what distinguishes a \"concentration\" from an \"academic major\"?",
+    "document": "Inclusion of the concentration within a major",
+    "score": -0.5485405325889587
+  }
+]

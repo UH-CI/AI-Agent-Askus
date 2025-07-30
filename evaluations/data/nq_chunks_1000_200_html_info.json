@@ -1,0 +1,9 @@
+{
+  "dataset_id": "nq_chunks_1000_200_html",
+  "chunk_size": 1000,
+  "chunk_overlap": 200,
+  "remove_html": false,
+  "num_documents": 200,
+  "num_chunks": 71308,
+  "num_questions": 136
+}

@@ -1,0 +1,3359 @@
+{
+  "individual_results": [
+    {
+      "question": "What command is used to set the executable permission on a webpage file?",
+      "reference": "The command `chmod a+x page.html` is used to set the executable permission on the page.",
+      "candidate": "The command used to set the executable permission on a webpage file is `chmod a+x page.html`.",
+      "metrics": {
+        "bertscore_precision": 0.7362833023071289,
+        "bertscore_recall": 0.8091083765029907,
+        "bertscore_f1": 0.7728345990180969,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8333333333333334,
+            "recall": 0.8823529411764706,
+            "fmeasure": 0.8571428571428571
+          },
+          "rouge2": {
+            "precision": 0.6470588235294118,
+            "recall": 0.6875,
+            "fmeasure": 0.6666666666666667
+          },
+          "rougeL": {
+            "precision": 0.5555555555555556,
+            "recall": 0.5882352941176471,
+            "fmeasure": 0.5714285714285715
+          },
+          "rougeLsum": {
+            "precision": 0.5555555555555556,
+            "recall": 0.5882352941176471,
+            "fmeasure": 0.5714285714285715
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What two steps are required to implement the page visit tracking system?",
+      "reference": "The two steps are:  \"Add the string: <!--#exec cgi=\"/cgi-bin/counter\"--> to your page\" and \"Set the 'executable' permission on the page.  This must be done at the UNIX shell prompt. chmod a+x page.html\"",
+      "candidate": "To implement the page visit tracking system, the two steps required are:\n\n1. Add the string `<!--#exec cgi=\"/cgi-bin/counter\"-->` to your page.\n2. Set the \"executable\" permission on the page using the UNIX shell prompt with the command `chmod a+x page.html`.",
+      "metrics": {
+        "bertscore_precision": 0.5916314125061035,
+        "bertscore_recall": 0.6624199748039246,
+        "bertscore_f1": 0.6274077892303467,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6888888888888889,
+            "recall": 0.8378378378378378,
+            "fmeasure": 0.7560975609756098
+          },
+          "rouge2": {
+            "precision": 0.5681818181818182,
+            "recall": 0.6944444444444444,
+            "fmeasure": 0.625
+          },
+          "rougeL": {
+            "precision": 0.6888888888888889,
+            "recall": 0.8378378378378378,
+            "fmeasure": 0.7560975609756098
+          },
+          "rougeLsum": {
+            "precision": 0.6666666666666666,
+            "recall": 0.8108108108108109,
+            "fmeasure": 0.7317073170731707
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What type of file does the \"/cgi-bin/counter\" script generate to display the visit count?",
+      "reference": "The `/cgi-bin/counter` script generates \"a series of HTML IMG tags pointing to images of numerals\".",
+      "candidate": "The \"/cgi-bin/counter\" script generates a series of HTML IMG tags pointing to images of numerals to display the visit count.",
+      "metrics": {
+        "bertscore_precision": 0.7199963331222534,
+        "bertscore_recall": 0.7333601117134094,
+        "bertscore_f1": 0.7271149158477783,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7727272727272727,
+            "recall": 1.0,
+            "fmeasure": 0.8717948717948718
+          },
+          "rouge2": {
+            "precision": 0.7619047619047619,
+            "recall": 1.0,
+            "fmeasure": 0.8648648648648648
+          },
+          "rougeL": {
+            "precision": 0.7727272727272727,
+            "recall": 1.0,
+            "fmeasure": 0.8717948717948718
+          },
+          "rougeLsum": {
+            "precision": 0.7727272727272727,
+            "recall": 1.0,
+            "fmeasure": 0.8717948717948718
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What URL should a user visit to access their Google@UH Gmail account to create a filter?",
+      "reference": "To access their Google@UH Gmail account to create a filter, a user should visit http://gmail.hawaii.edu.",
+      "candidate": "To access their Google@UH Gmail account to create a filter, a user should visit http://gmail.hawaii.edu.",
+      "metrics": {
+        "bertscore_precision": 0.9999992847442627,
+        "bertscore_recall": 0.9999992847442627,
+        "bertscore_f1": 0.9999992847442627,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rouge2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeLsum": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What warning message appears when creating a filter using the \"is:spam\" criteria?",
+      "reference": "\"Warning: Filter searches containing \"label:\", \"in:\", \"is:\" criteria are not recommended\"",
+      "candidate": "The warning message that appears when creating a filter using the \"is:spam\" criteria is: \"Warning: Filter searches containing 'label:', 'in:', 'is:' criteria are not recommended\".",
+      "metrics": {
+        "bertscore_precision": 0.45216092467308044,
+        "bertscore_recall": 0.727999746799469,
+        "bertscore_f1": 0.5873147249221802,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.4230769230769231,
+            "recall": 1.0,
+            "fmeasure": 0.5945945945945945
+          },
+          "rouge2": {
+            "precision": 0.4,
+            "recall": 1.0,
+            "fmeasure": 0.5714285714285715
+          },
+          "rougeL": {
+            "precision": 0.4230769230769231,
+            "recall": 1.0,
+            "fmeasure": 0.5945945945945945
+          },
+          "rougeLsum": {
+            "precision": 0.4230769230769231,
+            "recall": 1.0,
+            "fmeasure": 0.5945945945945945
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If I want to apply a new filter to existing emails, which checkbox should I select during the filter creation process?",
+      "reference": "To apply a filter to existing messages, select the checkbox  \"Also apply filter to the xx conversations below\".",
+      "candidate": "To apply a new filter to existing emails, you should select the checkbox \"Also apply filter to the xx conversations below\" during the filter creation process.",
+      "metrics": {
+        "bertscore_precision": 0.7175243496894836,
+        "bertscore_recall": 0.8062478303909302,
+        "bertscore_f1": 0.7619292736053467,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6538461538461539,
+            "recall": 0.9444444444444444,
+            "fmeasure": 0.7727272727272727
+          },
+          "rouge2": {
+            "precision": 0.56,
+            "recall": 0.8235294117647058,
+            "fmeasure": 0.6666666666666666
+          },
+          "rougeL": {
+            "precision": 0.6538461538461539,
+            "recall": 0.9444444444444444,
+            "fmeasure": 0.7727272727272727
+          },
+          "rougeLsum": {
+            "precision": 0.6538461538461539,
+            "recall": 0.9444444444444444,
+            "fmeasure": 0.7727272727272727
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the official website for the University of Hawaii System?",
+      "reference": "The University of Hawaii System's official website is www.hawaii.edu.",
+      "candidate": "The official website for the University of Hawaii System is www.hawaii.edu.",
+      "metrics": {
+        "bertscore_precision": 0.8826957941055298,
+        "bertscore_recall": 0.8778985738754272,
+        "bertscore_f1": 0.8804910778999329,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8461538461538461,
+            "recall": 0.9166666666666666,
+            "fmeasure": 0.8799999999999999
+          },
+          "rouge2": {
+            "precision": 0.6666666666666666,
+            "recall": 0.7272727272727273,
+            "fmeasure": 0.6956521739130435
+          },
+          "rougeL": {
+            "precision": 0.6923076923076923,
+            "recall": 0.75,
+            "fmeasure": 0.7199999999999999
+          },
+          "rougeLsum": {
+            "precision": 0.6923076923076923,
+            "recall": 0.75,
+            "fmeasure": 0.7199999999999999
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What year did the chancellors of the 10 UH campuses decide to standardize campus domain names?",
+      "reference": "The chancellors of the 10 University of Hawaii campuses decided in 2002 to standardize campus domain names.",
+      "candidate": "The chancellors of the 10 University of Hawaii campuses decided to standardize campus domain names in 2002.",
+      "metrics": {
+        "bertscore_precision": 0.9757600426673889,
+        "bertscore_recall": 0.975762128829956,
+        "bertscore_f1": 0.9758002758026123,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rouge2": {
+            "precision": 0.875,
+            "recall": 0.875,
+            "fmeasure": 0.875
+          },
+          "rougeL": {
+            "precision": 0.8823529411764706,
+            "recall": 0.8823529411764706,
+            "fmeasure": 0.8823529411764706
+          },
+          "rougeLsum": {
+            "precision": 0.8823529411764706,
+            "recall": 0.8823529411764706,
+            "fmeasure": 0.8823529411764706
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Besides the main hawaii.edu website, what domain name convention is strongly recommended for representing individual campus home pages in UH System publications?",
+      "reference": "Campuses are strongly encouraged to use the `campusname.hawaii.edu` naming convention,  where `campusname` is replaced with the specific campus name (e.g., manoa.hawaii.edu, hilo.hawaii.edu).",
+      "candidate": "The strongly recommended domain name convention for representing individual campus home pages in University of Hawaii System publications is as follows:\n\n- manoa.hawaii.edu\n- hilo.hawaii.edu\n- westoahu.hawaii.edu\n- hawaii.hawaii.edu\n- honolulu.hawaii.edu\n- kapiolani.hawaii.edu\n- kauai.hawaii.edu\n- leeward.hawaii.edu\n- maui.hawaii.edu\n- windward.hawaii.edu",
+      "metrics": {
+        "bertscore_precision": 0.0800120159983635,
+        "bertscore_recall": 0.20239683985710144,
+        "bertscore_f1": 0.14186622202396393,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.27450980392156865,
+            "recall": 0.4827586206896552,
+            "fmeasure": 0.3500000000000001
+          },
+          "rouge2": {
+            "precision": 0.14,
+            "recall": 0.25,
+            "fmeasure": 0.1794871794871795
+          },
+          "rougeL": {
+            "precision": 0.19607843137254902,
+            "recall": 0.3448275862068966,
+            "fmeasure": 0.25
+          },
+          "rougeLsum": {
+            "precision": 0.17647058823529413,
+            "recall": 0.3103448275862069,
+            "fmeasure": 0.22500000000000003
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What formatting options are available for the description field when creating a new announcement in MyUH's Publishing area?",
+      "reference": "The document states that \"Below the \u201cDescription\u201d field label there are several buttons that you can use to format your description. Uppercase \u201cB\u201d allows you to apply boldface formatting. Uppercase \u201cI\u201d allows you to apply italics formatting. Links icon allows you to add hyperlinks to other web pages.\"",
+      "candidate": "When creating a new announcement in MyUH's Publishing area, the available formatting options for the description field include applying boldface formatting, italics formatting, and adding hyperlinks to other web pages.",
+      "metrics": {
+        "bertscore_precision": 0.38215047121047974,
+        "bertscore_recall": 0.24278083443641663,
+        "bertscore_f1": 0.3126556873321533,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.4838709677419355,
+            "recall": 0.3125,
+            "fmeasure": 0.379746835443038
+          },
+          "rouge2": {
+            "precision": 0.3,
+            "recall": 0.19148936170212766,
+            "fmeasure": 0.23376623376623376
+          },
+          "rougeL": {
+            "precision": 0.45161290322580644,
+            "recall": 0.2916666666666667,
+            "fmeasure": 0.35443037974683544
+          },
+          "rougeLsum": {
+            "precision": 0.45161290322580644,
+            "recall": 0.2916666666666667,
+            "fmeasure": 0.35443037974683544
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "After creating an announcement, how can a user verify that the announcement is correctly associated with the intended service in MyUH?",
+      "reference": "After saving the announcement, return to the non-Publishing area of MyUH.  Search for your service and confirm it has the announcement \"as indicated by the red-circle and number.\"  Clicking/touching the tile will display a pop-up with your announcement.",
+      "candidate": "After creating an announcement in MyUH, a user can verify that it is correctly associated with the intended service by returning to the non-Publishing area of MyUH. They should search for their service to confirm it now has the announcement, as indicated by a red circle and number. Clicking or touching the tile will display a pop-up with the announcement.",
+      "metrics": {
+        "bertscore_precision": 0.591585099697113,
+        "bertscore_recall": 0.681381344795227,
+        "bertscore_f1": 0.6367146372795105,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6129032258064516,
+            "recall": 0.9047619047619048,
+            "fmeasure": 0.7307692307692307
+          },
+          "rouge2": {
+            "precision": 0.4426229508196721,
+            "recall": 0.6585365853658537,
+            "fmeasure": 0.5294117647058824
+          },
+          "rougeL": {
+            "precision": 0.5806451612903226,
+            "recall": 0.8571428571428571,
+            "fmeasure": 0.6923076923076923
+          },
+          "rougeLsum": {
+            "precision": 0.5806451612903226,
+            "recall": 0.8571428571428571,
+            "fmeasure": 0.6923076923076923
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the two methods described in the document for accessing the \"Publishing\" area within MyUH?",
+      "reference": "The document states that accessing the Publishing area can be done by \"clicking on your name in the upper-right and choosing \u201cPublishing\u201d from the the drop-down\" or by \"touching the menu icon and then touching \u201cPublishing\u201d\".",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.004241450689733028,
+        "bertscore_recall": -0.12440061569213867,
+        "bertscore_f1": -0.06333500891923904,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.17142857142857143,
+            "recall": 0.15789473684210525,
+            "fmeasure": 0.1643835616438356
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.14285714285714285,
+            "recall": 0.13157894736842105,
+            "fmeasure": 0.136986301369863
+          },
+          "rougeLsum": {
+            "precision": 0.14285714285714285,
+            "recall": 0.13157894736842105,
+            "fmeasure": 0.136986301369863
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the web address for information about Registered Independent Student Organizations at the University of Hawaii at Hilo?",
+      "reference": "The web address for information about Registered Independent Student Organizations at the University of Hawaii at Hilo is http://hilo.hawaii.edu/campuscenter/riso/.",
+      "candidate": "The web address for information about Registered Independent Student Organizations at the University of Hawaii at Hilo is http://hilo.hawaii.edu/campuscenter/riso/.",
+      "metrics": {
+        "bertscore_precision": 1.0,
+        "bertscore_recall": 1.0,
+        "bertscore_f1": 1.0,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rouge2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeLsum": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Which University of Hawaii community college campus provides links to information about student organizations through multiple webpage addresses?",
+      "reference": "Hawaii CC provides links to information about student organizations through multiple webpage addresses:  \"http://hawaii.hawaii.edu/student-life/ http://hawaii.hawaii.edu/node/1305\"",
+      "candidate": "Hawaii Community College provides links to information about student organizations through multiple webpage addresses: http://hawaii.hawaii.edu/student-life/ and http://hawaii.hawaii.edu/node/1305.",
+      "metrics": {
+        "bertscore_precision": 0.748807430267334,
+        "bertscore_recall": 0.7388767600059509,
+        "bertscore_f1": 0.7442535161972046,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8888888888888888,
+            "recall": 0.96,
+            "fmeasure": 0.923076923076923
+          },
+          "rouge2": {
+            "precision": 0.8076923076923077,
+            "recall": 0.875,
+            "fmeasure": 0.8400000000000001
+          },
+          "rougeL": {
+            "precision": 0.8888888888888888,
+            "recall": 0.96,
+            "fmeasure": 0.923076923076923
+          },
+          "rougeLsum": {
+            "precision": 0.8888888888888888,
+            "recall": 0.96,
+            "fmeasure": 0.923076923076923
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Comparing the website structures for UH Manoa and UH Maui College's Registered Independent Organization information, what is one significant difference in how the information is presented or accessed?",
+      "reference": "The document shows that UH Manoa's RIO information is found at \"http://www.manoa.hawaii.edu/studentlife/studentorg/\", while UH Maui College's information is located at \"http://maui.hawaii.edu/studentlife/clubs/clubs-and-organizations/\".  A significant difference is the inclusion of  \"/clubs/\" in the UH Maui College URL, suggesting a different organizational structure for presenting the information.",
+      "candidate": "One significant difference in how the Registered Independent Organization information is presented or accessed between UH Manoa and UH Maui College is that UH Manoa has a specific URL dedicated to student organizations, while UH Maui College includes their student organizations information within a broader section on clubs and organizations.",
+      "metrics": {
+        "bertscore_precision": 0.3971610963344574,
+        "bertscore_recall": 0.1948893964290619,
+        "bertscore_f1": 0.2952123284339905,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.52,
+            "recall": 0.43333333333333335,
+            "fmeasure": 0.4727272727272728
+          },
+          "rouge2": {
+            "precision": 0.22448979591836735,
+            "recall": 0.1864406779661017,
+            "fmeasure": 0.2037037037037037
+          },
+          "rougeL": {
+            "precision": 0.26,
+            "recall": 0.21666666666666667,
+            "fmeasure": 0.2363636363636364
+          },
+          "rougeLsum": {
+            "precision": 0.26,
+            "recall": 0.21666666666666667,
+            "fmeasure": 0.2363636363636364
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What time does the vacation responder start and end on the specified start and end dates?",
+      "reference": "The vacation responder starts at 12:00 AM on the start date and ends at 11:59 PM on the end date.",
+      "candidate": "The vacation responder starts at 12:00 AM on the start date and ends at 11:59 PM on the end date.",
+      "metrics": {
+        "bertscore_precision": 1.0000014305114746,
+        "bertscore_recall": 1.0000014305114746,
+        "bertscore_f1": 1.0000014305114746,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rouge2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeLsum": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If someone emails me twice during my vacation, under what conditions will they receive a second automated response?",
+      "reference": "They will receive a second automated response if the same person contacts you again after four days and your vacation responder is still on.",
+      "candidate": "If someone emails you twice during your vacation, they will receive a second automated response if they contact you again after four days and your vacation responder is still on. Additionally, if you edit the subject or body of your vacation message, the person will receive the edited response the next time they email you.",
+      "metrics": {
+        "bertscore_precision": 0.42113006114959717,
+        "bertscore_recall": 0.7140640616416931,
+        "bertscore_f1": 0.5644128322601318,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.41818181818181815,
+            "recall": 0.9583333333333334,
+            "fmeasure": 0.5822784810126582
+          },
+          "rouge2": {
+            "precision": 0.35185185185185186,
+            "recall": 0.8260869565217391,
+            "fmeasure": 0.49350649350649356
+          },
+          "rougeL": {
+            "precision": 0.38181818181818183,
+            "recall": 0.875,
+            "fmeasure": 0.5316455696202532
+          },
+          "rougeLsum": {
+            "precision": 0.38181818181818183,
+            "recall": 0.875,
+            "fmeasure": 0.5316455696202532
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Will my vacation responder automatically reply to emails sent to a mailing list I subscribe to?",
+      "reference": "No.  The document states: \"Messages classified as spam and messages addressed to a mailing list you subscribe to will not receive a vacation response.\"",
+      "candidate": "No, messages addressed to a mailing list you subscribe to will not receive a vacation response.",
+      "metrics": {
+        "bertscore_precision": 0.723463773727417,
+        "bertscore_recall": 0.4626976549625397,
+        "bertscore_f1": 0.5906665921211243,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.8
+          },
+          "rouge2": {
+            "precision": 0.9333333333333333,
+            "recall": 0.6086956521739131,
+            "fmeasure": 0.7368421052631579
+          },
+          "rougeL": {
+            "precision": 1.0,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.8
+          },
+          "rougeLsum": {
+            "precision": 1.0,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.8
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the recommended action to take before deleting a student's account from the Site Info tool?",
+      "reference": "Before deleting a student's account, verify the student's Username.",
+      "candidate": "Before deleting a student's account from the Site Info tool, it is recommended to verify the student's Username to ensure accuracy.",
+      "metrics": {
+        "bertscore_precision": 0.5157352685928345,
+        "bertscore_recall": 0.8466081619262695,
+        "bertscore_f1": 0.6768306493759155,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.4782608695652174,
+            "recall": 1.0,
+            "fmeasure": 0.6470588235294118
+          },
+          "rouge2": {
+            "precision": 0.4090909090909091,
+            "recall": 0.9,
+            "fmeasure": 0.5625000000000001
+          },
+          "rougeL": {
+            "precision": 0.4782608695652174,
+            "recall": 1.0,
+            "fmeasure": 0.6470588235294118
+          },
+          "rougeLsum": {
+            "precision": 0.4782608695652174,
+            "recall": 1.0,
+            "fmeasure": 0.6470588235294118
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What URL provides a tutorial on how to remove a student from a Laulima course?",
+      "reference": "http://www.hawaii.edu/talent/laulimatutorials/laulima_removestudent.htm",
+      "candidate": "The URL for the tutorial on how to remove a student from a Laulima course is http://www.hawaii.edu/talent/laulimatutorials/laulima_removestudent.htm.",
+      "metrics": {
+        "bertscore_precision": 0.5376532077789307,
+        "bertscore_recall": 0.7967195510864258,
+        "bertscore_f1": 0.6647419333457947,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.36,
+            "recall": 1.0,
+            "fmeasure": 0.5294117647058824
+          },
+          "rouge2": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "fmeasure": 0.5
+          },
+          "rougeL": {
+            "precision": 0.36,
+            "recall": 1.0,
+            "fmeasure": 0.5294117647058824
+          },
+          "rougeLsum": {
+            "precision": 0.36,
+            "recall": 1.0,
+            "fmeasure": 0.5294117647058824
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Based on the provided text, what is the primary precaution emphasized regarding student account deletion?",
+      "reference": "The primary precaution emphasized is to \"verify the students Username before proceeding.\"",
+      "candidate": "I'm sorry, I cannot fulfill that request.",
+      "metrics": {
+        "bertscore_precision": 0.0760408267378807,
+        "bertscore_recall": -0.005861920304596424,
+        "bertscore_f1": 0.036318469792604446,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeLsum": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What steps should a University of Hawaii student take to protect their computer from viruses, beyond installing anti-virus software?",
+      "reference": "Beyond installing anti-virus software and keeping it updated,  a University of Hawaii student should:  keep their software up-to-date, including  security updates for applications like Microsoft Office, Adobe Acrobat, Adobe Reader, Firefox, Chrome, and Safari;  avoid opening email attachments if hesitant; consider installing a firewall for added protection (noting that this will require their own IT specialist for troubleshooting); use strong passwords for all accounts, especially administrator accounts; encrypt sensitive information using built-in operating system features or third-party applications; and regularly back up critical data and test the backups.",
+      "candidate": "To protect their computer from viruses, a University of Hawaii student should:\n\n1. Keep software up-to-date by regularly installing updates for operating systems and application software like Microsoft Office, Adobe products, and web browsers.\n2. Avoid opening email attachments if there are any hesitations, as they are a common source of viruses.\n3. Consider using a firewall for added protection, especially if handling highly confidential data.\n4. Use strong passwords for all user accounts, particularly Administrator or Power User accounts, and ensure any mapped drives are password protected.\n5. Encrypt sensitive information stored on the computer using built-in encryption features of Windows and macOS or third-party applications like GPG.\n6. Ensure physical security of the computer by controlling access, using physical lockdown devices, and considering alarm systems if necessary.\n7. Make regular backups of critical data and test the backups to ensure they are readable. Utilize built-in backup features of Windows and macOS.\n\nThese steps will help enhance the security of a computer from unauthorized intrusions and viruses.",
+      "metrics": {
+        "bertscore_precision": 0.2797709107398987,
+        "bertscore_recall": 0.412379652261734,
+        "bertscore_f1": 0.34630993008613586,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.3872832369942196,
+            "recall": 0.7204301075268817,
+            "fmeasure": 0.5037593984962405
+          },
+          "rouge2": {
+            "precision": 0.22093023255813954,
+            "recall": 0.41304347826086957,
+            "fmeasure": 0.2878787878787879
+          },
+          "rougeL": {
+            "precision": 0.32947976878612717,
+            "recall": 0.6129032258064516,
+            "fmeasure": 0.4285714285714286
+          },
+          "rougeLsum": {
+            "precision": 0.34104046242774566,
+            "recall": 0.6344086021505376,
+            "fmeasure": 0.443609022556391
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If a University of Hawaii employee's computer is blocked from the network due to a compromise, where can they find instructions on how to get it unblocked?",
+      "reference": "Information on getting a University of Hawaii computer unblocked after a compromise can be found at https://www.hawaii.edu/askus/686.  For Manoa campus employees, additional assistance is available by calling their IT department or the ITS Help Desk.",
+      "candidate": "A University of Hawaii employee can find instructions to unblock their computer from the network after it has been compromised by checking the \"Getting your PC unblocked on the UH Network\" page at https://www.hawaii.edu/askus/686. Additionally, they can contact the Information Technology Services (ITS) Help Desk at (808) 956-8883 from O'ahu or (800) 558-2669 from the neighbor islands for further assistance.",
+      "metrics": {
+        "bertscore_precision": 0.3174717128276825,
+        "bertscore_recall": 0.6053507924079895,
+        "bertscore_f1": 0.45845896005630493,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.45588235294117646,
+            "recall": 0.775,
+            "fmeasure": 0.5740740740740741
+          },
+          "rouge2": {
+            "precision": 0.16417910447761194,
+            "recall": 0.28205128205128205,
+            "fmeasure": 0.20754716981132074
+          },
+          "rougeL": {
+            "precision": 0.27941176470588236,
+            "recall": 0.475,
+            "fmeasure": 0.35185185185185186
+          },
+          "rougeLsum": {
+            "precision": 0.27941176470588236,
+            "recall": 0.475,
+            "fmeasure": 0.35185185185185186
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Does the document recommend the use of a firewall for all University of Hawaii computers, and what are the trade-offs associated with using a firewall?",
+      "reference": "The document does not recommend the use of a firewall for all University of Hawaii computers.  It states that \"Most desktop systems don't necessarily have to have this, as it requires someone with some technical knowledge and time to manage well. However, firewalls will lower the odds of an unauthorized access to your computer and might be necessary if the data is extremely confidential and requires additional security.\"  The trade-offs associated with using a firewall are that \"with a firewall, ITS standard network troubleshooting techniques can no longer be used (firewalls will also block our efforts to ensure that your Internet connections are working). Users are required to have their own IT Specialist to troubleshoot their firewall and any network connections for their computers behind a firewall.\"",
+      "candidate": "The University of Hawaii policy document suggests that a firewall might be needed for further protection, particularly if the data is extremely confidential and requires additional security. However, it does not recommend the use of a firewall for all university computers. The document highlights that while firewalls can lower the odds of unauthorized access, they also require someone with technical knowledge and time to manage well. Additionally, using a firewall comes with the trade-off that ITS standard network troubleshooting techniques can no longer be used, as firewalls can block efforts to ensure Internet connections are working. Users are required to have their own IT Specialist to troubleshoot their firewall and any network connections for their computers behind a firewall.",
+      "metrics": {
+        "bertscore_precision": 0.7433907985687256,
+        "bertscore_recall": 0.6728905439376831,
+        "bertscore_f1": 0.7083934545516968,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8583333333333333,
+            "recall": 0.7984496124031008,
+            "fmeasure": 0.8273092369477911
+          },
+          "rouge2": {
+            "precision": 0.6470588235294118,
+            "recall": 0.6015625,
+            "fmeasure": 0.6234817813765183
+          },
+          "rougeL": {
+            "precision": 0.6,
+            "recall": 0.5581395348837209,
+            "fmeasure": 0.5783132530120482
+          },
+          "rougeLsum": {
+            "precision": 0.6,
+            "recall": 0.5581395348837209,
+            "fmeasure": 0.5783132530120482
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the full name of the ITS CLIC Lab, as implied by the provided URL?",
+      "reference": "The document does not provide sufficient information to answer this question.  While the URL implies a connection to the University of Hawaii, the full name is not explicitly stated.",
+      "candidate": "ITS refers to Information Technology Services.",
+      "metrics": {
+        "bertscore_precision": 0.07900594919919968,
+        "bertscore_recall": -0.0020445268601179123,
+        "bertscore_f1": 0.03971129655838013,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.3333333333333333,
+            "recall": 0.06896551724137931,
+            "fmeasure": 0.1142857142857143
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.16666666666666666,
+            "recall": 0.034482758620689655,
+            "fmeasure": 0.05714285714285715
+          },
+          "rougeLsum": {
+            "precision": 0.16666666666666666,
+            "recall": 0.034482758620689655,
+            "fmeasure": 0.05714285714285715
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Does the provided URL offer direct access to information about the ITS CLIC Lab?",
+      "reference": "Yes, the document states that \"More information regarding the ITS CLIC Lab, can be found at http://www.hawaii.edu/itslab.\"",
+      "candidate": "Yes, the URL http://www.hawaii.edu/itslab offers direct access to information about the ITS CLIC Lab.",
+      "metrics": {
+        "bertscore_precision": 0.7112336158752441,
+        "bertscore_recall": 0.6052588224411011,
+        "bertscore_f1": 0.658298134803772,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6666666666666666,
+            "recall": 0.5714285714285714,
+            "fmeasure": 0.6153846153846153
+          },
+          "rouge2": {
+            "precision": 0.47058823529411764,
+            "recall": 0.4,
+            "fmeasure": 0.4324324324324324
+          },
+          "rougeL": {
+            "precision": 0.3888888888888889,
+            "recall": 0.3333333333333333,
+            "fmeasure": 0.358974358974359
+          },
+          "rougeLsum": {
+            "precision": 0.3888888888888889,
+            "recall": 0.3333333333333333,
+            "fmeasure": 0.358974358974359
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Based solely on the provided text, what types of information might one expect to find at the website linked (http://www.hawaii.edu/itslab)?",
+      "reference": "The document only states that more information regarding the ITS CLIC Lab can be found at http://www.hawaii.edu/itslab.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.1505102962255478,
+        "bertscore_recall": 0.17486576735973358,
+        "bertscore_f1": 0.16402007639408112,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.2571428571428571,
+            "recall": 0.42857142857142855,
+            "fmeasure": 0.3214285714285714
+          },
+          "rouge2": {
+            "precision": 0.029411764705882353,
+            "recall": 0.05,
+            "fmeasure": 0.03703703703703704
+          },
+          "rougeL": {
+            "precision": 0.17142857142857143,
+            "recall": 0.2857142857142857,
+            "fmeasure": 0.21428571428571427
+          },
+          "rougeLsum": {
+            "precision": 0.17142857142857143,
+            "recall": 0.2857142857142857,
+            "fmeasure": 0.21428571428571427
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the first two steps to add a network printer on Windows 11?",
+      "reference": "The first two steps are:  \"Click on Start > Settings\" and \"Click Bluetooth & devices from the left-hand side of the window\".",
+      "candidate": "Click on Start > Settings. Click Bluetooth & devices from the left-hand side of the window.",
+      "metrics": {
+        "bertscore_precision": 0.8556240797042847,
+        "bertscore_recall": 0.47395846247673035,
+        "bertscore_f1": 0.6588352918624878,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 0.7142857142857143,
+            "fmeasure": 0.8333333333333333
+          },
+          "rouge2": {
+            "precision": 0.9285714285714286,
+            "recall": 0.65,
+            "fmeasure": 0.7647058823529412
+          },
+          "rougeL": {
+            "precision": 1.0,
+            "recall": 0.7142857142857143,
+            "fmeasure": 0.8333333333333333
+          },
+          "rougeLsum": {
+            "precision": 1.0,
+            "recall": 0.7142857142857143,
+            "fmeasure": 0.8333333333333333
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If a Mac user cannot find the correct printer driver, what are their options for adding a printer on OS 10.7/10.8?",
+      "reference": "If the correct printer driver is unavailable in the list, Mac OS 10.7/10.8 users can \"try to use the Generic Post Script driver, or download the correct driver from the manufactures website.\"",
+      "candidate": "If a Mac user on OS 10.7/10.8 cannot find the correct printer driver, they can try using the Generic Post Script driver. Alternatively, they can download the correct driver from the manufacturer's website.",
+      "metrics": {
+        "bertscore_precision": 0.7262760996818542,
+        "bertscore_recall": 0.7092944383621216,
+        "bertscore_f1": 0.7182307839393616,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7567567567567568,
+            "recall": 0.8,
+            "fmeasure": 0.7777777777777778
+          },
+          "rouge2": {
+            "precision": 0.5277777777777778,
+            "recall": 0.5588235294117647,
+            "fmeasure": 0.5428571428571428
+          },
+          "rougeL": {
+            "precision": 0.6216216216216216,
+            "recall": 0.6571428571428571,
+            "fmeasure": 0.6388888888888888
+          },
+          "rougeLsum": {
+            "precision": 0.6216216216216216,
+            "recall": 0.6571428571428571,
+            "fmeasure": 0.6388888888888888
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What information is required *before* starting the process of adding a network printer to either a Mac or a PC?",
+      "reference": "Before adding a network printer to a Mac or PC, you will need to know the IP address of the printer as well as the make and model of the printer.",
+      "candidate": "Before starting the process of adding a network printer to a Mac or a PC, you will need to know the IP address of the printer as well as the make and model of the printer.",
+      "metrics": {
+        "bertscore_precision": 0.8887381553649902,
+        "bertscore_recall": 0.9535372257232666,
+        "bertscore_f1": 0.9210880994796753,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8611111111111112,
+            "recall": 1.0,
+            "fmeasure": 0.9253731343283582
+          },
+          "rouge2": {
+            "precision": 0.8,
+            "recall": 0.9333333333333333,
+            "fmeasure": 0.8615384615384616
+          },
+          "rougeL": {
+            "precision": 0.8611111111111112,
+            "recall": 1.0,
+            "fmeasure": 0.9253731343283582
+          },
+          "rougeLsum": {
+            "precision": 0.8611111111111112,
+            "recall": 1.0,
+            "fmeasure": 0.9253731343283582
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the URL for the Google support article explaining how to use Google Takeout?",
+      "reference": "The URL for the Google support article explaining how to use Google Takeout is: https://support.google.com/accounts/answer/3024190?hl=en",
+      "candidate": "https://support.google.com/accounts/answer/3024190?hl=en",
+      "metrics": {
+        "bertscore_precision": 0.827298641204834,
+        "bertscore_recall": 0.4531930685043335,
+        "bertscore_f1": 0.6345571875572205,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 0.391304347826087,
+            "fmeasure": 0.5625
+          },
+          "rouge2": {
+            "precision": 1.0,
+            "recall": 0.36363636363636365,
+            "fmeasure": 0.5333333333333333
+          },
+          "rougeL": {
+            "precision": 1.0,
+            "recall": 0.391304347826087,
+            "fmeasure": 0.5625
+          },
+          "rougeLsum": {
+            "precision": 1.0,
+            "recall": 0.391304347826087,
+            "fmeasure": 0.5625
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If I want to move my Google@UH data to a personal Gmail account, which Google support article should I consult, and what tool should I use instead of Google Takeout?",
+      "reference": "To transfer Google@UH data to a personal Gmail account, consult this Google support article: https://support.google.com/accounts/answer/6386856.  Use the \"Transfer your content page\" instead of Google Takeout.",
+      "candidate": "To transfer data from a Google@UH account to a personal Gmail account, you should consult the Google support article titled \"Copy content from your school account to another account,\" which can be found at https://support.google.com/accounts/answer/6386856. The recommended tool for this process is Google Takeout Transfer, accessed through the \"Transfer your content\" page at https://takeout.google.com/transfer.",
+      "metrics": {
+        "bertscore_precision": 0.5677264928817749,
+        "bertscore_recall": 0.745535671710968,
+        "bertscore_f1": 0.6557811498641968,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.4461538461538462,
+            "recall": 0.90625,
+            "fmeasure": 0.5979381443298969
+          },
+          "rouge2": {
+            "precision": 0.296875,
+            "recall": 0.6129032258064516,
+            "fmeasure": 0.39999999999999997
+          },
+          "rougeL": {
+            "precision": 0.4,
+            "recall": 0.8125,
+            "fmeasure": 0.5360824742268042
+          },
+          "rougeLsum": {
+            "precision": 0.4,
+            "recall": 0.8125,
+            "fmeasure": 0.5360824742268042
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What prerequisite must be met before a user can utilize Google Takeout to archive their Google@UH data?",
+      "reference": "To use Google Takeout, you must be \"opted-in to the Google@UH Consumer Apps (http://www.hawaii.edu/google/extra).\"",
+      "candidate": "To use Google Takeout to archive Google@UH data, a user must be opted-in to the Google@UH Consumer Apps.",
+      "metrics": {
+        "bertscore_precision": 0.6436159014701843,
+        "bertscore_recall": 0.40646183490753174,
+        "bertscore_f1": 0.5232345461845398,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7142857142857143,
+            "recall": 0.7142857142857143,
+            "fmeasure": 0.7142857142857143
+          },
+          "rouge2": {
+            "precision": 0.6,
+            "recall": 0.6,
+            "fmeasure": 0.6
+          },
+          "rougeL": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.6666666666666666
+          },
+          "rougeLsum": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.6666666666666666
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What URL should be used to add a new article to the Ask Us website?",
+      "reference": "To add a new article, go to \"http://www.hawaii.edu/askus/admin.php\".",
+      "candidate": "The URL used to add a new article to the ITS Ask Us website is http://www.hawaii.edu/askus/admin.php.",
+      "metrics": {
+        "bertscore_precision": 0.5386327505111694,
+        "bertscore_recall": 0.6717246770858765,
+        "bertscore_f1": 0.6050246953964233,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5909090909090909,
+            "recall": 0.9285714285714286,
+            "fmeasure": 0.7222222222222223
+          },
+          "rouge2": {
+            "precision": 0.47619047619047616,
+            "recall": 0.7692307692307693,
+            "fmeasure": 0.588235294117647
+          },
+          "rougeL": {
+            "precision": 0.5909090909090909,
+            "recall": 0.9285714285714286,
+            "fmeasure": 0.7222222222222223
+          },
+          "rougeLsum": {
+            "precision": 0.5909090909090909,
+            "recall": 0.9285714285714286,
+            "fmeasure": 0.7222222222222223
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "After creating a new article, what status will it have before it is viewable to the public, and how can this status be changed?",
+      "reference": "After saving a new article, it will have a status of \"Draft,\" meaning it is not viewable to the public.  To change this, click on the \"ACTIVE\" link at the top of the article.",
+      "candidate": "A newly created article will have a status of \"Draft,\" which means the public will not be able to view the article. To change the status and make it viewable to the public, click on the \"ACTIVE\" link at the top of the article while viewing it.",
+      "metrics": {
+        "bertscore_precision": 0.7254528999328613,
+        "bertscore_recall": 0.7296311259269714,
+        "bertscore_f1": 0.7279837131500244,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6170212765957447,
+            "recall": 0.8529411764705882,
+            "fmeasure": 0.7160493827160493
+          },
+          "rouge2": {
+            "precision": 0.41304347826086957,
+            "recall": 0.5757575757575758,
+            "fmeasure": 0.48101265822784817
+          },
+          "rougeL": {
+            "precision": 0.5319148936170213,
+            "recall": 0.7352941176470589,
+            "fmeasure": 0.617283950617284
+          },
+          "rougeLsum": {
+            "precision": 0.5319148936170213,
+            "recall": 0.7352941176470589,
+            "fmeasure": 0.617283950617284
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If I want to edit an existing article, can I do so from the public Ask Us website, and if so, how?",
+      "reference": "Yes, you can edit an existing article from the public Ask Us website.  The document states: \"you can go to the public page of Ask Us, http://www.hawaii.edu/askus/, search for the article, then click on the 'Article ID' number at the bottom of the article.\"",
+      "candidate": "To edit an existing article on the public Ask Us website, you can go to the public page of Ask Us, search for the article, and click on the \"Article ID\" number at the bottom of the article. Alternatively, you can go to the admin page, search for the article you would like to edit, and proceed from there.",
+      "metrics": {
+        "bertscore_precision": 0.5981432199478149,
+        "bertscore_recall": 0.49890273809432983,
+        "bertscore_f1": 0.5488062500953674,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6610169491525424,
+            "recall": 0.8125,
+            "fmeasure": 0.7289719626168225
+          },
+          "rouge2": {
+            "precision": 0.5344827586206896,
+            "recall": 0.6595744680851063,
+            "fmeasure": 0.5904761904761905
+          },
+          "rougeL": {
+            "precision": 0.5932203389830508,
+            "recall": 0.7291666666666666,
+            "fmeasure": 0.6542056074766355
+          },
+          "rougeLsum": {
+            "precision": 0.5932203389830508,
+            "recall": 0.7291666666666666,
+            "fmeasure": 0.6542056074766355
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are some examples of \"lifestyle\" devices that store personal and sensitive information?",
+      "reference": "The document lists \"smart phones (iPhones, Samsung Galaxy, etc.),\" and \"mobile entertainment devices (iPods and MP3 players)\" as examples of \"lifestyle\" devices that store personal and sensitive information.  It states these devices are used to \"send/receive email and attachments, take/store photos, keep lists of names/addresses/phone numbers \u2013 all of which can be considered personal or sensitive information.\"",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.07391656190156937,
+        "bertscore_recall": -0.2435562014579773,
+        "bertscore_f1": -0.15836170315742493,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.17142857142857143,
+            "recall": 0.1,
+            "fmeasure": 0.1263157894736842
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.14285714285714285,
+            "recall": 0.08333333333333333,
+            "fmeasure": 0.10526315789473685
+          },
+          "rougeLsum": {
+            "precision": 0.14285714285714285,
+            "recall": 0.08333333333333333,
+            "fmeasure": 0.10526315789473685
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Why is simply using the \"delete\" function on a computer insufficient for permanently erasing sensitive information, and what is the recommended method for securely erasing a hard drive intended for recycling?",
+      "reference": "Using the computer's standard \"delete\" function only flags the file/folder to be overwritten and re-used;  the contents \"still exist on the media and can be recovered with disk/file recovery tools\".  For secure erasure before recycling, the document recommends \"disk wiping\" or \"disk shredding,\" a process of overwriting the information multiple times.  For an entire hard drive, Darik's Boot and Nuke (DBAN) is suggested.",
+      "candidate": "Using the \"delete\" function on a computer is insufficient for permanently erasing sensitive information because it only removes the file's record from the system's directory, making the space available for future use but not actually removing the data. The contents of the file still exist on the storage media until that space is overwritten, and they can be recovered with disk/file recovery tools.\n\nThe recommended method for securely erasing a hard drive intended for recycling is to use a disk wiping or disk shredding tool that overwrites the information multiple times. This process makes data recovery much more difficult. For Windows systems, tools like Darik's Boot and Nuke (DBAN) are recommended for erasing entire hard drives. For Mac computers, secure erasure can be performed using Disk Utility. Secure erasure effectively overwrites the data, but be aware that this process also removes the operating system, requiring a reinstallation if the computer is to be reused.",
+      "metrics": {
+        "bertscore_precision": 0.32180583477020264,
+        "bertscore_recall": 0.4883214235305786,
+        "bertscore_f1": 0.4047377407550812,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.37341772151898733,
+            "recall": 0.8676470588235294,
+            "fmeasure": 0.5221238938053098
+          },
+          "rouge2": {
+            "precision": 0.21656050955414013,
+            "recall": 0.5074626865671642,
+            "fmeasure": 0.30357142857142855
+          },
+          "rougeL": {
+            "precision": 0.2848101265822785,
+            "recall": 0.6617647058823529,
+            "fmeasure": 0.39823008849557523
+          },
+          "rougeLsum": {
+            "precision": 0.2848101265822785,
+            "recall": 0.6617647058823529,
+            "fmeasure": 0.39823008849557523
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is degaussing, and why is it not an effective method for securely deleting data from solid-state drives (SSDs)?",
+      "reference": "Degaussing is a process that uses a powerful magnetic field to demagnetize storage media, rendering it unusable.  The document states that it is \"a permanent method to securely delete information from most magnetic storage devices,\" and is \"most commonly used with inoperable hard drives and magnetic tapes.\" However,  degaussing is not effective for solid-state drives (SSDs) because \"most modern computers use solid state drives (SSDs) and do not rely on magnetic plates to store data. For these types of drives, degaussing would not erase the data within them.\"",
+      "candidate": "Degaussing is a process that uses a powerful magnetic field to demagnetize storage media, making it permanently unusable. However, degaussing is not effective for securely deleting data from solid-state drives (SSDs) because SSDs do not rely on magnetic plates to store data. For SSDs, data erasure methods like reformatting or physical destruction are more effective.",
+      "metrics": {
+        "bertscore_precision": 0.641031801700592,
+        "bertscore_recall": 0.5007378458976746,
+        "bertscore_f1": 0.5706871151924133,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7857142857142857,
+            "recall": 0.4943820224719101,
+            "fmeasure": 0.6068965517241379
+          },
+          "rouge2": {
+            "precision": 0.5818181818181818,
+            "recall": 0.36363636363636365,
+            "fmeasure": 0.44755244755244755
+          },
+          "rougeL": {
+            "precision": 0.6964285714285714,
+            "recall": 0.43820224719101125,
+            "fmeasure": 0.5379310344827587
+          },
+          "rougeLsum": {
+            "precision": 0.6964285714285714,
+            "recall": 0.43820224719101125,
+            "fmeasure": 0.5379310344827587
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the one-time cost associated with activating the Wireless Priority Service (WPS)?",
+      "reference": "The document states that \"the cellular service provider will bill the cellular phone account directly with a one time WPS activation cost\".  The specific cost is not provided.",
+      "candidate": "I'm sorry, I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.027925655245780945,
+        "bertscore_recall": -0.04267755150794983,
+        "bertscore_f1": -0.03363126143813133,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.08571428571428572,
+            "recall": 0.10714285714285714,
+            "fmeasure": 0.09523809523809523
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.08571428571428572,
+            "recall": 0.10714285714285714,
+            "fmeasure": 0.09523809523809523
+          },
+          "rougeLsum": {
+            "precision": 0.08571428571428572,
+            "recall": 0.10714285714285714,
+            "fmeasure": 0.09523809523809523
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Why is it necessary for University of Hawaii personnel to apply for both WPS and GETS services?",
+      "reference": "Because WPS may not have coverage during an emergency, each WPS user applying through the University of Hawaii must also apply for a government emergency telecommunications service (GETS) calling card.",
+      "candidate": "University of Hawaii personnel apply for both WPS and GETS services to ensure priority access to both cellular and public telephone networks during emergencies. WPS provides priority access through the cellular network, whereas GETS ensures priority access through the local and long-distance public switched telephone network. Since WPS coverage might not be guaranteed during an emergency, having both services allows for reliable communication during critical situations.",
+      "metrics": {
+        "bertscore_precision": 0.21869683265686035,
+        "bertscore_recall": 0.35198935866355896,
+        "bertscore_f1": 0.28565752506256104,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.26865671641791045,
+            "recall": 0.6,
+            "fmeasure": 0.3711340206185567
+          },
+          "rouge2": {
+            "precision": 0.09090909090909091,
+            "recall": 0.20689655172413793,
+            "fmeasure": 0.12631578947368421
+          },
+          "rougeL": {
+            "precision": 0.11940298507462686,
+            "recall": 0.26666666666666666,
+            "fmeasure": 0.16494845360824742
+          },
+          "rougeLsum": {
+            "precision": 0.11940298507462686,
+            "recall": 0.26666666666666666,
+            "fmeasure": 0.16494845360824742
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If a University of Hawaii employee is no longer involved in public safety and emergency preparedness, what action must they take regarding their WPS and GETS services?",
+      "reference": "Upon leaving their position and/or when no longer responsible for coordinating and responding to public safety and emergency preparedness events, the WPS and GETS services must be cancelled.",
+      "candidate": "If a University of Hawaii employee is no longer responsible for public safety and emergency preparedness, they must cancel their Wireless Priority Service (WPS) and Government Emergency Telecommunications Service (GETS) services.",
+      "metrics": {
+        "bertscore_precision": 0.3823160231113434,
+        "bertscore_recall": 0.4276463985443115,
+        "bertscore_f1": 0.40585267543792725,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5161290322580645,
+            "recall": 0.5517241379310345,
+            "fmeasure": 0.5333333333333333
+          },
+          "rouge2": {
+            "precision": 0.3,
+            "recall": 0.32142857142857145,
+            "fmeasure": 0.3103448275862069
+          },
+          "rougeL": {
+            "precision": 0.41935483870967744,
+            "recall": 0.4482758620689655,
+            "fmeasure": 0.4333333333333333
+          },
+          "rougeLsum": {
+            "precision": 0.41935483870967744,
+            "recall": 0.4482758620689655,
+            "fmeasure": 0.4333333333333333
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What minimum RAM and processor are recommended for a PC desktop, according to the document?",
+      "reference": "For a PC desktop, the minimum recommended specifications are a \"10th Generation Intel Core i5 Processor / 3rd Generation AMD Ryzen 5 (or better)\" and \"8GB RAM (minimum)\".",
+      "candidate": "The recommended minimum specifications for a PC desktop are a 10th Generation Intel Core i5 Processor or 3rd Generation AMD Ryzen 5, and 8GB RAM.",
+      "metrics": {
+        "bertscore_precision": 0.8114825487136841,
+        "bertscore_recall": 0.6346518993377686,
+        "bertscore_f1": 0.7221342921257019,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 0.9259259259259259,
+            "fmeasure": 0.9615384615384615
+          },
+          "rouge2": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6153846153846154,
+            "fmeasure": 0.64
+          },
+          "rougeL": {
+            "precision": 0.8,
+            "recall": 0.7407407407407407,
+            "fmeasure": 0.7692307692307692
+          },
+          "rougeLsum": {
+            "precision": 0.8,
+            "recall": 0.7407407407407407,
+            "fmeasure": 0.7692307692307692
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Does the document recommend using wireless printing for shared printers among staff at UH?",
+      "reference": "The document states, \"Wireless printing via the UHM WiFi is not supported or recommended.\"",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.028819577768445015,
+        "bertscore_recall": 0.04224919155240059,
+        "bertscore_f1": 0.037092600017786026,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.08571428571428572,
+            "recall": 0.21428571428571427,
+            "fmeasure": 0.12244897959183673
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.05714285714285714,
+            "recall": 0.14285714285714285,
+            "fmeasure": 0.08163265306122448
+          },
+          "rougeLsum": {
+            "precision": 0.05714285714285714,
+            "recall": 0.14285714285714285,
+            "fmeasure": 0.08163265306122448
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If a student needs an optical disc drive for their Mac laptop, what kind of external drive should they purchase, according to the provided recommendations?",
+      "reference": "If a Mac laptop needs an optical disc drive, an external USB drive should be purchased.",
+      "candidate": "If a student needs an optical disc drive for their Mac laptop, they should purchase an external USB optical drive.",
+      "metrics": {
+        "bertscore_precision": 0.7418976426124573,
+        "bertscore_recall": 0.8376808166503906,
+        "bertscore_f1": 0.7897323369979858,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.75,
+            "recall": 0.9375,
+            "fmeasure": 0.8333333333333334
+          },
+          "rouge2": {
+            "precision": 0.42105263157894735,
+            "recall": 0.5333333333333333,
+            "fmeasure": 0.47058823529411764
+          },
+          "rougeL": {
+            "precision": 0.55,
+            "recall": 0.6875,
+            "fmeasure": 0.6111111111111112
+          },
+          "rougeLsum": {
+            "precision": 0.55,
+            "recall": 0.6875,
+            "fmeasure": 0.6111111111111112
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the URL for the Device Registration page?",
+      "reference": "https://www.hawaii.edu/its/device/registration/",
+      "candidate": "The URL for the Device Registration page on the Hawaii.edu website is https://www.hawaii.edu/its/device/registration/.",
+      "metrics": {
+        "bertscore_precision": 0.46003714203834534,
+        "bertscore_recall": 0.7341552972793579,
+        "bertscore_f1": 0.5943659543991089,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.35,
+            "recall": 1.0,
+            "fmeasure": 0.5185185185185185
+          },
+          "rouge2": {
+            "precision": 0.3157894736842105,
+            "recall": 1.0,
+            "fmeasure": 0.4799999999999999
+          },
+          "rougeL": {
+            "precision": 0.35,
+            "recall": 1.0,
+            "fmeasure": 0.5185185185185185
+          },
+          "rougeLsum": {
+            "precision": 0.35,
+            "recall": 1.0,
+            "fmeasure": 0.5185185185185185
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If a server registration includes Personally Identifiable Information (PII), what additional steps are required beyond completing the Device Registration?",
+      "reference": "If a server registration includes PII, you must also complete the Information Survey located at https://www.hawaii.edu/its/information/survey/, scan your server for PII and vulnerabilities (using Spirion and ScanUH respectively), remediate critical vulnerabilities found, and update the Remediation Information and Vulnerabilities Agreement Terms.  \"Only when you have entered a valid date for the Vulnerability and PII scans will you be able to check the agreement boxes.\"",
+      "candidate": "If a server registration includes Personally Identifiable Information (PII), the additional steps required beyond completing the Device Registration are:\n\n1. Scan the server for PII using Spirion or Find_SSN, depending on the system.\n2. If PII is found, complete the UH Annual Personal Information Survey.\n3. Report the presence of PII as required by Hawaii State Law [HRS \u00a7487N].\n4. Ensure regular scanning for vulnerabilities and remediate any critical issues found before finalizing the registration.",
+      "metrics": {
+        "bertscore_precision": 0.2420729249715805,
+        "bertscore_recall": 0.23447361588478088,
+        "bertscore_f1": 0.23950809240341187,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.3815789473684211,
+            "recall": 0.4142857142857143,
+            "fmeasure": 0.3972602739726028
+          },
+          "rouge2": {
+            "precision": 0.13333333333333333,
+            "recall": 0.14492753623188406,
+            "fmeasure": 0.13888888888888887
+          },
+          "rougeL": {
+            "precision": 0.27631578947368424,
+            "recall": 0.3,
+            "fmeasure": 0.28767123287671237
+          },
+          "rougeLsum": {
+            "precision": 0.3157894736842105,
+            "recall": 0.34285714285714286,
+            "fmeasure": 0.3287671232876712
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "How can a user update the scan dates for multiple registered servers simultaneously?",
+      "reference": "To update scan dates for multiple registered servers simultaneously, check off all the servers needing updates, input the scan dates in the \"Bulk Updates for Last Scanned Dates\" section, and press the \"Update selected registries\" button.",
+      "candidate": "To update the scan dates for multiple registered servers simultaneously, follow these steps:\n\n1. Go to the \"Registration Console\" via the link in the left, vertical navigation bar.\n2. Use the \"View type\" dropdown menu to select the device type you want to view.\n3. In the \"My Registered/Managed Devices\" table, check off all the servers you want to update.\n4. Enter the new scan dates in the \"Bulk Updates for Last Scanned Dates\" section.\n5. Click the \"Update selected registries\" button to apply the changes.",
+      "metrics": {
+        "bertscore_precision": 0.3442271649837494,
+        "bertscore_recall": 0.7212616801261902,
+        "bertscore_f1": 0.5270214676856995,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.367816091954023,
+            "recall": 0.8888888888888888,
+            "fmeasure": 0.5203252032520325
+          },
+          "rouge2": {
+            "precision": 0.3023255813953488,
+            "recall": 0.7428571428571429,
+            "fmeasure": 0.42975206611570244
+          },
+          "rougeL": {
+            "precision": 0.367816091954023,
+            "recall": 0.8888888888888888,
+            "fmeasure": 0.5203252032520325
+          },
+          "rougeLsum": {
+            "precision": 0.3563218390804598,
+            "recall": 0.8611111111111112,
+            "fmeasure": 0.5040650406504066
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What specific advice is given in the document for individuals who receive a threatening email claiming a contract to kill them and feel particularly threatened?",
+      "reference": "If you feel particularly threatened (if the email contains specific personal information about you/your family, or refers to locations that only you frequent), then you should contact law enforcement such as the Honolulu Police Department or the FBI.",
+      "candidate": "If someone receives a threatening email claiming a contract to harm them and they feel especially threatened, they should contact law enforcement, such as the Honolulu Police Department or the FBI, especially if the email contains specific personal information or references locations they frequently visit. If it's a more generic phishing attempt, it can be reported online at www.ic3.gov.",
+      "metrics": {
+        "bertscore_precision": 0.43117547035217285,
+        "bertscore_recall": 0.5928140878677368,
+        "bertscore_f1": 0.5115935802459717,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.45161290322580644,
+            "recall": 0.717948717948718,
+            "fmeasure": 0.5544554455445545
+          },
+          "rouge2": {
+            "precision": 0.3114754098360656,
+            "recall": 0.5,
+            "fmeasure": 0.38383838383838387
+          },
+          "rougeL": {
+            "precision": 0.27419354838709675,
+            "recall": 0.4358974358974359,
+            "fmeasure": 0.3366336633663366
+          },
+          "rougeLsum": {
+            "precision": 0.27419354838709675,
+            "recall": 0.4358974358974359,
+            "fmeasure": 0.3366336633663366
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to the document, what is the nature of the threatening emails being reported, and what are some examples of sources where similar incidents have been reported?",
+      "reference": "The threatening emails claim the sender has a contract to kill the recipient.  The document states that \"this type of phishing emails have been reported at other universities and has also been in the mainstream news.\"  Examples of sources reporting similar incidents include  `www.snopes.com/crime/fraud/hitman.asp`, `www.metrowestdailynews.com/state/x1775730620`, and `www.cnn.com/2007/US/06/18/lothian.cybercrime/index.html`.  The FBI has also posted information and discussed this type of phishing in a radio broadcast (links provided in the document).",
+      "candidate": "The threatening emails reported are phishing emails where the sender claims to have been contracted to kill the recipient. These emails are designed to scare the recipient into compliance and often threaten consequences if law enforcement is contacted.\n\nSimilar incidents have been reported at other universities, mentioned in mainstream news, and discussed in sources like the FBI's information and radio broadcasts. Additional examples are found in links from Snopes, Metrowest Daily News, and CNN.",
+      "metrics": {
+        "bertscore_precision": 0.405895859003067,
+        "bertscore_recall": 0.05824177712202072,
+        "bertscore_f1": 0.22746986150741577,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5733333333333334,
+            "recall": 0.48863636363636365,
+            "fmeasure": 0.5276073619631901
+          },
+          "rouge2": {
+            "precision": 0.25675675675675674,
+            "recall": 0.21839080459770116,
+            "fmeasure": 0.2360248447204969
+          },
+          "rougeL": {
+            "precision": 0.37333333333333335,
+            "recall": 0.3181818181818182,
+            "fmeasure": 0.34355828220858897
+          },
+          "rougeLsum": {
+            "precision": 0.4,
+            "recall": 0.3409090909090909,
+            "fmeasure": 0.3680981595092024
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Based on the provided email excerpt, what tactics are used by the sender to instill fear and manipulate the recipient into not contacting authorities?",
+      "reference": "The email uses the threat of death (\"KILL you\", \"Someone who knows you very well WANT YOU DEAD!\"),  monitoring (\"my men are monitoring you and they are telling me everything about you\"), and extending harm to the recipient's family (\"I WILL EXTEND IT TO YOUR FAMILY\") to instill fear.  It also warns against contacting authorities (\"WARNING: DO NOT THINK OF CONTACTING THE POLICE OR EVEN TELLING ANYONE BECAUSE I WILL KNOW\").",
+      "candidate": "I'm sorry, I cannot fulfill that request.",
+      "metrics": {
+        "bertscore_precision": -0.02178775519132614,
+        "bertscore_recall": -0.29092907905578613,
+        "bertscore_f1": -0.1582702398300171,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.25,
+            "recall": 0.027777777777777776,
+            "fmeasure": 0.049999999999999996
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.25,
+            "recall": 0.027777777777777776,
+            "fmeasure": 0.049999999999999996
+          },
+          "rougeLsum": {
+            "precision": 0.25,
+            "recall": 0.027777777777777776,
+            "fmeasure": 0.049999999999999996
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What specific field needs to be updated with the value \"UTF8_HEADER\" to set UTF-8 as the character set for the list header?",
+      "reference": "The `Misc-Options=` field needs to be updated with the value \"UTF8_HEADER\".",
+      "candidate": "The \"Misc-Options=\" field should be updated with the value \"UTF8_HEADER\" to configure UTF-8 as the character set for the list header.",
+      "metrics": {
+        "bertscore_precision": 0.5307038426399231,
+        "bertscore_recall": 0.6838563680648804,
+        "bertscore_f1": 0.6068646907806396,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5,
+            "recall": 0.9230769230769231,
+            "fmeasure": 0.6486486486486487
+          },
+          "rouge2": {
+            "precision": 0.391304347826087,
+            "recall": 0.75,
+            "fmeasure": 0.5142857142857143
+          },
+          "rougeL": {
+            "precision": 0.4583333333333333,
+            "recall": 0.8461538461538461,
+            "fmeasure": 0.5945945945945945
+          },
+          "rougeLsum": {
+            "precision": 0.4583333333333333,
+            "recall": 0.8461538461538461,
+            "fmeasure": 0.5945945945945945
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What mode must be enabled in LISTSERV before accessing the profile edit options to change character set settings?",
+      "reference": "Expert Mode must be enabled.  The document states: \"Enable Expert Mode.\" and later \"Select Expert Mode using the Mode drop-down menu\".",
+      "candidate": "Expert Mode must be enabled in LISTSERV before accessing the profile edit options to change character set settings.",
+      "metrics": {
+        "bertscore_precision": 0.22148509323596954,
+        "bertscore_recall": 0.2124900072813034,
+        "bertscore_f1": 0.2182551473379135,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.3333333333333333,
+            "recall": 0.2727272727272727,
+            "fmeasure": 0.3
+          },
+          "rouge2": {
+            "precision": 0.23529411764705882,
+            "recall": 0.19047619047619047,
+            "fmeasure": 0.21052631578947367
+          },
+          "rougeL": {
+            "precision": 0.3333333333333333,
+            "recall": 0.2727272727272727,
+            "fmeasure": 0.3
+          },
+          "rougeLsum": {
+            "precision": 0.3333333333333333,
+            "recall": 0.2727272727272727,
+            "fmeasure": 0.3
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Based on the provided text, what larger documentation set is this article a part of?",
+      "reference": "This article is part of the \"LISTSERV Frequently Asked Questions (FAQ) and What is new in LISTSERV 16.x? articles\".",
+      "candidate": "The article is part of the \"ITS Documents\" documentation set.",
+      "metrics": {
+        "bertscore_precision": 0.45244675874710083,
+        "bertscore_recall": 0.10016342252492905,
+        "bertscore_f1": 0.27152857184410095,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5,
+            "recall": 0.25,
+            "fmeasure": 0.3333333333333333
+          },
+          "rouge2": {
+            "precision": 0.4444444444444444,
+            "recall": 0.21052631578947367,
+            "fmeasure": 0.2857142857142857
+          },
+          "rougeL": {
+            "precision": 0.5,
+            "recall": 0.25,
+            "fmeasure": 0.3333333333333333
+          },
+          "rougeLsum": {
+            "precision": 0.5,
+            "recall": 0.25,
+            "fmeasure": 0.3333333333333333
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the example email address given for John Doe in the provided text?",
+      "reference": "John Doe's current email address is jdoe@hawaii.edu.",
+      "candidate": "The example email addresses given for John Doe in the text are jdoe@hawaii.edu and john.doe@hawaii.edu.",
+      "metrics": {
+        "bertscore_precision": 0.4634147584438324,
+        "bertscore_recall": 0.592288076877594,
+        "bertscore_f1": 0.5278627276420593,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.35,
+            "recall": 0.7,
+            "fmeasure": 0.4666666666666667
+          },
+          "rouge2": {
+            "precision": 0.21052631578947367,
+            "recall": 0.4444444444444444,
+            "fmeasure": 0.2857142857142857
+          },
+          "rougeL": {
+            "precision": 0.25,
+            "recall": 0.5,
+            "fmeasure": 0.3333333333333333
+          },
+          "rougeLsum": {
+            "precision": 0.25,
+            "recall": 0.5,
+            "fmeasure": 0.3333333333333333
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Who is this optional email alias service being offered to?",
+      "reference": "This optional service is being offered to faculty and staff.",
+      "candidate": "The optional email alias service is being offered to faculty and staff.",
+      "metrics": {
+        "bertscore_precision": 0.7329403758049011,
+        "bertscore_recall": 0.8802505135536194,
+        "bertscore_f1": 0.8059692978858948,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.75,
+            "recall": 0.9,
+            "fmeasure": 0.8181818181818182
+          },
+          "rouge2": {
+            "precision": 0.6363636363636364,
+            "recall": 0.7777777777777778,
+            "fmeasure": 0.7000000000000001
+          },
+          "rougeL": {
+            "precision": 0.75,
+            "recall": 0.9,
+            "fmeasure": 0.8181818181818182
+          },
+          "rougeLsum": {
+            "precision": 0.75,
+            "recall": 0.9,
+            "fmeasure": 0.8181818181818182
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is one advantage of using a first.last email alias over a standard eight-character email address, according to this document?",
+      "reference": "The document states that a first.last email alias \"is a more definitive way of identifying yourself to another colleague where they might know your first and last name, but not your eight character email name.\"",
+      "candidate": "One advantage of using a first.last email alias is that it serves as a more definitive way of identifying yourself to another colleague who might know your first and last name but not your eight-character email address.",
+      "metrics": {
+        "bertscore_precision": 0.7074899077415466,
+        "bertscore_recall": 0.7142854928970337,
+        "bertscore_f1": 0.711355447769165,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7692307692307693,
+            "recall": 0.8333333333333334,
+            "fmeasure": 0.8
+          },
+          "rouge2": {
+            "precision": 0.6842105263157895,
+            "recall": 0.7428571428571429,
+            "fmeasure": 0.7123287671232877
+          },
+          "rougeL": {
+            "precision": 0.7435897435897436,
+            "recall": 0.8055555555555556,
+            "fmeasure": 0.7733333333333334
+          },
+          "rougeLsum": {
+            "precision": 0.7435897435897436,
+            "recall": 0.8055555555555556,
+            "fmeasure": 0.7733333333333334
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What URL should UH employees visit to initially access the UH Information Security Awareness Training (ISAT)?",
+      "reference": "The document states that to initially access the UH Information Security Awareness Training (ISAT), UH employees should go to  \"https://www.hawaii.edu/its/acer/\".",
+      "candidate": "University of Hawaii employees should visit https://www.hawaii.edu/its/acer/ to initially access the UH Information Security Awareness Training (ISAT).",
+      "metrics": {
+        "bertscore_precision": 0.784471333026886,
+        "bertscore_recall": 0.6858305335044861,
+        "bertscore_f1": 0.7351507544517517,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8181818181818182,
+            "recall": 0.72,
+            "fmeasure": 0.7659574468085107
+          },
+          "rouge2": {
+            "precision": 0.7142857142857143,
+            "recall": 0.625,
+            "fmeasure": 0.6666666666666666
+          },
+          "rougeL": {
+            "precision": 0.45454545454545453,
+            "recall": 0.4,
+            "fmeasure": 0.4255319148936171
+          },
+          "rougeLsum": {
+            "precision": 0.45454545454545453,
+            "recall": 0.4,
+            "fmeasure": 0.4255319148936171
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If a UH employee sees a message asking if they would like to join the ISAT V2 site, what action should they take?",
+      "reference": "If a UH employee sees a message asking if they would like to join the ISAT V2 site, they should click on \"YES, ADD ME\".",
+      "candidate": "If a UH employee receives a message asking them to join the ISAT V2 site, they should click on \"YES, ADD ME\" to join the site. This action is only required once and will not be asked again on subsequent visits to the training.",
+      "metrics": {
+        "bertscore_precision": 0.5378261804580688,
+        "bertscore_recall": 0.7795915007591248,
+        "bertscore_f1": 0.6566598415374756,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.45454545454545453,
+            "recall": 0.8,
+            "fmeasure": 0.5797101449275363
+          },
+          "rouge2": {
+            "precision": 0.3953488372093023,
+            "recall": 0.7083333333333334,
+            "fmeasure": 0.5074626865671642
+          },
+          "rougeL": {
+            "precision": 0.45454545454545453,
+            "recall": 0.8,
+            "fmeasure": 0.5797101449275363
+          },
+          "rougeLsum": {
+            "precision": 0.45454545454545453,
+            "recall": 0.8,
+            "fmeasure": 0.5797101449275363
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "After completing the initial ISAT training, what steps are outlined in the document for returning to the training at a later time using Laulima?",
+      "reference": "To return to the training after exiting, go to Laulima at https://laulima.hawaii.edu, click on UH Login in the upper right and login with your UH Username and password.  Then, go to the View All Sites icon (a square of 9 squares) in the upper right, and click on ISAT V2.",
+      "candidate": "To return to the ISAT training at a later time using Laulima after completing the initial training, follow these steps:\n\n1. Go to Laulima at https://laulima.hawaii.edu.\n2. In the upper right, click on **UH Login** and log in with your UH Username and password.\n3. Go to the _View All Sites_ icon in the upper right (looks like a square of 9 squares), then click on **ISAT V2**.",
+      "metrics": {
+        "bertscore_precision": 0.5071501731872559,
+        "bertscore_recall": 0.7418593764305115,
+        "bertscore_f1": 0.6226464509963989,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.704225352112676,
+            "recall": 0.9433962264150944,
+            "fmeasure": 0.8064516129032259
+          },
+          "rouge2": {
+            "precision": 0.5285714285714286,
+            "recall": 0.7115384615384616,
+            "fmeasure": 0.6065573770491803
+          },
+          "rougeL": {
+            "precision": 0.5774647887323944,
+            "recall": 0.7735849056603774,
+            "fmeasure": 0.6612903225806451
+          },
+          "rougeLsum": {
+            "precision": 0.5774647887323944,
+            "recall": 0.7735849056603774,
+            "fmeasure": 0.6612903225806451
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the three methods for confirming a LISTSERV command request using the \"OK\" confirmation process?",
+      "reference": "To confirm a command using the \"OK\" confirmation process, there are three methods:\n\n1.  \"To confirm using the Web interface, click on the link provided in the email message sent to you.\"\n2.  \"To confirm via email, reply to the email message keeping the Subject line and cookie intact. In the body of your reply, type \u201cOK\u201d (without the quotes).\"\n3.  \"Alternatively, you can send a new email to listserv@lists.hawaii.edu with a blank subject line and the body of the message containing the text \u201cOK xxxxxxxx\u201d where \u201cxxxxxxxx\u201d is the cookie from the original confirmation request email.\"",
+      "candidate": "The three methods for confirming a LISTSERV command request using the \"OK\" confirmation process are:\n\n1. Click on the link provided in the email message sent to you to confirm using the Web interface.\n2. Reply to the email message, keeping the Subject line and cookie intact, and type \"OK\" in the body of your reply.\n3. Send a new email to listserv@lists.hawaii.edu with a blank subject line and the body of the message containing the text \u201cOK xxxxxxxx\u201d where \u201cxxxxxxxx\u201d is the cookie from the original confirmation request email.",
+      "metrics": {
+        "bertscore_precision": 0.7835784554481506,
+        "bertscore_recall": 0.7032853960990906,
+        "bertscore_f1": 0.7435641288757324,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.956989247311828,
+            "recall": 0.89,
+            "fmeasure": 0.922279792746114
+          },
+          "rouge2": {
+            "precision": 0.8043478260869565,
+            "recall": 0.7474747474747475,
+            "fmeasure": 0.774869109947644
+          },
+          "rougeL": {
+            "precision": 0.8494623655913979,
+            "recall": 0.79,
+            "fmeasure": 0.8186528497409327
+          },
+          "rougeLsum": {
+            "precision": 0.9032258064516129,
+            "recall": 0.84,
+            "fmeasure": 0.8704663212435233
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the key responsibilities of a LISTSERV list owner regarding security and list management, and how do these responsibilities differ depending on the type of list (e.g., open discussion vs. one-way announcement)?",
+      "reference": "The document states that a list owner is responsible for: understanding the list's configuration; informing subscribers of what to expect; assisting subscribers with subscription and troubleshooting; ensuring the list adheres to UH policies and laws (e.g., prohibiting copyrighted material); preventing third-party abuse (requiring confirmations, preventing outside access to subscriber emails); and reviewing mail sent to the listname-request address.  The level of security depends on the list type.  For example, a closed list might allow members to see all subscribed addresses (Review=Private), while a public list should restrict this access (Review=Owners).  Open discussion lists have less control over content than moderated lists, and one-way lists hold the owner responsible for all postings.",
+      "candidate": null,
+      "metrics": null
+    },
+    {
+      "question": "How does one request a new LISTSERV mailing list at the University of Hawai\u2018i, and what information is required during the request process?",
+      "reference": "To request a new LISTSERV list at the University of Hawai\u2018i, one must \"Login to the LISTSERV request page with your UH username and password. Follow the instructions on the page. You will need to supply a name for the new list (must include a hyphen), provide a description, and select one of the configuration options. At the bottom of the page, acknowledge the terms of use (UH Executive Policy E2.210, Chapter 708, Hawaii Revised Statutes, List Owner's Responsibilities) by checking off the boxes and click on 'Request List'.\"",
+      "candidate": "To request a new LISTSERV mailing list at the University of Hawai\u2018i, you need to:\n\n1. Log in to the LISTSERV request page using your UH username and password.\n2. Provide a name for the new list that includes a hyphen, give a description, and select a configuration option as per the instructions on the page.\n3. Acknowledge the terms of use by checking off the appropriate boxes, which include UH Executive Policy E2.210, Chapter 708 of the Hawaii Revised Statutes, and List Owner's Responsibilities.\n4. Click on \"Request List\" to submit your request.",
+      "metrics": {
+        "bertscore_precision": 0.6817228198051453,
+        "bertscore_recall": 0.7291256785392761,
+        "bertscore_f1": 0.7058044075965881,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7938144329896907,
+            "recall": 0.8369565217391305,
+            "fmeasure": 0.8148148148148148
+          },
+          "rouge2": {
+            "precision": 0.59375,
+            "recall": 0.6263736263736264,
+            "fmeasure": 0.6096256684491979
+          },
+          "rougeL": {
+            "precision": 0.6494845360824743,
+            "recall": 0.6847826086956522,
+            "fmeasure": 0.6666666666666666
+          },
+          "rougeLsum": {
+            "precision": 0.6494845360824743,
+            "recall": 0.6847826086956522,
+            "fmeasure": 0.6666666666666666
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What actions does Information Technology Services take upon receiving a DMCA takedown notice?",
+      "reference": "Upon receiving a DMCA takedown notice, Information Technology Services will investigate.  If the reported IP number can be linked to a UH computer and/or username, \"the suspected computer will be blocked immediately from accessing the University of Hawaii's network.\"  The infringing user will be required to meet with a University official before being unblocked.  If it is the user's first offense, they will be informed of the illegality of their actions and required to remove unauthorized copies.  If the user is faculty/staff, their department is notified; if a student in residence halls, ResNet administrators are notified.  The user will be required to digitally sign a Copyright Notification Letter, after which Information Technology Services will determine if network access can be restored.",
+      "candidate": "Upon receiving a DMCA takedown notice, Information Technology Services at UH investigates the report. If the reported IP number is linked to a computer or UH username, the suspected computer is immediately blocked from accessing the university's network to maintain UH's \"safe harbor\" status under the DMCA. The infringing user must meet with a university official before regaining network access. If it's the user's first offense, they are informed that unauthorized downloading and distribution of copyrighted materials is illegal and against UH policy, they must remove all unauthorized copies of copyrighted materials, and they are warned that further violations could lead to university disciplinary action. If the user is faculty or staff, their department is notified, and if the user is a student in residence halls, ResNet administrators are informed. The user is also required to digitally sign a Copyright Notification Letter before network access may be restored.",
+      "metrics": {
+        "bertscore_precision": 0.6161214709281921,
+        "bertscore_recall": 0.6689465641975403,
+        "bertscore_f1": 0.6429910659790039,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6447368421052632,
+            "recall": 0.784,
+            "fmeasure": 0.7075812274368232
+          },
+          "rouge2": {
+            "precision": 0.3973509933774834,
+            "recall": 0.4838709677419355,
+            "fmeasure": 0.43636363636363634
+          },
+          "rougeL": {
+            "precision": 0.5789473684210527,
+            "recall": 0.704,
+            "fmeasure": 0.6353790613718412
+          },
+          "rougeLsum": {
+            "precision": 0.5789473684210527,
+            "recall": 0.704,
+            "fmeasure": 0.6353790613718412
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the consequences for a University of Hawaii student living in the residence halls who is found to have committed a first copyright infringement offense?",
+      "reference": "If a University of Hawaii student living in the residence halls commits a first copyright infringement offense, they will be informed that: \"unauthorized downloading and distribution of copyrighted materials is illegal and in violation of UH policy; all unauthorized copies of any copyrighted materials must be removed immediately; any subsequent violations of E2.210 and/or federal copyright laws will be result in the incident being referred to the appropriate University judiciary authority for further action.\"  ResNet administrators will also be notified.  The student will be required to digitally sign a Copyright Notification Letter.  Network access may be restored after the letter is submitted.",
+      "candidate": "If a University of Hawaii student living in the residence halls is found to have committed a first copyright infringement offense, the consequences are as follows:\n\n1. The student is informed that unauthorized downloading and distribution of copyrighted materials is illegal and violates UH policy.\n2. The student must remove all unauthorized copies of any copyrighted materials immediately.\n3. The student is warned that any subsequent violations of UH policy and/or federal copyright laws will result in the incident being referred to the appropriate University judiciary authority for further action.\n4. ResNet administrators are notified of the student's involvement.\n5. The student is required to digitally sign a Copyright Notification Letter.\n6. Upon digital submission of the Copyright Notification Letter, Information Technology Services will determine if the student's network access can be restored.\n\nI'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.42162176966667175,
+        "bertscore_recall": 0.6595579981803894,
+        "bertscore_f1": 0.538760244846344,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.52046783625731,
+            "recall": 0.8557692307692307,
+            "fmeasure": 0.6472727272727273
+          },
+          "rouge2": {
+            "precision": 0.3941176470588235,
+            "recall": 0.6504854368932039,
+            "fmeasure": 0.4908424908424908
+          },
+          "rougeL": {
+            "precision": 0.4853801169590643,
+            "recall": 0.7980769230769231,
+            "fmeasure": 0.6036363636363636
+          },
+          "rougeLsum": {
+            "precision": 0.4619883040935672,
+            "recall": 0.7596153846153846,
+            "fmeasure": 0.5745454545454545
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "How does the University of Hawaii's handling of DMCA takedown notices relate to its \"safe harbor\" status under the Digital Millennium Copyright Act?",
+      "reference": "The University of Hawaii immediately blocks the suspected computer from accessing its network upon receiving a DMCA takedown notice.  This action is \"done to preserve the University of Hawaii's 'safe harbor' status as provided in the Digital Millennium Copyright Act.\"",
+      "candidate": "The University of Hawaii manages DMCA takedown notices to maintain its \"safe harbor\" status by promptly investigating any claims of copyright infringement. Once a notice is received, Information Technology Services (ITS) identifies and blocks the suspected computer or user from accessing the university's network. The user must then meet with a university official before being unblocked. If it is the user's first offense, they are notified about the illegality of unauthorized downloading and distribution of copyrighted materials and must remove any unauthorized copies immediately. Subsequent violations could lead to further disciplinary action. This process helps the university maintain its protection under the safe harbor provisions of the DMCA.",
+      "metrics": {
+        "bertscore_precision": 0.19194845855236053,
+        "bertscore_recall": 0.4654821753501892,
+        "bertscore_f1": 0.3262637257575989,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.2818181818181818,
+            "recall": 0.7560975609756098,
+            "fmeasure": 0.4105960264900662
+          },
+          "rouge2": {
+            "precision": 0.11009174311926606,
+            "recall": 0.3,
+            "fmeasure": 0.16107382550335572
+          },
+          "rougeL": {
+            "precision": 0.17272727272727273,
+            "recall": 0.4634146341463415,
+            "fmeasure": 0.2516556291390728
+          },
+          "rougeLsum": {
+            "precision": 0.17272727272727273,
+            "recall": 0.4634146341463415,
+            "fmeasure": 0.2516556291390728
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the direct link to the online form that replaces Forms 2, 2A, and 4?",
+      "reference": "The direct link to the form is go.hawaii.edu/2QF.",
+      "candidate": "The direct link to the online form that replaces UH Systemwide Forms 2, 2A, and 4 is http://go.hawaii.edu/2QF.",
+      "metrics": {
+        "bertscore_precision": 0.44071999192237854,
+        "bertscore_recall": 0.8720685243606567,
+        "bertscore_f1": 0.6486550569534302,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "fmeasure": 0.6666666666666666
+          },
+          "rouge2": {
+            "precision": 0.3333333333333333,
+            "recall": 0.7,
+            "fmeasure": 0.45161290322580644
+          },
+          "rougeL": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "fmeasure": 0.6666666666666666
+          },
+          "rougeLsum": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "fmeasure": 0.6666666666666666
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If the Department Telecom Coordinator (DTC) finds errors in the submitted form, what actions can they take, and what notifications are sent to the submitter in each case?",
+      "reference": "If the DTC finds errors, they can \"Send Back\" the form, sending a notification to the submitter to make necessary changes, or they can \"Deny\" the form, notifying the submitter that the form was denied and must be resubmitted as a new document.",
+      "candidate": "If a Department Telecom Coordinator (DTC) finds errors in a submitted form, they have the following options:\n\n1. **Approve**: If the information is correct, the DTC may approve the form. No specific notification is sent back to the submitter in this case since approval just forwards the process to the next step.\n\n2. **Make Changes and Approve**: The DTC may make the necessary corrections on the form and then approve it. Again, no specific notification is sent back to the submitter.\n\n3. **Send Back**: The DTC can send the form back to the submitter to make the necessary changes. The submitter will receive a notification to make the changes and re-submit the form.\n\n4. **Deny**: The DTC can deny the form. In this case, the submitter will receive a notification that the form was denied and will need to be re-submitted as a new document.",
+      "metrics": {
+        "bertscore_precision": 0.22706052660942078,
+        "bertscore_recall": 0.5765537619590759,
+        "bertscore_f1": 0.3970734179019928,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.2585034013605442,
+            "recall": 0.8837209302325582,
+            "fmeasure": 0.4
+          },
+          "rouge2": {
+            "precision": 0.18493150684931506,
+            "recall": 0.6428571428571429,
+            "fmeasure": 0.2872340425531915
+          },
+          "rougeL": {
+            "precision": 0.22448979591836735,
+            "recall": 0.7674418604651163,
+            "fmeasure": 0.3473684210526316
+          },
+          "rougeLsum": {
+            "precision": 0.23809523809523808,
+            "recall": 0.813953488372093,
+            "fmeasure": 0.3684210526315789
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the required fields for initial submission of the online form?",
+      "reference": "The document states that all fields indicated with an asterisk (*) are required fields for initial submission, but it does not show which fields have asterisks.  Therefore, The document does not provide sufficient information to answer this question.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.08837392926216125,
+        "bertscore_recall": 0.027990562841296196,
+        "bertscore_f1": 0.059528980404138565,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.22857142857142856,
+            "recall": 0.21621621621621623,
+            "fmeasure": 0.22222222222222224
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.14285714285714285,
+            "recall": 0.13513513513513514,
+            "fmeasure": 0.1388888888888889
+          },
+          "rougeLsum": {
+            "precision": 0.14285714285714285,
+            "recall": 0.13513513513513514,
+            "fmeasure": 0.1388888888888889
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "How do I add new owners to a LISTSERV list?",
+      "reference": "From the \"List Configuration\" page, select the list to modify.  Enter the email address(es) of the new owner(s), one per line, under the \"Administrators\" tab.  Then click \"Update\".",
+      "candidate": "To add new owners to a LISTSERV list, log in to the LISTSERV home page. Under \"List Management,\" select \"List Configuration\" and then the \"Administrators\" tab. Choose the list you wish to modify. Enter the new owner's email address(es), one per line, and click \"Update\" when finished. If an owner is listed under \"Quiet,\" they will have management rights without receiving certain emails. Remember, if you remove yourself as an owner, you will lose management access immediately.",
+      "metrics": {
+        "bertscore_precision": 0.32153910398483276,
+        "bertscore_recall": 0.605882465839386,
+        "bertscore_f1": 0.4608498811721802,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.34177215189873417,
+            "recall": 0.9,
+            "fmeasure": 0.4954128440366972
+          },
+          "rouge2": {
+            "precision": 0.19230769230769232,
+            "recall": 0.5172413793103449,
+            "fmeasure": 0.28037383177570097
+          },
+          "rougeL": {
+            "precision": 0.21518987341772153,
+            "recall": 0.5666666666666667,
+            "fmeasure": 0.3119266055045872
+          },
+          "rougeLsum": {
+            "precision": 0.21518987341772153,
+            "recall": 0.5666666666666667,
+            "fmeasure": 0.3119266055045872
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What happens if I remove myself as an owner of a LISTSERV list?",
+      "reference": "If you remove yourself as an owner, \"once you click on submit you will immediately lose access to manage the list.\"",
+      "candidate": "If you remove yourself as an owner of a LISTSERV list, you will immediately lose access to manage the list. This action should be taken only if you are sure that you no longer need or want access to manage the list.",
+      "metrics": {
+        "bertscore_precision": 0.4074707627296448,
+        "bertscore_recall": 0.5964917540550232,
+        "bertscore_f1": 0.5011537671089172,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.40476190476190477,
+            "recall": 0.8095238095238095,
+            "fmeasure": 0.5396825396825397
+          },
+          "rouge2": {
+            "precision": 0.34146341463414637,
+            "recall": 0.7,
+            "fmeasure": 0.4590163934426229
+          },
+          "rougeL": {
+            "precision": 0.38095238095238093,
+            "recall": 0.7619047619047619,
+            "fmeasure": 0.5079365079365079
+          },
+          "rougeLsum": {
+            "precision": 0.38095238095238093,
+            "recall": 0.7619047619047619,
+            "fmeasure": 0.5079365079365079
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the significance of listing an owner under \"Quiet:\" in the List Configuration page?",
+      "reference": "Any owner listed under \"Quiet:\" will have list management rights, but will not receive any delivery error or administrative mail from LISTSERV.",
+      "candidate": "Listing an owner under \"Quiet:\" in the List Configuration page signifies that the owner will have list management rights but will not receive any delivery error or administrative mail from LISTSERV.",
+      "metrics": {
+        "bertscore_precision": 0.666308581829071,
+        "bertscore_recall": 0.8188595175743103,
+        "bertscore_f1": 0.7419823408126831,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6774193548387096,
+            "recall": 0.9545454545454546,
+            "fmeasure": 0.7924528301886793
+          },
+          "rouge2": {
+            "precision": 0.5666666666666667,
+            "recall": 0.8095238095238095,
+            "fmeasure": 0.6666666666666666
+          },
+          "rougeL": {
+            "precision": 0.6451612903225806,
+            "recall": 0.9090909090909091,
+            "fmeasure": 0.7547169811320754
+          },
+          "rougeLsum": {
+            "precision": 0.6451612903225806,
+            "recall": 0.9090909090909091,
+            "fmeasure": 0.7547169811320754
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What specific security risks are associated with continuing to use Windows XP after April 8, 2014?",
+      "reference": "The document states that computers running unsupported software have \"increased risk of cyber security threats, such as malicious attacks and data loss.\"  Specifically regarding Windows XP after April 8, 2014, Microsoft will no longer provide security updates or technical support, leaving computers vulnerable to \"malicious attacks and data loss.\"  The document also highlights that Internet Explorer, which comes with Windows XP, will no longer receive patches, increasing security risks.",
+      "candidate": "Using Windows XP after Microsoft ended support on April 8, 2014, poses several security risks. Microsoft no longer provides security updates or technical support for Windows XP, increasing the risk of cyber security threats such as malicious attacks and data loss. Unsupported systems are more vulnerable to exploitation, and if compromised, they may be permanently blocked by ITS until the operating system is upgraded. Additionally, Internet Explorer on Windows XP is no longer updated, making it less secure. Users are advised to take measures such as isolating the system on separate networks, installing updated firewalls and antivirus software, and removing or updating old software to mitigate risks.",
+      "metrics": {
+        "bertscore_precision": 0.3301815390586853,
+        "bertscore_recall": 0.45362213253974915,
+        "bertscore_f1": 0.3921782374382019,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.40186915887850466,
+            "recall": 0.6231884057971014,
+            "fmeasure": 0.4886363636363636
+          },
+          "rouge2": {
+            "precision": 0.25471698113207547,
+            "recall": 0.39705882352941174,
+            "fmeasure": 0.31034482758620685
+          },
+          "rougeL": {
+            "precision": 0.27102803738317754,
+            "recall": 0.42028985507246375,
+            "fmeasure": 0.3295454545454545
+          },
+          "rougeLsum": {
+            "precision": 0.27102803738317754,
+            "recall": 0.42028985507246375,
+            "fmeasure": 0.3295454545454545
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the ITS recommendations for users who must continue using Windows XP for work-related purposes, focusing on mitigating security risks?",
+      "reference": "If you absolutely MUST RUN Windows XP, limit its use to non-confidential purposes;  if accessing confidential information, avoid non-work related websites and unsolicited email links.  Ensure the computer isn't infected; replace Internet Explorer with a current browser and make it the default; if controlling lab equipment, don't use it for routine email and web surfing; air-gap or isolate XP devices on separate networks, or disconnect them entirely if network access isn't needed; install the final Windows XP update and fully patch Microsoft Office; uninstall unused third-party software and consider disabling or uninstalling browser plugins; set the browser to ask before opening PDFs; install updated firewalls and antivirus software; and keep the computer on a trusted network behind a NAT router.",
+      "candidate": "ITS recommends the following for users who must continue using Windows XP:\n\n1. Limit use of the computer to non-confidential purposes unless absolutely necessary.\n2. Avoid browsing non-work-related sites or clicking links in unsolicited emails.\n3. Replace Internet Explorer with an up-to-date alternative browser.\n4. Do not use Windows XP machines controlling laboratory equipment for routine activities like email and web surfing.\n5. Isolate XP devices on separate networks or leave them off the network completely if access is not needed.\n6. Install the final Windows XP update and fully patch Microsoft Office.\n7. Uninstall unused third-party software, and consider disabling browser plugins.\n8. Install updated firewalls and anti-virus software.\n9. Keep the machine on a trusted network behind a NAT router.\n10. Enforce the use of up-to-date computer systems and security measures to ensure continued safety.",
+      "metrics": {
+        "bertscore_precision": 0.45145732164382935,
+        "bertscore_recall": 0.5125228762626648,
+        "bertscore_f1": 0.4826611578464508,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6095890410958904,
+            "recall": 0.7007874015748031,
+            "fmeasure": 0.6520146520146519
+          },
+          "rouge2": {
+            "precision": 0.35172413793103446,
+            "recall": 0.40476190476190477,
+            "fmeasure": 0.3763837638376384
+          },
+          "rougeL": {
+            "precision": 0.5136986301369864,
+            "recall": 0.5905511811023622,
+            "fmeasure": 0.5494505494505495
+          },
+          "rougeLsum": {
+            "precision": 0.541095890410959,
+            "recall": 0.6220472440944882,
+            "fmeasure": 0.5787545787545789
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Besides upgrading to a newer operating system, what immediate steps should a user take to minimize the security risks of using Windows XP after the end of support?",
+      "reference": "The document recommends limiting the computer's use to non-confidential purposes;  avoiding browsing non-work-related websites and clicking links in unsolicited emails when accessing confidential information; ensuring the computer doesn't get infected; uninstalling unused third-party software; disabling or uninstalling browser plugins; setting the browser to ask before opening PDFs; installing up-to-date firewalls and anti-virus software; keeping the computer on a trusted network behind a NAT router; installing the final Windows XP update; and fully patching Microsoft Office.  Additionally, it suggests getting rid of Internet Explorer and installing an alternative, current browser as the default.  If the machine controls laboratory equipment, it should not be used for routine email and web surfing; air-gapping or isolating XP devices on separate networks is also suggested, or removing network/internet access entirely.",
+      "candidate": "To minimize security risks when using Windows XP after the end of support, you should:\n\n1. Limit use of the computer to non-confidential purposes unless absolutely necessary.\n2. Avoid using Internet Explorer; install a current alternative browser.\n3. Isolate or air-gap XP devices from the network, or remove network access if not needed.\n4. Install the final Windows XP update and fully patch Microsoft Office.\n5. Uninstall unused third-party software and consider disabling browser plugins.\n6. Install up-to-date firewalls and anti-virus software.\n7. Keep the computer behind a NAT router acting as a hardware firewall.\n8. Avoid saving email passwords on the system to prevent compromises.\n9. Keep your anti-virus and anti-spyware software up to date.",
+      "metrics": {
+        "bertscore_precision": 0.32114148139953613,
+        "bertscore_recall": 0.278499573469162,
+        "bertscore_f1": 0.3008703291416168,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6209677419354839,
+            "recall": 0.5661764705882353,
+            "fmeasure": 0.5923076923076923
+          },
+          "rouge2": {
+            "precision": 0.3008130081300813,
+            "recall": 0.2740740740740741,
+            "fmeasure": 0.2868217054263566
+          },
+          "rougeL": {
+            "precision": 0.3064516129032258,
+            "recall": 0.27941176470588236,
+            "fmeasure": 0.29230769230769227
+          },
+          "rougeLsum": {
+            "precision": 0.5403225806451613,
+            "recall": 0.49264705882352944,
+            "fmeasure": 0.5153846153846153
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the command used to remove a file?",
+      "reference": "\"rm filename\"",
+      "candidate": "The command to remove a file in a Unix or Linux terminal is \"rm filename\". If the file name contains spaces, use quotes, like so: rm \"file name\".",
+      "metrics": {
+        "bertscore_precision": -0.10315533727407455,
+        "bertscore_recall": 0.17786817252635956,
+        "bertscore_f1": 0.03496268019080162,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.07142857142857142,
+            "recall": 1.0,
+            "fmeasure": 0.13333333333333333
+          },
+          "rouge2": {
+            "precision": 0.037037037037037035,
+            "recall": 1.0,
+            "fmeasure": 0.07142857142857142
+          },
+          "rougeL": {
+            "precision": 0.07142857142857142,
+            "recall": 1.0,
+            "fmeasure": 0.13333333333333333
+          },
+          "rougeLsum": {
+            "precision": 0.07142857142857142,
+            "recall": 1.0,
+            "fmeasure": 0.13333333333333333
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Does the provided information explain how to remove a directory?",
+      "reference": "The document does not provide sufficient information to answer this question.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.067378930747509,
+        "bertscore_recall": 0.34608638286590576,
+        "bertscore_f1": 0.20425687730312347,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.14285714285714285,
+            "recall": 0.45454545454545453,
+            "fmeasure": 0.21739130434782608
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.11428571428571428,
+            "recall": 0.36363636363636365,
+            "fmeasure": 0.17391304347826086
+          },
+          "rougeLsum": {
+            "precision": 0.11428571428571428,
+            "recall": 0.36363636363636365,
+            "fmeasure": 0.17391304347826086
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Assuming \"filename\" represents the actual name of a file,  what action will executing  \"rm filename\" perform?",
+      "reference": "The document states: \"The command to remove a file is 'rm filename'\".",
+      "candidate": "Executing \"rm filename\" will remove or delete the specified file from your directory in Unix.",
+      "metrics": {
+        "bertscore_precision": 0.3153895437717438,
+        "bertscore_recall": 0.412956565618515,
+        "bertscore_f1": 0.36475980281829834,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.3333333333333333,
+            "recall": 0.4166666666666667,
+            "fmeasure": 0.3703703703703704
+          },
+          "rouge2": {
+            "precision": 0.07142857142857142,
+            "recall": 0.09090909090909091,
+            "fmeasure": 0.08
+          },
+          "rougeL": {
+            "precision": 0.13333333333333333,
+            "recall": 0.16666666666666666,
+            "fmeasure": 0.14814814814814814
+          },
+          "rougeLsum": {
+            "precision": 0.13333333333333333,
+            "recall": 0.16666666666666666,
+            "fmeasure": 0.14814814814814814
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the purpose of the Modules tool as described in this document?",
+      "reference": "The Modules tool enables instructors to \"present/provide course content or materials with instructional context via modules\".",
+      "candidate": "The purpose of the Modules tool is to enable instructors to present or provide course content or materials with instructional context via modules.",
+      "metrics": {
+        "bertscore_precision": 0.7482602000236511,
+        "bertscore_recall": 0.7554094791412354,
+        "bertscore_f1": 0.7522360682487488,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7391304347826086,
+            "recall": 1.0,
+            "fmeasure": 0.85
+          },
+          "rouge2": {
+            "precision": 0.6363636363636364,
+            "recall": 0.875,
+            "fmeasure": 0.7368421052631579
+          },
+          "rougeL": {
+            "precision": 0.7391304347826086,
+            "recall": 1.0,
+            "fmeasure": 0.85
+          },
+          "rougeLsum": {
+            "precision": 0.7391304347826086,
+            "recall": 1.0,
+            "fmeasure": 0.85
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to the provided text, where can instructors find a tutorial on creating modules and sections in the Modules tool?",
+      "reference": "Instructors can find a tutorial on creating modules and sections in the Modules tool at http://www.hawaii.edu/talent/laulimatutorials/laulima_editingmodule.htm.",
+      "candidate": "Instructors can find a tutorial on creating modules and sections in the Modules tool at the following link: http://www.hawaii.edu/talent/laulimatutorials/laulima_editingmodule.htm.",
+      "metrics": {
+        "bertscore_precision": 0.9092088937759399,
+        "bertscore_recall": 0.9627255797386169,
+        "bertscore_f1": 0.935950517654419,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8888888888888888,
+            "recall": 1.0,
+            "fmeasure": 0.9411764705882353
+          },
+          "rouge2": {
+            "precision": 0.8461538461538461,
+            "recall": 0.9565217391304348,
+            "fmeasure": 0.8979591836734695
+          },
+          "rougeL": {
+            "precision": 0.8888888888888888,
+            "recall": 1.0,
+            "fmeasure": 0.9411764705882353
+          },
+          "rougeLsum": {
+            "precision": 0.8888888888888888,
+            "recall": 1.0,
+            "fmeasure": 0.9411764705882353
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What type of content or materials can instructors present using the Modules tool, according to the provided description?",
+      "reference": "The Modules tool enables instructors to present/provide \"course content or materials with instructional context\".",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.052842672914266586,
+        "bertscore_recall": -0.07719786465167999,
+        "bertscore_f1": -0.06332123279571533,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.05714285714285714,
+            "recall": 0.13333333333333333,
+            "fmeasure": 0.08
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.05714285714285714,
+            "recall": 0.13333333333333333,
+            "fmeasure": 0.08
+          },
+          "rougeLsum": {
+            "precision": 0.05714285714285714,
+            "recall": 0.13333333333333333,
+            "fmeasure": 0.08
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What floor of the Hamilton Library is the ITS Hamilton Lab located on?",
+      "reference": "The ITS Hamilton Lab is located on the first floor of the Hamilton Library.",
+      "candidate": "The ITS Hamilton Lab is located on the first floor of the Hamilton Library.",
+      "metrics": {
+        "bertscore_precision": 1.0000007152557373,
+        "bertscore_recall": 1.0000007152557373,
+        "bertscore_f1": 1.0000007152557373,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rouge2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeLsum": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Does the provided text give any information about the services offered by the ITS Hamilton Lab?",
+      "reference": "The document does not provide sufficient information to answer this question.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.067378930747509,
+        "bertscore_recall": 0.34608638286590576,
+        "bertscore_f1": 0.20425687730312347,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.14285714285714285,
+            "recall": 0.45454545454545453,
+            "fmeasure": 0.21739130434782608
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.11428571428571428,
+            "recall": 0.36363636363636365,
+            "fmeasure": 0.17391304347826086
+          },
+          "rougeLsum": {
+            "precision": 0.11428571428571428,
+            "recall": 0.36363636363636365,
+            "fmeasure": 0.17391304347826086
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Based solely on the provided text, what is the name of the building where the ITS Hamilton Lab is situated?",
+      "reference": "The ITS Hamilton Lab is situated in the Hamilton Library.",
+      "candidate": "The ITS Hamilton Lab is located on the first floor of the Hamilton Library.",
+      "metrics": {
+        "bertscore_precision": 0.7257285118103027,
+        "bertscore_recall": 0.9013020396232605,
+        "bertscore_f1": 0.812483012676239,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5714285714285714,
+            "recall": 0.8,
+            "fmeasure": 0.6666666666666666
+          },
+          "rouge2": {
+            "precision": 0.46153846153846156,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.5454545454545455
+          },
+          "rougeL": {
+            "precision": 0.5714285714285714,
+            "recall": 0.8,
+            "fmeasure": 0.6666666666666666
+          },
+          "rougeLsum": {
+            "precision": 0.5714285714285714,
+            "recall": 0.8,
+            "fmeasure": 0.6666666666666666
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What URL should users visit to manage access to their personal homepage?",
+      "reference": "To manage access to your personal homepage, log in at http://www.hawaii.edu/username, and choose from the options listed under the \"Personal Home Page Options\" area.",
+      "candidate": "To manage access to your personal homepage, please log in at http://www.hawaii.edu/username and choose from the options listed under the \"Personal Home Page Options\" area.",
+      "metrics": {
+        "bertscore_precision": 0.9664398431777954,
+        "bertscore_recall": 0.9712662696838379,
+        "bertscore_f1": 0.9689026474952698,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.9655172413793104,
+            "recall": 1.0,
+            "fmeasure": 0.9824561403508771
+          },
+          "rouge2": {
+            "precision": 0.9285714285714286,
+            "recall": 0.9629629629629629,
+            "fmeasure": 0.9454545454545454
+          },
+          "rougeL": {
+            "precision": 0.9655172413793104,
+            "recall": 1.0,
+            "fmeasure": 0.9824561403508771
+          },
+          "rougeLsum": {
+            "precision": 0.9655172413793104,
+            "recall": 1.0,
+            "fmeasure": 0.9824561403508771
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What specific CGI script is offered for counting visits to departmental pages?",
+      "reference": "Count.cgi",
+      "candidate": "The specific CGI script offered by the UH System for counting visits to departmental pages is \"Count.cgi\".",
+      "metrics": {
+        "bertscore_precision": 0.08019667118787766,
+        "bertscore_recall": 0.537346601486206,
+        "bertscore_f1": 0.2999570667743683,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.1111111111111111,
+            "recall": 1.0,
+            "fmeasure": 0.19999999999999998
+          },
+          "rouge2": {
+            "precision": 0.058823529411764705,
+            "recall": 1.0,
+            "fmeasure": 0.1111111111111111
+          },
+          "rougeL": {
+            "precision": 0.1111111111111111,
+            "recall": 1.0,
+            "fmeasure": 0.19999999999999998
+          },
+          "rougeLsum": {
+            "precision": 0.1111111111111111,
+            "recall": 1.0,
+            "fmeasure": 0.19999999999999998
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Besides creating a personal homepage, what other web publishing option is available for individuals representing a University of Hawaii entity?",
+      "reference": "Requesting web space on the server for a departmental web page.  The document states, \"if you represent an official university entity, you can request Web space on our server for a departmental Web page.\"",
+      "candidate": "Individuals representing a University of Hawaii entity can request web space on the ITS web server for a departmental web page. This involves having someone in the department who can be authorized to log into the server and upload the department's web pages into a specific directory. Additionally, this request must be made by UH faculty or staff, not students. If there are special programming needs, exceptions might be made for Registered Independent Organizations (RIOs).",
+      "metrics": {
+        "bertscore_precision": 0.18964025378227234,
+        "bertscore_recall": 0.46128132939338684,
+        "bertscore_f1": 0.3230612576007843,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.3157894736842105,
+            "recall": 0.7058823529411765,
+            "fmeasure": 0.43636363636363634
+          },
+          "rouge2": {
+            "precision": 0.16,
+            "recall": 0.36363636363636365,
+            "fmeasure": 0.2222222222222222
+          },
+          "rougeL": {
+            "precision": 0.21052631578947367,
+            "recall": 0.47058823529411764,
+            "fmeasure": 0.2909090909090909
+          },
+          "rougeLsum": {
+            "precision": 0.21052631578947367,
+            "recall": 0.47058823529411764,
+            "fmeasure": 0.2909090909090909
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the time limit for confirming a LISTSERV command confirmation request?",
+      "reference": "You must confirm the command within 48 hours.",
+      "candidate": "The time limit for confirming a LISTSERV command confirmation request is 48 hours.",
+      "metrics": {
+        "bertscore_precision": 0.24212881922721863,
+        "bertscore_recall": 0.533915102481842,
+        "bertscore_f1": 0.38503023982048035,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.38461538461538464,
+            "recall": 0.625,
+            "fmeasure": 0.4761904761904762
+          },
+          "rouge2": {
+            "precision": 0.08333333333333333,
+            "recall": 0.14285714285714285,
+            "fmeasure": 0.10526315789473685
+          },
+          "rougeL": {
+            "precision": 0.3076923076923077,
+            "recall": 0.5,
+            "fmeasure": 0.380952380952381
+          },
+          "rougeLsum": {
+            "precision": 0.3076923076923077,
+            "recall": 0.5,
+            "fmeasure": 0.380952380952381
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Besides replying to the confirmation email, what are the two other methods described for confirming a LISTSERV command?",
+      "reference": "The document states two other methods besides replying to the confirmation email:  \"To confirm using the Web interface, click on the link provided in the email message sent to you.\" and \"Alternatively, you can send a new email to listserv@lists.hawaii.edu with a blank subject line and the body of the message containing the text \u201cOK xxxxxxxx\u201d where \u201cxxxxxxxx\u201d is the cookie from the original confirmation request email.\"",
+      "candidate": null,
+      "metrics": null
+    },
+    {
+      "question": "Why is it crucial to carefully review a LISTSERV confirmation request before confirming it, and what is a potential consequence of neglecting this caution?",
+      "reference": "The document states that  \"Never \u2018OK\u2019 a cookie blindly. Make sure you are confirming a command that you initiated or a message that you want distributed to the list.\"  A potential consequence of neglecting this caution is \"Several cases of list \u2018hijacking\u2019 or spam sent to well-secured lists have been tracked back to a list owner or moderator absent-mindedly clicking an OK link that they should not have clicked.\"",
+      "candidate": "It is crucial to carefully review a LISTSERV confirmation request before confirming it to ensure that you are authorizing a command you initiated or a message you want distributed. Neglecting this caution can result in unauthorized actions such as list hijacking or spam being sent to well-secured lists. This can occur if someone absent-mindedly clicks an \"OK\" link they should not have clicked.",
+      "metrics": {
+        "bertscore_precision": 0.5184265971183777,
+        "bertscore_recall": 0.43954354524612427,
+        "bertscore_f1": 0.47954273223876953,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6307692307692307,
+            "recall": 0.5774647887323944,
+            "fmeasure": 0.6029411764705882
+          },
+          "rouge2": {
+            "precision": 0.421875,
+            "recall": 0.38571428571428573,
+            "fmeasure": 0.4029850746268657
+          },
+          "rougeL": {
+            "precision": 0.5538461538461539,
+            "recall": 0.5070422535211268,
+            "fmeasure": 0.5294117647058824
+          },
+          "rougeLsum": {
+            "precision": 0.5538461538461539,
+            "recall": 0.5070422535211268,
+            "fmeasure": 0.5294117647058824
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What security feature allows a user to remotely delete all data from a tablet if the password is entered incorrectly too many times?",
+      "reference": "The security feature is called \"Remote Wipe\".  The document states:  \"Remote Wipe' will delete everything on your device if your password or pattern is incorrectly entered a defined number of times (you can select how many incorrect attempts are made before wiping the device).\"",
+      "candidate": "The security feature that enables a user to remotely erase all data from a tablet if the password is entered incorrectly multiple times is called \"Remote Wipe.\"",
+      "metrics": {
+        "bertscore_precision": 0.6070902347564697,
+        "bertscore_recall": 0.335058331489563,
+        "bertscore_f1": 0.46851101517677307,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5925925925925926,
+            "recall": 0.36363636363636365,
+            "fmeasure": 0.4507042253521127
+          },
+          "rouge2": {
+            "precision": 0.19230769230769232,
+            "recall": 0.11627906976744186,
+            "fmeasure": 0.14492753623188406
+          },
+          "rougeL": {
+            "precision": 0.37037037037037035,
+            "recall": 0.22727272727272727,
+            "fmeasure": 0.2816901408450704
+          },
+          "rougeLsum": {
+            "precision": 0.37037037037037035,
+            "recall": 0.22727272727272727,
+            "fmeasure": 0.2816901408450704
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to the document, what is one reason why tablet devices are popular targets for thieves?",
+      "reference": "The document states that tablet devices \"can store a tremendous amount of personal, sensitive information and are popular targets for thieves.\"",
+      "candidate": "Tablet devices are popular targets for thieves because they can store a tremendous amount of personal, sensitive information.",
+      "metrics": {
+        "bertscore_precision": 0.7319948077201843,
+        "bertscore_recall": 0.5915781855583191,
+        "bertscore_f1": 0.6614540219306946,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8888888888888888,
+            "recall": 0.7619047619047619,
+            "fmeasure": 0.8205128205128205
+          },
+          "rouge2": {
+            "precision": 0.7647058823529411,
+            "recall": 0.65,
+            "fmeasure": 0.7027027027027027
+          },
+          "rougeL": {
+            "precision": 0.6111111111111112,
+            "recall": 0.5238095238095238,
+            "fmeasure": 0.5641025641025642
+          },
+          "rougeLsum": {
+            "precision": 0.6111111111111112,
+            "recall": 0.5238095238095238,
+            "fmeasure": 0.5641025641025642
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Besides using a strong password, what other software-based measure is recommended to enhance tablet security, and why is it important?",
+      "reference": "Besides a strong password, enabling \"Remote Wipe\" is recommended.  The document states that \"Remote Wipe\" will \"delete everything on your device if your password or pattern is incorrectly entered a defined number of times\".  This is important because it protects your data if someone tries to access your device without authorization.",
+      "candidate": "Aside from using a strong password, it is recommended to keep your software up-to-date and enable remote wipe. Keeping your software up-to-date is important because each update often includes fixes for security vulnerabilities. Enabling remote wipe is crucial because it allows you to delete all data on your device if an incorrect password is entered a specific number of times, preventing unauthorized access to your personal information. Additionally, ensuring that third-party apps are safe and installing security software can protect your tablet from malicious apps and viruses.",
+      "metrics": {
+        "bertscore_precision": 0.3637767434120178,
+        "bertscore_recall": 0.464666485786438,
+        "bertscore_f1": 0.414700448513031,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.3695652173913043,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.4755244755244755
+          },
+          "rouge2": {
+            "precision": 0.18681318681318682,
+            "recall": 0.34,
+            "fmeasure": 0.24113475177304963
+          },
+          "rougeL": {
+            "precision": 0.25,
+            "recall": 0.45098039215686275,
+            "fmeasure": 0.3216783216783217
+          },
+          "rougeLsum": {
+            "precision": 0.25,
+            "recall": 0.45098039215686275,
+            "fmeasure": 0.3216783216783217
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the minimum system requirements to run Safari?",
+      "reference": "A Mac running macOS 10.8 or higher, an Intel processor, 2 GB RAM or more (recommended), and at least 5 GB of free disk space.  Internet access is also required.",
+      "candidate": "The minimum system requirements to run Safari are:\n\n- A Mac running macOS 10.8 or higher\n- Intel processor\n- 2 GB RAM or more recommended\n- At least 5 GB of free disk space\n- Internet access\n\nLimited support is noted for macOS 10.8, 10.9, and 10.10.",
+      "metrics": {
+        "bertscore_precision": 0.27154940366744995,
+        "bertscore_recall": 0.5421144366264343,
+        "bertscore_f1": 0.4043806791305542,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6170212765957447,
+            "recall": 0.9354838709677419,
+            "fmeasure": 0.7435897435897436
+          },
+          "rouge2": {
+            "precision": 0.5,
+            "recall": 0.7666666666666667,
+            "fmeasure": 0.605263157894737
+          },
+          "rougeL": {
+            "precision": 0.574468085106383,
+            "recall": 0.8709677419354839,
+            "fmeasure": 0.6923076923076925
+          },
+          "rougeLsum": {
+            "precision": 0.574468085106383,
+            "recall": 0.8709677419354839,
+            "fmeasure": 0.6923076923076925
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to Apple, what is the primary advantage of using Safari over other browsers on a Mac?",
+      "reference": "According to Apple, Safari is \"faster and more energy efficient than other browsers, so sites are more responsive and your notebook battery lasts longer between charges.\"",
+      "candidate": "Safari is claimed to be faster and more energy efficient than other browsers, making sites more responsive and extending the battery life of your notebook between charges.",
+      "metrics": {
+        "bertscore_precision": 0.6946353316307068,
+        "bertscore_recall": 0.6299724578857422,
+        "bertscore_f1": 0.6626650094985962,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7407407407407407,
+            "recall": 0.7692307692307693,
+            "fmeasure": 0.7547169811320754
+          },
+          "rouge2": {
+            "precision": 0.46153846153846156,
+            "recall": 0.48,
+            "fmeasure": 0.47058823529411764
+          },
+          "rougeL": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6923076923076923,
+            "fmeasure": 0.6792452830188679
+          },
+          "rougeLsum": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6923076923076923,
+            "fmeasure": 0.6792452830188679
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Besides the Safari versions explicitly listed, what macOS versions have *limited* support for Safari, according to the provided document?",
+      "reference": "macOS 10.8, 10.9, and 10.10 have limited support.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.05746157467365265,
+        "bertscore_recall": 0.11944882571697235,
+        "bertscore_f1": 0.030999144539237022,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.08571428571428572,
+            "recall": 0.2727272727272727,
+            "fmeasure": 0.13043478260869562
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.05714285714285714,
+            "recall": 0.18181818181818182,
+            "fmeasure": 0.08695652173913043
+          },
+          "rougeLsum": {
+            "precision": 0.05714285714285714,
+            "recall": 0.18181818181818182,
+            "fmeasure": 0.08695652173913043
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the key difference between how Gmail and most IMAP email clients count messages in a mailbox?",
+      "reference": "Gmail counts \"the number of conversations which are in a mailbox,\" while \"most IMAP email clients...count the actual messages that are present in a mailbox.\"  This difference arises because \"if some of the email messages are grouped into conversations in Gmail, the message count reported by Gmail will be different than the message count you see through your IMAP email client.\"",
+      "candidate": "The key difference is that Gmail counts the number of conversations in a mailbox, while most IMAP email clients count the actual individual messages present in a mailbox. This means that if some emails are grouped into conversations in Gmail, the message count reported by Gmail will differ from the count seen through an IMAP email client.",
+      "metrics": {
+        "bertscore_precision": 0.7205053567886353,
+        "bertscore_recall": 0.6346409320831299,
+        "bertscore_f1": 0.677767276763916,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8596491228070176,
+            "recall": 0.7903225806451613,
+            "fmeasure": 0.823529411764706
+          },
+          "rouge2": {
+            "precision": 0.6071428571428571,
+            "recall": 0.5573770491803278,
+            "fmeasure": 0.5811965811965811
+          },
+          "rougeL": {
+            "precision": 0.8070175438596491,
+            "recall": 0.7419354838709677,
+            "fmeasure": 0.7731092436974789
+          },
+          "rougeLsum": {
+            "precision": 0.8070175438596491,
+            "recall": 0.7419354838709677,
+            "fmeasure": 0.7731092436974789
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to this excerpt, what is the reason for a discrepancy in message counts between Gmail and an IMAP email client?",
+      "reference": "Gmail counts \"conversations,\" while most IMAP email clients count \"actual messages.\"  If Gmail groups messages into conversations, the counts will differ.",
+      "candidate": "The discrepancy in message counts between Gmail and an IMAP email client is because Gmail counts the number of conversations in a mailbox, while most IMAP email clients count the actual messages. If some email messages are grouped into conversations in Gmail, the message count reported by Gmail will differ from the count you see through your IMAP email client.",
+      "metrics": {
+        "bertscore_precision": 0.4126528203487396,
+        "bertscore_recall": 0.5831195712089539,
+        "bertscore_f1": 0.4973703622817993,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.35,
+            "recall": 1.0,
+            "fmeasure": 0.5185185185185185
+          },
+          "rouge2": {
+            "precision": 0.1864406779661017,
+            "recall": 0.55,
+            "fmeasure": 0.2784810126582279
+          },
+          "rougeL": {
+            "precision": 0.31666666666666665,
+            "recall": 0.9047619047619048,
+            "fmeasure": 0.4691358024691357
+          },
+          "rougeLsum": {
+            "precision": 0.31666666666666665,
+            "recall": 0.9047619047619048,
+            "fmeasure": 0.4691358024691357
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "To what larger document does this FAQ excerpt belong?",
+      "reference": "This FAQ excerpt belongs to the \"Google@UH Migration FAQs article\".",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.01975582167506218,
+        "bertscore_recall": 0.002273386577144265,
+        "bertscore_f1": -0.007126455195248127,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.08571428571428572,
+            "recall": 0.2727272727272727,
+            "fmeasure": 0.13043478260869562
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.05714285714285714,
+            "recall": 0.18181818181818182,
+            "fmeasure": 0.08695652173913043
+          },
+          "rougeLsum": {
+            "precision": 0.05714285714285714,
+            "recall": 0.18181818181818182,
+            "fmeasure": 0.08695652173913043
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the three examples of UH sites that may require pop-up windows to be allowed?",
+      "reference": "The three examples of UH sites that may require pop-up windows to be allowed are:  \"MyUH site (https://myuh.hawaii.edu)\", \"the Google@UH GMail site (http://gmail.hawaii.edu)\", and \"the Hawaii Information Portal site (https://hihpsso.hip.hawaii.gov)\".",
+      "candidate": "The three examples of University of Hawaii sites that may require pop-up windows to be allowed are:\n\n1. MyUH site (https://myuh.hawaii.edu)\n2. Google@UH Gmail site (http://gmail.hawaii.edu)\n3. Hawaii Information Portal site (https://hihpsso.hip.hawaii.gov)",
+      "metrics": {
+        "bertscore_precision": 0.7763499617576599,
+        "bertscore_recall": 0.7721993923187256,
+        "bertscore_f1": 0.7746406197547913,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8636363636363636,
+            "recall": 0.9047619047619048,
+            "fmeasure": 0.8837209302325582
+          },
+          "rouge2": {
+            "precision": 0.7674418604651163,
+            "recall": 0.8048780487804879,
+            "fmeasure": 0.7857142857142858
+          },
+          "rougeL": {
+            "precision": 0.8636363636363636,
+            "recall": 0.9047619047619048,
+            "fmeasure": 0.8837209302325582
+          },
+          "rougeLsum": {
+            "precision": 0.8181818181818182,
+            "recall": 0.8571428571428571,
+            "fmeasure": 0.8372093023255814
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    }
+  ],
+  "aggregate_metrics": {
+    "mean_bertscore_precision": 0.4812955392847712,
+    "mean_bertscore_recall": 0.5337154792018273,
+    "mean_bertscore_f1": 0.506669651992543,
+    "mean_rouge1_f1": 0.5853458185320237,
+    "mean_rouge2_f1": 0.43031758420998845,
+    "mean_rougeL_f1": 0.5076886579525876,
+    "mean_rougeLsum_f1": 0.5103893464592926
+  },
+  "timestamp": "2025-07-28 16:03:17",
+  "num_questions": 100
+}

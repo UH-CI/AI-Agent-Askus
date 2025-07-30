@@ -1,0 +1,3415 @@
+{
+  "individual_results": [
+    {
+      "question": "What are the minimum credit hour requirements for an academic major and an academic minor, respectively?",
+      "reference": "An academic major requires \"at least thirty credits,\" while an academic minor \"generally contain[s] fifteen to eighteen hours of coursework.\"",
+      "candidate": "The minimum credit hour requirement for an academic major is thirty credits, and for an academic minor, it is generally fifteen to eighteen hours of coursework, with at least nine hours of upper-division coursework.",
+      "metrics": {
+        "bertscore_precision": 0.5190120935440063,
+        "bertscore_recall": 0.4918332099914551,
+        "bertscore_f1": 0.506191611289978,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5142857142857142,
+            "recall": 0.8571428571428571,
+            "fmeasure": 0.6428571428571428
+          },
+          "rouge2": {
+            "precision": 0.3235294117647059,
+            "recall": 0.55,
+            "fmeasure": 0.4074074074074075
+          },
+          "rougeL": {
+            "precision": 0.42857142857142855,
+            "recall": 0.7142857142857143,
+            "fmeasure": 0.5357142857142858
+          },
+          "rougeLsum": {
+            "precision": 0.42857142857142855,
+            "recall": 0.7142857142857143,
+            "fmeasure": 0.5357142857142858
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to section II. Definitions, what is the distinction between a \"credential\" and a \"degree\"?",
+      "reference": "A \"credential\" is a general term encompassing degrees, certificates, and other forms of institutional acknowledgment (\"A credential is a general term that can be used to describe a degree, certificate, or other form of institutional-based acknowledgment.\"), while a \"degree\" is a type of credential that typically takes two or more years to complete (\"A degree is a type of credential that typically takes two or more years to complete.\").",
+      "candidate": "A degree is a specific type of credential that typically takes two or more years to complete. In contrast, a credential is a broader term that encompasses various forms of institutional-based acknowledgment, including degrees, certificates, and other qualifications.",
+      "metrics": {
+        "bertscore_precision": 0.5523879528045654,
+        "bertscore_recall": 0.4129059910774231,
+        "bertscore_f1": 0.4825880527496338,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8205128205128205,
+            "recall": 0.45714285714285713,
+            "fmeasure": 0.5871559633027523
+          },
+          "rouge2": {
+            "precision": 0.6578947368421053,
+            "recall": 0.36231884057971014,
+            "fmeasure": 0.4672897196261682
+          },
+          "rougeL": {
+            "precision": 0.5128205128205128,
+            "recall": 0.2857142857142857,
+            "fmeasure": 0.36697247706422015
+          },
+          "rougeLsum": {
+            "precision": 0.5128205128205128,
+            "recall": 0.2857142857142857,
+            "fmeasure": 0.36697247706422015
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What office is responsible for maintaining an annually updated list of all University curricula, including Board- and unit/conferred credentials?",
+      "reference": "The Office of the Vice President for Academic Strategy is responsible for maintaining an annually updated list of all University curricula including Board- and unit/conferred credentials.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.014148899354040623,
+        "bertscore_recall": -0.06544961780309677,
+        "bertscore_f1": -0.02430778555572033,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.08571428571428572,
+            "recall": 0.1111111111111111,
+            "fmeasure": 0.0967741935483871
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.05714285714285714,
+            "recall": 0.07407407407407407,
+            "fmeasure": 0.06451612903225806
+          },
+          "rougeLsum": {
+            "precision": 0.05714285714285714,
+            "recall": 0.07407407407407407,
+            "fmeasure": 0.06451612903225806
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Beyond the generally accepted credit hour limits, what approval process is required for associate, baccalaureate, or graduate degrees?",
+      "reference": "Degrees that exceed the generally accepted credit hours (60 for Associate, 120 for Baccalaureate) require approval from the chief academic officer or their designee.",
+      "candidate": "Beyond the generally accepted credit hour limits, approval is required from the chief academic officer or their designee for associate, baccalaureate, or graduate degrees.",
+      "metrics": {
+        "bertscore_precision": 0.5673614144325256,
+        "bertscore_recall": 0.4838765263557434,
+        "bertscore_f1": 0.5260693430900574,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7916666666666666,
+            "recall": 0.7916666666666666,
+            "fmeasure": 0.7916666666666666
+          },
+          "rouge2": {
+            "precision": 0.5217391304347826,
+            "recall": 0.5217391304347826,
+            "fmeasure": 0.5217391304347826
+          },
+          "rougeL": {
+            "precision": 0.5833333333333334,
+            "recall": 0.5833333333333334,
+            "fmeasure": 0.5833333333333334
+          },
+          "rougeLsum": {
+            "precision": 0.5833333333333334,
+            "recall": 0.5833333333333334,
+            "fmeasure": 0.5833333333333334
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Which Executive Policy outlines the authority to create new degrees as defined in EP 5.205?",
+      "reference": "EP 5.201 outlines the authority to create new degrees as defined in this policy (EP 5.205).",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.03662080690264702,
+        "bertscore_recall": -0.007127545773983002,
+        "bertscore_f1": -0.020257016643881798,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.08571428571428572,
+            "recall": 0.16666666666666666,
+            "fmeasure": 0.11320754716981132
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.08571428571428572,
+            "recall": 0.16666666666666666,
+            "fmeasure": 0.11320754716981132
+          },
+          "rougeLsum": {
+            "precision": 0.08571428571428572,
+            "recall": 0.16666666666666666,
+            "fmeasure": 0.11320754716981132
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the effective date of Board of Regents Policy 10.206?",
+      "reference": "The effective date of Board of Regents Policy 10.206 is March 20, 1986.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.05868660658597946,
+        "bertscore_recall": 0.026414012536406517,
+        "bertscore_f1": -0.014850460924208164,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.05714285714285714,
+            "recall": 0.14285714285714285,
+            "fmeasure": 0.08163265306122448
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.05714285714285714,
+            "recall": 0.14285714285714285,
+            "fmeasure": 0.08163265306122448
+          },
+          "rougeLsum": {
+            "precision": 0.05714285714285714,
+            "recall": 0.14285714285714285,
+            "fmeasure": 0.08163265306122448
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What authority is delegated to the president regarding child care programs, according to section III?",
+      "reference": "According to section III, the president is delegated the authority \"to promulgate practices and procedures governing the use of university-owned or operated facilities\".",
+      "candidate": "The president is delegated the authority to promulgate practices and procedures governing the use of university-owned or operated facilities related to child care programs. Additionally, the authority to execute the intent and provisions of Board Policy RP 10.206, Child Care Programs, is also delegated to the president.",
+      "metrics": {
+        "bertscore_precision": 0.4571608304977417,
+        "bertscore_recall": 0.6350452303886414,
+        "bertscore_f1": 0.5454028844833374,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.42857142857142855,
+            "recall": 0.875,
+            "fmeasure": 0.5753424657534246
+          },
+          "rouge2": {
+            "precision": 0.3958333333333333,
+            "recall": 0.8260869565217391,
+            "fmeasure": 0.5352112676056338
+          },
+          "rougeL": {
+            "precision": 0.40816326530612246,
+            "recall": 0.8333333333333334,
+            "fmeasure": 0.547945205479452
+          },
+          "rougeLsum": {
+            "precision": 0.40816326530612246,
+            "recall": 0.8333333333333334,
+            "fmeasure": 0.547945205479452
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the purpose of Board of Regents Policy 10.206?",
+      "reference": "To set forth policy regarding the president\u2019s authority regarding child care programs.",
+      "candidate": "The purpose of Board of Regents Policy 10.206 is to direct the implementation of Regents Policy 9.213, which involves the systematic evaluation of the performance of the faculty and other professional staff at the University of Hawai\u2018i. It also outlines the responsibilities of the appropriate administrative offices to define specific procedures for this evaluation process. Additionally, it aims to provide procedures for reviewing faculty in programs that lack their own evaluation procedures.",
+      "metrics": {
+        "bertscore_precision": 0.029824933037161827,
+        "bertscore_recall": 0.29293471574783325,
+        "bertscore_f1": 0.15935762226581573,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.05333333333333334,
+            "recall": 0.3076923076923077,
+            "fmeasure": 0.09090909090909093
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.05333333333333334,
+            "recall": 0.3076923076923077,
+            "fmeasure": 0.09090909090909093
+          },
+          "rougeLsum": {
+            "precision": 0.05333333333333334,
+            "recall": 0.3076923076923077,
+            "fmeasure": 0.09090909090909093
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "To what section does section IV refer regarding the president's delegated authority?",
+      "reference": "Section IV refers to section III, specifically section III.A: \"See RP 10.206(A).\"",
+      "candidate": "Section IV refers to RP 4.201(C)(4)(e) regarding the president's delegated authority.",
+      "metrics": {
+        "bertscore_precision": 0.4335261285305023,
+        "bertscore_recall": 0.42618197202682495,
+        "bertscore_f1": 0.43077778816223145,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.3125,
+            "recall": 0.3333333333333333,
+            "fmeasure": 0.3225806451612903
+          },
+          "rouge2": {
+            "precision": 0.2,
+            "recall": 0.21428571428571427,
+            "fmeasure": 0.20689655172413796
+          },
+          "rougeL": {
+            "precision": 0.3125,
+            "recall": 0.3333333333333333,
+            "fmeasure": 0.3225806451612903
+          },
+          "rougeLsum": {
+            "precision": 0.3125,
+            "recall": 0.3333333333333333,
+            "fmeasure": 0.3225806451612903
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the email address for the Office of the Board of Regents as listed in the document?",
+      "reference": "The email address for the Office of the Board of Regents is bor@hawaii.edu.",
+      "candidate": "The email address for the Office of the Board of Regents is bor@hawaii.edu.",
+      "metrics": {
+        "bertscore_precision": 1.0000007152557373,
+        "bertscore_recall": 1.0000007152557373,
+        "bertscore_f1": 1.0000007152557373,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rouge2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeLsum": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the purpose of Board of Regents Policy 7.202?",
+      "reference": "The purpose of Board of Regents Policy 7.202 is \"To set forth policy regarding chartered student organizations.\"",
+      "candidate": "The purpose of Board of Regents Policy 7.202 is to provide guidance relating to the implementation of Board of Regents Policy RP 10.205, which concerns the use of University-owned facilities.",
+      "metrics": {
+        "bertscore_precision": 0.5369609594345093,
+        "bertscore_recall": 0.5622045397758484,
+        "bertscore_f1": 0.5502863526344299,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.36363636363636365,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.4705882352941177
+          },
+          "rouge2": {
+            "precision": 0.3125,
+            "recall": 0.5882352941176471,
+            "fmeasure": 0.40816326530612246
+          },
+          "rougeL": {
+            "precision": 0.36363636363636365,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.4705882352941177
+          },
+          "rougeLsum": {
+            "precision": 0.36363636363636365,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.4705882352941177
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What specific activities are examples of CSO functions and operations as defined in the policy?",
+      "reference": "Examples of CSO functions and operations include: \"(a) serving as representatives for the undergraduate student body; (b) serving as representatives for the graduate student body; (c) responsibility for student publications; (d) responsibility for broadcast communications; and (e) oversight of the operation of the student center.\"",
+      "candidate": "Examples of CSO functions and operations include:\n\n(a) Serving as representatives for the undergraduate student body.\n(b) Serving as representatives for the graduate student body.\n(c) Responsibility for student publications.\n(d) Responsibility for broadcast communications.\n(e) Oversight of the operation of the student center.",
+      "metrics": {
+        "bertscore_precision": 0.693128764629364,
+        "bertscore_recall": 0.6840547919273376,
+        "bertscore_f1": 0.6890942454338074,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 0.9777777777777777,
+            "fmeasure": 0.9887640449438202
+          },
+          "rouge2": {
+            "precision": 0.9767441860465116,
+            "recall": 0.9545454545454546,
+            "fmeasure": 0.9655172413793104
+          },
+          "rougeL": {
+            "precision": 1.0,
+            "recall": 0.9777777777777777,
+            "fmeasure": 0.9887640449438202
+          },
+          "rougeLsum": {
+            "precision": 0.9545454545454546,
+            "recall": 0.9333333333333333,
+            "fmeasure": 0.9438202247191012
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "How is the funding for CSOs\u2019 activities obtained, according to the policy?",
+      "reference": "A CSO\u2019s activities are \u201cdirectly financed through mandatory student activity fees, as authorized by Section 304A-2257, HRS.\u201d",
+      "candidate": "The funding for CSOs\u2019 activities is obtained through student organization fees, as authorized by Section 304A-2257, HRS. These fees are generally managed and administered by a recognized student governance organization chartered by the University.",
+      "metrics": {
+        "bertscore_precision": 0.5138710141181946,
+        "bertscore_recall": 0.65268474817276,
+        "bertscore_f1": 0.5830859541893005,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.4,
+            "recall": 0.7368421052631579,
+            "fmeasure": 0.5185185185185185
+          },
+          "rouge2": {
+            "precision": 0.20588235294117646,
+            "recall": 0.3888888888888889,
+            "fmeasure": 0.2692307692307692
+          },
+          "rougeL": {
+            "precision": 0.34285714285714286,
+            "recall": 0.631578947368421,
+            "fmeasure": 0.4444444444444445
+          },
+          "rougeLsum": {
+            "precision": 0.34285714285714286,
+            "recall": 0.631578947368421,
+            "fmeasure": 0.4444444444444445
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Who has the final authority to approve a CSO's charter, constitution, and budget?",
+      "reference": "The Board of Regents delegates to the president the authority to approve a CSO\u2019s charter or constitution, amendments to the charter or constitution, and budget.  The president further delegates this authority to the chancellor or chancellor\u2019s designee of each campus.  \"The board delegates to the president the authority to approve a CSO\u2019s charter or constitution, amendments to the charter or constitution, and budget. The president delegates this authority further to the chancellor or chancellor\u2019s designee of each campus.\"",
+      "candidate": "The final authority to approve a CSO's charter, constitution, and budget is delegated to the president.",
+      "metrics": {
+        "bertscore_precision": 0.5632685422897339,
+        "bertscore_recall": 0.16665086150169373,
+        "bertscore_f1": 0.3585745394229889,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8823529411764706,
+            "recall": 0.18292682926829268,
+            "fmeasure": 0.30303030303030304
+          },
+          "rouge2": {
+            "precision": 0.6875,
+            "recall": 0.13580246913580246,
+            "fmeasure": 0.22680412371134023
+          },
+          "rougeL": {
+            "precision": 0.8823529411764706,
+            "recall": 0.18292682926829268,
+            "fmeasure": 0.30303030303030304
+          },
+          "rougeLsum": {
+            "precision": 0.8823529411764706,
+            "recall": 0.18292682926829268,
+            "fmeasure": 0.30303030303030304
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the relationship between a Chartered Student Organization (CSO) and the university, regarding liability for the CSO's actions?",
+      "reference": "The university recognizes a CSO as \"part of the student life co-curricular program\" but not a university department.  University recognition \"does not divest the university of any authority or powers\" and \"does not imply that the university assumes any liability or legal responsibility for acts or omissions of the CSO not in compliance with pertinent university policies and regulations.\"",
+      "candidate": "A Chartered Student Organization (CSO) is recognized by the university as part of the student life co-curricular program, but it is not a department of the university. While the university provides administrative support to a CSO, this recognition does not relieve the university of its authority or powers granted by the legislature. Furthermore, the university does not assume any liability or legal responsibility for the actions or omissions of a CSO that do not comply with university policies and regulations. CSOs must adhere to all relevant university policies and regulations.",
+      "metrics": {
+        "bertscore_precision": 0.5270977020263672,
+        "bertscore_recall": 0.6295427083969116,
+        "bertscore_f1": 0.5785326361656189,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5824175824175825,
+            "recall": 0.8833333333333333,
+            "fmeasure": 0.7019867549668874
+          },
+          "rouge2": {
+            "precision": 0.35555555555555557,
+            "recall": 0.5423728813559322,
+            "fmeasure": 0.42953020134228187
+          },
+          "rougeL": {
+            "precision": 0.4835164835164835,
+            "recall": 0.7333333333333333,
+            "fmeasure": 0.5827814569536424
+          },
+          "rougeLsum": {
+            "precision": 0.4835164835164835,
+            "recall": 0.7333333333333333,
+            "fmeasure": 0.5827814569536424
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What forms are required to cancel a University of Hawai\u2018i General Account check due to an error in the payee name?",
+      "reference": "To cancel a University of Hawai\u2018i General Account check due to an error in the payee name, the Stop Payment/Cancellation/Reissue Form: GALC-625 (Attachment 1) is required.  The document also states that a screenshot of the \u201cSearch for Payment\u201d query in the Kuali Financial System (KFS) should be submitted as supporting documentation.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.038404762744903564,
+        "bertscore_recall": -0.1779431700706482,
+        "bertscore_f1": -0.07043780386447906,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.2,
+            "recall": 0.12727272727272726,
+            "fmeasure": 0.15555555555555553
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.11428571428571428,
+            "recall": 0.07272727272727272,
+            "fmeasure": 0.08888888888888889
+          },
+          "rougeLsum": {
+            "precision": 0.11428571428571428,
+            "recall": 0.07272727272727272,
+            "fmeasure": 0.08888888888888889
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If a UHGA check is lost, what steps must the Fiscal Administrator take to initiate a replacement?",
+      "reference": "The Fiscal Administrator must void the check by writing \"VOID\" across the face (if available), complete the Stop Payment/Cancellation/Reissue Request Form: GALC-625 (Attachment 1), and submit the completed form and voided check (if available) to the General Accounting and Loan Collection Office.",
+      "candidate": "If a UHGA check is lost, the Fiscal Administrator must take the following steps to initiate a replacement:\n\n1. Void the lost check by writing \u201cVOID\u201d across the face of the original check, if it is available.\n2. Complete the Stop Payment/Cancellation/Reissue Request Form: GALC-625.\n3. Submit the original completed form and the voided check (if available) to the General Accounting and Loan Collection Office.",
+      "metrics": {
+        "bertscore_precision": 0.4949093759059906,
+        "bertscore_recall": 0.6474641561508179,
+        "bertscore_f1": 0.5708315968513489,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6323529411764706,
+            "recall": 0.9555555555555556,
+            "fmeasure": 0.7610619469026547
+          },
+          "rouge2": {
+            "precision": 0.4925373134328358,
+            "recall": 0.75,
+            "fmeasure": 0.5945945945945946
+          },
+          "rougeL": {
+            "precision": 0.6176470588235294,
+            "recall": 0.9333333333333333,
+            "fmeasure": 0.7433628318584071
+          },
+          "rougeLsum": {
+            "precision": 0.5441176470588235,
+            "recall": 0.8222222222222222,
+            "fmeasure": 0.654867256637168
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What office is responsible for processing the GALC-625 form and what actions do they take?",
+      "reference": "The General Accounting and Loan Collection Office processes the GALC-625 form.  Their actions include verifying the outstanding status of the check, submitting a Stop Payment order to the bank (if appropriate), and authorizing and processing replacement check issuance in KFS.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.008984517306089401,
+        "bertscore_recall": -0.07855652272701263,
+        "bertscore_f1": -0.033497411757707596,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.11428571428571428,
+            "recall": 0.0975609756097561,
+            "fmeasure": 0.10526315789473684
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.11428571428571428,
+            "recall": 0.0975609756097561,
+            "fmeasure": 0.10526315789473684
+          },
+          "rougeLsum": {
+            "precision": 0.11428571428571428,
+            "recall": 0.0975609756097561,
+            "fmeasure": 0.10526315789473684
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "In the case of a forged UHGA check, what documentation must the payee provide to the Bank of Hawai\u2018i and to the General Accounting and Loan Collection Office?",
+      "reference": "In the case of a forged UHGA check, the payee must provide a completed Customer Claim form (Attachment 2) to the Bank of Hawai\u2018i and three notarized sets of the Customer Affidavit for the unauthorized transaction form (Attachment 2), along with a police report number, to the General Accounting and Loan Collection Office.",
+      "candidate": "In the case of a forged UHGA check, the payee must provide the following documentation:\n\nTo the Bank of Hawai\u2018i:\n1. Customer Claim form to report the alleged forgery.\n2. Three (3) sets of the Customer Affidavit for the unauthorized transaction, which must be notarized.\n\nTo the General Accounting and Loan Collection Office:\n1. The three (3) notarized sets of the Customer Affidavit.\n2. A police report number.",
+      "metrics": {
+        "bertscore_precision": 0.42507365345954895,
+        "bertscore_recall": 0.5609601736068726,
+        "bertscore_f1": 0.4929939806461334,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6666666666666666,
+            "recall": 0.8518518518518519,
+            "fmeasure": 0.7479674796747967
+          },
+          "rouge2": {
+            "precision": 0.5441176470588235,
+            "recall": 0.6981132075471698,
+            "fmeasure": 0.6115702479338843
+          },
+          "rougeL": {
+            "precision": 0.5217391304347826,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.5853658536585366
+          },
+          "rougeLsum": {
+            "precision": 0.6666666666666666,
+            "recall": 0.8518518518518519,
+            "fmeasure": 0.7479674796747967
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to the document, what happens to funds from a cancelled check issued from prior year general funds?",
+      "reference": "Cancellation of a check from prior year general funds reverts to the State Treasury.  All other funds held within the University of Hawai\u2018i revert to the original fund.",
+      "candidate": "Funds from a cancelled check issued from prior year general funds revert to the State Treasury.",
+      "metrics": {
+        "bertscore_precision": 0.6314136981964111,
+        "bertscore_recall": 0.32155102491378784,
+        "bertscore_f1": 0.472898006439209,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.875,
+            "recall": 0.4827586206896552,
+            "fmeasure": 0.6222222222222222
+          },
+          "rouge2": {
+            "precision": 0.6,
+            "recall": 0.32142857142857145,
+            "fmeasure": 0.41860465116279066
+          },
+          "rougeL": {
+            "precision": 0.75,
+            "recall": 0.41379310344827586,
+            "fmeasure": 0.5333333333333333
+          },
+          "rougeLsum": {
+            "precision": 0.75,
+            "recall": 0.41379310344827586,
+            "fmeasure": 0.5333333333333333
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the effective date of Executive Policy 10.501?",
+      "reference": "October 2014",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.26697826385498047,
+        "bertscore_recall": -0.007305115461349487,
+        "bertscore_f1": -0.13879548013210297,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeLsum": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "To whom is the authority to promulgate parking and operations procedures delegated?",
+      "reference": "The President is delegated the authority to promulgate practices and procedures governing parking and operation of motor vehicles on University campuses.  The President also delegates authority to Chancellors to promulgate practices and procedures to govern parking and operation of motor vehicles on their respective campuses.",
+      "candidate": "The authority to promulgate parking and operations procedures is delegated to the President, who in turn delegates authority to the Chancellors of the respective campuses to govern parking and operation of motor vehicles on their campuses.",
+      "metrics": {
+        "bertscore_precision": 0.6629730463027954,
+        "bertscore_recall": 0.6572018265724182,
+        "bertscore_f1": 0.6606382131576538,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8888888888888888,
+            "recall": 0.7111111111111111,
+            "fmeasure": 0.7901234567901234
+          },
+          "rouge2": {
+            "precision": 0.5428571428571428,
+            "recall": 0.4318181818181818,
+            "fmeasure": 0.4810126582278481
+          },
+          "rougeL": {
+            "precision": 0.6666666666666666,
+            "recall": 0.5333333333333333,
+            "fmeasure": 0.5925925925925926
+          },
+          "rougeLsum": {
+            "precision": 0.6666666666666666,
+            "recall": 0.5333333333333333,
+            "fmeasure": 0.5925925925925926
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What Hawai'i Administrative Rules chapter governs parking and operations of motor vehicles on each campus?",
+      "reference": "Title 20, Chapter 12, Parking and Operations of Motor Vehicles, Hawai\u2018i Administrative Rules.",
+      "candidate": "The Hawai'i Administrative Rules chapter that governs parking and operations of motor vehicles on each campus is Chapter 20-12.",
+      "metrics": {
+        "bertscore_precision": 0.4476760923862457,
+        "bertscore_recall": 0.515556812286377,
+        "bertscore_f1": 0.48224762082099915,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6190476190476191,
+            "recall": 0.9285714285714286,
+            "fmeasure": 0.742857142857143
+          },
+          "rouge2": {
+            "precision": 0.4,
+            "recall": 0.6153846153846154,
+            "fmeasure": 0.4848484848484849
+          },
+          "rougeL": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "fmeasure": 0.4
+          },
+          "rougeLsum": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "fmeasure": 0.4
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What office is responsible for this Executive Policy?",
+      "reference": "The Office of the Vice President for Administration is responsible for this Executive Policy.",
+      "candidate": "The office responsible for this Executive Policy is the Office of the President, as it issues Executive Policies governing the internal management and organization of the University.",
+      "metrics": {
+        "bertscore_precision": 0.34098362922668457,
+        "bertscore_recall": 0.4922446012496948,
+        "bertscore_f1": 0.4164980351924896,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.4074074074074074,
+            "recall": 0.7857142857142857,
+            "fmeasure": 0.5365853658536585
+          },
+          "rouge2": {
+            "precision": 0.2692307692307692,
+            "recall": 0.5384615384615384,
+            "fmeasure": 0.3589743589743589
+          },
+          "rougeL": {
+            "precision": 0.25925925925925924,
+            "recall": 0.5,
+            "fmeasure": 0.3414634146341463
+          },
+          "rougeLsum": {
+            "precision": 0.25925925925925924,
+            "recall": 0.5,
+            "fmeasure": 0.3414634146341463
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the purpose of Executive Policy 10.501?",
+      "reference": "The purpose of Executive Policy 10.501 is \"To codify the delegation of authority to the President to promulgate practices and procedures governing parking and operation of motor vehicles on University campuses.\"",
+      "candidate": "The purpose of Executive Policy 10.501 is to ensure that the University of Hawaii (UH) is committed to planning that addresses both current and long-term educational needs and challenges. It also aims to demonstrate the University\u2019s ongoing commitment to public accountability and to satisfy mandatory federal, state, and University reporting requirements. Assessment and accountability are central elements of this policy, with the University expected to report on assessment results relative to strategic plan goals.",
+      "metrics": {
+        "bertscore_precision": 0.18213582038879395,
+        "bertscore_recall": 0.3462367355823517,
+        "bertscore_f1": 0.26409274339675903,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.24675324675324675,
+            "recall": 0.59375,
+            "fmeasure": 0.3486238532110092
+          },
+          "rouge2": {
+            "precision": 0.10526315789473684,
+            "recall": 0.25806451612903225,
+            "fmeasure": 0.14953271028037382
+          },
+          "rougeL": {
+            "precision": 0.23376623376623376,
+            "recall": 0.5625,
+            "fmeasure": 0.3302752293577982
+          },
+          "rougeLsum": {
+            "precision": 0.23376623376623376,
+            "recall": 0.5625,
+            "fmeasure": 0.3302752293577982
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the purpose of Administrative Procedure 8.671?",
+      "reference": "To provide guidance on recording the accounting data necessary at fiscal year-end for the preparation of financial statements in accordance with accepted accounting principles.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.016312427818775177,
+        "bertscore_recall": -0.04709557071328163,
+        "bertscore_f1": -0.030076686292886734,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.11428571428571428,
+            "recall": 0.16,
+            "fmeasure": 0.13333333333333333
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.08571428571428572,
+            "recall": 0.12,
+            "fmeasure": 0.09999999999999999
+          },
+          "rougeLsum": {
+            "precision": 0.08571428571428572,
+            "recall": 0.12,
+            "fmeasure": 0.09999999999999999
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to section III.A.1.a, what must departments do regarding unrecorded accounts receivable if invoices weren't recorded by the end of the twelfth month?",
+      "reference": "According to section III.A.1.a, departments must prepare journal vouchers (JVs) to record all unrecorded accounts receivable amounts if invoices were not recorded into the financial system by the close of the twelfth (12th) month.  This applies even to departments using the University\u2019s Accounts Receivable system (KFS A/R).",
+      "candidate": "Departments must prepare journal vouchers (JVs) to record all unrecorded accounts receivable amounts if invoices were not recorded into the financial system by the close of the twelfth month. This procedure also applies to departments using the University\u2019s Accounts Receivable system (KFS A/R).",
+      "metrics": {
+        "bertscore_precision": 0.9022135138511658,
+        "bertscore_recall": 0.7401767373085022,
+        "bertscore_f1": 0.8203440308570862,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.9555555555555556,
+            "recall": 0.8269230769230769,
+            "fmeasure": 0.88659793814433
+          },
+          "rouge2": {
+            "precision": 0.8863636363636364,
+            "recall": 0.7647058823529411,
+            "fmeasure": 0.8210526315789474
+          },
+          "rougeL": {
+            "precision": 0.9555555555555556,
+            "recall": 0.8269230769230769,
+            "fmeasure": 0.88659793814433
+          },
+          "rougeLsum": {
+            "precision": 0.9555555555555556,
+            "recall": 0.8269230769230769,
+            "fmeasure": 0.88659793814433
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the two main methods of recording revenues and expenses during the fiscal year, and how do they differ?",
+      "reference": "The document states that during months one through twelve, the University generally records revenues and expenses on a \"cash basis\".  However,  \"For the presentation of the University\u2019s fiscal year-end financial statements, however, both revenues and expenses must be recorded on the full accrual basis of accounting\".  The difference is that the cash basis records revenues when cash is received and expenses when cash is paid, while the accrual basis records revenues when earned and expenses when incurred, regardless of when cash changes hands.",
+      "candidate": "The two main methods of recording revenues and expenses during the fiscal year are the accrual basis of accounting and the full accrual basis of accounting. \n\n1. Accrual Basis of Accounting: Under this method, revenues are recorded when they are earned, and expenses are recorded when they are incurred. This typically happens when goods and services are received, regardless of whether payment has been made.\n\n2. Full Accrual Basis of Accounting: This method is used for the presentation of the University\u2019s fiscal year-end financial statements and adheres to Governmental Accounting and Financial Reporting Standards. It also records revenues when earned and expenses when incurred but emphasizes completeness and accuracy for financial reporting at fiscal year-end, including necessary adjustments and accruals.\n\nThe key difference lies in the context of usage; the accrual basis is used for day-to-day accounting and transactions throughout the fiscal year, while the full accrual basis is specifically applied at the fiscal year's end for formal financial statements.",
+      "metrics": {
+        "bertscore_precision": 0.23486635088920593,
+        "bertscore_recall": 0.3828946053981781,
+        "bertscore_f1": 0.30896374583244324,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.3433734939759036,
+            "recall": 0.6705882352941176,
+            "fmeasure": 0.45418326693227096
+          },
+          "rouge2": {
+            "precision": 0.18787878787878787,
+            "recall": 0.36904761904761907,
+            "fmeasure": 0.24899598393574296
+          },
+          "rougeL": {
+            "precision": 0.19879518072289157,
+            "recall": 0.38823529411764707,
+            "fmeasure": 0.26294820717131473
+          },
+          "rougeLsum": {
+            "precision": 0.25903614457831325,
+            "recall": 0.5058823529411764,
+            "fmeasure": 0.3426294820717132
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "How does the document define \"accrual basis\" accounting?",
+      "reference": "\"Accrual basis - The basis of accounting under which revenues are recorded when earned and expenses are recorded when incurred (generally, when goods and services are received but not necessarily paid).\"",
+      "candidate": "The document defines \"accrual basis\" accounting as the basis under which revenues are recorded when earned and expenses are recorded when incurred, which typically means when goods and services are received but not necessarily paid.",
+      "metrics": {
+        "bertscore_precision": 0.7306066751480103,
+        "bertscore_recall": 0.7667283415794373,
+        "bertscore_f1": 0.7490194439888,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8,
+            "recall": 0.9333333333333333,
+            "fmeasure": 0.8615384615384616
+          },
+          "rouge2": {
+            "precision": 0.6764705882352942,
+            "recall": 0.7931034482758621,
+            "fmeasure": 0.7301587301587301
+          },
+          "rougeL": {
+            "precision": 0.7714285714285715,
+            "recall": 0.9,
+            "fmeasure": 0.8307692307692307
+          },
+          "rougeLsum": {
+            "precision": 0.7714285714285715,
+            "recall": 0.9,
+            "fmeasure": 0.8307692307692307
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What specific types of transactions are recorded by central offices, as detailed in section III.B?",
+      "reference": "Section III.B lists the following transactions recorded by central offices: accrued interest receivable, accounts payable, accrued payroll and fringe, accrued vacation, accrued ORS contracts and grants receivables, allowance for doubtful accounts for KFS A/R and contracts and grants invoices, non-imposed fringe, reclassification of negative accounts receivable, and elimination of internal service transactions.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.03164178878068924,
+        "bertscore_recall": -0.23152250051498413,
+        "bertscore_f1": -0.13182511925697327,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.05714285714285714,
+            "recall": 0.03636363636363636,
+            "fmeasure": 0.044444444444444446
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.05714285714285714,
+            "recall": 0.03636363636363636,
+            "fmeasure": 0.044444444444444446
+          },
+          "rougeLsum": {
+            "precision": 0.05714285714285714,
+            "recall": 0.03636363636363636,
+            "fmeasure": 0.044444444444444446
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What specific actions are defined as workplace violence under Executive Policy 9.210?",
+      "reference": "Executive Policy 9.210 defines workplace violence as \"any work related or workplace violence against its students, faculty, staff, visitors and contract employees which materially and substantially interferes with an individual\u2019s work, academic performance, and/or workplace safety and/or otherwise subjectively and objectively creates a hostile environment.\"  Specific examples include: \"physical attack, property damage, as well as written or verbal statements or non-verbal gestures that, to a reasonable person, express or suggest the intent to cause physical or mental harm to another person including but not limited to: hitting; pushing and shoving; throwing or breaking objects; shouting or yelling in a threatening or hostile manner; threatening gestures or remarks; disruptive or hostile actions; abusive or belligerent language; sabotage of equipment; making or sending harassing or threatening telephone calls, letters or other forms of written or electronic communications; stalking, etc.\"",
+      "candidate": "Workplace violence under Executive Policy 9.210 includes any work-related violence that materially and substantially interferes with an individual's work, academic performance, or workplace safety, and creates a hostile environment. Specific actions may involve physical attacks, property damage, as well as written or verbal statements or non-verbal gestures that, to a reasonable person, express or convey threats of violence.",
+      "metrics": {
+        "bertscore_precision": 0.670071005821228,
+        "bertscore_recall": 0.21902117133140564,
+        "bertscore_f1": 0.4359992742538452,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8870967741935484,
+            "recall": 0.3873239436619718,
+            "fmeasure": 0.5392156862745098
+          },
+          "rouge2": {
+            "precision": 0.7213114754098361,
+            "recall": 0.3120567375886525,
+            "fmeasure": 0.4356435643564357
+          },
+          "rougeL": {
+            "precision": 0.8225806451612904,
+            "recall": 0.3591549295774648,
+            "fmeasure": 0.5
+          },
+          "rougeLsum": {
+            "precision": 0.8225806451612904,
+            "recall": 0.3591549295774648,
+            "fmeasure": 0.5
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the recommended procedure for reporting a workplace violence incident involving a student?",
+      "reference": "Students should report incidents to the \"appropriate dean, administrator, or respective campus security personnel who will take appropriate action, in accordance with statutes and University policies.\"",
+      "candidate": "The recommended procedure for reporting a workplace violence incident involving a student is as follows: \n\n1. Students, visitors, and contract employees should report the incident to the appropriate dean or administrator.\n2. Alternatively, they can report the incident to the respective campus security personnel.\n3. The reported incident will then be addressed in accordance with statutes and University policies. \n\nIt is important for supervisors to address any complaints immediately as per the established guidelines.",
+      "metrics": {
+        "bertscore_precision": 0.2552182376384735,
+        "bertscore_recall": 0.5924529433250427,
+        "bertscore_f1": 0.4194815456867218,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.2972972972972973,
+            "recall": 0.8461538461538461,
+            "fmeasure": 0.44000000000000006
+          },
+          "rouge2": {
+            "precision": 0.2054794520547945,
+            "recall": 0.6,
+            "fmeasure": 0.3061224489795918
+          },
+          "rougeL": {
+            "precision": 0.28378378378378377,
+            "recall": 0.8076923076923077,
+            "fmeasure": 0.42
+          },
+          "rougeLsum": {
+            "precision": 0.28378378378378377,
+            "recall": 0.8076923076923077,
+            "fmeasure": 0.42
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the responsibilities of the Office of Human Resources regarding workplace non-violence, according to this policy?",
+      "reference": "The Office of Human Resources is responsible for:  \"a. Develop[ing] and maintain[ing], in consultation with campus representatives and the Offices of Student Affairs, Academic Affairs, Legal Affairs, University Relations and Campus Security, the University\u2019s non-violence in the workplace policy and procedures. b. Assist[ing] in the provision and coordination of training and referrals to counseling services. c. Advis[ing] colleges/campuses regarding the Statewide and University policies on non-violence as it relates to labor relations, workers\u2019 compensation, etc.\"",
+      "candidate": "The Office of Human Resources is responsible for developing and maintaining the University\u2019s non-violence in the workplace policy and procedures in consultation with various campus representatives and offices. They also assist in the provision and coordination of training and referrals to counseling services, and advise colleges/campuses regarding the Statewide and University policies on workplace non-violence.",
+      "metrics": {
+        "bertscore_precision": 0.7512617111206055,
+        "bertscore_recall": 0.3983806371688843,
+        "bertscore_f1": 0.5698639154434204,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.9152542372881356,
+            "recall": 0.6506024096385542,
+            "fmeasure": 0.7605633802816901
+          },
+          "rouge2": {
+            "precision": 0.7241379310344828,
+            "recall": 0.5121951219512195,
+            "fmeasure": 0.6000000000000001
+          },
+          "rougeL": {
+            "precision": 0.7796610169491526,
+            "recall": 0.5542168674698795,
+            "fmeasure": 0.647887323943662
+          },
+          "rougeLsum": {
+            "precision": 0.7796610169491526,
+            "recall": 0.5542168674698795,
+            "fmeasure": 0.647887323943662
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "How does this policy address the prevention of workplace violence, and what specific measures are mentioned?",
+      "reference": "This policy addresses workplace violence prevention through several measures: careful employee screening including background checks (I.1.a);  a training program addressing proactive and reactive measures (I.1.b);  improving physical security (building access, lighting, help systems, security personnel) (I.1.c); and establishing a Campus Crisis Management Team (CCMT) to address serious incidents and provide training (J).  The policy also prohibits retaliation against those reporting violence (G).",
+      "candidate": "The policy addresses the prevention of workplace violence by emphasizing the creation of a safe environment for students, faculty, staff, employees of contractors, and visitors. Specific measures mentioned include assisting in the provision and coordination of training and referrals to counseling services, advising colleges/campuses on policies related to non-violence, and ensuring that appropriate campus security departments/programs maintain accurate incident reports. The overall objective is to establish procedures for responding to incidents of workplace violence.",
+      "metrics": {
+        "bertscore_precision": 0.2436782419681549,
+        "bertscore_recall": 0.05799664556980133,
+        "bertscore_f1": 0.150520458817482,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.2987012987012987,
+            "recall": 0.3382352941176471,
+            "fmeasure": 0.3172413793103448
+          },
+          "rouge2": {
+            "precision": 0.039473684210526314,
+            "recall": 0.04477611940298507,
+            "fmeasure": 0.04195804195804195
+          },
+          "rougeL": {
+            "precision": 0.16883116883116883,
+            "recall": 0.19117647058823528,
+            "fmeasure": 0.1793103448275862
+          },
+          "rougeLsum": {
+            "precision": 0.16883116883116883,
+            "recall": 0.19117647058823528,
+            "fmeasure": 0.1793103448275862
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to section G, what constitutes retaliation under this policy, and what are the potential consequences for those found to have engaged in retaliatory actions?",
+      "reference": "Section G states that retaliation is defined as \"adverse actions that would dissuade a reasonable person from making or supporting a charge of workplace violence or hostile treatment against any individual because he or she engaged in any of the following activities: a. sought advice or assistance about workplace violence; b. reported a workplace violence incident; c. opposed workplace violence or filed an informal or formal complaint; or d. assisted or participated in a workplace violence complaint resolution process or investigation.\"  Examples of adverse actions include \"suspension, unsatisfactory or unfair performance evaluation, unfair assignment, firing, failing to promote, reassignment with significantly different responsibility or a decision causing a significant change in benefits, direct or implied threats, coercion, harassment, intimidation, or encouragement of others to retaliate.\"  Consequences for those found to have engaged in retaliatory actions are \"appropriate disciplinary action in accordance with the appropriate collective bargaining agreement, if applicable.\"",
+      "candidate": "Retaliation under this policy includes adverse actions that would dissuade a reasonable person from making or supporting a complaint. Examples of such actions include direct or implied threats, coercion, harassment, intimidation, encouragement of others to retaliate, significant changes in one\u2019s status (like suspension, unfair evaluations, unfair grades, unfair assignments, firing, failing to promote, or reassignment with significantly different responsibilities), and decisions causing significant changes in benefits.\n\nThose found to have engaged in retaliatory actions are subject to consequences under the policy, which may include being found responsible for retaliation as a separate offense, even if they were not found responsible for the underlying reported violation. Additionally, retaliation complaints can be filed separately or as part of a workplace violence complaint, and they will be investigated accordingly.",
+      "metrics": {
+        "bertscore_precision": 0.34610697627067566,
+        "bertscore_recall": 0.24568986892700195,
+        "bertscore_f1": 0.29655927419662476,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6141732283464567,
+            "recall": 0.5234899328859061,
+            "fmeasure": 0.5652173913043478
+          },
+          "rouge2": {
+            "precision": 0.3888888888888889,
+            "recall": 0.3310810810810811,
+            "fmeasure": 0.35766423357664234
+          },
+          "rougeL": {
+            "precision": 0.3937007874015748,
+            "recall": 0.33557046979865773,
+            "fmeasure": 0.3623188405797102
+          },
+          "rougeLsum": {
+            "precision": 0.3700787401574803,
+            "recall": 0.31543624161073824,
+            "fmeasure": 0.3405797101449275
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the effective date of Executive Policy 1.206?",
+      "reference": "The effective date of Executive Policy 1.206 is May 2019.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.1028047725558281,
+        "bertscore_recall": 0.029759537428617477,
+        "bertscore_f1": -0.03573080897331238,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.05714285714285714,
+            "recall": 0.18181818181818182,
+            "fmeasure": 0.08695652173913043
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.05714285714285714,
+            "recall": 0.18181818181818182,
+            "fmeasure": 0.08695652173913043
+          },
+          "rougeLsum": {
+            "precision": 0.05714285714285714,
+            "recall": 0.18181818181818182,
+            "fmeasure": 0.08695652173913043
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to the policy, what constitutes \"Misconduct\"?",
+      "reference": "\"Misconduct\" is defined as \"A violation of state or federal law or regulation; a serious violation of University policy (including faculty and staff ethical standards or student conduct code), the substantive use of University property, assets, resources, equipment, authority, services or cash for personal gain or other non-University-related purposes except as provided under University policy; fraud; gross incompetence; economic waste or other forms of gross inefficiency; or conditions that may significantly endanger the health or safety of University employees, students, and/or the general public.\"",
+      "candidate": "According to the policy, \"Misconduct\" includes the following:\n\n1. A violation of state or federal law or regulation.\n2. A serious violation of University policy, including faculty and staff ethical standards or the student conduct code.\n3. The substantive misuse of University property or assets.\n4. Fabrication, which is making up data or results and recording or reporting them.\n5. Falsification, which is manipulating research materials, equipment, or processes.\n6. Plagiarism, which involves using results or words without giving appropriate credit.\n7. Abuse of confidentiality, including taking or appropriating confidential or private information without proper authority or disclosing it to others.\n8. Interference, which is the direct or indirect use of authority or influence to obstruct an individual's right to make a protected disclosure.",
+      "metrics": {
+        "bertscore_precision": 0.14317035675048828,
+        "bertscore_recall": 0.23906143009662628,
+        "bertscore_f1": 0.19198448956012726,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.392,
+            "recall": 0.5632183908045977,
+            "fmeasure": 0.46226415094339623
+          },
+          "rouge2": {
+            "precision": 0.21774193548387097,
+            "recall": 0.313953488372093,
+            "fmeasure": 0.2571428571428571
+          },
+          "rougeL": {
+            "precision": 0.328,
+            "recall": 0.47126436781609193,
+            "fmeasure": 0.38679245283018865
+          },
+          "rougeLsum": {
+            "precision": 0.304,
+            "recall": 0.4367816091954023,
+            "fmeasure": 0.3584905660377359
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If a University employee believes they are experiencing retaliation for reporting misconduct, to which offices can they submit a complaint?",
+      "reference": "Complaints of retaliation may be submitted to the campus or system level Office of Human Resources, the Office of the Vice President for Administration or Research (as appropriate), and/or the Office of the General Counsel.",
+      "candidate": "A University employee experiencing retaliation for reporting misconduct can submit a complaint to the following offices:\n\n1. The campus or system level Office of Human Resources\n2. The Office of the Vice President for Administration or Research (as appropriate)\n3. The Office of the General Counsel\n\nComplaints should be in writing and include all relevant details, such as the date and nature of the retaliation, the names of individuals involved, and any witnesses or individuals with direct knowledge of the acts.",
+      "metrics": {
+        "bertscore_precision": 0.2970653474330902,
+        "bertscore_recall": 0.6640431880950928,
+        "bertscore_f1": 0.47519850730895996,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.43209876543209874,
+            "recall": 0.9722222222222222,
+            "fmeasure": 0.5982905982905983
+          },
+          "rouge2": {
+            "precision": 0.3125,
+            "recall": 0.7142857142857143,
+            "fmeasure": 0.43478260869565216
+          },
+          "rougeL": {
+            "precision": 0.37037037037037035,
+            "recall": 0.8333333333333334,
+            "fmeasure": 0.5128205128205128
+          },
+          "rougeLsum": {
+            "precision": 0.41975308641975306,
+            "recall": 0.9444444444444444,
+            "fmeasure": 0.5811965811965812
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What actions does the University take upon receiving a \"Good Faith Report\" of misconduct?",
+      "reference": "Upon receiving a Good Faith Report of Misconduct, the University \"will determine appropriate action including any investigation and appropriate resolution of the matter, in accordance with applicable University policies.\"  If an investigation is conducted, the University will notify the individual suspected of misconduct and may interview relevant witnesses.",
+      "candidate": "Upon receiving a Good Faith Report of misconduct, the University determines appropriate actions, which may include an investigation and resolution in accordance with applicable policies. If an investigation is conducted, the University will notify the individual suspected of misconduct and may interview relevant witnesses to gather detailed information. Additionally, it is possible to report suspected misconduct anonymously through the University\u2019s Whistleblower Hotline.",
+      "metrics": {
+        "bertscore_precision": 0.5757842063903809,
+        "bertscore_recall": 0.7478206753730774,
+        "bertscore_f1": 0.6610351204872131,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6825396825396826,
+            "recall": 0.8958333333333334,
+            "fmeasure": 0.7747747747747749
+          },
+          "rouge2": {
+            "precision": 0.5483870967741935,
+            "recall": 0.723404255319149,
+            "fmeasure": 0.6238532110091743
+          },
+          "rougeL": {
+            "precision": 0.6507936507936508,
+            "recall": 0.8541666666666666,
+            "fmeasure": 0.7387387387387387
+          },
+          "rougeLsum": {
+            "precision": 0.6507936507936508,
+            "recall": 0.8541666666666666,
+            "fmeasure": 0.7387387387387387
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Does this policy supersede the Hawai'i Whistleblowers\u2019 Protection Act (HRS \u00a7 378-62)?  Explain your answer.",
+      "reference": "No, this policy does not supersede the Hawai'i Whistleblowers\u2019 Protection Act.  The document explicitly states that \"This policy is intended to supplement and not supersede the Hawai'i Whistleblowers\u2019 Protection Act, Hawai'i Revised Statutes (HRS) \u00a7 378-62, and existing policies prohibiting retaliation for good faith reporting of violations of law, regulation and policy.\"",
+      "candidate": "No, this policy does not supersede the Hawai'i Whistleblowers\u2019 Protection Act (HRS \u00a7 378-62). It is explicitly stated that this policy is intended to supplement and not supersede the Act, as well as existing policies prohibiting retaliation for good faith reporting of violations.",
+      "metrics": {
+        "bertscore_precision": 0.8066223859786987,
+        "bertscore_recall": 0.6826102137565613,
+        "bertscore_f1": 0.7443531155586243,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8863636363636364,
+            "recall": 0.7090909090909091,
+            "fmeasure": 0.7878787878787878
+          },
+          "rouge2": {
+            "precision": 0.7906976744186046,
+            "recall": 0.6296296296296297,
+            "fmeasure": 0.7010309278350516
+          },
+          "rougeL": {
+            "precision": 0.8181818181818182,
+            "recall": 0.6545454545454545,
+            "fmeasure": 0.7272727272727274
+          },
+          "rougeLsum": {
+            "precision": 0.8181818181818182,
+            "recall": 0.6545454545454545,
+            "fmeasure": 0.7272727272727274
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the effective date of Administrative Procedure AP 8.635, Accounting For Leases, Public-Private and Public-Public Partnerships and Availability Payment Arrangements, and Subscription Based Information Technology Arrangements?",
+      "reference": "The effective date of Administrative Procedure AP 8.635 is June 2024.",
+      "candidate": "The effective date of Administrative Procedure AP 8.635 is June 2024.",
+      "metrics": {
+        "bertscore_precision": 1.0,
+        "bertscore_recall": 1.0,
+        "bertscore_f1": 1.0,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rouge2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeLsum": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the responsibilities of the Fiscal Administrator (FA) regarding right-to-use agreements?",
+      "reference": "The Fiscal Administrator (FA) is responsible for:  \"1. Reporting right-to-use agreements in accordance with GA\u2019s instructions and providing copies of agreements as needed.  2. Recording Public-Private and Public-Public Partnership new assets and asset improvements to the financial system at acquisition cost when the new asset or asset improvement is placed in service.  3. Notifying GA of impairment, significant delinquent right-to-use receivables/payables, and/or other significant issues that may require remeasurement of right-to-use asset and/or liability and deferred inflow of resources, if any.\"",
+      "candidate": "The responsibilities of the Fiscal Administrator (FA) regarding right-to-use agreements include determining whether the agreements should be reported as right-to-use agreements and recording accrual journal entries related to these agreements. This involves recording right-to-use intangible assets, liabilities, receivables, deferred inflows of resources, adjustments, interest revenue, interest expense, and depreciation and amortization expense.",
+      "metrics": {
+        "bertscore_precision": 0.2872399687767029,
+        "bertscore_recall": 0.08906001597642899,
+        "bertscore_f1": 0.18755090236663818,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5689655172413793,
+            "recall": 0.3548387096774194,
+            "fmeasure": 0.4370860927152318
+          },
+          "rouge2": {
+            "precision": 0.22807017543859648,
+            "recall": 0.14130434782608695,
+            "fmeasure": 0.17449664429530198
+          },
+          "rougeL": {
+            "precision": 0.39655172413793105,
+            "recall": 0.24731182795698925,
+            "fmeasure": 0.304635761589404
+          },
+          "rougeLsum": {
+            "precision": 0.39655172413793105,
+            "recall": 0.24731182795698925,
+            "fmeasure": 0.304635761589404
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "How are variable payments in leases handled when determining the lease liability for the University as the lessee?",
+      "reference": "\"Variable payments based on future performance of the lessee or usage of the underlying asset are not included in the measurement of the lease liability.\"",
+      "candidate": "Variable payments based on future performance of the lessee or usage of the underlying asset are not included in the measurement of the lease liability for the University as the lessee. The lease liability is measured at the present value of the payments expected to be made during the lease term, excluding these variable payments.",
+      "metrics": {
+        "bertscore_precision": 0.5063807368278503,
+        "bertscore_recall": 0.7504159808158875,
+        "bertscore_f1": 0.6263352036476135,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.45454545454545453,
+            "recall": 1.0,
+            "fmeasure": 0.625
+          },
+          "rouge2": {
+            "precision": 0.4444444444444444,
+            "recall": 1.0,
+            "fmeasure": 0.6153846153846153
+          },
+          "rougeL": {
+            "precision": 0.45454545454545453,
+            "recall": 1.0,
+            "fmeasure": 0.625
+          },
+          "rougeLsum": {
+            "precision": 0.45454545454545453,
+            "recall": 1.0,
+            "fmeasure": 0.625
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Under what conditions are Availability Payment Arrangements (APAs) accounted for as financed purchases?",
+      "reference": "Availability Payment Arrangements (APAs) are accounted for as financed purchases \"where payments are based solely on the availability of the asset to perform services.\"",
+      "candidate": "Availability Payment Arrangements (APAs) are accounted for as financed purchases when the payments are based solely on the availability of the asset to perform services.",
+      "metrics": {
+        "bertscore_precision": 0.8802251815795898,
+        "bertscore_recall": 0.8413970470428467,
+        "bertscore_f1": 0.8609718084335327,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.92,
+            "recall": 0.9583333333333334,
+            "fmeasure": 0.9387755102040817
+          },
+          "rouge2": {
+            "precision": 0.875,
+            "recall": 0.9130434782608695,
+            "fmeasure": 0.8936170212765957
+          },
+          "rougeL": {
+            "precision": 0.92,
+            "recall": 0.9583333333333334,
+            "fmeasure": 0.9387755102040817
+          },
+          "rougeLsum": {
+            "precision": 0.92,
+            "recall": 0.9583333333333334,
+            "fmeasure": 0.9387755102040817
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to section III.D.4.c, how are deferred inflows of resources handled in Public-Private and Public-Public Partnership arrangements after the initial measurement?",
+      "reference": "\"Deferred inflows of resources are initially measured as the initial amount of the P3 receivable, adjusted for payments received at or before the agreement commencement date.  Subsequently, deferred inflows of resources are recorded to offset new or improved underlying P3 assets when they are placed in service. Deferred inflows of resources are recognized as revenue over the life of the agreement term in a systematic and rational method.\"",
+      "candidate": "Deferred inflows of resources are recorded to offset new or improved underlying P3 assets when they are placed in service. Subsequently, they are recognized as revenue over the life of the agreement term in a systematic and rational method.",
+      "metrics": {
+        "bertscore_precision": 0.7774887084960938,
+        "bertscore_recall": 0.5177343487739563,
+        "bertscore_f1": 0.6451622843742371,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.9743589743589743,
+            "recall": 0.5588235294117647,
+            "fmeasure": 0.7102803738317757
+          },
+          "rouge2": {
+            "precision": 0.9210526315789473,
+            "recall": 0.5223880597014925,
+            "fmeasure": 0.6666666666666666
+          },
+          "rougeL": {
+            "precision": 0.9487179487179487,
+            "recall": 0.5441176470588235,
+            "fmeasure": 0.6915887850467289
+          },
+          "rougeLsum": {
+            "precision": 0.9487179487179487,
+            "recall": 0.5441176470588235,
+            "fmeasure": 0.6915887850467289
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the purpose of Board of Regents Policy 6.206?",
+      "reference": "The purpose of Board of Regents Policy 6.206 is \"To describe the university\u2019s participation in the Western Interstate Commission for Higher Education (WICHE).\"",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.004738114308565855,
+        "bertscore_recall": -0.054321449249982834,
+        "bertscore_f1": -0.023305511102080345,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.11428571428571428,
+            "recall": 0.16,
+            "fmeasure": 0.13333333333333333
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.11428571428571428,
+            "recall": 0.16,
+            "fmeasure": 0.13333333333333333
+          },
+          "rougeLsum": {
+            "precision": 0.11428571428571428,
+            "recall": 0.16,
+            "fmeasure": 0.13333333333333333
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the effective date of Regents Policy RP 6.206?",
+      "reference": "The effective date of Regents Policy RP 6.206 is Nov. 16, 2006.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.07288502901792526,
+        "bertscore_recall": 0.11433963477611542,
+        "bertscore_f1": 0.02055755816400051,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.05714285714285714,
+            "recall": 0.15384615384615385,
+            "fmeasure": 0.08333333333333333
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.05714285714285714,
+            "recall": 0.15384615384615385,
+            "fmeasure": 0.08333333333333333
+          },
+          "rougeLsum": {
+            "precision": 0.05714285714285714,
+            "recall": 0.15384615384615385,
+            "fmeasure": 0.08333333333333333
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Which specific WICHE programs are mentioned as options for university participation?",
+      "reference": "The document mentions the WICHE Graduate Student Exchange Program, the WICHE Professional Student Exchange Program, and the Western Undergraduate Exchange Program as options for university participation.",
+      "candidate": "The specific WICHE programs mentioned as options for university participation are the WICHE Graduate Student Exchange Program, the WICHE Professional Student Exchange Program, and the Western Undergraduate Exchange Program.",
+      "metrics": {
+        "bertscore_precision": 0.8015040159225464,
+        "bertscore_recall": 0.8511297702789307,
+        "bertscore_f1": 0.8264932632446289,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8620689655172413,
+            "recall": 0.9615384615384616,
+            "fmeasure": 0.9090909090909091
+          },
+          "rouge2": {
+            "precision": 0.75,
+            "recall": 0.84,
+            "fmeasure": 0.7924528301886793
+          },
+          "rougeL": {
+            "precision": 0.6896551724137931,
+            "recall": 0.7692307692307693,
+            "fmeasure": 0.7272727272727274
+          },
+          "rougeLsum": {
+            "precision": 0.6896551724137931,
+            "recall": 0.7692307692307693,
+            "fmeasure": 0.7272727272727274
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "To whom is the authority delegated to choose participation in WICHE programs?",
+      "reference": "The president or the president\u2019s designee.  The document states: \"The president or president\u2019s designee may choose to participate in any of the WICHE programs\".",
+      "candidate": "The authority to choose participation in WICHE programs is delegated to the president or the president's designee.",
+      "metrics": {
+        "bertscore_precision": 0.54623943567276,
+        "bertscore_recall": 0.43807700276374817,
+        "bertscore_f1": 0.49244269728660583,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7777777777777778,
+            "recall": 0.5384615384615384,
+            "fmeasure": 0.6363636363636364
+          },
+          "rouge2": {
+            "precision": 0.47058823529411764,
+            "recall": 0.32,
+            "fmeasure": 0.38095238095238104
+          },
+          "rougeL": {
+            "precision": 0.3888888888888889,
+            "recall": 0.2692307692307692,
+            "fmeasure": 0.3181818181818182
+          },
+          "rougeLsum": {
+            "precision": 0.3888888888888889,
+            "recall": 0.2692307692307692,
+            "fmeasure": 0.3181818181818182
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the contact information for inquiries regarding this policy?",
+      "reference": "The contact information is: Office of the Vice President for Academic Affairs, 956-7075, risad@hawaii.edu",
+      "candidate": "For inquiries regarding this policy, you can contact:\n\nOffice of the Vice President for Information Technology and Chief Information Officer  \nPhone: 808-956-3501  \nEmail: gyoshimi@hawaii.edu  \n\nOffice of the Vice President for Administration  \nPhone: 808-956-6405  \nEmail: vpadmin@hawaii.edu  \n\nAdditionally, you can reach the general inquiries line at 808-956-5006  \nEmail: uhovpri@hawaii.edu.",
+      "metrics": {
+        "bertscore_precision": -0.061026304960250854,
+        "bertscore_recall": 0.2875315845012665,
+        "bertscore_f1": 0.10869477689266205,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.2033898305084746,
+            "recall": 0.7058823529411765,
+            "fmeasure": 0.3157894736842105
+          },
+          "rouge2": {
+            "precision": 0.10344827586206896,
+            "recall": 0.375,
+            "fmeasure": 0.16216216216216217
+          },
+          "rougeL": {
+            "precision": 0.1864406779661017,
+            "recall": 0.6470588235294118,
+            "fmeasure": 0.2894736842105263
+          },
+          "rougeLsum": {
+            "precision": 0.1864406779661017,
+            "recall": 0.6470588235294118,
+            "fmeasure": 0.2894736842105263
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the defined roles of the Executive Director, Business Office, and Principal Investigator within the ARL at UH's accounting policies?",
+      "reference": "The document defines the \"Executive Director\" as the ARL at UH Executive Director (3.a).  The \"Business Office\" is defined as the ARL at UH Business Office (3.b).  Their roles in accounting are detailed in section 4 and 5, indicating the Business Office coordinates with ORS on billing and reporting (4.e), informs ORS when task orders are ready for billing (4.e), reviews account establishment requests (5.a), makes accounts available to supervisors (5.b), reviews and approves cost transfers (5.d), and coordinates with principal investigators, departmental administrators, and department heads on billing, reports, and task order closeouts (5.e).  The \"Principal Investigator\" is defined as the ARL at UH faculty member or researcher primarily responsible for the task order (3.d).  Their role includes monitoring accounts (5.c), initiating cost transfers in collaboration with the departmental administrator (5.d), and informing the department head and Business Office of anticipated deficits (5.c).",
+      "candidate": "The Executive Director at the ARL at UH is responsible for overseeing the overall operations of the organization. The Business Office, led by the Business Office Director, is tasked with personnel and procurement processing, accounting, financial reporting, and rate setting. The Principal Investigator's role is not explicitly defined in the provided information. I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.12545956671237946,
+        "bertscore_recall": -0.06741561740636826,
+        "bertscore_f1": 0.028724074363708496,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.48863636363636365,
+            "recall": 0.27564102564102566,
+            "fmeasure": 0.3524590163934426
+          },
+          "rouge2": {
+            "precision": 0.14942528735632185,
+            "recall": 0.08387096774193549,
+            "fmeasure": 0.10743801652892562
+          },
+          "rougeL": {
+            "precision": 0.32954545454545453,
+            "recall": 0.1858974358974359,
+            "fmeasure": 0.23770491803278684
+          },
+          "rougeLsum": {
+            "precision": 0.32954545454545453,
+            "recall": 0.1858974358974359,
+            "fmeasure": 0.23770491803278684
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What specific budget pools (with their corresponding subcode ranges) are used in the FMIS system for recording costs, according to this document?",
+      "reference": "The document lists the following budget pools and their corresponding subcode ranges used in the FMIS system for recording costs:\n\n* **Pool 1100 Salaries & Wages:** Subcode Range 2001 \u2013 2007; 2009 \u2013 2033; 2301 - 2333\n* **Pool 1101 Overload:** Subcode Range 2008 \u2013 2008; 2508 \u2013 2536\n* **Pool 1102 Casual:** Subcode Range 2101 \u2013 2136; 2401 \u2013 2436\n* **Pool 1103 Student Help-Reg:** Subcode Range 2201 \u2013 2218; 2220 \u2013 2240\n* **Pool 1104 Student Help-Wkstdy:** Subcode Range 2219 \u2013 2219\n* **Pool 1105 Fringe Benefits:** Subcode Range 2034 \u2013 2099; 2137 \u2013 2199; 2241 \u2013 2299; 2334 \u2013 2399; 2437 \u2013 2499; 2537 - 2599\n* **Pool 1106 Services-Fee Basis:** Subcode Range 2900 \u2013 2999; 7100 \u2013 7199; 7235 - 7235\n* **Pool 1107 Materials & Supplies:** Subcode Range 3000 \u2013 3499; 7709 \u2013 7709; 7719 \u2013 7719; 7729 \u2013 7729; 7739 \u2013 7739; 7769 \u2013 7769; 7779 - 7779\n* **Pool 1108 Travel-Domestic:** Subcode Range 4100 \u2013 4469; 4500 \u2013 4569; 4600 \u2013 4669; 4700 \u2013 4869; 4890 \u2013 4892; 4894 \u2013 4899; 7240 -7240\n* **Pool 1109 Travel-International:** Subcode Range 4470 \u2013 4499; 4570 \u2013 4599; 5670 \u2013 4699; 4870 \u2013 4880; 4893 - 4893\n* **Pool 1110 Print & Publication:** Subcode Range 3900 \u2013 4099\n* **Pool 1111 Util & Comm:** Subcode Range 3700 \u2013 3899; 5000 - 5499\n* **Pool 1112 Rentals:** Subcode Range 5500 \u2013 5799\n* **Pool 1113 Repairs:** Subcode Range 5800 \u2013 5899\n* **Pool 1114 Tuition:** Subcode Range 6510 \u2013 6523\n* **Pool 1115 Stipends & Allow:** Subcode Range 6500 \u2013 6509; 6524-6599\n* **Pool 1116 Equipment:** Subcode Range 7700 \u2013 7708; 7710 \u2013 7718; 7720 \u2013 7728; 7730 \u2013 7738; 7740 \u2013 7768; 7770 \u2013 7778;\n* **Pool 1117 Others:** Subcode Range 3500 \u2013 3699; 5900 \u2013 6499; 6600 \u2013 7099; 7200 \u2013 7234; 7236 \u2013 7239; 7241 \u2013 7699; 7800 \u2013 9099; 9101 \u2013 9999\n* **Pool 1990 Indirect Cost:** Subcode Range 9100 \u2013 9100",
+      "candidate": "The specific budget pools and their corresponding subcode ranges used in the FMIS system for recording costs are as follows:\n\nPool 1100 - Salaries & Wages \nSubcode Range: 7779 - 7779, 4100 \u2013 4469; 4500 \u2013 4569; 4600 \u2013 4669; 4700 \u2013 4869; 4890 \u2013 4892; 4894 \u2013 4899; 7240 -7240, 4470 \u2013 4499; 4570 \u2013 4599; 5670 \u2013 4699; 4870 \u2013 4880; 4893 - 4893, 3900 \u2013 4099, 3700 \u2013 3899; 5000 - 5499, 5500 \u2013 5799, 5800 \u2013 5899, 6510 \u2013 6523, 6500 \u2013 6509; 6524-6599, 7700 \u2013 7708; 7710 \u2013 7718; 7720 \u2013 7728; 7730 \u2013 7738; 7740 \u2013 7768; 7770 \u2013 7778\n\nPool 1117 - Others \n\nPool Description 1990 - Indirect Cost \nSubcode Range: 7780 \u2013 7799, 3500 \u2013 3699; 5900 \u2013 6499;\n\n1106 - Services-Fee Basis \nSubcode Range: 2001 \u2013 2007; 2009 \u2013 2033; 2301 - 2333\n\n1107 - Materials & Supplies \nSubcode Range: 2008 \u2013 2008; 2508 \u2013 2536 \n\n1108 - Travel-Domestic \nSubcode Range: 2101 \u2013 2136; 2401 \u2013 2436 \n\n1109 - Travel-International \nSubcode Range: 2201 \u2013 2218; 2220 \u2013 2240 \n\n1110 - Print & Publication \nSubcode Range: 2219 \u2013 2219 \n\n1111 - Util & Comm \nSubcode Range: 2034 \u2013 2099; 2137 \u2013 2199; 2241 \u2013 2299; 2334 \u2013 2399; 2437 \u2013 2499; 2537 - 2599 \n\n1112 - Rentals \nSubcode Range: 2900 \u2013 2999; 7100 \u2013 7199",
+      "metrics": {
+        "bertscore_precision": 0.34634929895401,
+        "bertscore_recall": 0.2839221656322479,
+        "bertscore_f1": 0.3160615861415863,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.9640718562874252,
+            "recall": 0.6388888888888888,
+            "fmeasure": 0.7684964200477328
+          },
+          "rouge2": {
+            "precision": 0.8253012048192772,
+            "recall": 0.545816733067729,
+            "fmeasure": 0.657074340527578
+          },
+          "rougeL": {
+            "precision": 0.5209580838323353,
+            "recall": 0.34523809523809523,
+            "fmeasure": 0.4152744630071599
+          },
+          "rougeLsum": {
+            "precision": 0.9580838323353293,
+            "recall": 0.6349206349206349,
+            "fmeasure": 0.7637231503579952
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "How does the document describe the process for handling cost transfers between the RCUH financial system and the UH FMIS system?",
+      "reference": "Cost transfers are handled \"in accordance with UH policy and procedure A8.641, Journal Vouchers and Section 6.c. of UH policy and procedure A9.926.\"  The respective departmental administrator, in collaboration with the principal investigator, initiates cost transfers, which are then reviewed and approved by the Business Office.",
+      "candidate": "The document states that cost transfers shall be handled in accordance with UH policy and procedure A8.641, Journal Vouchers, and Section 6.c. of UH policy and procedure A9.926. Additionally, the ARL at UH must adhere to policies for the establishment of accounts in the UH Financial Management Information System (FMIS) and the recording and transferring of costs from the RCUH Financial Information System into FMIS, following the requirements of UH policy and procedure A8.926.",
+      "metrics": {
+        "bertscore_precision": 0.4167216420173645,
+        "bertscore_recall": 0.5167102813720703,
+        "bertscore_f1": 0.4671223759651184,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.41025641025641024,
+            "recall": 0.6530612244897959,
+            "fmeasure": 0.5039370078740157
+          },
+          "rouge2": {
+            "precision": 0.2987012987012987,
+            "recall": 0.4791666666666667,
+            "fmeasure": 0.368
+          },
+          "rougeL": {
+            "precision": 0.38461538461538464,
+            "recall": 0.6122448979591837,
+            "fmeasure": 0.4724409448818898
+          },
+          "rougeLsum": {
+            "precision": 0.38461538461538464,
+            "recall": 0.6122448979591837,
+            "fmeasure": 0.4724409448818898
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What procedures are in place for monitoring expenditures and addressing potential budget deficits on task orders, and who is responsible for these tasks?",
+      "reference": "Principal investigators and departmental administrators are responsible for monitoring accounts, including purchases, encumbrances, and payroll (\"Principal investigators and departmental administrators shall be responsible for monitoring accounts...\").  Monthly reports (CBMR090, CBMR090S, and CBMR090D) provide expenditure and encumbrance snapshots, and screens 619 and 618 offer more frequent monitoring options (\"Each month reports will be printed...For more periodic monitoring...\").  If a deficit is anticipated, they must inform the department head and the Business Office at least 45 days in advance to coordinate remedial action (\"If a deficit is anticipated, the principal investigator and departmental administrator shall inform the department head and contact the Business Office at least 45 days prior...\").  The ARL at UH is responsible for deficits and disallowances and must take immediate remedial action upon discovery (\"The ARL at UH shall be responsible for deficits and disallowances...\").",
+      "candidate": "The procedures in place for monitoring expenditures and addressing potential budget deficits on task orders include the use of Screen 619 for monthly monitoring of expenditures and encumbrances by principal investigators and departmental administrators. Additionally, reports will be printed monthly in formats CBMR090, CBMR090S, and CBMR090D to provide a snapshot of expenditures, encumbrances, and remaining budgets.\n\nThe responsibility for keeping costs within budget and avoiding cost overruns lies with the Executive Director, PDC program manager, or department director. Managers have some flexibility in managing multiple PDC accounts but must inform the Business Office Director before redirecting funds to new budget activities.",
+      "metrics": {
+        "bertscore_precision": 0.29182207584381104,
+        "bertscore_recall": 0.18174393475055695,
+        "bertscore_f1": 0.23743538558483124,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.46534653465346537,
+            "recall": 0.34306569343065696,
+            "fmeasure": 0.3949579831932773
+          },
+          "rouge2": {
+            "precision": 0.2,
+            "recall": 0.14705882352941177,
+            "fmeasure": 0.16949152542372883
+          },
+          "rougeL": {
+            "precision": 0.26732673267326734,
+            "recall": 0.19708029197080293,
+            "fmeasure": 0.22689075630252103
+          },
+          "rougeLsum": {
+            "precision": 0.27722772277227725,
+            "recall": 0.20437956204379562,
+            "fmeasure": 0.23529411764705885
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to section 4.c.ii of the policy, under what conditions are costs treated as direct costs versus prorated direct costs or institutional F&A costs?",
+      "reference": "According to section 4.c.ii:  \"Costs that can be specifically identified to a task order or can be assigned to it using methods that can be readily estimate the proportional benefit shall be treated as direct costs.  Costs incurred by the ARL at UH that should be treated as prorated direct costs or charged to facilitating services or fee funds shall be determined in accordance with ARL at UH policy A10.130, Prorated Direct Costs.  Cost incurred by the University that benefit more than one ARL at UH activity in proportions that cannot be readily estimated shall be treated as ARL at UH institutional F&A costs.\"",
+      "candidate": "Direct costs are treated as costs that can be specifically identified to a sponsored project or assigned to it using methods that can readily estimate the proportional benefit to the project. On the other hand, prorated direct costs refer to costs incurred by the ARL at UH to support its research efforts, such as administrative support and other related costs that may not be directly associated with a specific project but support research activities. Institutional F&A costs are not explicitly defined in the provided text, so I cannot provide specific conditions for those costs.",
+      "metrics": {
+        "bertscore_precision": 0.2750398516654968,
+        "bertscore_recall": 0.21040762960910797,
+        "bertscore_f1": 0.24375133216381073,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5368421052631579,
+            "recall": 0.4722222222222222,
+            "fmeasure": 0.5024630541871922
+          },
+          "rouge2": {
+            "precision": 0.3191489361702128,
+            "recall": 0.2803738317757009,
+            "fmeasure": 0.2985074626865672
+          },
+          "rougeL": {
+            "precision": 0.4105263157894737,
+            "recall": 0.3611111111111111,
+            "fmeasure": 0.3842364532019704
+          },
+          "rougeLsum": {
+            "precision": 0.4105263157894737,
+            "recall": 0.3611111111111111,
+            "fmeasure": 0.3842364532019704
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the purpose of document A10.355?",
+      "reference": "\"To establish capitalization policies for the Applied Research Laboratory at the University of Hawaii (ARL at UH).\"",
+      "candidate": "The purpose of document A10.355 is to recognize and support the responsibility of the University in protecting the safety of its students, staff, and faculty, and to ensure the integrity of its academic processes.",
+      "metrics": {
+        "bertscore_precision": 0.13692422211170197,
+        "bertscore_recall": 0.04908597469329834,
+        "bertscore_f1": 0.09409365057945251,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.14285714285714285,
+            "recall": 0.29411764705882354,
+            "fmeasure": 0.1923076923076923
+          },
+          "rouge2": {
+            "precision": 0.029411764705882353,
+            "recall": 0.0625,
+            "fmeasure": 0.039999999999999994
+          },
+          "rougeL": {
+            "precision": 0.14285714285714285,
+            "recall": 0.29411764705882354,
+            "fmeasure": 0.1923076923076923
+          },
+          "rougeLsum": {
+            "precision": 0.14285714285714285,
+            "recall": 0.29411764705882354,
+            "fmeasure": 0.1923076923076923
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Who is considered the \"property custodian\" according to this document?",
+      "reference": "The document states that the \"property custodian shall refer to the principal investigator or designee.\"",
+      "candidate": "The \"property custodian\" is considered to be the administrators who are delegated as responsible custodians when assigned property account(s). Additionally, asset representatives are also responsible for direct control, use, care, maintenance, and safekeeping of all property for their respective departments or units.",
+      "metrics": {
+        "bertscore_precision": 0.09413225948810577,
+        "bertscore_recall": 0.2352302372455597,
+        "bertscore_f1": 0.16506719589233398,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.13953488372093023,
+            "recall": 0.4,
+            "fmeasure": 0.2068965517241379
+          },
+          "rouge2": {
+            "precision": 0.047619047619047616,
+            "recall": 0.14285714285714285,
+            "fmeasure": 0.07142857142857142
+          },
+          "rougeL": {
+            "precision": 0.13953488372093023,
+            "recall": 0.4,
+            "fmeasure": 0.2068965517241379
+          },
+          "rougeLsum": {
+            "precision": 0.13953488372093023,
+            "recall": 0.4,
+            "fmeasure": 0.2068965517241379
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the policy regarding the amortization of leasehold improvements at the ARL at UH?",
+      "reference": "Leasehold improvements at the ARL at UH will be amortized over the shorter of the useful life of the improvement or the remaining lease term, unless treated as a current expense with approval from the Naval Sea Systems Command Procuring Contracting Officer (NAVSEA PCO) and/or the Office of Naval Research Administrative Contracting Officer (ONR ACO).  If a lease renewal option exists with uncertain renewal prospects, the amortization period is the original lease term.  This is because  \"Amortization of leasehold improvements is not sufficiently addressed in the University policy,\" so the ARL at UH \"shall apply generally accepted accounting principles\".",
+      "candidate": "The policy regarding the amortization of leasehold improvements at the ARL at UH states that leasehold improvements will be amortized over the shorter of the useful life of the improvement or the remaining lease term. However, the ARL at UH may elect to treat it as a current expense with the approval of the Naval Sea Systems Command Procuring Contracting Officer (NAVSEA PCO) and/or the Office of Naval Research Administrative or designee. Additionally, the amortization period should be the original lease term rather than any longer possible term.",
+      "metrics": {
+        "bertscore_precision": 0.6161741614341736,
+        "bertscore_recall": 0.4813523590564728,
+        "bertscore_f1": 0.5486664175987244,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7528089887640449,
+            "recall": 0.67,
+            "fmeasure": 0.708994708994709
+          },
+          "rouge2": {
+            "precision": 0.625,
+            "recall": 0.5555555555555556,
+            "fmeasure": 0.5882352941176471
+          },
+          "rougeL": {
+            "precision": 0.6404494382022472,
+            "recall": 0.57,
+            "fmeasure": 0.6031746031746033
+          },
+          "rougeLsum": {
+            "precision": 0.6404494382022472,
+            "recall": 0.57,
+            "fmeasure": 0.6031746031746033
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If a leasehold improvement's useful life is longer than the remaining lease term, what is the appropriate amortization period according to this document?",
+      "reference": "The document states that leasehold improvements \"will be amortized over the shorter of the useful life of the improvement or the remaining lease term\".",
+      "candidate": "The appropriate amortization period for a leasehold improvement with a useful life longer than the remaining lease term is the remaining lease term.",
+      "metrics": {
+        "bertscore_precision": 0.4531093239784241,
+        "bertscore_recall": 0.30792236328125,
+        "bertscore_f1": 0.3805291950702667,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.4782608695652174,
+            "recall": 0.4583333333333333,
+            "fmeasure": 0.4680851063829787
+          },
+          "rouge2": {
+            "precision": 0.22727272727272727,
+            "recall": 0.21739130434782608,
+            "fmeasure": 0.22222222222222224
+          },
+          "rougeL": {
+            "precision": 0.43478260869565216,
+            "recall": 0.4166666666666667,
+            "fmeasure": 0.425531914893617
+          },
+          "rougeLsum": {
+            "precision": 0.43478260869565216,
+            "recall": 0.4166666666666667,
+            "fmeasure": 0.425531914893617
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Which external organization's approval is required for the ARL at UH to treat leasehold improvements as a current expense?",
+      "reference": "The ARL at UH requires approval from the Naval Sea Systems Command Procuring Contracting Officer (NAVSEA PCO) and/or the Office of Naval Research Administrative Contracting Officer (ONR ACO) to treat leasehold improvements as a current expense.",
+      "candidate": "The external organization's approval required for the ARL at UH to treat leasehold improvements as a current expense is from the Naval Sea Systems Command Procuring Contracting Officer (NAVSEA PCO) and/or the Office of Naval Research Administrative or designee.",
+      "metrics": {
+        "bertscore_precision": 0.6390911340713501,
+        "bertscore_recall": 0.712823212146759,
+        "bertscore_f1": 0.676243007183075,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8048780487804879,
+            "recall": 0.8918918918918919,
+            "fmeasure": 0.8461538461538461
+          },
+          "rouge2": {
+            "precision": 0.7,
+            "recall": 0.7777777777777778,
+            "fmeasure": 0.7368421052631577
+          },
+          "rougeL": {
+            "precision": 0.5609756097560976,
+            "recall": 0.6216216216216216,
+            "fmeasure": 0.5897435897435899
+          },
+          "rougeLsum": {
+            "precision": 0.5609756097560976,
+            "recall": 0.6216216216216216,
+            "fmeasure": 0.5897435897435899
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What payroll number should be used for casual appointments, and why is a different payroll used for regular appointments?",
+      "reference": "Payroll Number F2 should be used for casual appointments.  The document states that \"The casual payroll (Payroll Number F2) should be used to pay personnel whose periods of appointment and conditions of service do not warrant using regular appointment and payroll procedures.\"  A different payroll is used for regular appointments because casual appointments have different conditions of service and appointment periods that do not qualify for the regular appointment procedures.",
+      "candidate": "The payroll number that should be used for casual appointments is F2. A different payroll is used for regular appointments because regular appointments and payroll procedures are meant for personnel whose periods of appointment and conditions of service are more stable and warrant a formal payroll process. Casual appointments, on the other hand, are for short-term or less formal employment situations that do not require the same level of structure.",
+      "metrics": {
+        "bertscore_precision": 0.4573843777179718,
+        "bertscore_recall": 0.4554339051246643,
+        "bertscore_f1": 0.4572921097278595,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.647887323943662,
+            "recall": 0.6571428571428571,
+            "fmeasure": 0.6524822695035462
+          },
+          "rouge2": {
+            "precision": 0.4142857142857143,
+            "recall": 0.42028985507246375,
+            "fmeasure": 0.4172661870503597
+          },
+          "rougeL": {
+            "precision": 0.39436619718309857,
+            "recall": 0.4,
+            "fmeasure": 0.3971631205673759
+          },
+          "rougeLsum": {
+            "precision": 0.39436619718309857,
+            "recall": 0.4,
+            "fmeasure": 0.3971631205673759
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to Section 5.A, under what conditions might a casual appointee be entitled to collective bargaining, health fund, and retirement system benefits?",
+      "reference": "According to Section 5.A, a casual appointee may be entitled to collective bargaining, health fund, and retirement system benefits if the appointment is half-time equivalent (.50 FTE) or more and exceeds three (3) months in duration.  The document states: \"If the appointment exceeds these limits, pursuant to the Sections 89-6(c), H.R.S., Appropriate bargaining units and 87-1(5) (B)iii, H.R.S., Public Employees Health Fund, Definitions, the appointee may be entitled to collective bargaining, health fund, and retirement system benefits.\"",
+      "candidate": "A casual appointee may be entitled to collective bargaining, health fund, and retirement system benefits if the appointment is half-time equivalent (0.50 FTE) or more and exceeds three months in duration. If a casual appointment is made for less than half-time, it can last for a period not to exceed twelve months, but benefits would not apply unless the other criteria are met.",
+      "metrics": {
+        "bertscore_precision": 0.5031000971794128,
+        "bertscore_recall": 0.1935887485742569,
+        "bertscore_f1": 0.3448704183101654,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5757575757575758,
+            "recall": 0.4318181818181818,
+            "fmeasure": 0.49350649350649356
+          },
+          "rouge2": {
+            "precision": 0.4461538461538462,
+            "recall": 0.3333333333333333,
+            "fmeasure": 0.3815789473684211
+          },
+          "rougeL": {
+            "precision": 0.5454545454545454,
+            "recall": 0.4090909090909091,
+            "fmeasure": 0.4675324675324675
+          },
+          "rougeLsum": {
+            "precision": 0.5454545454545454,
+            "recall": 0.4090909090909091,
+            "fmeasure": 0.4675324675324675
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What federal regulation governs the recruitment of casual employees for positions requiring three or more days of service?",
+      "reference": "Federal regulation Title 41, Chapter 60-250.4 governs the recruitment of casual employees for positions requiring three or more days of service.  The document states: \"In accordance with federal regulations (Title 41, Chapter 60-250.4), all needs for casual services of three (3) days or more must be listed with the State Employment Service (SES) on the island where the service is needed.\"",
+      "candidate": "The federal regulation that governs the recruitment of casual employees for positions requiring three or more days of service is Title 41, Chapter 60-250.4.",
+      "metrics": {
+        "bertscore_precision": 0.6905983686447144,
+        "bertscore_recall": 0.30994176864624023,
+        "bertscore_f1": 0.49442005157470703,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.9615384615384616,
+            "recall": 0.38461538461538464,
+            "fmeasure": 0.5494505494505495
+          },
+          "rouge2": {
+            "precision": 0.84,
+            "recall": 0.328125,
+            "fmeasure": 0.47191011235955066
+          },
+          "rougeL": {
+            "precision": 0.8846153846153846,
+            "recall": 0.35384615384615387,
+            "fmeasure": 0.5054945054945055
+          },
+          "rougeLsum": {
+            "precision": 0.8846153846153846,
+            "recall": 0.35384615384615387,
+            "fmeasure": 0.5054945054945055
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What form is used to process changes to casual appointments, and who is responsible for informing the appointee of such changes?",
+      "reference": "UH Form 25 (DISB) is used to process changes to casual appointments.  The Dean, Director, or their designees are responsible for informing the casual appointee of changes and filing a copy of the Form 25 in the employee's official personnel file.",
+      "candidate": "The form used to process changes to casual appointments is the UH Form 25 (DISB). It is the responsibility of the Dean, Director, or their designees to inform the casual appointee of any changes or corrections that affect their appointments.",
+      "metrics": {
+        "bertscore_precision": 0.638123631477356,
+        "bertscore_recall": 0.6027335524559021,
+        "bertscore_f1": 0.6209887266159058,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.725,
+            "recall": 0.6904761904761905,
+            "fmeasure": 0.7073170731707318
+          },
+          "rouge2": {
+            "precision": 0.5128205128205128,
+            "recall": 0.4878048780487805,
+            "fmeasure": 0.5
+          },
+          "rougeL": {
+            "precision": 0.5,
+            "recall": 0.47619047619047616,
+            "fmeasure": 0.4878048780487805
+          },
+          "rougeLsum": {
+            "precision": 0.5,
+            "recall": 0.47619047619047616,
+            "fmeasure": 0.4878048780487805
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the purpose of Administrative Procedure AP 8.808?",
+      "reference": "The purpose of Administrative Procedure AP 8.808 is \"To provide procedures for the processing of an order to pay funds electronically by wire.\"",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.02962152659893036,
+        "bertscore_recall": 0.019875064492225647,
+        "bertscore_f1": -0.0033635145518928766,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.11428571428571428,
+            "recall": 0.16666666666666666,
+            "fmeasure": 0.13559322033898305
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.08571428571428572,
+            "recall": 0.125,
+            "fmeasure": 0.1016949152542373
+          },
+          "rougeLsum": {
+            "precision": 0.08571428571428572,
+            "recall": 0.125,
+            "fmeasure": 0.1016949152542373
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the responsibility of the University department initiating a wire transfer?",
+      "reference": "University departments are responsible for \"obtaining the required information (ie. invoice) regarding fees for services provided or goods received. The payee\u2019s financial institution should be an authorized Federal Reserve institution.\"  They should also coordinate with the Disbursing Office two days prior to the desired wire transfer date and complete the wire transfer form.",
+      "candidate": "The University department initiating a wire transfer is responsible for obtaining the required information, such as invoices for fees for services provided or goods received. The department must ensure that the payee\u2019s financial institution is an authorized Federal Reserve institution. Additionally, they are responsible for verifying the accuracy of the UHGA account information on the transfer payment order form and coordinating with the Disbursing Office at least two days prior to the desired date of the wire transfer to avoid delays. Finally, the department must complete the wire transfer form with the necessary information.",
+      "metrics": {
+        "bertscore_precision": 0.523436427116394,
+        "bertscore_recall": 0.6791706085205078,
+        "bertscore_f1": 0.6008609533309937,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5052631578947369,
+            "recall": 0.8888888888888888,
+            "fmeasure": 0.6442953020134229
+          },
+          "rouge2": {
+            "precision": 0.3829787234042553,
+            "recall": 0.6792452830188679,
+            "fmeasure": 0.4897959183673469
+          },
+          "rougeL": {
+            "precision": 0.47368421052631576,
+            "recall": 0.8333333333333334,
+            "fmeasure": 0.6040268456375839
+          },
+          "rougeLsum": {
+            "precision": 0.47368421052631576,
+            "recall": 0.8333333333333334,
+            "fmeasure": 0.6040268456375839
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "When was Administrative Procedure AP 8.808 last amended?",
+      "reference": "Administrative Procedure AP 8.808 was last amended in February 2016.  The document states \"Prior Dates Amended: March 2007, February 2016\".",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.07555866986513138,
+        "bertscore_recall": -0.13803668320178986,
+        "bertscore_f1": -0.10520271211862564,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.02857142857142857,
+            "recall": 0.047619047619047616,
+            "fmeasure": 0.03571428571428571
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.02857142857142857,
+            "recall": 0.047619047619047616,
+            "fmeasure": 0.03571428571428571
+          },
+          "rougeLsum": {
+            "precision": 0.02857142857142857,
+            "recall": 0.047619047619047616,
+            "fmeasure": 0.03571428571428571
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Which office is responsible for reviewing the accuracy of the UHGA account information on the wire transfer payment order form?",
+      "reference": "The Disbursing Office is responsible for reviewing the transfer payment order form for the accuracy of the UHGA account information.",
+      "candidate": "The Disbursing Office is responsible for reviewing the accuracy of the UHGA account information on the wire transfer payment order form.",
+      "metrics": {
+        "bertscore_precision": 0.8814424276351929,
+        "bertscore_recall": 0.8877979516983032,
+        "bertscore_f1": 0.8848063349723816,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.9047619047619048,
+            "recall": 0.95,
+            "fmeasure": 0.9268292682926829
+          },
+          "rouge2": {
+            "precision": 0.8,
+            "recall": 0.8421052631578947,
+            "fmeasure": 0.8205128205128205
+          },
+          "rougeL": {
+            "precision": 0.6666666666666666,
+            "recall": 0.7,
+            "fmeasure": 0.6829268292682926
+          },
+          "rougeLsum": {
+            "precision": 0.6666666666666666,
+            "recall": 0.7,
+            "fmeasure": 0.6829268292682926
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Where can detailed procedures on processing wire transfers be found?",
+      "reference": "The document states that \"For detailed procedures on processing wire transfers, please refer to the link under References.\"  The link provided is:  https://drive.google.com/file/d/1Hb1jNFk5WtN3qOdwkwLAviGXIZ6mUWAl/view?usp=sharing",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.04189414158463478,
+        "bertscore_recall": -0.6620181202888489,
+        "bertscore_f1": -0.3707211911678314,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.14285714285714285,
+            "recall": 0.15625,
+            "fmeasure": 0.14925373134328357
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.11428571428571428,
+            "recall": 0.125,
+            "fmeasure": 0.11940298507462688
+          },
+          "rougeLsum": {
+            "precision": 0.11428571428571428,
+            "recall": 0.125,
+            "fmeasure": 0.11940298507462688
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the purpose of Regents Policy RP 6.208?",
+      "reference": "The purpose of Regents Policy RP 6.208 is \"To set forth policy regarding exemptions to non-resident tuition.\"",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.005862682592123747,
+        "bertscore_recall": 0.04092555493116379,
+        "bertscore_f1": 0.024919815361499786,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.11428571428571428,
+            "recall": 0.21052631578947367,
+            "fmeasure": 0.14814814814814814
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.11428571428571428,
+            "recall": 0.21052631578947367,
+            "fmeasure": 0.14814814814814814
+          },
+          "rougeLsum": {
+            "precision": 0.11428571428571428,
+            "recall": 0.21052631578947367,
+            "fmeasure": 0.14814814814814814
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to section III.B, which categories of non-resident students are exempt from the non-resident tuition differential?",
+      "reference": "Section III.B lists the following categories of non-resident students eligible for an exemption from the non-resident tuition differential:\n\n1.  East-West Center student grantees pursuing baccalaureate or advanced degrees.\n2.  United States military personnel stationed in Hawai\u2018i on active duty, and their authorized dependents during the period that the personnel are stationed in Hawai\u2018i.\n3.  Members of the Hawai\u2018i National Guard and the Hawai\u2018i Reserves.\n4.  Native Hawaiians whose domicile is outside of Hawai\u2018i.\n5.  Employees of the university, their spouses, and their dependents (with stipulations on employment).\n6.  Veterans eligible to use Post 9/11 GI Bill or Montgomery GI Bill benefits (with stipulations).\n7.  Individuals eligible to use transferred Post 9/11 GI Bill educational benefits (with stipulations).\n8.  Individuals eligible to use educational benefits under the Marine Gunnery Sergeant John David Fry Scholarship (with stipulations).\n9.  Individuals eligible to use educational assistance under the Survivors\u2019 or Dependents\u2019 Educational Assistance program (with stipulations).\n10. Veterans with service-connected disabilities eligible for benefits under Title 38, U.S. Code, Chapter 31 (with stipulations).\n11. Graduate (GA), teaching (TA), and research assistants (RA), as a function of their appointment to an assistantship.\n12. Ph.D. students registering for only one credit hour of a dissertation course.\n13. Students who are citizens of the Federated States of Micronesia, the Republic of the Marshall Islands, and the Republic of Palau (as required by federal law).",
+      "candidate": "The categories of non-resident students exempt from the non-resident tuition differential are:\n\n1. East-West Center student grantees pursuing baccalaureate or advanced degrees.\n2. United States military personnel stationed in Hawai\u2018i on active duty, and their authorized dependents during the period that the personnel are stationed in Hawai\u2018i.\n3. Members of the Hawai\u2018i National Guard and the Hawai\u2018i Reserves.\n4. Native Hawaiians whose domicile is outside of Hawai\u2018i.",
+      "metrics": {
+        "bertscore_precision": 0.8422513008117676,
+        "bertscore_recall": 0.13850289583206177,
+        "bertscore_f1": 0.46840471029281616,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 0.3112033195020747,
+            "fmeasure": 0.4746835443037975
+          },
+          "rouge2": {
+            "precision": 0.9459459459459459,
+            "recall": 0.2916666666666667,
+            "fmeasure": 0.445859872611465
+          },
+          "rougeL": {
+            "precision": 0.9866666666666667,
+            "recall": 0.3070539419087137,
+            "fmeasure": 0.46835443037974683
+          },
+          "rougeLsum": {
+            "precision": 0.9866666666666667,
+            "recall": 0.3070539419087137,
+            "fmeasure": 0.46835443037974683
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "When was Regents Policy RP 6.208 last amended?",
+      "reference": "The document states that Regents Policy RP 6.208 was last amended on February 17, 2022.  Prior dates amended are also listed: June 16, 2006; Nov. 16, 2006; Oct. 31, 2014 (recodified); May 21, 2015; June 1, 2017; September 26, 2019.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.008422410115599632,
+        "bertscore_recall": -0.25786152482032776,
+        "bertscore_f1": -0.13454164564609528,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.11428571428571428,
+            "recall": 0.0975609756097561,
+            "fmeasure": 0.10526315789473684
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.11428571428571428,
+            "recall": 0.0975609756097561,
+            "fmeasure": 0.10526315789473684
+          },
+          "rougeLsum": {
+            "precision": 0.11428571428571428,
+            "recall": 0.0975609756097561,
+            "fmeasure": 0.10526315789473684
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the maximum percentage of campus enrollment that can receive non-resident tuition exemptions under section III.C?",
+      "reference": "The maximum percentage is \"two percent of campus enrollment in any given year\".",
+      "candidate": "The maximum percentage of campus enrollment that can receive non-resident tuition exemptions is two percent in any given year.",
+      "metrics": {
+        "bertscore_precision": 0.5308371782302856,
+        "bertscore_recall": 0.6652038097381592,
+        "bertscore_f1": 0.5978618860244751,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.65,
+            "recall": 1.0,
+            "fmeasure": 0.787878787878788
+          },
+          "rouge2": {
+            "precision": 0.47368421052631576,
+            "recall": 0.75,
+            "fmeasure": 0.5806451612903226
+          },
+          "rougeL": {
+            "precision": 0.5,
+            "recall": 0.7692307692307693,
+            "fmeasure": 0.6060606060606061
+          },
+          "rougeLsum": {
+            "precision": 0.5,
+            "recall": 0.7692307692307693,
+            "fmeasure": 0.6060606060606061
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Under what conditions are students from Pacific Island jurisdictions charged 150 percent of the resident tuition rate (refer to section III.D)?",
+      "reference": "Students from Pacific Island jurisdictions that provide no public higher education institution granting baccalaureate degrees are charged 150 percent of the resident tuition rate.  For jurisdictions with a public higher education institution that doesn't offer a program desired by the student and offered at the University of Hawai\u2018i, the 150 percent rate may be applied \"upon written agreement by that institution and the university.\"",
+      "candidate": "Students from Pacific Island jurisdictions are charged 150 percent of the resident tuition rate if their jurisdiction provides no public higher education institution granting baccalaureate degrees. Additionally, for citizens from jurisdictions that have a public higher education institution but do not offer a desired program, the 150 percent rate may apply for participation in that specific program at the University of Hawai\u2018i.",
+      "metrics": {
+        "bertscore_precision": 0.7075694799423218,
+        "bertscore_recall": 0.6348779201507568,
+        "bertscore_f1": 0.6715216040611267,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.7619047619047619,
+            "recall": 0.7272727272727273,
+            "fmeasure": 0.7441860465116279
+          },
+          "rouge2": {
+            "precision": 0.5645161290322581,
+            "recall": 0.5384615384615384,
+            "fmeasure": 0.5511811023622047
+          },
+          "rougeL": {
+            "precision": 0.5238095238095238,
+            "recall": 0.5,
+            "fmeasure": 0.5116279069767442
+          },
+          "rougeLsum": {
+            "precision": 0.5238095238095238,
+            "recall": 0.5,
+            "fmeasure": 0.5116279069767442
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What forms are required when requesting sole source purchase approval for an item costing under $25,000?",
+      "reference": "For sole source purchases under $25,000, the requisitioner must submit:  1) Request For Sole Source, OPRPM Form 65 (Attachment 255.1); 2) original approvals from other administrative directives; 3) Determination of Cost or Price Reasonableness, OPRPM Form 95 (Attachment 285.1); 4) if federal funds are used, Authorization to Purchase Equipment with Federal Contract or Grant Funds, UH Form 39, and copies of the award document and budget sheet; 5) a completed KFS purchase order for encumbrance purposes (if a contract is issued); 6) a written, faxed, or emailed quotation with delivery method, freight, delivery time, insurance, taxes, and discounts; and 7)  Notice of Sole Source, OPRPM Form 110 (Attachment 255.3) is *not* required for purchases under $25,000.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.058447472751140594,
+        "bertscore_recall": -0.4047689139842987,
+        "bertscore_f1": -0.2359817624092102,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.14285714285714285,
+            "recall": 0.04132231404958678,
+            "fmeasure": 0.06410256410256411
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.14285714285714285,
+            "recall": 0.04132231404958678,
+            "fmeasure": 0.06410256410256411
+          },
+          "rougeLsum": {
+            "precision": 0.14285714285714285,
+            "recall": 0.04132231404958678,
+            "fmeasure": 0.06410256410256411
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Under what conditions does University policy permit sole source procurements without competitive quotations?",
+      "reference": "University policy permits sole source procurements without competitive quotations under the following conditions:\n\na.  When only one source provides the necessary goods or services, and the university department has a unique requirement essential to its work, met only by goods/services with unique features available from only one supplier (e.g., proprietary items, compatibility with existing equipment, public utility repairs).\n\nb. When goods or services are needed in limited quantity for testing or evaluation.",
+      "candidate": "University policy permits sole source procurements without competitive quotations under the following conditions:\n\n1) The University department has a unique requirement essential for accomplishing its work, which can only be met by particular goods, services, or construction that have the required unique feature, characteristic, or capability.\n   \n2) Public utility repairs or construction that can only be provided by the utility company.\n\n3) The particular goods, services, or construction with the unique feature, characteristic, or capability are available from only one supplier or source.\n\nAdditionally, when goods or services are necessary in a limited quantity for test or evaluation, purchases may also be made on a sole source basis.",
+      "metrics": {
+        "bertscore_precision": 0.45363321900367737,
+        "bertscore_recall": 0.5621136426925659,
+        "bertscore_f1": 0.5081354379653931,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5555555555555556,
+            "recall": 0.8108108108108109,
+            "fmeasure": 0.6593406593406594
+          },
+          "rouge2": {
+            "precision": 0.34579439252336447,
+            "recall": 0.5068493150684932,
+            "fmeasure": 0.41111111111111115
+          },
+          "rougeL": {
+            "precision": 0.4444444444444444,
+            "recall": 0.6486486486486487,
+            "fmeasure": 0.5274725274725275
+          },
+          "rougeLsum": {
+            "precision": 0.5,
+            "recall": 0.7297297297297297,
+            "fmeasure": 0.5934065934065933
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If a department needs to amend a sole source contract that increases the original price by 15%, what approval is required?",
+      "reference": "Amendments to sole source contracts exceeding departmental purchasing authority that increase the original contract price by ten percent or more require the President's approval.  Since a 15% increase exceeds the 10% threshold, the President's approval is required.  \"Amendments to sole source contracts exceeding departmental purchasing authority that would change the original scope of the contract or increase the original contract price by ten percent or more may only be made with the approval of the President.\"",
+      "candidate": "If a department needs to amend a sole source contract that increases the original price by 15%, the approval of the President is required.",
+      "metrics": {
+        "bertscore_precision": 0.5534994006156921,
+        "bertscore_recall": 0.2892368733882904,
+        "bertscore_f1": 0.4190482199192047,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8333333333333334,
+            "recall": 0.2564102564102564,
+            "fmeasure": 0.392156862745098
+          },
+          "rouge2": {
+            "precision": 0.4782608695652174,
+            "recall": 0.14285714285714285,
+            "fmeasure": 0.22
+          },
+          "rougeL": {
+            "precision": 0.6666666666666666,
+            "recall": 0.20512820512820512,
+            "fmeasure": 0.31372549019607837
+          },
+          "rougeLsum": {
+            "precision": 0.6666666666666666,
+            "recall": 0.20512820512820512,
+            "fmeasure": 0.31372549019607837
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the procedure for someone to object to a proposed sole source procurement?",
+      "reference": "Any objections to a sole source procurement request must be submitted in writing to the OPRPM within seven days of the notice posting.  The OPRPM will then place the request on hold, review the objection, and forward it to the President for a written determination to the objector.  \"All documents relating to the objection, including a written summary of the disposition of the objection, shall be kept with the sole source file.\"",
+      "candidate": "Any objections to a proposed sole source procurement must be submitted in writing and received by the Office of Procurement and Real Property Management (OPRPM) within seven days from the date the notice was posted. The OPRPM will place the sole source request on hold, review the objection, and forward it to the President for a written determination to the person who filed the protest. To expedite handling, the written protest should be submitted in an envelope labeled \"Protest\" and can be served personally or sent by registered or certified mail, return receipt requested, to the Procurement Officer. The protest must include at a minimum certain required information, although specific details on what that information is are not provided.",
+      "metrics": {
+        "bertscore_precision": 0.3026641309261322,
+        "bertscore_recall": 0.5880603790283203,
+        "bertscore_f1": 0.44249075651168823,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.48739495798319327,
+            "recall": 0.8055555555555556,
+            "fmeasure": 0.6073298429319371
+          },
+          "rouge2": {
+            "precision": 0.3135593220338983,
+            "recall": 0.5211267605633803,
+            "fmeasure": 0.3915343915343915
+          },
+          "rougeL": {
+            "precision": 0.40336134453781514,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.5026178010471204
+          },
+          "rougeLsum": {
+            "precision": 0.40336134453781514,
+            "recall": 0.6666666666666666,
+            "fmeasure": 0.5026178010471204
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to Exhibit A, what criteria must be met for a rental of booth space at a convention to be considered a sole source procurement?",
+      "reference": "According to Exhibit A, for rental of booth space to be considered a sole source procurement, the criteria is: \"When rental is available only through a single organizer or sponsor of the convention or trade show.\"",
+      "candidate": "For a rental of booth space at a convention to be considered a sole source procurement, the following criteria must be met: the rental must be available only through a single organizer or sponsor of the convention or trade show.",
+      "metrics": {
+        "bertscore_precision": 0.7016739249229431,
+        "bertscore_recall": 0.6631235480308533,
+        "bertscore_f1": 0.6828478574752808,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.75,
+            "recall": 0.8333333333333334,
+            "fmeasure": 0.7894736842105262
+          },
+          "rouge2": {
+            "precision": 0.5897435897435898,
+            "recall": 0.6571428571428571,
+            "fmeasure": 0.6216216216216216
+          },
+          "rougeL": {
+            "precision": 0.725,
+            "recall": 0.8055555555555556,
+            "fmeasure": 0.7631578947368423
+          },
+          "rougeLsum": {
+            "precision": 0.725,
+            "recall": 0.8055555555555556,
+            "fmeasure": 0.7631578947368423
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the effective date of Board of Regents Policy 9.217?",
+      "reference": "The effective date of Board of Regents Policy 9.217 is July 24, 1987.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.05774775892496109,
+        "bertscore_recall": 0.019744185730814934,
+        "bertscore_f1": -0.017648916691541672,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.05714285714285714,
+            "recall": 0.14285714285714285,
+            "fmeasure": 0.08163265306122448
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.05714285714285714,
+            "recall": 0.14285714285714285,
+            "fmeasure": 0.08163265306122448
+          },
+          "rougeLsum": {
+            "precision": 0.05714285714285714,
+            "recall": 0.14285714285714285,
+            "fmeasure": 0.08163265306122448
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to this policy, under what circumstances may the oath of loyalty be waived for university employees?",
+      "reference": "The oath of loyalty may be waived for \"aliens employed by the university, and casual and temporary employees and student helpers of the university whether on a monthly salary, hourly wage, or per diem basis.\"  This is in accordance with Hawai\u2018i Revised Statutes, Section 85-34, as amended (SLH 1987).",
+      "candidate": "The oath of loyalty may be waived for university employees under the following circumstances: \n\n1. Aliens employed by the university.\n2. Casual and temporary employees and student helpers of the university, whether on a monthly salary, hourly wage, or per diem basis.\n\nAdditionally, the president has the authority to waive the oath of loyalty in accordance with state statutes.",
+      "metrics": {
+        "bertscore_precision": 0.5152403712272644,
+        "bertscore_recall": 0.4310676157474518,
+        "bertscore_f1": 0.4736813008785248,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6440677966101694,
+            "recall": 0.7450980392156863,
+            "fmeasure": 0.6909090909090908
+          },
+          "rouge2": {
+            "precision": 0.5689655172413793,
+            "recall": 0.66,
+            "fmeasure": 0.6111111111111112
+          },
+          "rougeL": {
+            "precision": 0.6440677966101694,
+            "recall": 0.7450980392156863,
+            "fmeasure": 0.6909090909090908
+          },
+          "rougeLsum": {
+            "precision": 0.6271186440677966,
+            "recall": 0.7254901960784313,
+            "fmeasure": 0.6727272727272727
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Who has the delegated authority to waive the oath of loyalty for university employees?",
+      "reference": "The president is delegated the authority to waive the oath of loyalty in accordance with state statutes.  This is stated in sections III.B and IV.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.007344183512032032,
+        "bertscore_recall": 0.00979321263730526,
+        "bertscore_f1": 0.0028327121399343014,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.11428571428571428,
+            "recall": 0.15384615384615385,
+            "fmeasure": 0.13114754098360656
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.08571428571428572,
+            "recall": 0.11538461538461539,
+            "fmeasure": 0.09836065573770493
+          },
+          "rougeLsum": {
+            "precision": 0.08571428571428572,
+            "recall": 0.11538461538461539,
+            "fmeasure": 0.09836065573770493
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What Hawai'i Revised Statutes section does this policy reference regarding the waiver of the oath of loyalty?",
+      "reference": "Hawai'i Revised Statutes Section 85-34, as amended (SLH 1987), is referenced.",
+      "candidate": "The policy references Hawai\u2018i Revised Statutes Section 85-34 regarding the waiver of the oath of loyalty.",
+      "metrics": {
+        "bertscore_precision": 0.3584131896495819,
+        "bertscore_recall": 0.3200310468673706,
+        "bertscore_f1": 0.3402252793312073,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.3888888888888889,
+            "recall": 0.5384615384615384,
+            "fmeasure": 0.45161290322580644
+          },
+          "rouge2": {
+            "precision": 0.35294117647058826,
+            "recall": 0.5,
+            "fmeasure": 0.41379310344827586
+          },
+          "rougeL": {
+            "precision": 0.3888888888888889,
+            "recall": 0.5384615384615384,
+            "fmeasure": 0.45161290322580644
+          },
+          "rougeLsum": {
+            "precision": 0.3888888888888889,
+            "recall": 0.5384615384615384,
+            "fmeasure": 0.45161290322580644
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "When was this policy last reviewed, according to the document header?",
+      "reference": "August 2019",
+      "candidate": "The policy was last reviewed on March 19, 2020.",
+      "metrics": {
+        "bertscore_precision": -0.02457883581519127,
+        "bertscore_recall": 0.2084731161594391,
+        "bertscore_f1": 0.0907311961054802,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeLsum": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What are the reporting requirements for work-related injuries/illnesses that cause an employee to be absent for one or more days, or that require medical services beyond first aid?",
+      "reference": "Under the workers\u2019 compensation law, each work-related injury/illness causing an absence of one or more days or which requires medical services other than first aid treatment must be reported by the University within seven (7) working days to the Disability Compensation Division (DCD) of the State Department of Labor and Industrial Relations (DLIR).  The seven (7) working days reporting period begins from the first day the Employer has knowledge of the occurrence of the injury/illness.  For purposes of reporting work-related injuries/illnesses, the Employer is defined as the Employee\u2019s Supervisor.",
+      "candidate": "Each work-related injury or illness that causes an employee to be absent for one or more days or requires medical services beyond first aid must be reported by the University within seven working days to the Disability Compensation Division (DCD) of the State Department of Labor and Industrial Relations (DLIR). This reporting period begins from the first day the Employer (defined as the Employee\u2019s Supervisor) has knowledge of the occurrence. The types of incidents that require reporting include the need for medical treatment other than first aid, loss of consciousness, restriction of work or motion, and transfer to another job. To record an injury or illness, the instructions on the OSHA 200 form should be followed. If the recordability of an incident is questionable, it should be recorded, and if later deemed non-recordable, the entry can be lined out.",
+      "metrics": {
+        "bertscore_precision": 0.4178232252597809,
+        "bertscore_recall": 0.6022058129310608,
+        "bertscore_f1": 0.5092560052871704,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5563380281690141,
+            "recall": 0.8315789473684211,
+            "fmeasure": 0.6666666666666667
+          },
+          "rouge2": {
+            "precision": 0.3900709219858156,
+            "recall": 0.5851063829787234,
+            "fmeasure": 0.46808510638297873
+          },
+          "rougeL": {
+            "precision": 0.47183098591549294,
+            "recall": 0.7052631578947368,
+            "fmeasure": 0.5654008438818565
+          },
+          "rougeLsum": {
+            "precision": 0.47183098591549294,
+            "recall": 0.7052631578947368,
+            "fmeasure": 0.5654008438818565
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Who is responsible for administering the University\u2019s workers' compensation program, and what are the roles and responsibilities of the Supervisor and the Workers\u2019 Compensation Coordinator?",
+      "reference": "The Office of Human Resources (OHR), Workers\u2019 Compensation Section, is responsible for administering the University\u2019s workers' compensation program.  \"The designated administrative or personnel officer of each college shall be authorized to serve as the Workers\u2019 Compensation Coordinator (WC Coordinator) for the respective college.\"  The Supervisor \"shall timely advise and assist the Employee in securing medical attention, filing of the report of injury/illness, notifying the WC Coordinator of the injury/illness, and submitting required documents.\" The WC Coordinator \"shall advise the Supervisor and Employee of the Workers\u2019 Compensation Law and applicable administrative rules and University procedures pertinent to the reporting of work-related injury/illness and shall serve as the point of contact for the OHR and the TPA/IC.\"",
+      "candidate": "The Office of Human Resources (OHR), Workers\u2019 Compensation Section, is responsible for administering the University\u2019s workers' compensation program. \n\nThe Supervisor's roles and responsibilities include timely advising and assisting the Employee in securing medical attention, filing the report of injury/illness, notifying the Workers\u2019 Compensation Coordinator of the injury/illness, and submitting required documents.\n\nThe Workers\u2019 Compensation Coordinator (WC Coordinator) is responsible for advising the Supervisor and Employee about the Workers\u2019 Compensation Law and applicable administrative rules and University procedures regarding the reporting of work-related injury/illness. The WC Coordinator also serves as the point of contact for the OHR and any third-party administrator or insurance carrier involved.",
+      "metrics": {
+        "bertscore_precision": 0.7042134404182434,
+        "bertscore_recall": 0.6509009599685669,
+        "bertscore_f1": 0.6779537200927734,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8468468468468469,
+            "recall": 0.7768595041322314,
+            "fmeasure": 0.810344827586207
+          },
+          "rouge2": {
+            "precision": 0.7454545454545455,
+            "recall": 0.6833333333333333,
+            "fmeasure": 0.7130434782608696
+          },
+          "rougeL": {
+            "precision": 0.7567567567567568,
+            "recall": 0.6942148760330579,
+            "fmeasure": 0.7241379310344828
+          },
+          "rougeLsum": {
+            "precision": 0.7747747747747747,
+            "recall": 0.7107438016528925,
+            "fmeasure": 0.7413793103448275
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to the document, what forms are necessary to report a work-related injury/illness, and where are they located within the document?",
+      "reference": "The document lists several forms necessary to report a work-related injury/illness: UH Form 29 (H&S), UH Form 79 (OHR), UH Form 83 (OHR), UH Form 41 (OHR), UH Form 42 (OHR), UH Form 78 (OHR), and Form WC-1.  These forms are listed in sections 5 (paragraph 3), 6 (paragraphs a, b, c), and 7 of the document.",
+      "candidate": "The forms necessary to report a work-related injury/illness are:\n\n1. UH Form 79 (OHR), Report of Work-Related Injury/Illness - Section I\n2. UH Form 41 (OHR), Sick/Vacation Pay During Receipt of Workers\u2019 Compensation Disability Benefits\n\nThese forms should be submitted to the Workers\u2019 Compensation Coordinator in your college personnel office.",
+      "metrics": {
+        "bertscore_precision": 0.2571730613708496,
+        "bertscore_recall": 0.21854010224342346,
+        "bertscore_f1": 0.23902177810668945,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.48148148148148145,
+            "recall": 0.4262295081967213,
+            "fmeasure": 0.45217391304347826
+          },
+          "rouge2": {
+            "precision": 0.2830188679245283,
+            "recall": 0.25,
+            "fmeasure": 0.26548672566371684
+          },
+          "rougeL": {
+            "precision": 0.3888888888888889,
+            "recall": 0.3442622950819672,
+            "fmeasure": 0.3652173913043478
+          },
+          "rougeLsum": {
+            "precision": 0.3333333333333333,
+            "recall": 0.29508196721311475,
+            "fmeasure": 0.31304347826086953
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What procedures must an employee follow if they experience a work-related injury or illness, and what support is provided by their supervisor?",
+      "reference": "If an employee experiences a work-related injury or illness, they must: 1) report it to their supervisor immediately; 2) complete and submit UH Form 79 (OHR), Report of Work-Related Injury/Illness; 3) submit disability certification from their physician; 4) review provided information sheets; 5) submit UH Form 83 (OHR) upon return to work for medical appointments during work hours; 6) inform the WC Coordinator and TPA/IC of address changes; and 7) submit UH Form 1, Application for Leave of Absence, as appropriate.  The supervisor must: 1) provide the employee with UH Form 79; 2) assist in completing the form; 3) encourage the employee to seek medical attention; and 4) complete their statement on the form and forward it to the WC Coordinator.",
+      "candidate": "If an employee experiences a work-related injury or illness, they must follow these procedures:\n\n1. Report the injury/illness to their supervisor immediately after it occurs, or as soon as possible thereafter.\n2. Complete and submit the UH Form 79 (OHR), Report of Work-Related Injury/Illness, to the supervisor immediately or as soon as possible.\n3. Timely submit any disability certification from the treating physician to the supervisor to support requests for sick/vacation leave or leave without pay.\n\nThe supervisor is responsible for the following support:\n\n1. Provide the employee with the UH Form 79 (OHR).\n2. Assist the employee in completing the form, if necessary.\n3. Encourage the employee to seek medical attention, if needed.\n4. Complete the supervisor\u2019s statement on the UH Form 79 and forward it immediately to the respective Workers' Compensation Coordinator.",
+      "metrics": {
+        "bertscore_precision": 0.4746473431587219,
+        "bertscore_recall": 0.4528089165687561,
+        "bertscore_f1": 0.4645771384239197,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5928571428571429,
+            "recall": 0.664,
+            "fmeasure": 0.6264150943396226
+          },
+          "rouge2": {
+            "precision": 0.38848920863309355,
+            "recall": 0.43548387096774194,
+            "fmeasure": 0.41064638783269963
+          },
+          "rougeL": {
+            "precision": 0.5571428571428572,
+            "recall": 0.624,
+            "fmeasure": 0.588679245283019
+          },
+          "rougeLsum": {
+            "precision": 0.5,
+            "recall": 0.56,
+            "fmeasure": 0.5283018867924528
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "How does the document address the handling of injuries or illnesses to individuals other than University employees (e.g., students or visitors) who are injured on University premises?",
+      "reference": "To report an injury/illness of a person other than an employee (e.g., student or visitor) on University premises,  \"the person reporting the injury/illness shall complete UH Form 29 (H&S), Accidental Injury and Occupational Illness Report, in accordance with Administrative Procedure, A9.750, University Health and Safety Program, and submit the report directly to the respective Campus Safety Office.\"",
+      "candidate": "To report an injury or illness of a person other than a University employee, such as a student or visitor, the individual reporting the incident must complete the UH Form 29 (H&S), which is the Accidental Injury and Occupational Illness Report. This report should be submitted directly to the respective Campus Safety Office, in accordance with Administrative Procedure A9.750, University Health and Safety Program. Additionally, there are procedures for handling such incidents, including providing perspective and information on situations involving students and notifying relevant parties such as Campus Security, medical assistance, and legal affairs as necessary.",
+      "metrics": {
+        "bertscore_precision": 0.5387541055679321,
+        "bertscore_recall": 0.7089541554450989,
+        "bertscore_f1": 0.6231680512428284,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5510204081632653,
+            "recall": 0.8709677419354839,
+            "fmeasure": 0.6749999999999999
+          },
+          "rouge2": {
+            "precision": 0.38144329896907214,
+            "recall": 0.6065573770491803,
+            "fmeasure": 0.46835443037974683
+          },
+          "rougeL": {
+            "precision": 0.4387755102040816,
+            "recall": 0.6935483870967742,
+            "fmeasure": 0.5375
+          },
+          "rougeLsum": {
+            "precision": 0.4387755102040816,
+            "recall": 0.6935483870967742,
+            "fmeasure": 0.5375
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the purpose of Administrative Procedure No. A9.840?",
+      "reference": "The purpose of Administrative Procedure No. A9.840 is \"To establish procedures for implementing work force reduction of regular State civil service employees.\"",
+      "candidate": "The purpose of Administrative Procedure No. A9.840 is to outline the guidelines and procedures for the preparation and processing of authorizations to plan, proposals for new academic programs, and reviews of provisional programs. It aims to ensure the academic and fiscal soundness of proposed and provisional programs and their alignment with University-wide and campus missions. Additionally, it establishes an academic program approval and termination process from authorization to plan through established status, requiring Chancellors/Provost to develop procedures for their campuses and ensuring appropriate faculty and student input.",
+      "metrics": {
+        "bertscore_precision": 0.07862460613250732,
+        "bertscore_recall": 0.48513367772102356,
+        "bertscore_f1": 0.2751484811306,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.15555555555555556,
+            "recall": 0.6086956521739131,
+            "fmeasure": 0.24778761061946902
+          },
+          "rouge2": {
+            "precision": 0.11235955056179775,
+            "recall": 0.45454545454545453,
+            "fmeasure": 0.18018018018018017
+          },
+          "rougeL": {
+            "precision": 0.14444444444444443,
+            "recall": 0.5652173913043478,
+            "fmeasure": 0.2300884955752212
+          },
+          "rougeLsum": {
+            "precision": 0.14444444444444443,
+            "recall": 0.5652173913043478,
+            "fmeasure": 0.2300884955752212
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to the document, what constitutes a \"Regular Civil Service Employee\"?",
+      "reference": "A \"Regular Civil Service Employee\" is \"An employee who has been appointed to a position in the civil service in accordance with Chapter 76, HRS, and who has successfully completed his/her initial probational period or as provided by statute.\"",
+      "candidate": "A \"Regular Civil Service Employee\" is defined as an employee who has been appointed to a position in the civil service in accordance with Chapter 76 of the Hawaii Revised Statutes (HRS) and who has successfully completed the initial probational period or as provided by statute.",
+      "metrics": {
+        "bertscore_precision": 0.7092512249946594,
+        "bertscore_recall": 0.7635345458984375,
+        "bertscore_f1": 0.7366923093795776,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.8260869565217391,
+            "recall": 0.95,
+            "fmeasure": 0.8837209302325583
+          },
+          "rouge2": {
+            "precision": 0.7555555555555555,
+            "recall": 0.8717948717948718,
+            "fmeasure": 0.8095238095238095
+          },
+          "rougeL": {
+            "precision": 0.8260869565217391,
+            "recall": 0.95,
+            "fmeasure": 0.8837209302325583
+          },
+          "rougeLsum": {
+            "precision": 0.8260869565217391,
+            "recall": 0.95,
+            "fmeasure": 0.8837209302325583
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "If a department needs to lay off employees due to lack of funds, what is the minimum timeframe they must notify the University Office of Human Resources?",
+      "reference": "The department must notify the University Office of Human Resources at least thirty (30) days prior to the required time limitation imposed by the applicable bargaining unit agreement provisions.",
+      "candidate": "A department must notify the University Office of Human Resources at least thirty (30) days prior to the required time limitation imposed by the applicable bargaining unit agreement provisions when there is an impending workforce reduction of regular State civil service employees.",
+      "metrics": {
+        "bertscore_precision": 0.6800622940063477,
+        "bertscore_recall": 0.9182040691375732,
+        "bertscore_f1": 0.7969954609870911,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6666666666666666,
+            "recall": 0.9655172413793104,
+            "fmeasure": 0.7887323943661971
+          },
+          "rouge2": {
+            "precision": 0.6585365853658537,
+            "recall": 0.9642857142857143,
+            "fmeasure": 0.782608695652174
+          },
+          "rougeL": {
+            "precision": 0.6666666666666666,
+            "recall": 0.9655172413793104,
+            "fmeasure": 0.7887323943661971
+          },
+          "rougeLsum": {
+            "precision": 0.6666666666666666,
+            "recall": 0.9655172413793104,
+            "fmeasure": 0.7887323943661971
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Which offices are responsible for implementing the work force reduction process, and what are their specific roles?",
+      "reference": "The Division/College/School notifies the University Office of Human Resources (OHR) at least 30 days prior to the applicable bargaining unit agreement's time limitation  \"via the respective Chief Executive Campus Officer or Official Designee when there is an impending work force reduction of regular State civil service employees.\"  The University Office of Human Resources implements the procedures \"in coordination with the Department of Human Resources Development (DHRD).\"  Unions are also notified and may represent affected employees.",
+      "candidate": "The offices responsible for implementing the workforce reduction process are:\n\n1. **Division/College/School**: They must notify the University Office of Human Resources (OHR) via the respective Chief Executive Campus Officer or Official Designee about an impending workforce reduction of regular State civil service employees at least thirty (30) days prior to the required notification time limitation. They also identify eligible employees for staff reduction in consultation with the respective Senior Vice President (or President for offices reporting directly to the President), and submit lists of identified affected employees to the Senior Vice President.\n\n2. **University Office of Human Resources (OHR)**: OHR is notified by the Division/College/School and is involved in the overall process of workforce reduction. \n\n3. **Senior Vice President**: They consult with the Union and receive the lists of identified affected eligible employees from the Deans, Directors, and Provosts.",
+      "metrics": {
+        "bertscore_precision": 0.20559822022914886,
+        "bertscore_recall": 0.47004732489585876,
+        "bertscore_f1": 0.335593581199646,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.4195804195804196,
+            "recall": 0.7692307692307693,
+            "fmeasure": 0.5429864253393666
+          },
+          "rouge2": {
+            "precision": 0.2746478873239437,
+            "recall": 0.5064935064935064,
+            "fmeasure": 0.3561643835616438
+          },
+          "rougeL": {
+            "precision": 0.3146853146853147,
+            "recall": 0.5769230769230769,
+            "fmeasure": 0.4072398190045249
+          },
+          "rougeLsum": {
+            "precision": 0.2937062937062937,
+            "recall": 0.5384615384615384,
+            "fmeasure": 0.3800904977375566
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Where can employees find the Reduction In Force (RIF) Guidelines, and what other documents do these guidelines reference?",
+      "reference": "Employees can find the Reduction In Force (RIF) Guidelines on the Office of Human Resources Home Page under the topic Electronic Document Distribution on the World Wide Web (WWW).  These guidelines reference \"the appropriate bargaining unit contracts, Executive Order No. 95-01, and Title 14, Administrative Rules, Chapters 6, 8 and 14 of the State Personnel Rules\".",
+      "candidate": "Employees can find the Reduction In Force (RIF) Guidelines on the Office of Human Resources Home Page under the topic Electronic Document Distribution. The guidelines reference the appropriate bargaining unit contracts, Executive Order No. 95-01, Title 14, Administrative Rules, and Chapters 6, 8, and 14 of the State Personnel Rules, as well as various sections of the HRS regarding filling vacancies, reemployment and recall lists, layoffs, and adjustments authorized for officers and employees covered by collective bargaining agreements.",
+      "metrics": {
+        "bertscore_precision": 0.5754502415657043,
+        "bertscore_recall": 0.7293866872787476,
+        "bertscore_f1": 0.6519274711608887,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.6455696202531646,
+            "recall": 0.8947368421052632,
+            "fmeasure": 0.7500000000000001
+          },
+          "rouge2": {
+            "precision": 0.5769230769230769,
+            "recall": 0.8035714285714286,
+            "fmeasure": 0.6716417910447761
+          },
+          "rougeL": {
+            "precision": 0.6329113924050633,
+            "recall": 0.8771929824561403,
+            "fmeasure": 0.7352941176470589
+          },
+          "rougeLsum": {
+            "precision": 0.6329113924050633,
+            "recall": 0.8771929824561403,
+            "fmeasure": 0.7352941176470589
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the purpose of Administrative Policy A9.730?",
+      "reference": "The purpose of Administrative Policy A9.730 is \"To provide procedural and suggested processes to implement Executive Policy, E9.210, Workplace Non-Violence policy.\"",
+      "candidate": "The purpose of Administrative Policy A9.730 is to set forth the responsibilities of employees who perform or have authority for fiscal and administrative functions. It aims to establish guidelines and responsibilities for the proper recording, tracking, and management of the university's resources in a fiscally responsible manner, ensuring that institutional priorities and budget expenditures are aligned with the university\u2019s mission, vision, and plans.",
+      "metrics": {
+        "bertscore_precision": 0.14886784553527832,
+        "bertscore_recall": 0.40162113308906555,
+        "bertscore_f1": 0.27336713671684265,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.16666666666666666,
+            "recall": 0.4583333333333333,
+            "fmeasure": 0.2444444444444444
+          },
+          "rouge2": {
+            "precision": 0.12307692307692308,
+            "recall": 0.34782608695652173,
+            "fmeasure": 0.18181818181818182
+          },
+          "rougeL": {
+            "precision": 0.16666666666666666,
+            "recall": 0.4583333333333333,
+            "fmeasure": 0.2444444444444444
+          },
+          "rougeLsum": {
+            "precision": 0.16666666666666666,
+            "recall": 0.4583333333333333,
+            "fmeasure": 0.2444444444444444
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "According to Attachment 1, what are the four tasks to be performed if there is immediate or imminent danger during a workplace violence incident?",
+      "reference": "According to Attachment 1, if there is immediate or imminent danger, the four tasks to be performed are:  \"1) Call Honolulu Police Department - 911; 2) Call Campus Security; 3) Call Dean/Director/Provost (or other designated administrator); 4) Decide whether to continue operations or evacuate area\".",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": -0.02325086109340191,
+        "bertscore_recall": -0.2592523694038391,
+        "bertscore_f1": -0.1423034369945526,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.08571428571428572,
+            "recall": 0.06521739130434782,
+            "fmeasure": 0.07407407407407408
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.08571428571428572,
+            "recall": 0.06521739130434782,
+            "fmeasure": 0.07407407407407408
+          },
+          "rougeLsum": {
+            "precision": 0.08571428571428572,
+            "recall": 0.06521739130434782,
+            "fmeasure": 0.07407407407407408
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Which offices/departments are included in the suggested Campus Crisis Management Team (CCMT) as listed in Attachment 2?",
+      "reference": "Attachment 2 lists the following offices/departments in the suggested Campus Crisis Management Team (CCMT):  Administrative Lead (Chancellor or Designee), Lead Security (Campus Security Captain), Human Resources (Campus/College Human Resources Officer), Public Affairs, Legal Affairs, and Student Affairs.",
+      "candidate": "The offices/departments included in the suggested Campus Crisis Management Team (CCMT) are:\n\n1. Senior Executive of the campus\n2. Human Resources representative\n3. Academic Affairs\n4. Student Affairs\n5. Campus Security\n6. University Relations",
+      "metrics": {
+        "bertscore_precision": 0.2937719225883484,
+        "bertscore_recall": 0.2406768798828125,
+        "bertscore_f1": 0.2682787775993347,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.5714285714285714,
+            "recall": 0.5128205128205128,
+            "fmeasure": 0.5405405405405405
+          },
+          "rouge2": {
+            "precision": 0.3235294117647059,
+            "recall": 0.2894736842105263,
+            "fmeasure": 0.30555555555555564
+          },
+          "rougeL": {
+            "precision": 0.4857142857142857,
+            "recall": 0.4358974358974359,
+            "fmeasure": 0.45945945945945943
+          },
+          "rougeLsum": {
+            "precision": 0.5428571428571428,
+            "recall": 0.48717948717948717,
+            "fmeasure": 0.5135135135135135
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What information is requested in section 3 (\"Describe Main Issue\") of the Suggested Incident Report (Attachment 3)?",
+      "reference": "Attachment 3, section 3 (\"Describe Main Issue\") requests the following information:  Who, What, Where, When, and How;  it also asks for Unknowns.",
+      "candidate": "In section 3 (\"Describe Main Issue\") of the Suggested Incident Report, the information requested includes a clear and concise description of the incident(s) related to the allegations of research misconduct. This description should specify the nature of the allegation and identify the respondent involved.",
+      "metrics": {
+        "bertscore_precision": 0.16244331002235413,
+        "bertscore_recall": 0.1527247428894043,
+        "bertscore_f1": 0.15894795954227448,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.2,
+            "recall": 0.4090909090909091,
+            "fmeasure": 0.2686567164179105
+          },
+          "rouge2": {
+            "precision": 0.09090909090909091,
+            "recall": 0.19047619047619047,
+            "fmeasure": 0.12307692307692307
+          },
+          "rougeL": {
+            "precision": 0.17777777777777778,
+            "recall": 0.36363636363636365,
+            "fmeasure": 0.2388059701492537
+          },
+          "rougeLsum": {
+            "precision": 0.17777777777777778,
+            "recall": 0.36363636363636365,
+            "fmeasure": 0.2388059701492537
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "Based on the document, what steps are recommended for improving or addressing future workplace violence situations after an incident has occurred (refer to Attachment 4)?",
+      "reference": "The document states that Attachment 4, \"SUGGESTED POST-INCIDENT REPORT,\" includes a section \"3. Identify steps to improve or address situation or future situation,\" but the content of that section is not provided.  Therefore, the document does not provide sufficient information to answer this question.",
+      "candidate": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "metrics": {
+        "bertscore_precision": 0.07120932638645172,
+        "bertscore_recall": -0.050568435341119766,
+        "bertscore_f1": 0.011177223175764084,
+        "rouge": {
+          "rouge1": {
+            "precision": 0.22857142857142856,
+            "recall": 0.17777777777777778,
+            "fmeasure": 0.2
+          },
+          "rouge2": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "fmeasure": 0.0
+          },
+          "rougeL": {
+            "precision": 0.14285714285714285,
+            "recall": 0.1111111111111111,
+            "fmeasure": 0.125
+          },
+          "rougeLsum": {
+            "precision": 0.14285714285714285,
+            "recall": 0.1111111111111111,
+            "fmeasure": 0.125
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    },
+    {
+      "question": "What is the effective date of Executive Policy 10.201, Use of University-Owned Facilities?",
+      "reference": "The effective date of Executive Policy 10.201, Use of University-Owned Facilities, is October 2014.",
+      "candidate": "The effective date of Executive Policy 10.201, Use of University-Owned Facilities, is October 2014.",
+      "metrics": {
+        "bertscore_precision": 1.0000007152557373,
+        "bertscore_recall": 1.0000007152557373,
+        "bertscore_f1": 1.0000007152557373,
+        "rouge": {
+          "rouge1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rouge2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          },
+          "rougeLsum": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "fmeasure": 1.0
+          }
+        },
+        "bleurt": null,
+        "embedding_similarity": null
+      }
+    }
+  ],
+  "aggregate_metrics": {
+    "mean_bertscore_precision": 0.3780540848243982,
+    "mean_bertscore_recall": 0.36646256858482956,
+    "mean_bertscore_f1": 0.37134585494408384,
+    "mean_rouge1_f1": 0.4973542988840343,
+    "mean_rouge2_f1": 0.3610441159182421,
+    "mean_rougeL_f1": 0.4247222105653084,
+    "mean_rougeLsum_f1": 0.4293559875016139
+  },
+  "timestamp": "2025-07-29 10:14:50",
+  "num_questions": 100
+}

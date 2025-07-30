@@ -1,0 +1,8 @@
+{
+  "dataset_id": "policy_eval_2000_200",
+  "chunk_size": 2000,
+  "chunk_overlap": 200,
+  "num_documents": 437,
+  "num_chunks": 2593,
+  "num_questions": 2141
+}
