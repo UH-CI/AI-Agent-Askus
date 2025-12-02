@@ -1,4 +1,7 @@
+import sys
 import os
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from chromadb import HttpClient
 from dotenv import load_dotenv
@@ -200,4 +203,4 @@ add_routes(
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="localhost", port=8000)
+    uvicorn.run(app, host="localhost", port=8001)

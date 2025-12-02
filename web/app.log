@@ -1,0 +1,38 @@
+nohup: ignoring input
+
+> web@0.1.0 dev
+> next dev --hostname 0.0.0.0
+
+  ▲ Next.js 14.2.24
+  - Local:        http://localhost:3000
+  - Network:      http://0.0.0.0:3000
+
+ ✓ Starting...
+ ✓ Ready in 1930ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1422ms (719 modules)
+ GET / 200 in 1710ms
+ ○ Compiling /api/trpc/[trpc] ...
+ ✓ Compiled /api/trpc/[trpc] in 604ms (510 modules)
+[TRPC] chat.response took 241ms to execute
+❌ tRPC failed on chat.response: connect ECONNREFUSED 127.0.0.1:8001
+ POST /api/trpc/chat.response?batch=1 200 in 1583ms
+[TRPC] chat.response took 385ms to execute
+❌ tRPC failed on chat.response: connect ECONNREFUSED 127.0.0.1:8001
+ POST /api/trpc/chat.response?batch=1 200 in 411ms
+ GET / 200 in 171ms
+[TRPC] chat.response took 424ms to execute
+❌ tRPC failed on chat.response: connect ECONNREFUSED 127.0.0.1:8001
+ POST /api/trpc/chat.response?batch=1 200 in 452ms
+ GET / 200 in 28ms
+ GET / 200 in 25ms
+[TRPC] chat.response took 491ms to execute
+❌ tRPC failed on chat.response: connect ECONNREFUSED 127.0.0.1:8001
+ POST /api/trpc/chat.response?batch=1 200 in 522ms
+ GET / 200 in 20ms
+[TRPC] chat.response took 164ms to execute
+❌ tRPC failed on chat.response: connect ECONNREFUSED 127.0.0.1:8001
+ POST /api/trpc/chat.response?batch=1 200 in 184ms
+ GET / 200 in 20ms
+ GET / 200 in 19ms
+[?25h

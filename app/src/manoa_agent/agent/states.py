@@ -8,7 +8,7 @@ class AgentState(MessagesState):
     retriever: str
 
 
-class AgentOutputState(TypedDict):
+class AgentOutputState(MessagesState):
     message: BaseMessage
     sources: List[str]
 
