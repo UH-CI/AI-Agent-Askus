@@ -4,3 +4,7 @@ model/db
 .env
 .venv
 .idea
+app/askus_env/
+askus_env/
+app/myenv/
+myenv/
