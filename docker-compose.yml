@@ -1,4 +1,17 @@
 services:
+  frontend:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: ai-agent-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - hoku-app
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://hoku-app:8001
+
   hoku-app:
     build:
       context: ./app
@@ -11,8 +24,8 @@ services:
     environment:
       - CHROMA_HOST=chromadb
       - CHROMA_PORT=8000
-      - OPENAI_API_KEY=sk-svcacct-IHGi5JoNd8p3S-rVYYDpbpI40Q-Rz80oVBZI6j0j_oCCDOg…
-      - GEMINI_API_KEY=AIzaSyAdmHIhoIPCg9gdWCfjTBMVetVy4xgAGLw
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
     depends_on:
       - chromadb
     # Optional: expose ports, set env vars, mount volumes

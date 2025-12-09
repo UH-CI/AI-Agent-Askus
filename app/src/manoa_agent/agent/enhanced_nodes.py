@@ -139,7 +139,7 @@ class EnhancedAgentNode:
             logger.info("No relevant documents available; returning default message.")
             return {
                 "message": AIMessage(
-                    "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain."
+                    "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, TDX Knowledgebase, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain."
                 ),
                 "sources": [],
             }
@@ -186,7 +186,7 @@ class EnhancedAgentNode:
                     """Context: {context}\n End Context\n\n
 {input}\n
 Provide complete answers based solely on the given context.
-If the information is not available in the context, respond with 'I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.'.
+If the information is not available in the context, respond with 'I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, TeamDynamix Knowldgebase, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.'.
 Ensure your responses are concise and informative.
 Do not respond with markdown.
 Do not mention the context in your response.""",
@@ -215,4 +215,4 @@ Do not mention the context in your response.""",
         # log_to_file(log_data)
         
         logger.info("Enhanced documents chain returned an answer using the top reranked chunks.")
-        return {"message": response, "sources": unique_sources[:2]}
+        return {"message": response, "sources": unique_sources[:5]}

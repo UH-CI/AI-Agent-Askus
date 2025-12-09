@@ -1,0 +1,3536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Sample Test Results - Interactive Viewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #3498db;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        
+        .controls {
+            padding: 20px;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .filter-group select {
+            padding: 8px 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            background: white;
+            font-size: 14px;
+        }
+        
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .results-table th {
+            background: #f8f9fa;
+            padding: 15px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 2px solid #e9ecef;
+            font-size: 13px;
+        }
+        
+        .results-table td {
+            padding: 15px 10px;
+            border-bottom: 1px solid #f1f3f4;
+            vertical-align: top;
+            font-size: 13px;
+        }
+        
+        .results-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .question-cell {
+            max-width: 300px;
+            word-wrap: break-word;
+        }
+        
+        .answer-cell {
+            max-width: 400px;
+            word-wrap: break-word;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .status-success { background: #d4edda; color: #155724; }
+        .status-partial { background: #fff3cd; color: #856404; }
+        .status-failed { background: #f8d7da; color: #721c24; }
+        .status-error { background: #f5c6cb; color: #721c24; }
+        
+        .sources {
+            font-size: 11px;
+            color: #888;
+            margin-top: 5px;
+        }
+        
+        .sources a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .sources a:hover {
+            text-decoration: underline;
+        }
+        
+        .keyword-coverage {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        
+        .coverage-high { background: #d4edda; color: #155724; }
+        .coverage-medium { background: #fff3cd; color: #856404; }
+        .coverage-low { background: #f8d7da; color: #721c24; }
+        
+        .row-number {
+            text-align: center;
+            font-weight: bold;
+            color: #6c757d;
+            font-size: 12px;
+        }
+        
+        .response-time {
+            font-size: 11px;
+            color: #6c757d;
+        }
+        
+        .article-info {
+            font-size: 11px;
+            color: #6c757d;
+            margin-top: 3px;
+        }
+        
+        .keywords-info {
+            font-size: 11px;
+            margin-top: 5px;
+        }
+        
+        .keywords-found {
+            color: #28a745;
+        }
+        
+        .keywords-missing {
+            color: #dc3545;
+        }
+        
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-box {
+                min-width: auto;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎲 Random Sample Test Results</h1>
+            <div class="subtitle">100 Questions from Generated TeamDynamix Evaluation Set</div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">100</div>
+                    <div class="stat-label">Total Questions</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">79%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4.4s</div>
+                    <div class="stat-label">Avg Response Time</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">0%</div>
+                    <div class="stat-label">Avg Keyword Coverage</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Search questions, answers, or sources...">
+            </div>
+            <div class="filter-group">
+                <select id="statusFilter">
+                    <option value="">All Status</option>
+                    <option value="success">Success (79)</option>
+                    <option value="partial">Partial (8)</option>
+                    <option value="failed">Failed (13)</option>
+                    <option value="error">Error (0)</option>
+                </select>
+                <select id="coverageFilter">
+                    <option value="">All Coverage</option>
+                    <option value="high">High (≥70%)</option>
+                    <option value="medium">Medium (30-69%)</option>
+                    <option value="low">Low (<30%)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div style="overflow-x: auto;">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th style="width: 40px;">#</th>
+                        <th style="width: 300px;">Question</th>
+                        <th style="width: 400px;">Answer</th>
+                        <th style="width: 80px;">Status</th>
+                        <th style="width: 100px;">Coverage</th>
+                        <th style="width: 80px;">Time</th>
+                        <th style="width: 200px;">Sources</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTableBody">
+                    <!-- Results will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Embedded test results data
+        const testResultsData = [
+        {
+                "question_number": 1,
+                "question": "What are the steps to request a change in your UH Username due to a legal name change?",
+                "answer": "To request a change in your UH Username due to a legal name change, you must be an active faculty, staff, or student and follow these steps:\n\n1. Ensure your legal name change is officially documented in UH records.\n2. Submit a request for a username change, indicating that your legal name has changed and your current username no longer reflects this name.\n3. Follow any specific procedures or guidelines provided by your department or the university for processing the username change request.",
+                "status": "success",
+                "coverage": 0.14285714285714285,
+                "coverage_class": "low",
+                "response_time": 9.816306114196777,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20106"
+                ],
+                "article_id": "20106",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20106",
+                "keywords_found": [
+                        "username change"
+                ],
+                "keywords_missing": [
+                        "contact ITS Help Desk",
+                        "verify identity",
+                        "provide a legitimate reason",
+                        "confirmation email",
+                        "reply to ITS",
+                        "one to two business days"
+                ],
+                "expected_keywords": [
+                        "contact ITS Help Desk",
+                        "verify identity",
+                        "provide a legitimate reason",
+                        "confirmation email",
+                        "reply to ITS",
+                        "username change",
+                        "one to two business days"
+                ]
+        },
+        {
+                "question_number": 2,
+                "question": "What steps should you take to send an email to the owner of a LISTSERV list?",
+                "answer": "To contact the owner(s) of a LISTSERV list, you should send an email to listname-request@lists.hawaii.edu, where listname is the name of the list in question. For example, if the list is LISTSERV-L, you would send your email to LISTSERV-L-request@lists.hawaii.edu.",
+                "status": "success",
+                "coverage": 0.875,
+                "coverage_class": "high",
+                "response_time": 9.224536657333374,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20177",
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163"
+                ],
+                "article_id": "20177",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20161",
+                "keywords_found": [
+                        "send",
+                        "email",
+                        "listname-request@lists.hawaii.edu",
+                        "listname",
+                        "name",
+                        "of",
+                        "list"
+                ],
+                "keywords_missing": [
+                        "replace"
+                ],
+                "expected_keywords": [
+                        "send",
+                        "email",
+                        "listname-request@lists.hawaii.edu",
+                        "replace",
+                        "listname",
+                        "name",
+                        "of",
+                        "list"
+                ]
+        },
+        {
+                "question_number": 3,
+                "question": "Describe the steps to create a secure disk image on a Mac using Disk Utility, and explain the importance of the password used during this process.",
+                "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, TeamDynamix Knowledgebase, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+                "status": "partial",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 7.59323525428772,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20176"
+                ],
+                "article_id": "20176",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20176",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "Disk Utility",
+                        "New Image",
+                        "Blank Image",
+                        "encryption option",
+                        "password",
+                        "not able to open",
+                        "eject the secure disk image"
+                ],
+                "expected_keywords": [
+                        "Disk Utility",
+                        "New Image",
+                        "Blank Image",
+                        "encryption option",
+                        "password",
+                        "not able to open",
+                        "eject the secure disk image"
+                ]
+        },
+        {
+                "question_number": 4,
+                "question": "What should you do if you decide not to enable Google Consumer Apps after reviewing the Terms of Service?",
+                "answer": "If you do not want to enable Google Consumer Apps after reviewing the Terms of Service, you should click **Logout** and stop there.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 3.323214530944824,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20134"
+                ],
+                "article_id": "20134",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20134",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "click Logout",
+                        "stop the process"
+                ],
+                "expected_keywords": [
+                        "click Logout",
+                        "stop the process"
+                ]
+        },
+        {
+                "question_number": 5,
+                "question": "What steps should you follow to locate the MAC address on a Windows device?",
+                "answer": "To locate the MAC address on a Windows device, follow these steps:\n\n1. Click the **Start** button, then open **Settings**.\n2. Select the **Network & Internet** section and click on **Wi-Fi** or search for and select _Wi-Fi Settings_.\n3. Click on **Hardware Properties**.\n4. Scroll down and locate your device's **Physical address (MAC)**.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 4.046871662139893,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20127"
+                ],
+                "article_id": "20127",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20127",
+                "keywords_found": [
+                        "Start",
+                        "Settings",
+                        "Network & Internet",
+                        "Wi-Fi",
+                        "Hardware Properties",
+                        "Physical address"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "Start",
+                        "Settings",
+                        "Network & Internet",
+                        "Wi-Fi",
+                        "Hardware Properties",
+                        "Physical address"
+                ]
+        },
+        {
+                "question_number": 6,
+                "question": "Describe the steps to subscribe to a LISTSERV list using the web interface at the University of Hawai\u2018i.",
+                "answer": "To subscribe to a LISTSERV list using the web interface at the University of Hawai\u2018i, follow these steps:\n\n1. Go to https://listserv.hawaii.edu and log in to LISTSERV.\n2. After logging in, click on **Subscriptions** in the LISTSERV menu on the left. You may need to click on the **>** button in the top-left corner to show the menu.\n3. Click on **Customize Report**, select **Show All Lists** from the drop-down menu, and click **Update**.",
+                "status": "success",
+                "coverage": 0.2857142857142857,
+                "coverage_class": "low",
+                "response_time": 4.216243028640747,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163"
+                ],
+                "article_id": "20163",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20177",
+                "keywords_found": [
+                        "Customize report",
+                        "Show All Lists"
+                ],
+                "keywords_missing": [
+                        "log in to https://listserv.hawaii.edu",
+                        "click on Subscriptions",
+                        "check the boxes next to the lists",
+                        "select Subscribe",
+                        "click Update"
+                ],
+                "expected_keywords": [
+                        "log in to https://listserv.hawaii.edu",
+                        "click on Subscriptions",
+                        "Customize report",
+                        "Show All Lists",
+                        "check the boxes next to the lists",
+                        "select Subscribe",
+                        "click Update"
+                ]
+        },
+        {
+                "question_number": 7,
+                "question": "How can you unsubscribe from a list using email, and what should you include in the email body?",
+                "answer": "To unsubscribe from a list using email, you should send an email using the address you subscribed with (YourUsername@hawaii.edu) to listserv@lists.hawaii.edu. The subject line must be empty, and the body of the message should contain the \"signoff\" command followed by the list name (e.g., signoff testlist-l). Make sure there is no other text in the body of the message, including your email signature.",
+                "status": "success",
+                "coverage": 0.5714285714285714,
+                "coverage_class": "medium",
+                "response_time": 3.483397960662842,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163"
+                ],
+                "article_id": "20163",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163",
+                "keywords_found": [
+                        "body of the message",
+                        "list name",
+                        "no other text",
+                        "email signature"
+                ],
+                "keywords_missing": [
+                        "send an email to listserv@lists.hawaii.edu",
+                        "signoff command",
+                        "empty subject line"
+                ],
+                "expected_keywords": [
+                        "send an email to listserv@lists.hawaii.edu",
+                        "body of the message",
+                        "signoff command",
+                        "list name",
+                        "empty subject line",
+                        "no other text",
+                        "email signature"
+                ]
+        },
+        {
+                "question_number": 8,
+                "question": "What steps should you follow to reset your password online if you remember your current password?",
+                "answer": "If you remember your password and would like to change it online, follow these steps:\n\n1. Visit https://hawaii.edu/username/\n2. Select the **One-Step Password Change** button.\n3. Input your old password, new password, and new password confirmation.\n4. If your new password meets the requirements, your request should be processed and ready to use within 5 minutes.",
+                "status": "success",
+                "coverage": 0.3333333333333333,
+                "coverage_class": "medium",
+                "response_time": 4.048856735229492,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20116"
+                ],
+                "article_id": "20116",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20116",
+                "keywords_found": [
+                        "Visit https://hawaii.edu/username/",
+                        "new password confirmation"
+                ],
+                "keywords_missing": [
+                        "select One-Step Password Change",
+                        "input old password",
+                        "input new password",
+                        "process within 5 minutes"
+                ],
+                "expected_keywords": [
+                        "Visit https://hawaii.edu/username/",
+                        "select One-Step Password Change",
+                        "input old password",
+                        "input new password",
+                        "new password confirmation",
+                        "process within 5 minutes"
+                ]
+        },
+        {
+                "question_number": 9,
+                "question": "Describe the process and requirements for a university unit authority to request account termination for a former employee.",
+                "answer": "To request a UH Account termination for a former employee, a university unit authority (such as a Vice President, Chancellor, Vice Chancellor, Dean, Director, Department Head, or Administrative Officer) must follow these steps:\n\n1. Submit a formal request on departmental letterhead.\n2. Include the signature of the university unit authority or their designee on the request.\n\nUpon receiving the termination request, ITS will investigate to determine if the individual has any additional affiliations with UH, such as being a current student or having roles with another UH unit. \n\n- If no additional affiliations are found, the UH Email Account will be flagged for termination.\n- If there are other active affiliations, the individual may receive alternate credentials but will not have access to the data stored on their former UH Account.",
+                "status": "success",
+                "coverage": 0.3333333333333333,
+                "coverage_class": "medium",
+                "response_time": 4.894311904907227,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20107"
+                ],
+                "article_id": "20107",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20107",
+                "keywords_found": [
+                        "formal request on departmental letterhead",
+                        "flagged for termination"
+                ],
+                "keywords_missing": [
+                        "signature of University unit authority",
+                        "research additional affiliations",
+                        "remain active for 180 days",
+                        "immediate deactivation request"
+                ],
+                "expected_keywords": [
+                        "formal request on departmental letterhead",
+                        "signature of University unit authority",
+                        "research additional affiliations",
+                        "flagged for termination",
+                        "remain active for 180 days",
+                        "immediate deactivation request"
+                ]
+        },
+        {
+                "question_number": 10,
+                "question": "What should you be cautious of when removing yourself as an owner from a LISTSERV list?",
+                "answer": "You should be cautious that once you click on submit to remove yourself as an owner, you will immediately lose access to manage the list. Make sure this is what you want to do before proceeding.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 3.850257396697998,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20164"
+                ],
+                "article_id": "20164",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20160",
+                "keywords_found": [
+                        "lose access",
+                        "manage the list",
+                        "submit"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "lose access",
+                        "manage the list",
+                        "submit"
+                ]
+        },
+        {
+                "question_number": 11,
+                "question": "How can you view the full email header in Google@UH Gmail webmail?",
+                "answer": "To view the full email header in Google@UH Gmail webmail, follow these steps:\n\n1. Log in to Gmail using a web browser.\n2. Open the message you'd like to view headers for.\n3. Click the down arrow (labeled as More) next to **Reply** at the top of the message pane.\n4. Select **Show Original**.",
+                "status": "success",
+                "coverage": 0.25,
+                "coverage_class": "low",
+                "response_time": 3.516568183898926,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20142"
+                ],
+                "article_id": "20142",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20142",
+                "keywords_found": [
+                        "log in"
+                ],
+                "keywords_missing": [
+                        "open message",
+                        "click down arrow",
+                        "select Show Original"
+                ],
+                "expected_keywords": [
+                        "log in",
+                        "open message",
+                        "click down arrow",
+                        "select Show Original"
+                ]
+        },
+        {
+                "question_number": 12,
+                "question": "What steps should you take if you want to delete a LISTSERV list you own?",
+                "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, TeamDynamix Knowledgebase, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+                "status": "partial",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 9.135191440582275,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20164"
+                ],
+                "article_id": "20164",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20171",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "email help@hawaii.edu",
+                        "use @hawaii.edu account",
+                        "name of the list",
+                        "1-2 business days"
+                ],
+                "expected_keywords": [
+                        "email help@hawaii.edu",
+                        "use @hawaii.edu account",
+                        "name of the list",
+                        "1-2 business days"
+                ]
+        },
+        {
+                "question_number": 13,
+                "question": "What steps are needed to type the \u02bbokina and kahak\u014d using the Hawaiian keyboard on Windows?",
+                "answer": "To type the \u02bbokina and kahak\u014d using the Hawaiian keyboard on Windows, follow these steps:\n\n1. Select **Hawaiian** for the Hawaiian keyboard.\n2. To input the **\u02bbokina**, press the **apostrophe key** on your keyboard (to the right of the semicolon key).\n3. To input the **kahak\u014d** (line above a vowel), hold down the **option** key (on either side of the keyboard) and press your **desired vowel** (a, e, i, o, u).",
+                "status": "success",
+                "coverage": 0.25,
+                "coverage_class": "low",
+                "response_time": 4.475506782531738,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20167"
+                ],
+                "article_id": "20167",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20159",
+                "keywords_found": [
+                        "apostrophe key"
+                ],
+                "keywords_missing": [
+                        "switch keyboard",
+                        "right alt key",
+                        "vowel key"
+                ],
+                "expected_keywords": [
+                        "switch keyboard",
+                        "apostrophe key",
+                        "right alt key",
+                        "vowel key"
+                ]
+        },
+        {
+                "question_number": 14,
+                "question": "What steps should you follow to unsubscribe from a list via email using LISTSERV?",
+                "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, TeamDynamix Knowledgebase, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+                "status": "partial",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 8.158268213272095,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163"
+                ],
+                "article_id": "20163",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "send an email to listserv@lists.hawaii.edu",
+                        "no subject",
+                        "body of the message",
+                        "signoff command",
+                        "list name",
+                        "empty subject line"
+                ],
+                "expected_keywords": [
+                        "send an email to listserv@lists.hawaii.edu",
+                        "no subject",
+                        "body of the message",
+                        "signoff command",
+                        "list name",
+                        "empty subject line"
+                ]
+        },
+        {
+                "question_number": 15,
+                "question": "What steps must you follow to request a new LISTSERV list after logging in with your UH credentials?",
+                "answer": "After logging in with your UH credentials on the LISTSERV request page, you must follow these steps:\n\n1. Supply a name for the new list (the name must include a hyphen).\n2. Provide a description of the list.\n3. Select one of the configuration options.",
+                "status": "success",
+                "coverage": 0.42857142857142855,
+                "coverage_class": "medium",
+                "response_time": 3.7909419536590576,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20168"
+                ],
+                "article_id": "20168",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20168",
+                "keywords_found": [
+                        "supply a name",
+                        "include a hyphen",
+                        "provide a description"
+                ],
+                "keywords_missing": [
+                        "select configuration options",
+                        "acknowledge terms of use",
+                        "check boxes",
+                        "click Request List"
+                ],
+                "expected_keywords": [
+                        "supply a name",
+                        "include a hyphen",
+                        "provide a description",
+                        "select configuration options",
+                        "acknowledge terms of use",
+                        "check boxes",
+                        "click Request List"
+                ]
+        },
+        {
+                "question_number": 16,
+                "question": "What steps should you take to verify the sender's email address on an Android device using the Gmail app?",
+                "answer": "To verify the sender's email address on an Android device using the Gmail app, tap on the caret symbol (^) under the sender's name to view more details.",
+                "status": "success",
+                "coverage": 0.75,
+                "coverage_class": "high",
+                "response_time": 3.0499682426452637,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20174"
+                ],
+                "article_id": "20174",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20174",
+                "keywords_found": [
+                        "tap",
+                        "caret symbol",
+                        "view more details"
+                ],
+                "keywords_missing": [
+                        "under the sender name"
+                ],
+                "expected_keywords": [
+                        "tap",
+                        "caret symbol",
+                        "under the sender name",
+                        "view more details"
+                ]
+        },
+        {
+                "question_number": 17,
+                "question": "How do you enter your credentials in the geteduroam app to connect to the eduroam network?",
+                "answer": "To enter your credentials in the geteduroam app to connect to the eduroam network, follow these steps: \n\n1. In the **Login Required** prompt, enter your [_username]@hawaii.edu address and your UH password.\n2. Tap on the **Log In** button.\n3. When prompted with **\"geteduroam\" Want to Add a Wi-Fi Hotspot Network?**, tap on **Allow**.\n4. Then, when asked **\"geteduroam\" Want to Join Wi-Fi Network \"eduroam\"?,** tap on **Join**.\n5. The geteduroam app will then display that you are now connected.",
+                "status": "success",
+                "coverage": 0.3333333333333333,
+                "coverage_class": "medium",
+                "response_time": 4.762214183807373,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20124"
+                ],
+                "article_id": "20124",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20130",
+                "keywords_found": [
+                        "UH password"
+                ],
+                "keywords_missing": [
+                        "hawaii.edu email address",
+                        "Connect to Network"
+                ],
+                "expected_keywords": [
+                        "hawaii.edu email address",
+                        "UH password",
+                        "Connect to Network"
+                ]
+        },
+        {
+                "question_number": 18,
+                "question": "What information must be included in a File Drop request for a password reset if you cannot reset your password online or visit a campus representative?",
+                "answer": "The File Drop request for a password reset must include the following information: \n- Full name (first, middle, last)\n- UH Username\n- UH Number or last four digits of SSN\n- Month/day of date of birth (MM/DD) (do not provide the year)\n- Your telephone number",
+                "status": "success",
+                "coverage": 0.7142857142857143,
+                "coverage_class": "high",
+                "response_time": 3.0918638706207275,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20116"
+                ],
+                "article_id": "20116",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20116",
+                "keywords_found": [
+                        "Full name",
+                        "UH Username",
+                        "UH Number or last four digits of SSN",
+                        "Month/day of date of birth",
+                        "Telephone number"
+                ],
+                "keywords_missing": [
+                        "Ticket number",
+                        "Copy of government issued photo ID"
+                ],
+                "expected_keywords": [
+                        "Full name",
+                        "UH Username",
+                        "UH Number or last four digits of SSN",
+                        "Month/day of date of birth",
+                        "Telephone number",
+                        "Ticket number",
+                        "Copy of government issued photo ID"
+                ]
+        },
+        {
+                "question_number": 19,
+                "question": "How can you ensure that you won't be prompted to authenticate with Duo on your personal device for 7 days?",
+                "answer": "To ensure that you won't be prompted to authenticate with Duo on your personal device for 7 days, click on the option **Yes, this is my device**.",
+                "status": "success",
+                "coverage": 0.5,
+                "coverage_class": "medium",
+                "response_time": 3.656372547149658,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20119"
+                ],
+                "article_id": "20119",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20119",
+                "keywords_found": [
+                        "Yes, this is my device",
+                        "7 days"
+                ],
+                "keywords_missing": [
+                        "personal devices",
+                        "not prompted"
+                ],
+                "expected_keywords": [
+                        "Yes, this is my device",
+                        "personal devices",
+                        "not prompted",
+                        "7 days"
+                ]
+        },
+        {
+                "question_number": 20,
+                "question": "What are the prerequisites for changing the local recording location in Zoom on a desktop client?",
+                "answer": "The prerequisites for changing the local recording location in Zoom on a desktop client are:\n\n- A Basic (Free) account or above\n- Zoom desktop client for Windows, macOS, or Linux, version 5.0 or higher\n\nAdditionally, note that local recording is not supported on iOS and Android.",
+                "status": "success",
+                "coverage": 0.6666666666666666,
+                "coverage_class": "medium",
+                "response_time": 3.6670401096343994,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20094"
+                ],
+                "article_id": "20094",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20094",
+                "keywords_found": [
+                        "Zoom desktop client",
+                        "version 5.0 or higher"
+                ],
+                "keywords_missing": [
+                        "Basic account"
+                ],
+                "expected_keywords": [
+                        "Basic account",
+                        "Zoom desktop client",
+                        "version 5.0 or higher"
+                ]
+        },
+        {
+                "question_number": 21,
+                "question": "How can you add the Hawaiian keyboard on macOS through the System Settings?",
+                "answer": "To add the Hawaiian keyboard on macOS through the System Settings, follow these steps:\n\n1. In the left hand column, click on **Keyboard**.\n2. Click the **+** button on the bottom left of the **System Settings** window.\n3. Under the \"**Text Input**\" section, on the \"**Input Sources**\" line, click on **Edit**.\n4. Click the **+** button on the bottom left of the page.\n5. In the left hand column, click **Hawaiian**, then click **Add**.\n6. Click on **Done**. \n\nThe Hawaiian keyboard should now be installed.",
+                "status": "success",
+                "coverage": 0.7777777777777778,
+                "coverage_class": "high",
+                "response_time": 4.317816734313965,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20167"
+                ],
+                "article_id": "20167",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20167",
+                "keywords_found": [
+                        "System Settings",
+                        "Keyboard",
+                        "Text Input",
+                        "Input Sources",
+                        "Edit",
+                        "Hawaiian",
+                        "Add"
+                ],
+                "keywords_missing": [
+                        "Apple menu",
+                        "+ button"
+                ],
+                "expected_keywords": [
+                        "Apple menu",
+                        "System Settings",
+                        "Keyboard",
+                        "+ button",
+                        "Text Input",
+                        "Input Sources",
+                        "Edit",
+                        "Hawaiian",
+                        "Add"
+                ]
+        },
+        {
+                "question_number": 22,
+                "question": "What are the ITS recommended specifications for a Macintosh Laptop if it is used as a primary computer?",
+                "answer": "The ITS recommended specifications for a Macintosh Laptop used as a primary computer are:\n\n- 16GB RAM minimum; 32GB recommended for those running memory intensive applications\n- 512GB Solid State Drive recommended\n- Wired Gigabit Ethernet\n- Wi-Fi 4/5 (802.11n/ac) or higher\n- Webcam with microphone\n- Backup device - External hard drive and/or USB Flash Drive\n- AppleCare (3 year warranty)",
+                "status": "success",
+                "coverage": 0.5,
+                "coverage_class": "medium",
+                "response_time": 3.945024013519287,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20169"
+                ],
+                "article_id": "20169",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20169",
+                "keywords_found": [
+                        "16GB RAM minimum",
+                        "512GB Solid State Drive",
+                        "Webcam with microphone",
+                        "Backup device",
+                        "AppleCare"
+                ],
+                "keywords_missing": [
+                        "Apple M chip",
+                        "10+ core CPU/GPU",
+                        "32GB RAM recommended",
+                        "Ethernet Connection",
+                        "Wireless 802.11ax"
+                ],
+                "expected_keywords": [
+                        "Apple M chip",
+                        "10+ core CPU/GPU",
+                        "16GB RAM minimum",
+                        "32GB RAM recommended",
+                        "512GB Solid State Drive",
+                        "Ethernet Connection",
+                        "Webcam with microphone",
+                        "Wireless 802.11ax",
+                        "Backup device",
+                        "AppleCare"
+                ]
+        },
+        {
+                "question_number": 23,
+                "question": "What steps should you follow to back up your emails in Thunderbird for macOS, and where are the email data stored for IMAP and POP3 accounts?",
+                "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, TeamDynamix Knowledgebase, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+                "status": "partial",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 7.796786308288574,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20151"
+                ],
+                "article_id": "20151",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20151",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "Thunderbird Profile",
+                        "locate",
+                        "ImapMail",
+                        "Mail",
+                        "backup",
+                        "storage device",
+                        "IMAP",
+                        "POP3"
+                ],
+                "expected_keywords": [
+                        "Thunderbird Profile",
+                        "locate",
+                        "ImapMail",
+                        "Mail",
+                        "backup",
+                        "storage device",
+                        "IMAP",
+                        "POP3"
+                ]
+        },
+        {
+                "question_number": 24,
+                "question": "How do you add a group to a new calendar and set permissions for scheduling events?",
+                "answer": "To add a group to a new calendar and set permissions for scheduling events, follow these steps:\n\n1. Go to calendar.google.com.\n2. Create a calendar for the resource.\n3. Choose privacy settings (default settings can generally be used) and click \"Next.\"\n4. Add members by including users who will have access to the calendar. It is recommended to add at least one other Group Manager in case of the owner's absence.\n5. Click \"Create group.\"\n\nThis will allow the group members to schedule events using the resource.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 3.5230798721313477,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20181"
+                ],
+                "article_id": "20181",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20181",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "Add people and groups",
+                        "email address",
+                        "Make changes to events"
+                ],
+                "expected_keywords": [
+                        "Add people and groups",
+                        "email address",
+                        "Make changes to events"
+                ]
+        },
+        {
+                "question_number": 25,
+                "question": "What steps should you follow to enable Google Consumer Apps using your UH username?",
+                "answer": "To enable Google Consumer Apps using your UH username, follow these steps:\n\n1. Open a web browser and visit www.hawaii.edu/google/extra.\n2. Click the **Login button**.\n3. Log in using your UH username and password for the account you wish to update.\n4. Review the Google Terms of Service (TOS) and Privacy Policy.\n5. If you do not want to enable Consumer Apps, click **Logout** and stop here.",
+                "status": "success",
+                "coverage": 0.14285714285714285,
+                "coverage_class": "low",
+                "response_time": 4.588365316390991,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20134"
+                ],
+                "article_id": "20134",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20134",
+                "keywords_found": [
+                        "visit www.hawaii.edu/google/extra"
+                ],
+                "keywords_missing": [
+                        "click Login",
+                        "log in with UH username and password",
+                        "review Google Terms of Service",
+                        "check the box to proceed",
+                        "click Turn on Consumer Apps",
+                        "see confirmation message"
+                ],
+                "expected_keywords": [
+                        "visit www.hawaii.edu/google/extra",
+                        "click Login",
+                        "log in with UH username and password",
+                        "review Google Terms of Service",
+                        "check the box to proceed",
+                        "click Turn on Consumer Apps",
+                        "see confirmation message"
+                ]
+        },
+        {
+                "question_number": 26,
+                "question": "How can a non-credit student obtain a UH Username and what costs are involved?",
+                "answer": "A non-credit student can obtain a UH Username by having their program create an account for them. There is a nominal fee of $10 per UH Username, assessed each academic semester or equivalent time period. This fee is necessary because UH Usernames for non-credit students are not created automatically.",
+                "status": "success",
+                "coverage": 0.5,
+                "coverage_class": "medium",
+                "response_time": 3.227426052093506,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20106"
+                ],
+                "article_id": "20106",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20106",
+                "keywords_found": [
+                        "nominal fee",
+                        "$10 per UH Username"
+                ],
+                "keywords_missing": [
+                        "per academic semester",
+                        "contact ITS Help Desk"
+                ],
+                "expected_keywords": [
+                        "nominal fee",
+                        "$10 per UH Username",
+                        "per academic semester",
+                        "contact ITS Help Desk"
+                ]
+        },
+        {
+                "question_number": 27,
+                "question": "How can you pre-enroll into 'Ohana Online Services prior to leaving the University of Hawaii?",
+                "answer": "You can pre-enroll into 'Ohana Online Services at any time prior to leaving the University by choosing to do so. This action will automatically enroll you into 'Ohana online services once you are no longer affiliated with the University and requires no further action on your part. However, you will still need to renew your 'Ohana enrollment annually.",
+                "status": "success",
+                "coverage": 0.1111111111111111,
+                "coverage_class": "low",
+                "response_time": 3.713132381439209,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20135"
+                ],
+                "article_id": "20135",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20135",
+                "keywords_found": [
+                        "Ohana Online Services"
+                ],
+                "keywords_missing": [
+                        "UH Username Management site",
+                        "Manage UH Account",
+                        "login",
+                        "How do I keep my email",
+                        "I changed my mind",
+                        "email address",
+                        "text change",
+                        "confirmation email"
+                ],
+                "expected_keywords": [
+                        "UH Username Management site",
+                        "Manage UH Account",
+                        "login",
+                        "How do I keep my email",
+                        "Ohana Online Services",
+                        "I changed my mind",
+                        "email address",
+                        "text change",
+                        "confirmation email"
+                ]
+        },
+        {
+                "question_number": 28,
+                "question": "How do you configure Spirion to search all file types, and what should you do if you encounter problematic file types?",
+                "answer": "To configure Spirion to search all file types, follow these steps:\n\n1. On the left side column, click on **AnyFind**.\n2. Uncheck **Only when location contains keyword**.\n3. Click on **File Types** in the left side column.\n4. Next to \"Search these file types,\" click the dropdown box and select **All**.\n\nIf you encounter problematic file types, you can select **Custom** instead. This will reveal a Manage button where you can deselect the problematic file types.",
+                "status": "success",
+                "coverage": 0.42857142857142855,
+                "coverage_class": "medium",
+                "response_time": 4.016761779785156,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20178"
+                ],
+                "article_id": "20178",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20178",
+                "keywords_found": [
+                        "File Types",
+                        "Custom",
+                        "Manage button"
+                ],
+                "keywords_missing": [
+                        "Configuration tab",
+                        "Settings",
+                        "select All",
+                        "deselect problematic file types"
+                ],
+                "expected_keywords": [
+                        "Configuration tab",
+                        "Settings",
+                        "File Types",
+                        "select All",
+                        "Custom",
+                        "Manage button",
+                        "deselect problematic file types"
+                ]
+        },
+        {
+                "question_number": 29,
+                "question": "How can you configure the Mail app on an iPhone to use IMAP for a UH email account if the default setup does not work?",
+                "answer": "To configure the Mail app on an iPhone to use IMAP for a UH email account if the default setup does not work, you can manually set up the Mail app to receive your @hawaii.edu emails as an IMAP client. Ensure that IMAP is enabled for your @hawaii.edu email account first, then follow the necessary steps to add your account in the Mail app.",
+                "status": "success",
+                "coverage": 0.09090909090909091,
+                "coverage_class": "low",
+                "response_time": 3.5180375576019287,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20180"
+                ],
+                "article_id": "20180",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20180",
+                "keywords_found": [
+                        "IMAP"
+                ],
+                "keywords_missing": [
+                        "Settings app",
+                        "Password & Accounts",
+                        "Add Account",
+                        "Other",
+                        "Add Mail Account",
+                        "imap.gmail.com",
+                        "smtp.gmail.com",
+                        "UH email address",
+                        "your password",
+                        "Save"
+                ],
+                "expected_keywords": [
+                        "Settings app",
+                        "Password & Accounts",
+                        "Add Account",
+                        "Other",
+                        "Add Mail Account",
+                        "IMAP",
+                        "imap.gmail.com",
+                        "smtp.gmail.com",
+                        "UH email address",
+                        "your password",
+                        "Save"
+                ]
+        },
+        {
+                "question_number": 30,
+                "question": "How can you temporarily stop receiving emails from a Listserv without being removed from the list?",
+                "answer": "To temporarily stop receiving emails from a Listserv without being removed from the list, send an email to listserv@lists.hawaii.edu with a blank subject line. In the message body, include the SET command followed by the list name and the NOMAIL option, formatted as follows: \n\nSET _listname_ NOMAIL\n\nYou will receive a confirmation that your subscription settings were updated.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 3.571640729904175,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20162"
+                ],
+                "article_id": "20162",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20162",
+                "keywords_found": [
+                        "email",
+                        "listserv@lists.hawaii.edu",
+                        "blank subject line",
+                        "SET",
+                        "listname",
+                        "NOMAIL"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "email",
+                        "listserv@lists.hawaii.edu",
+                        "blank subject line",
+                        "SET",
+                        "listname",
+                        "NOMAIL"
+                ]
+        },
+        {
+                "question_number": 31,
+                "question": "What steps are necessary to properly install Spirion on a University-owned computer using the provided software download link?",
+                "answer": "To properly install Spirion on a University-owned computer, follow these steps:\n\n1. Visit the University of Hawaii Software Download Page to download the latest version of Spirion. You will need to log in with your UH Username and Password.\n2. Close all applications on your computer.\n3. Double click on the *.zip file you just downloaded to unzip the contents.\n4. Open the folder that was placed on your desktop and double click on the **Spirion.pkg** file to begin the installation process.",
+                "status": "success",
+                "coverage": 0.25,
+                "coverage_class": "low",
+                "response_time": 3.802356243133545,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20179"
+                ],
+                "article_id": "20179",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20178",
+                "keywords_found": [
+                        "download",
+                        "close all applications",
+                        "Install"
+                ],
+                "keywords_missing": [
+                        "log in with UH Username and Password",
+                        "double click on the .msi file",
+                        "Run",
+                        "Next",
+                        "I accept the terms of the License Agreement",
+                        "Typical",
+                        "administrator password",
+                        "Launch Spirion",
+                        "Finish"
+                ],
+                "expected_keywords": [
+                        "download",
+                        "log in with UH Username and Password",
+                        "close all applications",
+                        "double click on the .msi file",
+                        "Run",
+                        "Next",
+                        "I accept the terms of the License Agreement",
+                        "Typical",
+                        "Install",
+                        "administrator password",
+                        "Launch Spirion",
+                        "Finish"
+                ]
+        },
+        {
+                "question_number": 32,
+                "question": "How do you set up a smartphone for multi-factor authentication using Duo Mobile?",
+                "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, TeamDynamix Knowledgebase, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+                "status": "partial",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 8.92319393157959,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20145"
+                ],
+                "article_id": "20145",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20145",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "Login to the UH Login MFA Device Registration site",
+                        "Click on Get Started",
+                        "Click Duo Mobile",
+                        "Enter your phone number",
+                        "Download the Duo Mobile app",
+                        "Use QR code",
+                        "Setup completed"
+                ],
+                "expected_keywords": [
+                        "Login to the UH Login MFA Device Registration site",
+                        "Click on Get Started",
+                        "Click Duo Mobile",
+                        "Enter your phone number",
+                        "Download the Duo Mobile app",
+                        "Use QR code",
+                        "Setup completed"
+                ]
+        },
+        {
+                "question_number": 33,
+                "question": "What steps should you follow to locate and connect to the UH network once Wi-Fi is turned on?",
+                "answer": "To locate and connect to the UH network once Wi-Fi is turned on, follow these steps:\n\n1. Locate your campus' UH network from the list of available networks.\n2. Click on \"Connect.\"\n3. When the Wireless Authentication window pops up, enter your UH Username and Password.\n4. Once logged in, it should display the text \"Success.\"\n5. You can then close the window and begin browsing the Web.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 3.9907853603363037,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20123"
+                ],
+                "article_id": "20123",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20123",
+                "keywords_found": [
+                        "list of available networks",
+                        "UH network",
+                        "Connect",
+                        "Wireless Authentication",
+                        "UH Username",
+                        "Password",
+                        "Success"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "list of available networks",
+                        "UH network",
+                        "Connect",
+                        "Wireless Authentication",
+                        "UH Username",
+                        "Password",
+                        "Success"
+                ]
+        },
+        {
+                "question_number": 34,
+                "question": "How can you download the latest version of macOS if your department supports macOS 26 Tahoe?",
+                "answer": "To download the latest version of macOS, which is currently macOS 26 Tahoe, you can do so through the Mac App Store. Follow the upgrade instructions provided on the Apple website.",
+                "status": "success",
+                "coverage": 0.6666666666666666,
+                "coverage_class": "medium",
+                "response_time": 3.217130184173584,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20169"
+                ],
+                "article_id": "20169",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20169",
+                "keywords_found": [
+                        "Mac App Store",
+                        "upgrade instructions"
+                ],
+                "keywords_missing": [
+                        "link"
+                ],
+                "expected_keywords": [
+                        "Mac App Store",
+                        "upgrade instructions",
+                        "link"
+                ]
+        },
+        {
+                "question_number": 35,
+                "question": "Describe the steps to view full email headers in Microsoft Outlook 2010.",
+                "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, TeamDynamix Knowledgebase, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+                "status": "partial",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 8.730218887329102,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20142"
+                ],
+                "article_id": "20142",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20142",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "Outlook 2010",
+                        "double-click message",
+                        "File",
+                        "Properties",
+                        "View Internet Headers"
+                ],
+                "expected_keywords": [
+                        "Outlook 2010",
+                        "double-click message",
+                        "File",
+                        "Properties",
+                        "View Internet Headers"
+                ]
+        },
+        {
+                "question_number": 36,
+                "question": "What steps should you follow to change the visibility of your LISTSERV list to be publicly listed?",
+                "answer": "To change the visibility of your LISTSERV list to be publicly listed, follow these steps:\n\n1. Go to the LISTSERV home page and click on \"Log In\" in the top-right corner. Sign in using your email address and LISTSERV password.\n2. On the far left, click the arrow next to \"University of Hawai'i LISTSERV\".\n3. Change the \"Confidential\" setting to display your list on the main page.",
+                "status": "success",
+                "coverage": 0.3333333333333333,
+                "coverage_class": "medium",
+                "response_time": 4.006689548492432,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20166"
+                ],
+                "article_id": "20166",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20166",
+                "keywords_found": [
+                        "log in",
+                        "Confidential"
+                ],
+                "keywords_missing": [
+                        "List Management",
+                        "List Configuration",
+                        "Service",
+                        "Update"
+                ],
+                "expected_keywords": [
+                        "log in",
+                        "List Management",
+                        "List Configuration",
+                        "Confidential",
+                        "Service",
+                        "Update"
+                ]
+        },
+        {
+                "question_number": 37,
+                "question": "What steps should you take if you have previously connected to eduroam and need to set it up for your UH account on a Windows device?",
+                "answer": "If you have previously connected to eduroam and need to set it up for your UH account on a Windows device, follow these steps:\n\n1. Go to your wireless settings and click on eduroam, then select **Forget**.\n2. Select Wi-Fi on the menu on the left side, then select Manage known networks.\n3. Go to Settings and select Network & internet.",
+                "status": "success",
+                "coverage": 0.6666666666666666,
+                "coverage_class": "medium",
+                "response_time": 3.9337968826293945,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20131"
+                ],
+                "article_id": "20131",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20131",
+                "keywords_found": [
+                        "wireless settings",
+                        "Manage known networks"
+                ],
+                "keywords_missing": [
+                        "forget the eduroam network"
+                ],
+                "expected_keywords": [
+                        "forget the eduroam network",
+                        "wireless settings",
+                        "Manage known networks"
+                ]
+        },
+        {
+                "question_number": 38,
+                "question": "How can you confirm a command using LISTSERV's 'OK' confirmation method via email?",
+                "answer": "To confirm a command via email using LISTSERV's 'OK' confirmation method, reply to the email message while keeping the Subject line and cookie intact. In the body of your reply, type \u201cOK\u201d (without the quotes).",
+                "status": "success",
+                "coverage": 0.3333333333333333,
+                "coverage_class": "medium",
+                "response_time": 2.9575493335723877,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20177"
+                ],
+                "article_id": "20177",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20177",
+                "keywords_found": [
+                        "reply to the email"
+                ],
+                "keywords_missing": [
+                        "keep the Subject line and cookie intact",
+                        "type 'OK' in the body"
+                ],
+                "expected_keywords": [
+                        "reply to the email",
+                        "keep the Subject line and cookie intact",
+                        "type 'OK' in the body"
+                ]
+        },
+        {
+                "question_number": 39,
+                "question": "What steps must you follow to change the ownership of a LISTSERV mailing list?",
+                "answer": "To change the ownership of a LISTSERV mailing list, follow these steps:\n\n1. From the home page, click on \"Log In\" in the top-right corner and sign in using your email address and LISTSERV password.\n2. On the far left, click the arrow next to \"University of Hawai'i LISTSERV\".",
+                "status": "success",
+                "coverage": 0.6,
+                "coverage_class": "medium",
+                "response_time": 3.4876742362976074,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20164"
+                ],
+                "article_id": "20164",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20164",
+                "keywords_found": [
+                        "log in",
+                        "LISTSERV password",
+                        "email address"
+                ],
+                "keywords_missing": [
+                        "Select List",
+                        "Update"
+                ],
+                "expected_keywords": [
+                        "log in",
+                        "LISTSERV password",
+                        "Select List",
+                        "email address",
+                        "Update"
+                ]
+        },
+        {
+                "question_number": 40,
+                "question": "What steps should you take if the Zoom meeting recording conversion process is interrupted and you need to try converting the files again?",
+                "answer": "If the Zoom meeting recording conversion process is interrupted, you can try converting the files again by navigating to the recording location and double-clicking the recording files.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 3.4021737575531006,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20093"
+                ],
+                "article_id": "20093",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20093",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "navigate to the recording location",
+                        "double click the recording files",
+                        "try to convert the files again"
+                ],
+                "expected_keywords": [
+                        "navigate to the recording location",
+                        "double click the recording files",
+                        "try to convert the files again"
+                ]
+        },
+        {
+                "question_number": 41,
+                "question": "What steps should you follow to locate the MAC address on a macOS device?",
+                "answer": "To locate the MAC address on a macOS device, follow these steps:\n\n1. Start a Spotlight search by clicking the magnifying glass in the top right and search for System Settings.",
+                "status": "success",
+                "coverage": 0.3333333333333333,
+                "coverage_class": "medium",
+                "response_time": 2.703226327896118,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20127"
+                ],
+                "article_id": "20127",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20127",
+                "keywords_found": [
+                        "Spotlight search",
+                        "System Settings"
+                ],
+                "keywords_missing": [
+                        "Network",
+                        "Wi-Fi",
+                        "Advanced",
+                        "Wi-Fi MAC Address"
+                ],
+                "expected_keywords": [
+                        "Spotlight search",
+                        "System Settings",
+                        "Network",
+                        "Wi-Fi",
+                        "Advanced",
+                        "Wi-Fi MAC Address"
+                ]
+        },
+        {
+                "question_number": 42,
+                "question": "How can you subscribe to a LISTSERV list via email, and what should you ensure about the email's subject and body?",
+                "answer": "To subscribe to a LISTSERV list via email, use the email address you would like to subscribe with (YourUsername@hawaii.edu) and send an email to listserv@lists.hawaii.edu. Ensure that the email's subject line is empty and in the body of the message, include the \"_subscribe_\" command followed by the list name and your first and last names (e.g., subscribe testlist-l John Doe). Additionally, make sure there is no other text in the body of the message, including your email signature.",
+                "status": "success",
+                "coverage": 0.8333333333333334,
+                "coverage_class": "high",
+                "response_time": 4.6386284828186035,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163"
+                ],
+                "article_id": "20163",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163",
+                "keywords_found": [
+                        "send an email to listserv@lists.hawaii.edu",
+                        "list name",
+                        "first and last names",
+                        "subject line is empty",
+                        "no other text in the body"
+                ],
+                "keywords_missing": [
+                        "body containing 'subscribe' command"
+                ],
+                "expected_keywords": [
+                        "send an email to listserv@lists.hawaii.edu",
+                        "body containing 'subscribe' command",
+                        "list name",
+                        "first and last names",
+                        "subject line is empty",
+                        "no other text in the body"
+                ]
+        },
+        {
+                "question_number": 43,
+                "question": "How do you select the eduroam network after the initial setup on an iOS device?",
+                "answer": "Once the installation is completed, to select the eduroam network on your iOS device, go to your Wi-Fi settings and select _eduroam_ from the list of available networks.",
+                "status": "success",
+                "coverage": 0.5,
+                "coverage_class": "medium",
+                "response_time": 2.8447909355163574,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20131"
+                ],
+                "article_id": "20131",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20124",
+                "keywords_found": [
+                        "Wi-Fi settings"
+                ],
+                "keywords_missing": [
+                        "select eduroam"
+                ],
+                "expected_keywords": [
+                        "Wi-Fi settings",
+                        "select eduroam"
+                ]
+        },
+        {
+                "question_number": 44,
+                "question": "What are the prerequisites for changing the local recording location in Zoom?",
+                "answer": "The prerequisites for changing the local recording location in Zoom are:\n- Basic (Free) account or above\n- Zoom desktop client for Windows, macOS, or Linux, version 5.0 or higher\n- Note: Local recording is not supported on iOS and Android.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 3.541386127471924,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20094"
+                ],
+                "article_id": "20094",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20094",
+                "keywords_found": [
+                        "Basic (Free) account",
+                        "Zoom desktop client",
+                        "Windows",
+                        "macOS",
+                        "Linux",
+                        "version 5.0 or higher"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "Basic (Free) account",
+                        "Zoom desktop client",
+                        "Windows",
+                        "macOS",
+                        "Linux",
+                        "version 5.0 or higher"
+                ]
+        },
+        {
+                "question_number": 45,
+                "question": "What steps should you follow to change your UH Username if your legal name has changed?",
+                "answer": "To change your UH Username due to a legal name change, you must first update your legal name or chosen name at the appropriate UH office. After the name has been updated in official UH records, you can then request the username change. If your name has not yet been updated in the records, the ITS will not process your username change request.",
+                "status": "success",
+                "coverage": 0.125,
+                "coverage_class": "low",
+                "response_time": 3.0165445804595947,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20106"
+                ],
+                "article_id": "20106",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20106",
+                "keywords_found": [
+                        "appropriate UH office"
+                ],
+                "keywords_missing": [
+                        "update legal name",
+                        "request username change",
+                        "verify identity",
+                        "ITS Help Desk",
+                        "confirmation email",
+                        "reply to confirm",
+                        "new username available in one to two business days"
+                ],
+                "expected_keywords": [
+                        "update legal name",
+                        "appropriate UH office",
+                        "request username change",
+                        "verify identity",
+                        "ITS Help Desk",
+                        "confirmation email",
+                        "reply to confirm",
+                        "new username available in one to two business days"
+                ]
+        },
+        {
+                "question_number": 46,
+                "question": "What are the steps to configure Thunderbird for a Google@UH email account using IMAP on a Windows PC?",
+                "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, TeamDynamix Knowledgebase, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+                "status": "partial",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 8.687419414520264,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20151"
+                ],
+                "article_id": "20151",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20151",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "launch Thunderbird",
+                        "set up existing email",
+                        "IMAP",
+                        "imap.gmail.com",
+                        "port 993",
+                        "SSL/TLS",
+                        "OAuth2",
+                        "smtp.gmail.com",
+                        "port 465 or 587",
+                        "Google sign in",
+                        "allow access"
+                ],
+                "expected_keywords": [
+                        "launch Thunderbird",
+                        "set up existing email",
+                        "IMAP",
+                        "imap.gmail.com",
+                        "port 993",
+                        "SSL/TLS",
+                        "OAuth2",
+                        "smtp.gmail.com",
+                        "port 465 or 587",
+                        "Google sign in",
+                        "allow access"
+                ]
+        },
+        {
+                "question_number": 47,
+                "question": "How do you configure the geteduroam app to connect to the University of Hawaii's eduroam network?",
+                "answer": "To configure the geteduroam app to connect to the University of Hawaii's eduroam network, follow these steps:\n\n1. Visit the App Store and search for the geteduroam app, then tap the Get button to download it.\n2. Once the installation is complete, open the geteduroam app. In the Search for your organization box, enter \"University of Hawaii\" and select it from the list that appears.\n3. In the Login Required prompt, enter your username@hawaii.edu address and your UH password, then tap on the Log In button.",
+                "status": "success",
+                "coverage": 0.25,
+                "coverage_class": "low",
+                "response_time": 5.557331562042236,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20124"
+                ],
+                "article_id": "20124",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20130",
+                "keywords_found": [
+                        "open the geteduroam app",
+                        "UH password"
+                ],
+                "keywords_missing": [
+                        "enter University of Hawaii",
+                        "hawaii.edu email address",
+                        "Connect to Network button",
+                        "Allow",
+                        "Save",
+                        "Wi-fi configured"
+                ],
+                "expected_keywords": [
+                        "open the geteduroam app",
+                        "enter University of Hawaii",
+                        "hawaii.edu email address",
+                        "UH password",
+                        "Connect to Network button",
+                        "Allow",
+                        "Save",
+                        "Wi-fi configured"
+                ]
+        },
+        {
+                "question_number": 48,
+                "question": "What steps should a faculty member follow to request a first.last email alias at UH?",
+                "answer": "A faculty member should follow these steps to request a First.Last email alias at UH:\n\n1. Navigate to https://hawaii.edu/username/.\n2. Click on the button labeled \"Manage UH Account.\"\n3. Log in using your current UH username and password.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 3.671731948852539,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20117"
+                ],
+                "article_id": "20117",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20117",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "navigate to <https://hawaii.edu/username/>",
+                        "click Manage UH Account",
+                        "log in using UH username and password",
+                        "click on first.last Email Alias link",
+                        "follow on-screen instructions"
+                ],
+                "expected_keywords": [
+                        "navigate to <https://hawaii.edu/username/>",
+                        "click Manage UH Account",
+                        "log in using UH username and password",
+                        "click on first.last Email Alias link",
+                        "follow on-screen instructions"
+                ]
+        },
+        {
+                "question_number": 49,
+                "question": "How can you authenticate using the Duo Mobile app if you are in an area without internet access?",
+                "answer": "You can authenticate using the Duo Mobile app in an area without internet access by generating and using passcodes. The app allows you to create these passcodes even if you are completely offline.",
+                "status": "success",
+                "coverage": 0.5,
+                "coverage_class": "medium",
+                "response_time": 3.0383317470550537,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20113"
+                ],
+                "article_id": "20113",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20113",
+                "keywords_found": [
+                        "Duo Mobile app",
+                        "passcode",
+                        "offline"
+                ],
+                "keywords_missing": [
+                        "Duo Passcode",
+                        "generate",
+                        "airplane mode"
+                ],
+                "expected_keywords": [
+                        "Duo Passcode",
+                        "Duo Mobile app",
+                        "generate",
+                        "passcode",
+                        "offline",
+                        "airplane mode"
+                ]
+        },
+        {
+                "question_number": 50,
+                "question": "How do you connect to the eduroam network after configuring it on your iOS device?",
+                "answer": "To connect to the eduroam network after configuring it on your iOS device, ensure that you have installed the geteduroam app and followed the setup instructions. Once configured, you should be able to select the eduroam network from the Wi-Fi settings on your device and log in using your UH credentials.",
+                "status": "success",
+                "coverage": 0.5,
+                "coverage_class": "medium",
+                "response_time": 4.553345203399658,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20124"
+                ],
+                "article_id": "20124",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20124",
+                "keywords_found": [
+                        "Wi-Fi settings"
+                ],
+                "keywords_missing": [
+                        "select eduroam"
+                ],
+                "expected_keywords": [
+                        "Wi-Fi settings",
+                        "select eduroam"
+                ]
+        },
+        {
+                "question_number": 51,
+                "question": "How can you subscribe to a LISTSERV list using the web interface at listserv.hawaii.edu?",
+                "answer": "To subscribe to a LISTSERV list using the web interface at listserv.hawaii.edu, follow these steps:\n\n1. Go to https://listserv.hawaii.edu and log in to LISTSERV.\n2. After logging in, click on **Subscriptions** in the LISTSERV menu on the left. If necessary, click the **>** button in the top-left corner to display the menu.\n3. Click on **Customize Report**, select **Show All Lists** from the drop-down menu, and click **Update**.",
+                "status": "success",
+                "coverage": 0.5714285714285714,
+                "coverage_class": "medium",
+                "response_time": 4.779289722442627,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163"
+                ],
+                "article_id": "20163",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163",
+                "keywords_found": [
+                        "log in to LISTSERV",
+                        "Customize Report",
+                        "Show All Lists",
+                        "Update"
+                ],
+                "keywords_missing": [
+                        "Subscriptions menu",
+                        "check the boxes",
+                        "Subscribe option"
+                ],
+                "expected_keywords": [
+                        "log in to LISTSERV",
+                        "Subscriptions menu",
+                        "Customize Report",
+                        "Show All Lists",
+                        "check the boxes",
+                        "Subscribe option",
+                        "Update"
+                ]
+        },
+        {
+                "question_number": 52,
+                "question": "What steps should you take on an Android device using the Gmail app to verify the sender's email details?",
+                "answer": "On an Android device using the Gmail app, tap on the caret symbol (^) under the sender name to view more details about the sender's email.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 2.915574789047241,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20174"
+                ],
+                "article_id": "20174",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20174",
+                "keywords_found": [
+                        "tap",
+                        "caret symbol",
+                        "^",
+                        "under the sender name",
+                        "view more details"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "tap",
+                        "caret symbol",
+                        "^",
+                        "under the sender name",
+                        "view more details"
+                ]
+        },
+        {
+                "question_number": 53,
+                "question": "How can you view the full email headers in Google@UH Gmail webmail?",
+                "answer": "To view the full email headers in Google@UH Gmail webmail, follow these steps:\n\n1. Log in to Gmail using a web browser.\n2. Open the message you'd like to view headers for.\n3. Click the down arrow (says More) next to Reply at the top of the message pane.\n4. Select Show Original.",
+                "status": "success",
+                "coverage": 0.5,
+                "coverage_class": "medium",
+                "response_time": 3.2986230850219727,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20142"
+                ],
+                "article_id": "20142",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20142",
+                "keywords_found": [
+                        "log in",
+                        "select Show Original"
+                ],
+                "keywords_missing": [
+                        "open message",
+                        "click down arrow"
+                ],
+                "expected_keywords": [
+                        "log in",
+                        "open message",
+                        "click down arrow",
+                        "select Show Original"
+                ]
+        },
+        {
+                "question_number": 54,
+                "question": "What steps should you follow to enable Google Consumer Apps on your UH account?",
+                "answer": "To enable Google Consumer Apps on your UH account, follow these steps:\n\n1. Open a web browser and visit www.hawaii.edu/google/extra.\n2. Click the **Login button**.\n3. Log in using your UH username and password for the account you wish to update.\n4. Review the Google Terms of Service (TOS) and Privacy Policy.\n5. If you do **not** want to enable Consumer Apps, click **Logout** and stop here.",
+                "status": "success",
+                "coverage": 0.5,
+                "coverage_class": "medium",
+                "response_time": 3.830914258956909,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20134"
+                ],
+                "article_id": "20134",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20134",
+                "keywords_found": [
+                        "visit www.hawaii.edu/google/extra",
+                        "login",
+                        "UH username",
+                        "password"
+                ],
+                "keywords_missing": [
+                        "review Google Terms of Service",
+                        "check the box",
+                        "Turn on Consumer Apps",
+                        "confirmation message"
+                ],
+                "expected_keywords": [
+                        "visit www.hawaii.edu/google/extra",
+                        "login",
+                        "UH username",
+                        "password",
+                        "review Google Terms of Service",
+                        "check the box",
+                        "Turn on Consumer Apps",
+                        "confirmation message"
+                ]
+        },
+        {
+                "question_number": 55,
+                "question": "How can a retiring faculty member ensure continued access to their UH Email Account?",
+                "answer": "A retiring faculty member can ensure continued access to their UH Email Account by participating in the annual renewal process. They will receive email reminders regarding their upcoming renewal deadline to help them stay informed and maintain access. For more details about the basic online services available to retirees, they can visit the provided link.",
+                "status": "success",
+                "coverage": 0.5,
+                "coverage_class": "medium",
+                "response_time": 3.8830454349517822,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20107"
+                ],
+                "article_id": "20107",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20107",
+                "keywords_found": [
+                        "annual renewal",
+                        "email reminders"
+                ],
+                "keywords_missing": [
+                        "continued use",
+                        "Retirees and Emeriti"
+                ],
+                "expected_keywords": [
+                        "annual renewal",
+                        "email reminders",
+                        "continued use",
+                        "Retirees and Emeriti"
+                ]
+        },
+        {
+                "question_number": 56,
+                "question": "How do you configure the geteduroam app to work with your University of Hawaii credentials?",
+                "answer": "To configure the geteduroam app to work with your University of Hawaii credentials, follow these steps:\n\n1. Visit the App Store and search for the geteduroam app, then tap the Get button to download it.\n2. Once the installation is complete, open the geteduroam app. In the Search for your organization box, enter \"University of Hawaii\" and select it from the list that appears.\n3. In the Login Required prompt, enter your [username]@hawaii.edu email address and your UH password, then tap on the Log In button.",
+                "status": "success",
+                "coverage": 0.42857142857142855,
+                "coverage_class": "medium",
+                "response_time": 4.587401628494263,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20124"
+                ],
+                "article_id": "20124",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20130",
+                "keywords_found": [
+                        "open the geteduroam app",
+                        "hawaii.edu email address",
+                        "UH password"
+                ],
+                "keywords_missing": [
+                        "enter University of Hawaii",
+                        "Username box",
+                        "Password box",
+                        "Connect to Network"
+                ],
+                "expected_keywords": [
+                        "open the geteduroam app",
+                        "enter University of Hawaii",
+                        "Username box",
+                        "hawaii.edu email address",
+                        "Password box",
+                        "UH password",
+                        "Connect to Network"
+                ]
+        },
+        {
+                "question_number": 57,
+                "question": "What steps should you follow to enroll in 'Ohana Online Services during your 180-day grace period?",
+                "answer": "To enroll in 'Ohana Online Services during your 180-day grace period, you should follow these steps:\n\n1. Ensure that you are within the 180-day grace period after leaving the University of Hawaii.\n2. Follow the specific instructions provided for enrolling in 'Ohana Online Services during this grace period.\n3. Complete any necessary forms or processes as outlined in the enrollment instructions to maintain access to your UH email account and other online services.\n\nMake sure to act promptly within the grace period to secure your access.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 9.52268385887146,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20135"
+                ],
+                "article_id": "20135",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20135",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "Navigate to the UH Username Management site",
+                        "click Manage UH Account",
+                        "Login with your UH Username and password",
+                        "Enroll in our 'Ohana online services button",
+                        "setup two secret questions and answers if necessary"
+                ],
+                "expected_keywords": [
+                        "Navigate to the UH Username Management site",
+                        "click Manage UH Account",
+                        "Login with your UH Username and password",
+                        "Enroll in our 'Ohana online services button",
+                        "setup two secret questions and answers if necessary"
+                ]
+        },
+        {
+                "question_number": 58,
+                "question": "What information do you need to provide in the Check Status Form to reactivate your UH account?",
+                "answer": "To reactivate your UH account, you need to provide the following information in the Check Status Form: your First and Last name, UH ID number or full Social Security Number, and Full Date of Birth.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 3.813896656036377,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20118"
+                ],
+                "article_id": "20118",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20118",
+                "keywords_found": [
+                        "First and Last name",
+                        "UH ID number",
+                        "Social Security Number",
+                        "Full Date of Birth"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "First and Last name",
+                        "UH ID number",
+                        "Social Security Number",
+                        "Full Date of Birth"
+                ]
+        },
+        {
+                "question_number": 59,
+                "question": "What steps do you need to follow after installing the geteduroam app to connect to the eduroam network at the University of Hawaii?",
+                "answer": "After installing the geteduroam app, follow these steps to connect to the eduroam network at the University of Hawaii:\n\n1. Open the geteduroam app.\n2. In the \"Search for your organization\" box, enter \"University of Hawaii\" and select it from the list that appears.\n3. In the \"Login Required\" prompt, enter your [username]@hawaii.edu address and your UH password, then tap on the \"Log In\" button.",
+                "status": "success",
+                "coverage": 0.14285714285714285,
+                "coverage_class": "low",
+                "response_time": 4.195840358734131,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20124"
+                ],
+                "article_id": "20124",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20124",
+                "keywords_found": [
+                        "Log In"
+                ],
+                "keywords_missing": [
+                        "open geteduroam app",
+                        "search for University of Hawaii",
+                        "enter username",
+                        "enter UH password",
+                        "Allow",
+                        "Join"
+                ],
+                "expected_keywords": [
+                        "open geteduroam app",
+                        "search for University of Hawaii",
+                        "enter username",
+                        "enter UH password",
+                        "Log In",
+                        "Allow",
+                        "Join"
+                ]
+        },
+        {
+                "question_number": 60,
+                "question": "What steps must be followed after installing the geteduroam app to connect to eduroam on campus?",
+                "answer": "Once the installation of the geteduroam app is completed, you need to go to your Wi-Fi settings and select _eduroam_ from the list of available networks when visiting a participating campus.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 3.202812671661377,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20131"
+                ],
+                "article_id": "20131",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20124",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "open the app",
+                        "search for your organization",
+                        "University of Hawaii",
+                        "enter username",
+                        "enter UH password",
+                        "Allow",
+                        "Join",
+                        "connected"
+                ],
+                "expected_keywords": [
+                        "open the app",
+                        "search for your organization",
+                        "University of Hawaii",
+                        "enter username",
+                        "enter UH password",
+                        "Allow",
+                        "Join",
+                        "connected"
+                ]
+        },
+        {
+                "question_number": 61,
+                "question": "How can you ensure that your macOS device automatically logs in to the UH network in the future?",
+                "answer": "To ensure that your macOS device automatically logs in to the UH network using eduroam in the future, you need to forget the eduroam network if you have previously connected to it. Here\u2019s how to do it:\n\n1. Go to **System Settings**, then select **Wi-Fi**.\n2. Click on the **Advanced...** button and select **eduroam** from the Preferred Networks.\n\nBy following these steps, your device will be set up to use your UH credentials for automatic login to the eduroam network on campuses that are members of eduroam.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 4.596724033355713,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20132"
+                ],
+                "article_id": "20132",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20123",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "automatically log in",
+                        "Wireless Passthrough",
+                        "adding your device"
+                ],
+                "expected_keywords": [
+                        "automatically log in",
+                        "Wireless Passthrough",
+                        "adding your device"
+                ]
+        },
+        {
+                "question_number": 62,
+                "question": "What steps should you follow to remove the existing eduroam network from your macOS device before setting up a new connection for your UH account?",
+                "answer": "To remove the existing eduroam network from your macOS device before setting up a new connection for your UH account, follow these steps:\n\n1. Go to **System Settings** and select **Wi-Fi**.\n2. Click on the **Advanced...** button.\n3. Select **eduroam** from the Preferred Networks and remove it.",
+                "status": "success",
+                "coverage": 0.8,
+                "coverage_class": "high",
+                "response_time": 3.892594814300537,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20132"
+                ],
+                "article_id": "20132",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20132",
+                "keywords_found": [
+                        "System Settings",
+                        "Wi-Fi",
+                        "Advanced",
+                        "eduroam"
+                ],
+                "keywords_missing": [
+                        "minus sign"
+                ],
+                "expected_keywords": [
+                        "System Settings",
+                        "Wi-Fi",
+                        "Advanced",
+                        "eduroam",
+                        "minus sign"
+                ]
+        },
+        {
+                "question_number": 63,
+                "question": "What are the steps to increase the daily message threshold for a list on the University of Hawai'i LISTSERV?",
+                "answer": "To increase the daily message threshold for a list on the University of Hawai'i LISTSERV, follow these steps:\n\n1. Log in to https://listserv.hawaii.edu.\n2. On the far left, click the arrow next to \"University of Hawai'i LISTSERV.\"\n3. Under the List Management options in the navigation pane on the left, select List Configuration.",
+                "status": "success",
+                "coverage": 0.4444444444444444,
+                "coverage_class": "medium",
+                "response_time": 4.225446462631226,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20165"
+                ],
+                "article_id": "20165",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20165",
+                "keywords_found": [
+                        "log in",
+                        "https://listserv.hawaii.edu",
+                        "List Management",
+                        "List Configuration"
+                ],
+                "keywords_missing": [
+                        "arrow next to University of Hawai'i LISTSERV",
+                        "Subscriptions tab",
+                        "Daily-Threshold",
+                        "enter desired value",
+                        "Update"
+                ],
+                "expected_keywords": [
+                        "log in",
+                        "https://listserv.hawaii.edu",
+                        "arrow next to University of Hawai'i LISTSERV",
+                        "List Management",
+                        "List Configuration",
+                        "Subscriptions tab",
+                        "Daily-Threshold",
+                        "enter desired value",
+                        "Update"
+                ]
+        },
+        {
+                "question_number": 64,
+                "question": "How do you input Hawaiian diacritics using the Hawaiian keyboard on macOS?",
+                "answer": "To input Hawaiian diacritics using the Hawaiian keyboard on macOS, click on the US icon located on the right side of the menu bar. Then, select Hawaiian for the Hawaiian keyboard. To input the \u02bbokina, press the apostrophe key on your keyboard, which is located to the right of the semicolon key.",
+                "status": "success",
+                "coverage": 0.625,
+                "coverage_class": "medium",
+                "response_time": 3.2007148265838623,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20167"
+                ],
+                "article_id": "20167",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20167",
+                "keywords_found": [
+                        "US icon",
+                        "menu bar",
+                        "Hawaiian",
+                        "\u02bbokina",
+                        "apostrophe key"
+                ],
+                "keywords_missing": [
+                        "kahak\u014d",
+                        "option key",
+                        "vowel"
+                ],
+                "expected_keywords": [
+                        "US icon",
+                        "menu bar",
+                        "Hawaiian",
+                        "\u02bbokina",
+                        "apostrophe key",
+                        "kahak\u014d",
+                        "option key",
+                        "vowel"
+                ]
+        },
+        {
+                "question_number": 65,
+                "question": "What steps should you take to verify the legitimacy of an email if it appears suspicious on your smartphone email app?",
+                "answer": "To verify the legitimacy of a suspicious email on your smartphone email app, you should follow these steps:\n\n1. For Android devices using the Gmail app, tap on the caret symbol (^) under the sender's name to view more details. If you are on an iOS device using the built-in mail app, tap on the sender's name to view the sender's email.\n\n2. Never download files or send personal information unless you are sure that the email is legitimate.\n\n3. If you still have doubts, call the sender, agency, or organization to verify that the email is legitimate.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 4.209507703781128,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20174"
+                ],
+                "article_id": "20174",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20174",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "check sender email",
+                        "check URL",
+                        "requests personal information",
+                        "call sender",
+                        "contact ITS Help Desk"
+                ],
+                "expected_keywords": [
+                        "check sender email",
+                        "check URL",
+                        "requests personal information",
+                        "call sender",
+                        "contact ITS Help Desk"
+                ]
+        },
+        {
+                "question_number": 66,
+                "question": "How do you download and install the eduroam configuration for the University of Hawaii on a Windows device?",
+                "answer": "To download and install the eduroam configuration for the University of Hawaii on a Windows device, follow these steps:\n\n1. Use your web browser to visit the eduroam Configuration Assistant Tool at the provided link and click on \"Click here to download your eduroam installer.\"\n2. When the \"Organisation\" popup appears, click on the \"University of Hawaii\" button. If the button is not found, enter \"Hawaii\" in the search box to locate and select it.\n3. On the eduroam's University of Hawaii page, click on \"eduroam\" to download the installer. \n\nOnce you have downloaded the installer, run it to complete the installation of the eduroam configuration on your device.",
+                "status": "success",
+                "coverage": 0.6,
+                "coverage_class": "medium",
+                "response_time": 5.166696548461914,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20131"
+                ],
+                "article_id": "20131",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20131",
+                "keywords_found": [
+                        "eduroam Configuration Assistant Tool",
+                        "University of Hawaii",
+                        "download your eduroam installer"
+                ],
+                "keywords_missing": [
+                        "launch the installer",
+                        "enter UH email and password"
+                ],
+                "expected_keywords": [
+                        "eduroam Configuration Assistant Tool",
+                        "University of Hawaii",
+                        "download your eduroam installer",
+                        "launch the installer",
+                        "enter UH email and password"
+                ]
+        },
+        {
+                "question_number": 67,
+                "question": "How can a list owner free a list that is held due to exceeding the daily message threshold?",
+                "answer": "A list owner can free a list that is held due to exceeding the daily message threshold by issuing a \"free\" command. This will allow the list to resume delivering emails.",
+                "status": "success",
+                "coverage": 0.16666666666666666,
+                "coverage_class": "low",
+                "response_time": 2.946337938308716,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20165"
+                ],
+                "article_id": "20165",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20165",
+                "keywords_found": [
+                        "email"
+                ],
+                "keywords_missing": [
+                        "listserv@lists.hawaii.edu",
+                        "free listname",
+                        "blank subject",
+                        "LISTSERV Command",
+                        "submit"
+                ],
+                "expected_keywords": [
+                        "email",
+                        "listserv@lists.hawaii.edu",
+                        "free listname",
+                        "blank subject",
+                        "LISTSERV Command",
+                        "submit"
+                ]
+        },
+        {
+                "question_number": 68,
+                "question": "What are the character requirements for creating a UH Username password?",
+                "answer": "Your UH Username's password must meet the following character requirements:\n- Must be between 8 and 32 characters long.\n- Must contain at least one upper case character.\n- Must contain at least one lower case character.\n- Must contain at least one number.\n- Must contain at least one special character (symbol), with the exception of the following symbols: **( ) \" < > :**.\n- Must not contain any dictionary words or proper names (in any language).",
+                "status": "success",
+                "coverage": 0.6666666666666666,
+                "coverage_class": "medium",
+                "response_time": 3.5287468433380127,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20115"
+                ],
+                "article_id": "20115",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20115",
+                "keywords_found": [
+                        "one upper case character",
+                        "one lower case character",
+                        "one number",
+                        "one special character"
+                ],
+                "keywords_missing": [
+                        "8 to 32 characters",
+                        "symbols not allowed: ( ) \" < > :"
+                ],
+                "expected_keywords": [
+                        "8 to 32 characters",
+                        "one upper case character",
+                        "one lower case character",
+                        "one number",
+                        "one special character",
+                        "symbols not allowed: ( ) \" < > :"
+                ]
+        },
+        {
+                "question_number": 69,
+                "question": "What should you be cautious of if you decide to remove yourself as the owner of a LISTSERV list?",
+                "answer": "You should be cautious that once you click on submit to remove yourself as an owner, you will immediately lose access to manage the list. Ensure that this is the action you want to take before proceeding.",
+                "status": "success",
+                "coverage": 0.6666666666666666,
+                "coverage_class": "medium",
+                "response_time": 3.0308837890625,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20164"
+                ],
+                "article_id": "20164",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20164",
+                "keywords_found": [
+                        "immediately lose access",
+                        "manage the list"
+                ],
+                "keywords_missing": [
+                        "be sure this is what you want to do"
+                ],
+                "expected_keywords": [
+                        "immediately lose access",
+                        "manage the list",
+                        "be sure this is what you want to do"
+                ]
+        },
+        {
+                "question_number": 70,
+                "question": "What are the steps to request a new LISTSERV list using your UH credentials?",
+                "answer": "To request a new LISTSERV list using your UH credentials, follow these steps:\n\n1. Login to the LISTSERV request page with your UH username and password.\n2. Follow the instructions on the page. You will need to provide a name for the new list (which must include a hyphen), a description, and select one of the configuration options.",
+                "status": "success",
+                "coverage": 0.6666666666666666,
+                "coverage_class": "medium",
+                "response_time": 3.2055513858795166,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20168"
+                ],
+                "article_id": "20168",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20168",
+                "keywords_found": [
+                        "login",
+                        "LISTSERV request page",
+                        "UH username",
+                        "password",
+                        "description",
+                        "configuration options"
+                ],
+                "keywords_missing": [
+                        "supply a name",
+                        "acknowledge terms of use",
+                        "Request List"
+                ],
+                "expected_keywords": [
+                        "login",
+                        "LISTSERV request page",
+                        "UH username",
+                        "password",
+                        "supply a name",
+                        "description",
+                        "configuration options",
+                        "acknowledge terms of use",
+                        "Request List"
+                ]
+        },
+        {
+                "question_number": 71,
+                "question": "How can you create an encrypted container using Disk Utility on a Mac, and what settings should you use?",
+                "answer": "To create an encrypted container using Disk Utility on a Mac, follow these steps:\n\n1. Open Disk Utility.\n2. Choose the option to create a new disk image.\n3. If you're using macOS 10.13 or later, select **APFS** or **APFS (Case-sensitive)** as the format.\n4. If you're using macOS 10.12 or earlier, select **Mac OS Extended (Journaled)** or **Mac OS Extended (Case-sensitive, Journaled)**.\n5. Click the **Encryption** pop-up menu and select an encryption option.\n6. Complete the process to create the encrypted disk image.\n\nMake sure to choose the correct settings based on your macOS version.",
+                "status": "success",
+                "coverage": 0.2857142857142857,
+                "coverage_class": "low",
+                "response_time": 4.431629180908203,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20176"
+                ],
+                "article_id": "20176",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20176",
+                "keywords_found": [
+                        "Disk Utility",
+                        "Format",
+                        "APFS",
+                        "Encryption"
+                ],
+                "keywords_missing": [
+                        "New Image",
+                        "Blank Image",
+                        "filename",
+                        "Size",
+                        "password",
+                        "Single partition",
+                        "read/write disk image",
+                        "eject the secure disk image",
+                        "copy documents",
+                        "Erase original documents"
+                ],
+                "expected_keywords": [
+                        "Disk Utility",
+                        "New Image",
+                        "Blank Image",
+                        "filename",
+                        "Size",
+                        "Format",
+                        "APFS",
+                        "Encryption",
+                        "password",
+                        "Single partition",
+                        "read/write disk image",
+                        "eject the secure disk image",
+                        "copy documents",
+                        "Erase original documents"
+                ]
+        },
+        {
+                "question_number": 72,
+                "question": "What steps should you take regarding Duo MFA if you are traveling to a country under U.S. export controls?",
+                "answer": "If you are traveling to a country subject to U.S. export controls, you are required to uninstall the Duo Mobile app from any devices you will be taking with you. Additionally, you are prohibited from traveling with hard tokens. Be aware that any authentications from these embargoed destinations will result in an \"Access denied. Duo Security does not provide services in your current location\" message.",
+                "status": "success",
+                "coverage": 0.6666666666666666,
+                "coverage_class": "medium",
+                "response_time": 3.932330846786499,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20112"
+                ],
+                "article_id": "20112",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20112",
+                "keywords_found": [
+                        "uninstall the Duo Mobile app",
+                        "prohibited from traveling with hard tokens"
+                ],
+                "keywords_missing": [
+                        "access denied message"
+                ],
+                "expected_keywords": [
+                        "uninstall the Duo Mobile app",
+                        "prohibited from traveling with hard tokens",
+                        "access denied message"
+                ]
+        },
+        {
+                "question_number": 73,
+                "question": "What happens to your First.Last Email Alias after leaving UH, and how can you retain it?",
+                "answer": "After leaving UH, your first.last email alias will be removed at the end of your grace period unless you enroll in 'Ohana Online Services. To retain your email alias, you must renew your annual enrollment in 'Ohana Online Services; otherwise, it will be made available for reassignment.",
+                "status": "success",
+                "coverage": 0.5,
+                "coverage_class": "medium",
+                "response_time": 3.4190382957458496,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20117"
+                ],
+                "article_id": "20117",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20117",
+                "keywords_found": [
+                        "'Ohana Online Services",
+                        "annual enrollment"
+                ],
+                "keywords_missing": [
+                        "removed at the end of grace period",
+                        "first.last email alias availability for reassignment"
+                ],
+                "expected_keywords": [
+                        "removed at the end of grace period",
+                        "'Ohana Online Services",
+                        "first.last email alias availability for reassignment",
+                        "annual enrollment"
+                ]
+        },
+        {
+                "question_number": 74,
+                "question": "What steps should you follow to find the Wi-Fi MAC address on an iOS device?",
+                "answer": "To find the Wi-Fi MAC address on an iOS device (iPhone), follow these steps:\n\n1. Open the **Settings** app on your home screen.\n2. Scroll down and click on the **General** tab.\n3. Click **About** to access your device's information.\n4. Scroll down and locate your **Wi-Fi Address (MAC Address)**.",
+                "status": "success",
+                "coverage": 0.5,
+                "coverage_class": "medium",
+                "response_time": 4.008799076080322,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20127"
+                ],
+                "article_id": "20127",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20127",
+                "keywords_found": [
+                        "About",
+                        "Wi-Fi Address (MAC Address)"
+                ],
+                "keywords_missing": [
+                        "Settings app",
+                        "General tab"
+                ],
+                "expected_keywords": [
+                        "Settings app",
+                        "General tab",
+                        "About",
+                        "Wi-Fi Address (MAC Address)"
+                ]
+        },
+        {
+                "question_number": 75,
+                "question": "How can you set up a new virtual network adapter in the SoftEther VPN Client?",
+                "answer": "To set up a new virtual network adapter in the SoftEther VPN Client, follow these steps:\n\n1. Open the application and click on **Virtual Adapter** near the top.\n2. Select **New Virtual Network Adapter**.\n3. In the **Virtual Network Adapter Name** field, type _VPN_. If this name is not accepted, try _VPN2_ or _VPN3_ until a name is accepted.\n4. Click **OK** to finalize the setup.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 6.1042492389678955,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20128"
+                ],
+                "article_id": "20128",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20128",
+                "keywords_found": [
+                        "Virtual Adapter",
+                        "New Virtual Network Adapter",
+                        "VPN",
+                        "VPN2",
+                        "VPN3",
+                        "OK"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "Virtual Adapter",
+                        "New Virtual Network Adapter",
+                        "VPN",
+                        "VPN2",
+                        "VPN3",
+                        "OK"
+                ]
+        },
+        {
+                "question_number": 76,
+                "question": "How can you start a local recording in a Zoom meeting when acting as the host?",
+                "answer": "To start a local recording in a Zoom meeting as the host, follow these steps:\n\n1. Start a Zoom meeting as the host.\n2. Click the option to Record.\n3. If there is a menu, select Record on this Computer.\n\nWhile recording is active, both hosts and participants will see a recording indicator in the top-left corner. Note that local recording is not supported on iOS and Android.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 3.529768466949463,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20093"
+                ],
+                "article_id": "20093",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20093",
+                "keywords_found": [
+                        "start a Zoom meeting",
+                        "click the option to Record",
+                        "select Record on this Computer"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "start a Zoom meeting",
+                        "click the option to Record",
+                        "select Record on this Computer"
+                ]
+        },
+        {
+                "question_number": 77,
+                "question": "How can you contact the owner of a LISTSERV list named 'STUDENT-INFO' at the University of Hawaii?",
+                "answer": "To contact the owner(s) of the LISTSERV list named 'STUDENT-INFO' at the University of Hawaii, send an email to STUDENT-INFO-request@lists.hawaii.edu.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 3.45151686668396,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20161"
+                ],
+                "article_id": "20161",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20161",
+                "keywords_found": [
+                        "STUDENT-INFO-request@lists.hawaii.edu",
+                        "email",
+                        "contact",
+                        "owner"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "STUDENT-INFO-request@lists.hawaii.edu",
+                        "email",
+                        "contact",
+                        "owner"
+                ]
+        },
+        {
+                "question_number": 78,
+                "question": "What steps should you follow to populate a Change Request in TeamDynamix, and how do you determine the risk level of the change?",
+                "answer": "To populate a Change Request in TeamDynamix, follow these steps:\n\n1. Navigate to the TeamDynamix homepage at https://service.its.hawaii.edu/TDNext/.\n2. On the default 'IT - My Daily Dashboard', click on the appropriate button for the type of Change Request (CR) you would like to submit.\n3. Identify the change type.\n\nUnfortunately, the information provided does not include details on how to determine the risk level of the change.",
+                "status": "success",
+                "coverage": 0.14285714285714285,
+                "coverage_class": "low",
+                "response_time": 4.171695709228516,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20175"
+                ],
+                "article_id": "20175",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20175",
+                "keywords_found": [
+                        "navigate to the TeamDynamix homepage"
+                ],
+                "keywords_missing": [
+                        "identify change type",
+                        "fill out fields",
+                        "Classify / Schedule section",
+                        "Assess / Approval section",
+                        "Risk Assessment",
+                        "Low, Medium, High risk"
+                ],
+                "expected_keywords": [
+                        "navigate to the TeamDynamix homepage",
+                        "identify change type",
+                        "fill out fields",
+                        "Classify / Schedule section",
+                        "Assess / Approval section",
+                        "Risk Assessment",
+                        "Low, Medium, High risk"
+                ]
+        },
+        {
+                "question_number": 79,
+                "question": "What steps must be followed to request a new LISTSERV list and what information is required during the process?",
+                "answer": "To request a new LISTSERV list, follow these steps:\n\n1. Login to the LISTSERV request page with your UH username and password.\n2. Follow the instructions on the page. You will need to provide:\n   - A name for the new list (must include a hyphen)\n   - A description of the list\n   - Selection of one of the configuration options.",
+                "status": "success",
+                "coverage": 0.7272727272727273,
+                "coverage_class": "high",
+                "response_time": 3.832472085952759,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20168"
+                ],
+                "article_id": "20168",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20168",
+                "keywords_found": [
+                        "login",
+                        "LISTSERV request page",
+                        "UH username",
+                        "password",
+                        "name",
+                        "hyphen",
+                        "description",
+                        "configuration options"
+                ],
+                "keywords_missing": [
+                        "acknowledge",
+                        "terms of use",
+                        "Request List"
+                ],
+                "expected_keywords": [
+                        "login",
+                        "LISTSERV request page",
+                        "UH username",
+                        "password",
+                        "name",
+                        "hyphen",
+                        "description",
+                        "configuration options",
+                        "acknowledge",
+                        "terms of use",
+                        "Request List"
+                ]
+        },
+        {
+                "question_number": 80,
+                "question": "How can you confirm a command in LISTSERV via email, and what should you ensure before doing so?",
+                "answer": "I'm sorry, I cannot fulfill that request.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 0.7785968780517578,
+                "sources": [],
+                "article_id": "Unknown",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20177",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "reply to the email",
+                        "subject line",
+                        "cookie intact",
+                        "type 'OK'",
+                        "ensure confirming a command you initiated"
+                ],
+                "expected_keywords": [
+                        "reply to the email",
+                        "subject line",
+                        "cookie intact",
+                        "type 'OK'",
+                        "ensure confirming a command you initiated"
+                ]
+        },
+        {
+                "question_number": 81,
+                "question": "How do you set up a new virtual network adapter using the SoftEther VPN Client Manager?",
+                "answer": "To set up a new virtual network adapter using the SoftEther VPN Client Manager, follow these steps:\n\n1. Open the application and click on **Virtual Adapter** near the top.\n2. Select **New Virtual Network Adapter**.\n3. In the **Virtual Network Adapter Name** field, type _VPN_. If it won\u2019t accept _VPN_, try _VPN2_, then _VPN3_, until the name is accepted.\n4. Click **OK**.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 5.2083518505096436,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20128"
+                ],
+                "article_id": "20128",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20128",
+                "keywords_found": [
+                        "Virtual Adapter",
+                        "New Virtual Network Adapter",
+                        "VPN",
+                        "VPN2",
+                        "VPN3",
+                        "accepted",
+                        "OK"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "Virtual Adapter",
+                        "New Virtual Network Adapter",
+                        "VPN",
+                        "VPN2",
+                        "VPN3",
+                        "accepted",
+                        "OK"
+                ]
+        },
+        {
+                "question_number": 82,
+                "question": "How long might it take to complete the deletion of a LISTSERV list after requesting it?",
+                "answer": "The request to delete a LISTSERV list may take 1-2 business days to complete.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 2.6974098682403564,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20171"
+                ],
+                "article_id": "20171",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20171",
+                "keywords_found": [
+                        "1-2 business days"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "1-2 business days"
+                ]
+        },
+        {
+                "question_number": 83,
+                "question": "How can you subscribe to a list using the web interface on LISTSERV?",
+                "answer": "To subscribe to a list using the web interface on LISTSERV, follow these steps:\n\n1. Go to https://listserv.hawaii.edu and log in to LISTSERV.\n2. After logging in, click on **Subscriptions** in the LISTSERV menu on the left. You may need to click on the **>** button in the top-left corner to show the menu.\n3. Click on **Customize Report**, select **Show All Lists** from the drop-down menu, and click **Update**.",
+                "status": "success",
+                "coverage": 0.42857142857142855,
+                "coverage_class": "medium",
+                "response_time": 4.327332258224487,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163"
+                ],
+                "article_id": "20163",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20163",
+                "keywords_found": [
+                        "log in to LISTSERV",
+                        "Customize Report",
+                        "Show All Lists"
+                ],
+                "keywords_missing": [
+                        "click on Subscriptions",
+                        "check the boxes next to the lists",
+                        "select Subscribe",
+                        "click Update"
+                ],
+                "expected_keywords": [
+                        "log in to LISTSERV",
+                        "click on Subscriptions",
+                        "Customize Report",
+                        "Show All Lists",
+                        "check the boxes next to the lists",
+                        "select Subscribe",
+                        "click Update"
+                ]
+        },
+        {
+                "question_number": 84,
+                "question": "How can you modify the search locations in Spirion and what should you do if you want to scan multiple file locations?",
+                "answer": "To modify the search locations in Spirion, click on **Locations** near the top of the window and select **My Computer** or any other file location within the \"File Locations\" category. If you want to scan multiple file locations, you need to start another scan since Spirion can only scan one location at a time within the \"File Locations\" category. Additionally, ensure to set the recommended settings, as Spirion will not scan mapped/network drives if those settings aren't configured.",
+                "status": "success",
+                "coverage": 0.25,
+                "coverage_class": "low",
+                "response_time": 4.254036903381348,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20178"
+                ],
+                "article_id": "20178",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20178",
+                "keywords_found": [
+                        "only scan one location at a time"
+                ],
+                "keywords_missing": [
+                        "Click on Locations",
+                        "select My Computer or other locations",
+                        "start another scan for additional locations"
+                ],
+                "expected_keywords": [
+                        "Click on Locations",
+                        "select My Computer or other locations",
+                        "only scan one location at a time",
+                        "start another scan for additional locations"
+                ]
+        },
+        {
+                "question_number": 85,
+                "question": "What steps should you take if you want to register a landline as your Duo device and you have an extension number?",
+                "answer": "To register a landline as your Duo device with an extension number, follow these steps:\n\n1. Click **Phone number**.\n2. Enter your phone number, including the area code (no parentheses or dashes needed), and check the _This is a landline phone_ box.\n3. Type your extension number in the Extension box.\n4. Click **Add extension**.\n5. Confirm that the correct phone number is displayed and click **Yes, it's correct**.\n6. Click **Continue**.",
+                "status": "success",
+                "coverage": 0.125,
+                "coverage_class": "low",
+                "response_time": 4.458740949630737,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20145"
+                ],
+                "article_id": "20145",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20121",
+                "keywords_found": [
+                        "Add extension"
+                ],
+                "keywords_missing": [
+                        "Login to UH Login MFA Device Registration site",
+                        "click Get Started",
+                        "select Phone number",
+                        "check This is a landline phone",
+                        "type extension",
+                        "confirm phone number",
+                        "Setup completed"
+                ],
+                "expected_keywords": [
+                        "Login to UH Login MFA Device Registration site",
+                        "click Get Started",
+                        "select Phone number",
+                        "check This is a landline phone",
+                        "type extension",
+                        "Add extension",
+                        "confirm phone number",
+                        "Setup completed"
+                ]
+        },
+        {
+                "question_number": 86,
+                "question": "How can you temporarily stop receiving emails from a Listserv without being removed from the list?",
+                "answer": "To temporarily stop receiving emails from a Listserv without being removed from the list, send an email to listserv@lists.hawaii.edu with a blank subject line and include the following in the message body: \n\nSET _listname_ NOMAIL\n\nReplace _listname_ with the actual name of the list. You should receive a confirmation that your subscription settings were updated.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 3.5254874229431152,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20162"
+                ],
+                "article_id": "20162",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20162",
+                "keywords_found": [
+                        "send an email",
+                        "listserv@lists.hawaii.edu",
+                        "blank subject line",
+                        "SET",
+                        "listname",
+                        "NOMAIL"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "send an email",
+                        "listserv@lists.hawaii.edu",
+                        "blank subject line",
+                        "SET",
+                        "listname",
+                        "NOMAIL"
+                ]
+        },
+        {
+                "question_number": 87,
+                "question": "How do you start the process of configuring eduroam on an iOS device?",
+                "answer": "To start the process of configuring eduroam on an iOS device, visit the App Store and search for the geteduroam app, then tap the Get button.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 3.1684253215789795,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20124"
+                ],
+                "article_id": "20124",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20124",
+                "keywords_found": [
+                        "App Store",
+                        "search for the geteduroam app",
+                        "tap the Get button"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "App Store",
+                        "search for the geteduroam app",
+                        "tap the Get button"
+                ]
+        },
+        {
+                "question_number": 88,
+                "question": "How do you set up a new virtual network adapter in the SoftEther VPN Client Manager?",
+                "answer": "To set up a new virtual network adapter in the SoftEther VPN Client Manager, follow these steps:\n\n1. Open the application and click on **Virtual Adapter** near the top.\n2. Select **New Virtual Network Adapter**.\n3. In the **Virtual Network Adapter Name** field, type _VPN_. If that name is not accepted, try _VPN2_, then _VPN3_, until a name is accepted.\n4. Click **OK**.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 4.225288152694702,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20128"
+                ],
+                "article_id": "20128",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20128",
+                "keywords_found": [
+                        "Virtual Adapter",
+                        "New Virtual Network Adapter",
+                        "VPN",
+                        "VPN2",
+                        "VPN3",
+                        "OK"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "Virtual Adapter",
+                        "New Virtual Network Adapter",
+                        "VPN",
+                        "VPN2",
+                        "VPN3",
+                        "OK"
+                ]
+        },
+        {
+                "question_number": 89,
+                "question": "Describe the steps needed to perform bulk operations for adding subscribers in LISTSERV once you have logged in.",
+                "answer": "To perform bulk operations for adding subscribers in LISTSERV after logging in, follow these steps:\n\n1. Under the **List Management** options in the menu on the left, select **Subscriber Reports**.\n2. Click on **Bulk Operations** next to **Add Subscribers**.\n3. Select your desired option to add and click on **Choose File** to select the plain text file containing the email addresses.\n4. Click **Import** to complete the process.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 4.464026212692261,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20170"
+                ],
+                "article_id": "20170",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20170",
+                "keywords_found": [
+                        "List Management",
+                        "Subscriber Reports",
+                        "Bulk Operations",
+                        "Choose File",
+                        "Import"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "List Management",
+                        "Subscriber Reports",
+                        "Bulk Operations",
+                        "Choose File",
+                        "Import"
+                ]
+        },
+        {
+                "question_number": 90,
+                "question": "How do you enable the Hawaiian keyboard on a Windows computer?",
+                "answer": "To enable the Hawaiian keyboard on a Windows computer, follow these steps:\n\n1. Open the Start Menu (indicated by the Windows icon in the bottom Taskbar).\n2. Click on the gear icon to enter Settings.\n3. On the left-hand side, click on the Time & language tab.",
+                "status": "success",
+                "coverage": 0.42857142857142855,
+                "coverage_class": "medium",
+                "response_time": 4.125365972518921,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20159"
+                ],
+                "article_id": "20159",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20159",
+                "keywords_found": [
+                        "Start Menu",
+                        "Settings",
+                        "Time & language"
+                ],
+                "keywords_missing": [
+                        "Language & region",
+                        "Add a language",
+                        "Hawai \u2019i (Hawaiian)",
+                        "Install"
+                ],
+                "expected_keywords": [
+                        "Start Menu",
+                        "Settings",
+                        "Time & language",
+                        "Language & region",
+                        "Add a language",
+                        "Hawai \u2019i (Hawaiian)",
+                        "Install"
+                ]
+        },
+        {
+                "question_number": 91,
+                "question": "How can you pre-enroll into 'Ohana Online Services prior to leaving the University of Hawaii?",
+                "answer": "You can pre-enroll into 'Ohana Online Services at any time prior to leaving the University of Hawaii by choosing to pre-enroll. This action will automatically enroll you into 'Ohana online services once you are no longer affiliated with the University, requiring no further action on your part. However, you will still need to renew your 'Ohana enrollment annually.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 4.093906879425049,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20135"
+                ],
+                "article_id": "20135",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20135",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "Navigate to the UH Username Management site",
+                        "click on Manage UH Account",
+                        "click on How do I keep my email after I leave UH?",
+                        "click on I changed my mind. I want to keep my email address",
+                        "text will change to indicate you have opted to keep your email address"
+                ],
+                "expected_keywords": [
+                        "Navigate to the UH Username Management site",
+                        "click on Manage UH Account",
+                        "click on How do I keep my email after I leave UH?",
+                        "click on I changed my mind. I want to keep my email address",
+                        "text will change to indicate you have opted to keep your email address"
+                ]
+        },
+        {
+                "question_number": 92,
+                "question": "What are the steps to authenticate using SMS text codes with Duo, and what should you do if it is not the first time using this method?",
+                "answer": "To authenticate using SMS text codes with Duo for the first time, follow these steps:\n\n1. Click on **Other options** when logging in under the UP.\n2. Select SMS text codes.\n\nIf it is not your first time using this method, you can simply proceed to authenticate without needing to click on **Other options** again.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 3.6717751026153564,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20119"
+                ],
+                "article_id": "20119",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20119",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "click Other options",
+                        "Text message passcode",
+                        "enter passcode",
+                        "Verify",
+                        "Send a passcode"
+                ],
+                "expected_keywords": [
+                        "click Other options",
+                        "Text message passcode",
+                        "enter passcode",
+                        "Verify",
+                        "Send a passcode"
+                ]
+        },
+        {
+                "question_number": 93,
+                "question": "How do you set up a smartphone for multi-factor authentication using Duo Mobile?",
+                "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, TeamDynamix Knowledgebase, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+                "status": "partial",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 8.183064222335815,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20145"
+                ],
+                "article_id": "20145",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20145",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "Login to the UH Login MFA Device Registration site",
+                        "Click on Get Started",
+                        "Click Duo Mobile",
+                        "Enter phone number",
+                        "Download Duo Mobile app",
+                        "Open Duo Mobile app",
+                        "Use QR code to scan barcode"
+                ],
+                "expected_keywords": [
+                        "Login to the UH Login MFA Device Registration site",
+                        "Click on Get Started",
+                        "Click Duo Mobile",
+                        "Enter phone number",
+                        "Download Duo Mobile app",
+                        "Open Duo Mobile app",
+                        "Use QR code to scan barcode"
+                ]
+        },
+        {
+                "question_number": 94,
+                "question": "How can you subscribe to a LISTSERV list via email, and what information must be included in the email body?",
+                "answer": "To subscribe to a LISTSERV list via email, send an email to listserv@lists.hawaii.edu with no subject. In the body of the message, include the \"subscribe\" command followed by the list name and your first and last names (for example, subscribe testlist-l John Doe). Ensure that the subject line is empty and there is no other text in the body of the message, including your email signature.",
+                "status": "success",
+                "coverage": 0.6666666666666666,
+                "coverage_class": "medium",
+                "response_time": 4.424720525741577,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20177"
+                ],
+                "article_id": "20177",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20177",
+                "keywords_found": [
+                        "email to listserv@lists.hawaii.edu",
+                        "no subject",
+                        "list name",
+                        "first and last names"
+                ],
+                "keywords_missing": [
+                        "body containing subscribe command",
+                        "no additional text or signature"
+                ],
+                "expected_keywords": [
+                        "email to listserv@lists.hawaii.edu",
+                        "no subject",
+                        "body containing subscribe command",
+                        "list name",
+                        "first and last names",
+                        "no additional text or signature"
+                ]
+        },
+        {
+                "question_number": 95,
+                "question": "What steps should you follow to set up eduroam on a Windows device if you have previously connected to eduroam?",
+                "answer": "If you have previously connected to eduroam and are setting this up for your UH account, you should go to your wireless settings and forget the eduroam network before beginning the setup.",
+                "status": "success",
+                "coverage": 0.125,
+                "coverage_class": "low",
+                "response_time": 3.0849242210388184,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20131"
+                ],
+                "article_id": "20131",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20131",
+                "keywords_found": [
+                        "forget the eduroam network"
+                ],
+                "keywords_missing": [
+                        "select Wi-Fi",
+                        "Manage known networks",
+                        "visit eduroam Configuration Assistant Tool",
+                        "download your eduroam installer",
+                        "select University of Hawaii",
+                        "launch the installer",
+                        "enter your UH email and password"
+                ],
+                "expected_keywords": [
+                        "forget the eduroam network",
+                        "select Wi-Fi",
+                        "Manage known networks",
+                        "visit eduroam Configuration Assistant Tool",
+                        "download your eduroam installer",
+                        "select University of Hawaii",
+                        "launch the installer",
+                        "enter your UH email and password"
+                ]
+        },
+        {
+                "question_number": 96,
+                "question": "What steps should you follow to install Spirion on macOS?",
+                "answer": "To install Spirion on macOS, follow these steps:\n\n1. Double click on the *.zip file you just downloaded to unzip the contents.\n2. Open the folder that was placed on your desktop and double click on the **Spirion.pkg** file.\n3. The setup wizard opens. Click **Continue**.\n4. Click **Install**.\n5. Input your password to the popup verification prompt and press **Install Software**.\n6. Wait while the files are installed.\n7. Click **Close**.\n8. You can find Spirion in the **Applications** folder.",
+                "status": "success",
+                "coverage": 0.7142857142857143,
+                "coverage_class": "high",
+                "response_time": 4.8789591789245605,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20179"
+                ],
+                "article_id": "20179",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20179",
+                "keywords_found": [
+                        "unzip the contents",
+                        "Spirion.pkg",
+                        "setup wizard",
+                        "Install",
+                        "password"
+                ],
+                "keywords_missing": [
+                        "Close all applications",
+                        "Applications folder"
+                ],
+                "expected_keywords": [
+                        "Close all applications",
+                        "unzip the contents",
+                        "Spirion.pkg",
+                        "setup wizard",
+                        "Install",
+                        "password",
+                        "Applications folder"
+                ]
+        },
+        {
+                "question_number": 97,
+                "question": "If your UH Username password is found in the database of known compromised passwords, what should you do?",
+                "answer": "If your UH Username password is found in the database of known compromised passwords, you will not be allowed to use that password and will have to choose a different one. Make sure to select a unique password that you have not used previously.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 3.434170722961426,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20115"
+                ],
+                "article_id": "20115",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20115",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "choose a different password",
+                        "cannot use compromised password"
+                ],
+                "expected_keywords": [
+                        "choose a different password",
+                        "cannot use compromised password"
+                ]
+        },
+        {
+                "question_number": 98,
+                "question": "What are the steps to bulk add subscribers to a LISTSERV list using a plain text file?",
+                "answer": "1. In the LISTSERV homepage, click **Log In** and sign in.\n2. Under the **List Management** options in the menu on the left, select **Subscriber Reports**.\n3. Click on **Bulk Operations** next to **Add Subscribers**.\n4. Select your desired option to add or remove and click on **Choose File** to select the plain text file containing the email addresses.\n5. Click **Import**.",
+                "status": "success",
+                "coverage": 1.0,
+                "coverage_class": "high",
+                "response_time": 4.172184228897095,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20170"
+                ],
+                "article_id": "20170",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20170",
+                "keywords_found": [
+                        "log in",
+                        "List Management",
+                        "Subscriber Reports",
+                        "Bulk Operations",
+                        "Choose File",
+                        "Import"
+                ],
+                "keywords_missing": [],
+                "expected_keywords": [
+                        "log in",
+                        "List Management",
+                        "Subscriber Reports",
+                        "Bulk Operations",
+                        "Choose File",
+                        "Import"
+                ]
+        },
+        {
+                "question_number": 99,
+                "question": "How can you request a password reset via File Drop if you cannot reset it online or in person?",
+                "answer": "To request a password reset via File Drop, you need to provide the following information in your request: \n\n- Full name (first, middle, last)\n- UH Username\n- UH Number or last four digits of SSN\n- Month/day of date of birth (MM/DD) without the year\n- Your telephone number \n\nEnsure that this request is submitted if you are unable to reset your password online or visit a campus representative in person.",
+                "status": "failed",
+                "coverage": 0.0,
+                "coverage_class": "low",
+                "response_time": 3.820732831954956,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20116"
+                ],
+                "article_id": "20116",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20116",
+                "keywords_found": [],
+                "keywords_missing": [
+                        "Visit www.hawaii.edu/filedrop",
+                        "Enter your name and email address",
+                        "Recipient field enter help@hawaii.edu",
+                        "Check Require authentication",
+                        "Include name, reason for request, ticket number",
+                        "Choose File and upload required documents",
+                        "Scan/picture of government issued photo ID"
+                ],
+                "expected_keywords": [
+                        "Visit www.hawaii.edu/filedrop",
+                        "Enter your name and email address",
+                        "Recipient field enter help@hawaii.edu",
+                        "Check Require authentication",
+                        "Include name, reason for request, ticket number",
+                        "Choose File and upload required documents",
+                        "Scan/picture of government issued photo ID"
+                ]
+        },
+        {
+                "question_number": 100,
+                "question": "What are the steps required to set up a landline phone for Duo MFA enrollment?",
+                "answer": "1. Login to the UH Login MFA Device Registration site at www.hawaii.edu/its/uhlogin/device-reg.\n2. If you have not yet registered any devices, you will see the following screen. Click on the **Get Started button**, then proceed to Step 4.",
+                "status": "success",
+                "coverage": 0.16666666666666666,
+                "coverage_class": "low",
+                "response_time": 3.7396228313446045,
+                "sources": [
+                        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20121"
+                ],
+                "article_id": "20121",
+                "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20121",
+                "keywords_found": [
+                        "Login to the UH Login MFA Device Registration site"
+                ],
+                "keywords_missing": [
+                        "Add a device",
+                        "Select Phone number",
+                        "Check This is a landline phone",
+                        "Add extension",
+                        "Setup completed"
+                ],
+                "expected_keywords": [
+                        "Login to the UH Login MFA Device Registration site",
+                        "Add a device",
+                        "Select Phone number",
+                        "Check This is a landline phone",
+                        "Add extension",
+                        "Setup completed"
+                ]
+        }
+];
+
+        let filteredResults = [...testResultsData];
+
+        function renderResults(results) {
+            const tbody = document.getElementById('resultsTableBody');
+            tbody.innerHTML = '';
+
+            results.forEach(result => {
+                const row = document.createElement('tr');
+                
+                // Coverage percentage and class
+                const coveragePercent = Math.round(result.coverage * 100);
+                const coverageClass = `coverage-${result.coverage_class}`;
+                
+                // Sources HTML
+                const sourcesHtml = result.sources.map(source => {
+                    if (source.includes('teamdynamix.com')) {
+                        return `<a href="${source}" target="_blank">Article ${result.article_id}</a>`;
+                    }
+                    return `<a href="${source}" target="_blank">${source}</a>`;
+                }).join(', ');
+                
+                // Keywords info
+                const keywordsFoundHtml = result.keywords_found.length > 0 ? 
+                    `<div class="keywords-found">✓ Found: ${result.keywords_found.join(', ')}</div>` : '';
+                const keywordsMissingHtml = result.keywords_missing.length > 0 ? 
+                    `<div class="keywords-missing">✗ Missing: ${result.keywords_missing.join(', ')}</div>` : '';
+                
+                row.innerHTML = `
+                    <td class="row-number">${result.question_number}</td>
+                    <td class="question-cell">
+                        ${result.question}
+                        <div class="article-info">From Article ${result.article_id}</div>
+                    </td>
+                    <td class="answer-cell">
+                        ${result.answer}
+                        <div class="keywords-info">
+                            ${keywordsFoundHtml}
+                            ${keywordsMissingHtml}
+                        </div>
+                    </td>
+                    <td>
+                        <span class="status-badge status-${result.status}">${result.status}</span>
+                    </td>
+                    <td>
+                        <span class="keyword-coverage ${coverageClass}">${coveragePercent}%</span>
+                    </td>
+                    <td class="response-time">${result.response_time.toFixed(2)}s</td>
+                    <td class="sources">${sourcesHtml}</td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+        }
+
+        function filterResults() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const statusFilter = document.getElementById('statusFilter').value;
+            const coverageFilter = document.getElementById('coverageFilter').value;
+
+            filteredResults = testResultsData.filter(result => {
+                // Search filter
+                const matchesSearch = !searchTerm || 
+                    result.question.toLowerCase().includes(searchTerm) ||
+                    result.answer.toLowerCase().includes(searchTerm) ||
+                    result.sources.some(source => source.toLowerCase().includes(searchTerm));
+
+                // Status filter
+                const matchesStatus = !statusFilter || result.status === statusFilter;
+
+                // Coverage filter
+                let matchesCoverage = true;
+                if (coverageFilter === 'high') {
+                    matchesCoverage = result.coverage >= 0.7;
+                } else if (coverageFilter === 'medium') {
+                    matchesCoverage = result.coverage >= 0.3 && result.coverage < 0.7;
+                } else if (coverageFilter === 'low') {
+                    matchesCoverage = result.coverage < 0.3;
+                }
+
+                return matchesSearch && matchesStatus && matchesCoverage;
+            });
+
+            renderResults(filteredResults);
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterResults);
+        document.getElementById('statusFilter').addEventListener('change', filterResults);
+        document.getElementById('coverageFilter').addEventListener('change', filterResults);
+
+        // Initial render
+        renderResults(testResultsData);
+    </script>
+</body>
+</html>

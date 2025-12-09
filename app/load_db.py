@@ -32,8 +32,13 @@ utils.upload(general_collection, faq_loader, text_splitter, reset=True, batch_si
 
 
 
+# Load UH policies
 json_loader = JSONFileLoader("data/json/policies.json")
 utils.upload(general_collection, json_loader, text_splitter, reset=False, batch_size=30)
+
+# Load TeamDynamix knowledge base articles
+teamdynamix_loader = JSONFileLoader("../web-scraper/data/kb_articles_extracted.json")
+utils.upload(general_collection, teamdynamix_loader, text_splitter, reset=False, batch_size=30)
 
 
 # its_faq_collection = Chroma(

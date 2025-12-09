@@ -18,6 +18,8 @@
     "@trpc/react-query": "^11.0.0-rc.446",
     "@trpc/server": "^11.0.0-rc.446",
     "axios": "^1.7.9",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.1",
     "geist": "^1.3.0",
     "langchain": "^0.3.3",
     "next": "^14.2.4",
@@ -25,6 +27,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "server-only": "^0.0.1",
+    "stream-browserify": "^3.0.0",
     "superjson": "^2.2.1",
     "zod": "^3.23.3"
   },

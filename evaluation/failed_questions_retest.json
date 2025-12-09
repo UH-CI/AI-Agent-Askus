@@ -1,0 +1,104 @@
+{
+  "test_settings": {
+    "score_threshold": 0.4,
+    "k": 16,
+    "timestamp": "2025-12-03 04:15:16"
+  },
+  "results": [
+    {
+      "question": "What steps should you follow to update your Zoom Desktop Application to the latest version?",
+      "source_article": "Zoom Desktop Application update",
+      "success": true,
+      "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "keyword_coverage": 0.0,
+      "keywords_found": [],
+      "keywords_missing": [
+        "click profile",
+        "check for updates",
+        "download latest version"
+      ],
+      "sources": [
+        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20169",
+        "https://www.hawaii.edu/askus/1737"
+      ],
+      "response_time": 6.793781
+    },
+    {
+      "question": "What should you do if you encounter issues after attempting to update the Zoom Desktop Application?",
+      "source_article": "Zoom Desktop Application troubleshooting",
+      "success": true,
+      "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "keyword_coverage": 0.0,
+      "keywords_found": [],
+      "keywords_missing": [
+        "restart your computer"
+      ],
+      "sources": [
+        "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20151"
+      ],
+      "response_time": 5.739613
+    },
+    {
+      "question": "What are the steps to change your Microsoft 365 password using the web interface?",
+      "source_article": "Microsoft 365 password change",
+      "success": true,
+      "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "keyword_coverage": 0.0,
+      "keywords_found": [],
+      "keywords_missing": [
+        "Sign in to office.com/signin",
+        "Settings > Password",
+        "Enter old password",
+        "Create a new password",
+        "Select Submit"
+      ],
+      "sources": [
+        "https://www.hawaii.edu/askus/1807",
+        "https://www.hawaii.edu/askus/1703"
+      ],
+      "response_time": 5.613966
+    },
+    {
+      "question": "How can you forward a spam email as an attachment using Microsoft Outlook on Windows?",
+      "source_article": "Spam email reporting",
+      "success": true,
+      "answer": "To forward a spam email as an attachment using Microsoft Outlook on Windows, follow these steps:\n\n1. Open the email you want to forward.\n2. Click on the \"More\" button (the three-dot icon) at the top of the message pane.\n3. Select \"Forward as Attachment\" from the dropdown menu.\n4. A new message window will open with the original email attached as a `.eml` file. \n5. Enter the email address of the recipient in the \"To\" field.\n6. Add any additional message you want in the body of the email.\n7. Click \"Send\" to forward the email as an attachment. \n\nNote: The exact wording or options might vary slightly depending on your version of Outlook.",
+      "keyword_coverage": 0.3333333333333333,
+      "keywords_found": [
+        "Forward as attachment"
+      ],
+      "keywords_missing": [
+        "highlight message",
+        "Ctrl + Alt + F"
+      ],
+      "sources": [
+        "https://www.hawaii.edu/askus/1161",
+        "https://www.hawaii.edu/askus/1145"
+      ],
+      "response_time": 7.461411
+    },
+    {
+      "question": "What are the steps to connect to the organization's network using the Cisco AnyConnect VPN client?",
+      "source_article": "VPN connection setup",
+      "success": true,
+      "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "keyword_coverage": 0.0,
+      "keywords_found": [],
+      "keywords_missing": [
+        "Launch Cisco AnyConnect",
+        "evpn2.sample.com",
+        "Connect",
+        "Login with UserID"
+      ],
+      "sources": [
+        "https://www.hawaii.edu/askus/1606",
+        "https://www.hawaii.edu/askus/1607"
+      ],
+      "response_time": 5.137619
+    }
+  ],
+  "summary": {
+    "successful_responses": 5,
+    "average_keyword_coverage": 0.06666666666666667
+  }
+}

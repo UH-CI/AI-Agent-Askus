@@ -46,7 +46,7 @@ http_client = HttpClient(host=chroma_host, port=chroma_port)
 # )
 
 general_collection = Chroma(
-    collection_name="general_faq",
+    collection_name="question_based_faq",
     client=http_client,
     embedding_function=embedder,
     collection_metadata={"hnsw:space": "cosine"},
@@ -76,7 +76,7 @@ predefined_collection = Chroma(
 
 general_retriever = general_collection.as_retriever(
     search_type="similarity",
-    search_kwargs={"k": 15},
+    search_kwargs={"k": 50},
     # search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.5}
 )
 
@@ -98,7 +98,7 @@ retrievers = {
     "general": general_retriever,
 }
 
-llm = ChatOpenAI(model="gpt-4o-mini")
+llm = ChatOpenAI(model="gpt-4o")
 # llm = ChatOllama(model=os.getenv("OLLAMA_MODEL"), base_url=os.getenv("OLLAMA_HOST"))
 # llm = ChatOpenAI(model="gemini-2.0-flash", api_key=os.getenv("GEMINI_API_KEY"), base_url=os.getenv("GEMINI_BASE_URL"))
 # llm = GoogleGenerativeAI(model="gemini-2.0-flash", api_key=os.getenv("GEMINI_API_KEY"))
@@ -110,6 +110,7 @@ prompt_injection_classifier = load(
 
 from manoa_agent.agent.nodes import *
 from manoa_agent.agent.enhanced_nodes import *
+from manoa_agent.agent.agentic_enhanced_nodes import *
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -153,7 +154,7 @@ workflow.add_node("reformulate", ReformulateNode(llm=llm))
 # workflow.add_node("get_documents", DocumentsNode(retrievers=retrievers))
 # workflow.add_node("rag_agent", AgentNode(llm=llm))
 workflow.add_node("get_documents", EnhancedDocumentsNode(retrievers=retrievers))
-workflow.add_node("rag_agent", EnhancedAgentNode(llm=llm))
+workflow.add_node("rag_agent", AgenticEnhancedNode(llm=llm, retriever=general_retriever))
 workflow.add_node("general_agent", GeneralAgentNode(llm=llm))
 
 workflow.add_edge(START, "predefined")

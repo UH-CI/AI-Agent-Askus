@@ -1,0 +1,12 @@
+nohup: ignoring input
+
+> web@0.1.0 start
+> next start --port 3000 --hostname 0.0.0.0
+
+  ▲ Next.js 14.2.24
+  - Local:        http://localhost:3000
+  - Network:      http://0.0.0.0:3000
+
+ ✓ Starting...
+ ✓ Ready in 440ms
+[TRPC] chat.response took 3925ms to execute

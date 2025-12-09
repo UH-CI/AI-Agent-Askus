@@ -30,8 +30,9 @@ export const chatRouter = createTRPCRouter({
         },
       };
 
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8001";
       const response = await axios.post(
-        "http://localhost:8001/askus/invoke",
+        `${apiUrl}/askus/invoke`,
         body,
       );
 

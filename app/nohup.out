@@ -1,0 +1,27 @@
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+INFO:sentence_transformers.cross_encoder.CrossEncoder:Use pytorch device: cpu
+INFO:manoa_agent.agent.enhanced_nodes:Initialized cross-encoder model: cross-encoder/ms-marco-MiniLM-L-6-v2
+INFO:__main__:Workflow compiled successfully
+INFO:     Started server process [23599]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [23599]
+Connecting to Chroma at localhost:8000
+Starting server on 0.0.0.0:8001
+
+     __          ___      .__   __.   _______      _______. _______ .______     ____    ____  _______
+    |  |        /   \     |  \ |  |  /  _____|    /       ||   ____||   _  \    \   \  /   / |   ____|
+    |  |       /  ^  \    |   \|  | |  |  __     |   (----`|  |__   |  |_)  |    \   \/   /  |  |__
+    |  |      /  /_\  \   |  . `  | |  | |_ |     \   \    |   __|  |      /      \      /   |   __|
+    |  `----./  _____  \  |  |\   | |  |__| | .----)   |   |  |____ |  |\  \----.  \    /    |  |____
+    |_______/__/     \__\ |__| \__|  \______| |_______/    |_______|| _| `._____|   \__/     |_______|
+    
+[1;32;40mLANGSERVE:[0m Playground for chain "/askus/" is live at:
+[1;32;40mLANGSERVE:[0m  │
+[1;32;40mLANGSERVE:[0m  └──> /askus/playground/
+[1;32;40mLANGSERVE:[0m
+[1;32;40mLANGSERVE:[0m See all available routes at /docs/

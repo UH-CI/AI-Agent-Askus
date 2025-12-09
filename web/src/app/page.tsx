@@ -101,27 +101,6 @@ export default function Home() {
                   {msg.message.type === "ai" ? "Hoku" : "You"}
                 </div>
                 <div>{msg.message.content}</div>
-                {msg.sources.length > 0 && (
-                  <>
-                    <br></br>
-                    <div className="">
-                      For more information check out these links:
-                    </div>
-                    <div className="mt-2 space-y-1">
-                      {msg.sources.map((link, i) => (
-                        <a
-                          key={i}
-                          className="block text-xs text-blue-600 hover:text-blue-800 hover:underline"
-                          href={link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {link}
-                        </a>
-                      ))}
-                    </div>
-                  </>
-                )}
               </div>
             </div>
           ))}

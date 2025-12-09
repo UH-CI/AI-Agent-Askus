@@ -52,8 +52,9 @@ elif command -v "docker-compose" > /dev/null 2>&1; then
     DOCKER_COMPOSE_CMD="docker-compose"
 else
     echo "❌ Neither docker compose nor docker-compose found. Please install Docker Compose."
-    exit 1
 fi
+
+DOCKER_COMPOSE_CMD='docker compose'
 
 # Function to cleanup on exit
 cleanup() {

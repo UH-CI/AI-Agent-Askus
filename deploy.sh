@@ -56,9 +56,9 @@ cleanup() {
 trap cleanup EXIT INT TERM
 
 # Use docker compose (newer syntax) or docker-compose (legacy)
-if command -v "docker compose" > /dev/null 2>&1; then
+if docker compose version > /dev/null 2>&1; then
     DOCKER_COMPOSE_CMD="docker compose"
-elif command -v "docker-compose" > /dev/null 2>&1; then
+elif command -v docker-compose > /dev/null 2>&1; then
     DOCKER_COMPOSE_CMD="docker-compose"
 else
     echo "❌ Neither docker compose nor docker-compose found. Please install Docker Compose."
@@ -76,10 +76,6 @@ docker system prune -f > /dev/null 2>&1 || true
 echo "🚀 Starting ChromaDB service..."
 $DOCKER_COMPOSE_CMD up -d chromadb
 sleep 10
-
-# Start the backend with main.py
-echo "🚀 Starting backend with main.py..."
-$DOCKER_COMPOSE_CMD run -d --name hoku-app -p 8001:8001 -e HOST=0.0.0.0 -e PORT=8001 hoku-app python /app/main.py
 
 # Wait for services to be ready
 echo "⏳ Waiting for backend services to be ready..."
@@ -99,17 +95,36 @@ for i in {1..30}; do
     sleep 2
 done
 
-# Load database data into ChromaDB
-echo "🗄️ Loading data into ChromaDB (this may take a while)..."
-docker compose run --rm hoku-app python /app/load_db.py || {
-    echo "❌ Failed to load database data"
-    exit 1
-}
-echo "✅ Database loaded successfully"
+# Check if database needs to be loaded
+echo "🔍 Checking if database needs to be loaded..."
+DB_CHECK=$($DOCKER_COMPOSE_CMD run --rm hoku-app python -c "
+import os
+from chromadb import HttpClient
+try:
+    client = HttpClient(host=os.getenv('CHROMA_HOST'), port=os.getenv('CHROMA_PORT'))
+    collections = client.list_collections()
+    if any(c.name == 'general_faq' for c in collections):
+        print('EXISTS')
+    else:
+        print('MISSING')
+except:
+    print('MISSING')
+" 2>/dev/null | tail -1)
 
-# Stop and remove the hoku-app container if it's running
-$DOCKER_COMPOSE_CMD stop hoku-app
-$DOCKER_COMPOSE_CMD rm -f hoku-app
+if [ "$DB_CHECK" = "EXISTS" ]; then
+    echo "✅ Database already loaded, skipping..."
+else
+    echo "🗄️ Loading data into ChromaDB (this may take a while)..."
+    $DOCKER_COMPOSE_CMD run --rm hoku-app python /app/load_db.py || {
+        echo "❌ Failed to load database data"
+        exit 1
+    }
+    echo "✅ Database loaded successfully"
+fi
+
+# Start the hoku-app service properly
+echo "🚀 Starting Python API service..."
+$DOCKER_COMPOSE_CMD up -d hoku-app
 
 # Check if Python backend is ready
 echo "🔍 Checking Python backend connection..."
@@ -149,8 +164,13 @@ else
     npm run build
 fi
 
-# Start the frontend on port 3000
-echo "🌐 Starting frontend on port 3000..."
+# Kill any existing Next.js processes
+echo "🧹 Stopping any existing frontend processes..."
+pkill -f "next" 2>/dev/null || true
+sleep 2
+
+# Start the frontend on port 3000 in production mode
+echo "🌐 Starting frontend on port 3000 (production mode)..."
 if command -v pnpm > /dev/null; then
     pnpm start --port 3000 --hostname 0.0.0.0 &
 else

@@ -1,0 +1,282 @@
+{
+  "comparison_metadata": {
+    "timestamp": "2025-12-03 04:32:56",
+    "settings": {
+      "old": "similarity search, k=15",
+      "new": "similarity_score_threshold=0.4, k=16"
+    }
+  },
+  "summary": {
+    "improved": 1,
+    "worse": 0,
+    "no_change": 4,
+    "errors": 0,
+    "total_improvement_score": 2
+  },
+  "detailed_results": [
+    {
+      "question": "What are the steps to change your Microsoft 365 password using the web interface?",
+      "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=3728",
+      "expected_keywords": [
+        "Sign in to office.com/signin",
+        "Settings > Password",
+        "Enter old password",
+        "Create a new password",
+        "Select Submit"
+      ],
+      "original": {
+        "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+        "sources": [
+          "https://www.hawaii.edu/askus/1807",
+          "https://www.hawaii.edu/askus/1703"
+        ],
+        "analysis": {
+          "is_default_response": true,
+          "keyword_coverage": 0.0,
+          "keywords_found": [],
+          "keywords_missing": [
+            "Sign in to office.com/signin",
+            "Settings > Password",
+            "Enter old password",
+            "Create a new password",
+            "Select Submit"
+          ],
+          "answer_length": 197,
+          "has_specific_content": false
+        }
+      },
+      "new": {
+        "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+        "sources": [
+          "https://www.hawaii.edu/askus/1807",
+          "https://www.hawaii.edu/askus/1703"
+        ],
+        "analysis": {
+          "is_default_response": true,
+          "keyword_coverage": 0.0,
+          "keywords_found": [],
+          "keywords_missing": [
+            "Sign in to office.com/signin",
+            "Settings > Password",
+            "Enter old password",
+            "Create a new password",
+            "Select Submit"
+          ],
+          "answer_length": 197,
+          "has_specific_content": false
+        }
+      },
+      "improvement_score": 0,
+      "improvements": [],
+      "regressions": [],
+      "status": "\ud83d\udfe1 NO CHANGE"
+    },
+    {
+      "question": "What should you do if you encounter issues while trying to change your Microsoft 365 password?",
+      "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=3728",
+      "expected_keywords": [
+        "contact",
+        "ITS Service Center"
+      ],
+      "original": {
+        "answer": "If you encounter issues while trying to change your Microsoft 365 password, it is possible your UH Username has been disabled to prevent malicious use. You should immediately change your password by visiting http://www.hawaii.edu/username and clicking on the \"Forgot your password?\" link. If you continue to experience issues, consider reaching out to your system administrator or seeking further assistance from tech support.",
+        "sources": [
+          "https://www.hawaii.edu/askus/892",
+          "https://www.hawaii.edu/askus/1785"
+        ],
+        "analysis": {
+          "is_default_response": false,
+          "keyword_coverage": 0.0,
+          "keywords_found": [],
+          "keywords_missing": [
+            "contact",
+            "ITS Service Center"
+          ],
+          "answer_length": 426,
+          "has_specific_content": true
+        }
+      },
+      "new": {
+        "answer": "If you encounter issues while trying to change your Microsoft 365 password, it is possible that your UH Username has been disabled to prevent malicious use. In this case, you should try the following steps:\n\n1. Go to http://www.hawaii.edu/username and click on the \"Forgot your password?\" link to initiate a password change.\n2. If you continue to experience errors, it may be necessary to contact UH IT support for assistance, as there could be an account-related issue that needs to be resolved.\n\nMake sure to follow the password guidelines for creating a strong password, and remember to treat your password as confidential information.",
+        "sources": [
+          "https://www.hawaii.edu/askus/892",
+          "https://www.hawaii.edu/askus/1785"
+        ],
+        "analysis": {
+          "is_default_response": false,
+          "keyword_coverage": 0.5,
+          "keywords_found": [
+            "contact"
+          ],
+          "keywords_missing": [
+            "ITS Service Center"
+          ],
+          "answer_length": 638,
+          "has_specific_content": true
+        }
+      },
+      "improvement_score": 2,
+      "improvements": [
+        "\u2705 Keyword coverage: 0.0% \u2192 50.0%"
+      ],
+      "regressions": [],
+      "status": "\ud83d\udfe2 IMPROVED"
+    },
+    {
+      "question": "What steps should you follow if you cannot log in to iwanttacos.com due to an expired password?",
+      "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20079",
+      "expected_keywords": [
+        "open iwanttacos.com",
+        "click on Forgot your password",
+        "check your email",
+        "password reset link"
+      ],
+      "original": {
+        "answer": "If you cannot log in to iwanttacos.com due to an expired password, follow these steps:\n\n1. Access the Password Change link.\n2. If you remember your old password, input it along with your new password of choice twice. Ensure the new password meets the specified requirements.\n3. If you do not remember your password or it is not working, look for a way to set a new password over the Web, which may involve answering two security questions you selected when your UH Username was activated.\n4. If your UH Username has expired in the past six months, fill in the Check Status Form with your First and Last name, UH ID number or full Social Security Number, and Full Date of Birth, then click on Check Status.\n5. If you see a pop-up indicating that your UH Username has expired, proceed to enter the answers to your secret questions and click on Reactivate UH Username.",
+        "sources": [
+          "https://www.hawaii.edu/askus/1785",
+          "https://www.hawaii.edu/askus/1784"
+        ],
+        "analysis": {
+          "is_default_response": false,
+          "keyword_coverage": 0.0,
+          "keywords_found": [],
+          "keywords_missing": [
+            "open iwanttacos.com",
+            "click on Forgot your password",
+            "check your email",
+            "password reset link"
+          ],
+          "answer_length": 865,
+          "has_specific_content": true
+        }
+      },
+      "new": {
+        "answer": "If you cannot log in to iwanttacos.com due to an expired password, follow these steps:\n\n1. Go to the Password Change link.\n2. If you remember your old password, input it along with a new password of your choice twice. Make sure your new password meets the required criteria.\n3. If you do not remember your password, use the option to set a new password over the Web. You will need to answer the two secret questions you selected when your UH Username was activated.\n4. Fill in the Check Status Form with your First and Last name, UH ID number or full Social Security Number, and Full Date of Birth, then click on Check Status.\n5. If your UH username has expired in the past 6 months, a pop-up will indicate that you have a recently expired UH Username.\n6. It will then prompt you for the answers to your secret questions; enter those answers and click on the button that says Reactivate UH Username.",
+        "sources": [
+          "https://www.hawaii.edu/askus/1785",
+          "https://www.hawaii.edu/askus/1784"
+        ],
+        "analysis": {
+          "is_default_response": false,
+          "keyword_coverage": 0.0,
+          "keywords_found": [],
+          "keywords_missing": [
+            "open iwanttacos.com",
+            "click on Forgot your password",
+            "check your email",
+            "password reset link"
+          ],
+          "answer_length": 899,
+          "has_specific_content": true
+        }
+      },
+      "improvement_score": 0,
+      "improvements": [],
+      "regressions": [],
+      "status": "\ud83d\udfe1 NO CHANGE"
+    },
+    {
+      "question": "What is the likely cause if you receive an error message logging into iwanttacos.com?",
+      "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20079",
+      "expected_keywords": [
+        "passwords expire",
+        "every other day"
+      ],
+      "original": {
+        "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+        "sources": [
+          "https://www.hawaii.edu/askus/892",
+          "https://www.hawaii.edu/askus/1785"
+        ],
+        "analysis": {
+          "is_default_response": true,
+          "keyword_coverage": 0.0,
+          "keywords_found": [],
+          "keywords_missing": [
+            "passwords expire",
+            "every other day"
+          ],
+          "answer_length": 197,
+          "has_specific_content": false
+        }
+      },
+      "new": {
+        "answer": "I'm sorry I don't have the answer to that question. I can only answer questions about UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+        "sources": [
+          "https://www.hawaii.edu/askus/892",
+          "https://www.hawaii.edu/askus/1785"
+        ],
+        "analysis": {
+          "is_default_response": true,
+          "keyword_coverage": 0.0,
+          "keywords_found": [],
+          "keywords_missing": [
+            "passwords expire",
+            "every other day"
+          ],
+          "answer_length": 197,
+          "has_specific_content": false
+        }
+      },
+      "improvement_score": 0,
+      "improvements": [],
+      "regressions": [],
+      "status": "\ud83d\udfe1 NO CHANGE"
+    },
+    {
+      "question": "Describe the procedure to submit a request for an Enterprise VPN account.",
+      "article_url": "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20077",
+      "expected_keywords": [
+        "fill out request form",
+        "submit to IT department",
+        "provide necessary information",
+        "follow up for approval"
+      ],
+      "original": {
+        "answer": "To submit a request for an Enterprise VPN account, follow these steps:\n\n1. In the Recipient field, enter help@hawaii.edu.\n2. Check the \"Require authentication\" option.\n3. In the comment section, include your name, the reason for the request, and your ticket number. If you do not have a ticket number, you can contact the ITS Help Desk for assistance.\n4. Ensure that the comment/description section does NOT contain any personal identifying information such as your UH number or your date of birth.\n5. Click \"Proceed\" to submit your request for processing.\n\nIf you have any questions, you can email itsdctr@hawaii.edu.",
+        "sources": [
+          "https://www.hawaii.edu/askus/1868",
+          "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20116"
+        ],
+        "analysis": {
+          "is_default_response": false,
+          "keyword_coverage": 0.0,
+          "keywords_found": [],
+          "keywords_missing": [
+            "fill out request form",
+            "submit to IT department",
+            "provide necessary information",
+            "follow up for approval"
+          ],
+          "answer_length": 618,
+          "has_specific_content": true
+        }
+      },
+      "new": {
+        "answer": "To submit a request for an Enterprise VPN account, follow these steps:\n\n1. In the \"Instructions\" field, describe the work you are requesting.\n2. Select the appropriate \"Update Type\" from the dropdown menu.\n3. If you are making changes to provisioning, choose the relevant value from the \"Product Item\" dropdown menu.\n4. For changes related to information such as contacts or account code, specify those changes in the instructions box only.\n5. Click on \"Submit\" to send your request for processing.\n\nIf you have any questions, email itsdctr@hawaii.edu.",
+        "sources": [
+          "https://www.hawaii.edu/askus/1868",
+          "https://solutions.teamdynamix.com/TDClient/277/Portal/KB/ArticleDet?ID=20116"
+        ],
+        "analysis": {
+          "is_default_response": false,
+          "keyword_coverage": 0.0,
+          "keywords_found": [],
+          "keywords_missing": [
+            "fill out request form",
+            "submit to IT department",
+            "provide necessary information",
+            "follow up for approval"
+          ],
+          "answer_length": 552,
+          "has_specific_content": true
+        }
+      },
+      "improvement_score": 0,
+      "improvements": [],
+      "regressions": [],
+      "status": "\ud83d\udfe1 NO CHANGE"
+    }
+  ]
+}
