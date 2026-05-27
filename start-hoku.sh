@@ -10,6 +10,7 @@ pkill -f "python main.py" 2>/dev/null || true
 pkill -f "npm run dev" 2>/dev/null || true
 pkill -f "next dev" 2>/dev/null || true
 pkill -f "next-server" 2>/dev/null || true
+pkill -f "next start" 2>/dev/null || true
 pkill -f "chroma run" 2>/dev/null || true
 docker stop $(docker ps -q --filter ancestor=chromadb/chroma) 2>/dev/null || true
 
@@ -64,13 +65,26 @@ fi
 echo "Starting backend..."
 nohup python main.py > ../backend.log 2>&1 &
 
-# Give backend time to start
-sleep 5
+# Wait for backend to be ready
+echo "Waiting for backend to be ready..."
+for i in {1..30}; do
+    if curl -s http://localhost:8001/docs > /dev/null 2>&1; then
+        echo "Backend is ready!"
+        break
+    elif [ $i -eq 30 ]; then
+        echo "Backend failed to start after 30 attempts"
+        exit 1
+    else
+        echo "Waiting for backend... attempt $i/30"
+        sleep 2
+    fi
+done
 
-# Start frontend (clean cache + force port)
-echo "Starting frontend..."
+# Start frontend (build for production, then start)
+echo "Building frontend..."
 cd /home/exouser/AI-Agent-Askus/web
-rm -rf .next
-nohup npm run dev -- --hostname 0.0.0.0 --port 3000 > ../frontend.log 2>&1 &
+npm run build > ../frontend-build.log 2>&1
+echo "Starting frontend..."
+nohup npm run start -- --hostname 0.0.0.0 --port 3000 > ../frontend.log 2>&1 &
 
 echo "Hoku started"
