@@ -1,27 +1,26 @@
+/home/exouser/miniconda3/envs/ai-agent-askus/lib/python3.10/site-packages/google/api_core/_python_version_support.py:263: FutureWarning: You are using a Python version (3.10.18) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/home/exouser/miniconda3/envs/ai-agent-askus/lib/python3.10/site-packages/google/api_core/_python_version_support.py:263: FutureWarning: You are using a Python version (3.10.18) which Google will stop supporting in new releases of google.ai.generativelanguage_v1beta once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.ai.generativelanguage_v1beta past that date.
+  warnings.warn(message, FutureWarning)
 /home/exouser/miniconda3/envs/ai-agent-askus/lib/python3.10/site-packages/sklearn/base.py:380: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.5.1 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
 https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
   warnings.warn(
-/home/exouser/AI-Agent-Askus/app/main.py:146: LangGraphDeprecatedSinceV05: `output` is deprecated and will be removed. Please use `output_schema` instead. Deprecated in LangGraph V0.5 to be removed in V2.0.
-  workflow = StateGraph(AgentState, output=AgentOutputState)
 INFO:__main__:Workflow compiled successfully
-INFO:     Started server process [3281018]
+INFO:     Started server process [1691064]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://localhost:8001 (Press CTRL+C to quit)
 INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/f5a3e8e6-6492-45b8-9fb0-f0a1b2a83a72/query "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
 WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
-INFO:manoa_agent.agent.nodes:Message: 'Hello' is not predefined
+INFO:manoa_agent.agent.nodes:Message: 'what can you tell me about whistleblowers' is not predefined
 INFO:__main__:Evaluating predefined_condition
 INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
 INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Message: 'Hello' is not a prompt injection
+INFO:manoa_agent.agent.nodes:Message: 'what can you tell me about whistleblowers' is not a prompt injection
 INFO:__main__:Evaluating prompt_injection_condition
 INFO:__main__:prompt_injection_condition: state is safe
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='Aloha! How can I assist you today with information about UH Manoa?'
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='Sorry, my services may be unavailable at this time.'
 INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
 
      __          ___      .__   __.   _______      _______. _______ .______     ____    ____  _______
@@ -36,184 +35,200 @@ INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system 
 [1;32;40mLANGSERVE:[0m  └──> /askus/playground/
 [1;32;40mLANGSERVE:[0m
 [1;32;40mLANGSERVE:[0m See all available routes at /docs/
-INFO:     127.0.0.1:43242 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43084 - "POST /askus/invoke HTTP/1.1" 200 OK
 INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/f5a3e8e6-6492-45b8-9fb0-f0a1b2a83a72/query "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
 WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
-INFO:manoa_agent.agent.nodes:Message: 'What llm do you run on' is not predefined
+INFO:manoa_agent.agent.nodes:Message: 'what can you tell me about whistleblowers' is not predefined
 INFO:__main__:Evaluating predefined_condition
 INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
 INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Message: 'What llm do you run on' is not a prompt injection
+INFO:manoa_agent.agent.nodes:Message: 'what can you tell me about whistleblowers' is not a prompt injection
 INFO:__main__:Evaluating prompt_injection_condition
 INFO:__main__:prompt_injection_condition: state is safe
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:System prompt chain returned: answer="I'm Hoku, an AI assistant here to help with questions about UH Manoa. I operate based on the guidelines and information provided to me, but I don't have specific details about the underlying technology or LLM model."
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I am sorry, but I cannot provide information about whistleblowers.'
 INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
-INFO:     127.0.0.1:56718 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37588 - "POST /askus/invoke HTTP/1.1" 200 OK
 INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/f5a3e8e6-6492-45b8-9fb0-f0a1b2a83a72/query "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
 WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
-INFO:manoa_agent.agent.nodes:Message: 'Yes you do' is not predefined
+INFO:manoa_agent.agent.nodes:Message: 'how do I connect to UH VPN' is not predefined
 INFO:__main__:Evaluating predefined_condition
 INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
 INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Message: 'Yes you do' is not a prompt injection
+INFO:manoa_agent.agent.nodes:Message: 'how do I connect to UH VPN' is not a prompt injection
 INFO:__main__:Evaluating prompt_injection_condition
 INFO:__main__:prompt_injection_condition: state is safe
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:System prompt chain returned: answer="I'm Hoku, an AI assistant here to help with questions about UH Manoa. I operate based on the guidelines and information provided to me, but I don't have specific details about the underlying technology or LLM model."
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I am sorry, but I cannot provide information about how to connect to UH VPN.'
 INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
-INFO:     127.0.0.1:41666 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57636 - "POST /askus/invoke HTTP/1.1" 200 OK
 INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/f5a3e8e6-6492-45b8-9fb0-f0a1b2a83a72/query "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
 WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
-INFO:manoa_agent.agent.nodes:Message: 'Fine, how do I connect to uh wifi?' is not predefined
+INFO:manoa_agent.agent.nodes:Message: 'What are UH's COVID-19 guidelines if I test positive?"' is not predefined
 INFO:__main__:Evaluating predefined_condition
 INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
 INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Message: 'Fine, how do I connect to uh wifi?' is not a prompt injection
+INFO:manoa_agent.agent.nodes:Message: 'What are UH's COVID-19 guidelines if I test positive?"' is not a prompt injection
 INFO:__main__:Evaluating prompt_injection_condition
 INFO:__main__:prompt_injection_condition: state is safe
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:System prompt chain returned: answer=None
-INFO:manoa_agent.agent.nodes:Entering ReformulateNode.__call__
-INFO:manoa_agent.agent.nodes:Reformuate Node Called
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Reformulating message to :'How can I connect to UH WiFi?'
-INFO:manoa_agent.agent.nodes:Entering DocumentsNode.__call__
-INFO:manoa_agent.agent.nodes:Get Documents Node called
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/72f2ff38-9a4f-4516-9415-18819f197e86/query "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Documents chain returned an answer from the relevant documents.
-INFO:     127.0.0.1:48022 - "POST /askus/invoke HTTP/1.1" 200 OK
-INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/f5a3e8e6-6492-45b8-9fb0-f0a1b2a83a72/query "HTTP/1.1 200 OK"
-WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
-INFO:manoa_agent.agent.nodes:Message: 'What about the wireless passthrough' is not predefined
-INFO:__main__:Evaluating predefined_condition
-INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
-INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Message: 'What about the wireless passthrough' is not a prompt injection
-INFO:__main__:Evaluating prompt_injection_condition
-INFO:__main__:prompt_injection_condition: state is safe
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:System prompt chain returned: answer="To set up a wireless passthrough for UH Manoa's network, you'll need to register your device's MAC address with the UH network. This allows your device to connect without needing to log in with your UH credentials each time. You'll typically do this through the university's IT services portal. If you're looking for step-by-step instructions, you should refer to the specific guidelines provided by the UH IT department, often available via their website or tech support."
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='If you test positive for COVID-19, you should isolate for 5 days and wear a mask for 10 days. You can return to campus on day 6 if your symptoms are improving and you have been fever-free for 24 hours without the use of fever-reducing medication. If you have moderate or severe illness, or have a weakened immune system, you should isolate for 10 days.'
 INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
-INFO:     127.0.0.1:54236 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46750 - "POST /askus/invoke HTTP/1.1" 200 OK
 INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/f5a3e8e6-6492-45b8-9fb0-f0a1b2a83a72/query "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
 WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
-INFO:manoa_agent.agent.nodes:Message: 'Give me links pertaining to uh wireless passthrough' is not predefined
+INFO:manoa_agent.agent.nodes:Message: '"Do I have to wear a mask on UH campuses?"' is not predefined
 INFO:__main__:Evaluating predefined_condition
 INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
 INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Message: 'Give me links pertaining to uh wireless passthrough' is not a prompt injection
+INFO:manoa_agent.agent.nodes:Message: '"Do I have to wear a mask on UH campuses?"' is not a prompt injection
 INFO:__main__:Evaluating prompt_injection_condition
 INFO:__main__:prompt_injection_condition: state is safe
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:System prompt chain returned: answer=None
-INFO:manoa_agent.agent.nodes:Entering ReformulateNode.__call__
-INFO:manoa_agent.agent.nodes:Reformuate Node Called
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Reformulating message to :'I'm unable to provide real-time links or browse the internet. However, you can find information about setting up a wireless passthrough at UH Manoa by visiting the university's Information Technology Services (ITS) website. You can also reach out to the ITS Help Desk for guidance or look for sections regarding network access or wireless services on their site.'
-INFO:manoa_agent.agent.nodes:Entering DocumentsNode.__call__
-INFO:manoa_agent.agent.nodes:Get Documents Node called
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/72f2ff38-9a4f-4516-9415-18819f197e86/query "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Documents chain returned an answer from the relevant documents.
-INFO:     127.0.0.1:53802 - "POST /askus/invoke HTTP/1.1" 200 OK
-INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/f5a3e8e6-6492-45b8-9fb0-f0a1b2a83a72/query "HTTP/1.1 200 OK"
-WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
-INFO:manoa_agent.agent.nodes:Message: 'Ok what can you tell me about policies' is not predefined
-INFO:__main__:Evaluating predefined_condition
-INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
-INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Message: 'Ok what can you tell me about policies' is not a prompt injection
-INFO:__main__:Evaluating prompt_injection_condition
-INFO:__main__:prompt_injection_condition: state is safe
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:System prompt chain returned: answer=None
-INFO:manoa_agent.agent.nodes:Entering ReformulateNode.__call__
-INFO:manoa_agent.agent.nodes:Reformuate Node Called
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Reformulating message to :'I can provide information about UH Systemwide Policies, such as guidelines and regulations affecting students, faculty, and staff across the University of Hawaii system. If you have specific questions about these policies, like academic policies, campus safety regulations, or IT-related policies, feel free to ask!'
-INFO:manoa_agent.agent.nodes:Entering DocumentsNode.__call__
-INFO:manoa_agent.agent.nodes:Get Documents Node called
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/72f2ff38-9a4f-4516-9415-18819f197e86/query "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Documents chain returned an answer from the relevant documents.
-INFO:     127.0.0.1:46714 - "POST /askus/invoke HTTP/1.1" 200 OK
-INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/f5a3e8e6-6492-45b8-9fb0-f0a1b2a83a72/query "HTTP/1.1 200 OK"
-WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
-INFO:manoa_agent.agent.nodes:Message: 'will I keep my hawaii.edu email after graduating?' is not predefined
-INFO:__main__:Evaluating predefined_condition
-INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
-INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Message: 'will I keep my hawaii.edu email after graduating?' is not a prompt injection
-INFO:__main__:Evaluating prompt_injection_condition
-INFO:__main__:prompt_injection_condition: state is safe
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:System prompt chain returned: answer="Yes, University of Hawai'i System alumni are allowed to keep their hawaii.edu email addresses after graduating. It is often encouraged for graduates to stay connected with the university community through their email account. Just ensure that you continue to log in periodically to keep it active."
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I am sorry, but I cannot provide information about mask requirements on UH campuses.'
 INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
-INFO:     127.0.0.1:51806 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33442 - "POST /askus/invoke HTTP/1.1" 200 OK
 INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/f5a3e8e6-6492-45b8-9fb0-f0a1b2a83a72/query "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
 WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
-INFO:manoa_agent.agent.nodes:Message: 'Why aren't you provifing links with your responses?' is not predefined
+INFO:manoa_agent.agent.nodes:Message: 'Are emotional support animals allowed on UH campuses?' is not predefined
 INFO:__main__:Evaluating predefined_condition
 INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
 INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Message: 'Why aren't you provifing links with your responses?' is not a prompt injection
+INFO:manoa_agent.agent.nodes:Message: 'Are emotional support animals allowed on UH campuses?' is not a prompt injection
 INFO:__main__:Evaluating prompt_injection_condition
 INFO:__main__:prompt_injection_condition: state is safe
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I apologize for any inconvenience. If you need specific links or more detailed information directly from the UH website or other official resources, you might need to visit the UH Manoa website or contact their support directly for those resources. If there’s anything specific you’d like help with, let me know!'
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I am sorry, but I cannot provide information about emotional support animals on UH campuses.'
 INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
-INFO:     127.0.0.1:39970 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34688 - "POST /askus/invoke HTTP/1.1" 200 OK
 INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/f5a3e8e6-6492-45b8-9fb0-f0a1b2a83a72/query "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
 WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
-INFO:manoa_agent.agent.nodes:Message: 'Can you tell me anything about insurance for rcuh employees?' is not predefined
+INFO:manoa_agent.agent.nodes:Message: 'How do I report a violation of UH policies confidentially?' is not predefined
 INFO:__main__:Evaluating predefined_condition
 INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
 INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Message: 'Can you tell me anything about insurance for rcuh employees?' is not a prompt injection
+INFO:manoa_agent.agent.nodes:Message: 'How do I report a violation of UH policies confidentially?' is not a prompt injection
 INFO:__main__:Evaluating prompt_injection_condition
 INFO:__main__:prompt_injection_condition: state is safe
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:System prompt chain returned: answer=None
-INFO:manoa_agent.agent.nodes:Entering ReformulateNode.__call__
-INFO:manoa_agent.agent.nodes:Reformuate Node Called
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Reformulating message to :'RCUH employees typically have access to a variety of insurance benefits, including health, dental, vision, and life insurance. The specifics can vary depending on employment status and terms. To get detailed information about the insurance options available to RCUH employees, it's best to refer to the RCUH Human Resources website or contact their HR department directly. They can provide the most accurate and up-to-date information.'
-INFO:manoa_agent.agent.nodes:Entering DocumentsNode.__call__
-INFO:manoa_agent.agent.nodes:Get Documents Node called
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/72f2ff38-9a4f-4516-9415-18819f197e86/query "HTTP/1.1 200 OK"
-INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-INFO:manoa_agent.agent.nodes:Documents chain returned an answer from the relevant documents.
-INFO:     127.0.0.1:48614 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I am sorry, but I cannot provide information about how to report a violation of UH policies confidentially.'
+INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
+INFO:     127.0.0.1:48558 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
+WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
+INFO:manoa_agent.agent.nodes:Message: 'Hi tell me about connecting to UH wifi' is not predefined
+INFO:__main__:Evaluating predefined_condition
+INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
+INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
+INFO:manoa_agent.agent.nodes:Message: 'Hi tell me about connecting to UH wifi' is not a prompt injection
+INFO:__main__:Evaluating prompt_injection_condition
+INFO:__main__:prompt_injection_condition: state is safe
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I cannot answer questions about connecting to UH wifi at this time.'
+INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
+INFO:     127.0.0.1:37292 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
+WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
+INFO:manoa_agent.agent.nodes:Message: 'Can you tell me about wireless passthrough?' is not predefined
+INFO:__main__:Evaluating predefined_condition
+INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
+INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
+INFO:manoa_agent.agent.nodes:Message: 'Can you tell me about wireless passthrough?' is not a prompt injection
+INFO:__main__:Evaluating prompt_injection_condition
+INFO:__main__:prompt_injection_condition: state is safe
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I cannot answer questions about wireless passthrough at this time.'
+INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
+INFO:     127.0.0.1:39780 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
+WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
+INFO:manoa_agent.agent.nodes:Message: 'what do I do if I see a whistleblower' is not predefined
+INFO:__main__:Evaluating predefined_condition
+INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
+INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
+INFO:manoa_agent.agent.nodes:Message: 'what do I do if I see a whistleblower' is not a prompt injection
+INFO:__main__:Evaluating prompt_injection_condition
+INFO:__main__:prompt_injection_condition: state is safe
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I am sorry, I cannot answer this question. My knowledge is limited to UH Systemwide Policies, ITS AskUs Tech Support, and information on the hawaii.edu domain.'
+INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
+INFO:     127.0.0.1:32938 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
+WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
+INFO:manoa_agent.agent.nodes:Message: 'what do I do if I see someone smoking on campus' is not predefined
+INFO:__main__:Evaluating predefined_condition
+INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
+INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
+INFO:manoa_agent.agent.nodes:Message: 'what do I do if I see someone smoking on campus' is not a prompt injection
+INFO:__main__:Evaluating prompt_injection_condition
+INFO:__main__:prompt_injection_condition: state is safe
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I cannot answer this question.'
+INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
+INFO:     127.0.0.1:42058 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
+WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
+INFO:manoa_agent.agent.nodes:Message: 'what is a whistleblower' is not predefined
+INFO:__main__:Evaluating predefined_condition
+INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
+INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
+INFO:manoa_agent.agent.nodes:Message: 'what is a whistleblower' is not a prompt injection
+INFO:__main__:Evaluating prompt_injection_condition
+INFO:__main__:prompt_injection_condition: state is safe
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I cannot answer this question.'
+INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
+INFO:     127.0.0.1:36118 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
+WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
+INFO:manoa_agent.agent.nodes:Message: 'where can I smoke on campus' is not predefined
+INFO:__main__:Evaluating predefined_condition
+INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
+INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
+INFO:manoa_agent.agent.nodes:Message: 'where can I smoke on campus' is not a prompt injection
+INFO:__main__:Evaluating prompt_injection_condition
+INFO:__main__:prompt_injection_condition: state is safe
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I cannot answer this question.'
+INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
+INFO:     127.0.0.1:33568 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
+WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
+INFO:manoa_agent.agent.nodes:Message: 'how do I connect to uh wifi?' is not predefined
+INFO:__main__:Evaluating predefined_condition
+INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
+INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
+INFO:manoa_agent.agent.nodes:Message: 'how do I connect to uh wifi?' is not a prompt injection
+INFO:__main__:Evaluating prompt_injection_condition
+INFO:__main__:prompt_injection_condition: state is safe
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I am sorry, I cannot answer questions about connecting to UH wifi.'
+INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
+INFO:     127.0.0.1:58150 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
+WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
+INFO:manoa_agent.agent.nodes:Message: 'how do I connect to uh wifi?' is not predefined
+INFO:__main__:Evaluating predefined_condition
+INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
+INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
+INFO:manoa_agent.agent.nodes:Message: 'how do I connect to uh wifi?' is not a prompt injection
+INFO:__main__:Evaluating prompt_injection_condition
+INFO:__main__:prompt_injection_condition: state is safe
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='I am sorry, I cannot answer this question. Please refer to the ITS website for instructions on how to connect to UH WiFi.'
+INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
+INFO:     127.0.0.1:36916 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:manoa_agent.agent.nodes:Entering PredefinedNode.__call__
+INFO:httpx:HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/a86778b5-283a-4ee3-b258-f080ac5f07fc/query "HTTP/1.1 200 OK"
+WARNING:langchain_core.vectorstores.base:No relevant docs were retrieved using the relevance score threshold 0.95
+INFO:manoa_agent.agent.nodes:Message: 'how do I connect to uh wifi?' is not predefined
+INFO:__main__:Evaluating predefined_condition
+INFO:__main__:predefined_condition: state is not predefined, branching to prompt_injection
+INFO:manoa_agent.agent.nodes:Entering PromptInjectionNode.__call__
+INFO:manoa_agent.agent.nodes:Message: 'how do I connect to uh wifi?' is not a prompt injection
+INFO:__main__:Evaluating prompt_injection_condition
+INFO:__main__:prompt_injection_condition: state is safe
+INFO:manoa_agent.agent.nodes:System prompt chain returned: answer='To connect to UH WiFi, select '
+INFO:manoa_agent.agent.nodes:System prompt provided an answer; returning system answer.
+INFO:     127.0.0.1:52216 - "POST /askus/invoke HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55256 - "GET /docs HTTP/1.1" 200 OK

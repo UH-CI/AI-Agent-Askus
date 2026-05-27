@@ -9,13 +9,11 @@ from dotenv import load_dotenv
 # from manoa_agent.retrievers.graphdb import GraphVectorRetriever
 # from neo4j_graphrag.retrievers import VectorRetriever
 from langchain_chroma import Chroma
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.graph import END, StateGraph, START
-from openai import OpenAI
 
 from manoa_agent.embeddings import convert
 
-# from langchain_google_genai import GoogleGenerativeAI
 from manoa_agent.prompts.promp_injection import load
 
 load_dotenv(override=True)
@@ -25,7 +23,7 @@ load_dotenv(override=True)
 #     auth=(os.getenv('NEO4J_USERNAME'), os.getenv('NEO4J_PASSWORD'))
 # )
 
-embedder = convert.from_open_ai(OpenAI(), "text-embedding-3-large")
+embedder = convert.from_google(os.getenv("GEMINI_API_KEY"))
 http_client = HttpClient(os.getenv("CHROMA_HOST"), os.getenv("CHROMA_PORT"))
 
 its_faq_collection = Chroma(
@@ -96,10 +94,10 @@ retrievers = {
     "general": general_retriever,
 }
 
-llm = ChatOpenAI(model="gpt-4o")
+# llm = ChatOpenAI(model="gpt-4o")
 # llm = ChatOllama(model=os.getenv("OLLAMA_MODEL"), base_url=os.getenv("OLLAMA_HOST"))
 # llm = ChatOpenAI(model="gemini-2.0-flash", api_key=os.getenv("GEMINI_API_KEY"), base_url=os.getenv("GEMINI_BASE_URL"))
-# llm = GoogleGenerativeAI(model="gemini-2.0-flash", api_key=os.getenv("GEMINI_API_KEY"))
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key=os.getenv("GEMINI_API_KEY"))
 
 
 prompt_injection_classifier = load(

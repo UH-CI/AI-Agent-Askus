@@ -15,7 +15,7 @@ const default_message: ChatMessage = {
   message: {
     type: "ai",
     content:
-      "Aloha! my name is Hoku! I can assist you with UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
+      "Aloha! my name is Hoku!! I can assist you with UH Systemwide Policies, ITS AskUs Tech Support, and questions relating to information on the hawaii.edu domain.",
   },
   sources: [],
 };

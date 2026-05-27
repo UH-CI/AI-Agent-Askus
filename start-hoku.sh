@@ -24,7 +24,8 @@ conda activate ai-agent-askus
 
 # Start ChromaDB server
 echo "Starting ChromaDB server..."
-nohup docker run -p 8000:8000 chromadb/chroma > ../chromadb.log 2>&1 &
+mkdir -p /home/exouser/AI-Agent-Askus/chromadb_data
+nohup docker run -p 127.0.0.1:8000:8000 -v /home/exouser/AI-Agent-Askus/chromadb_data:/chroma/chroma chromadb/chroma > ../chromadb.log 2>&1 &
 
 echo "Waiting for ChromaDB to start..."
 sleep 10
@@ -43,10 +44,21 @@ for i in {1..30}; do
     fi
 done
 
-# Load database
-echo "Loading database..."
+# Load database (only if collections are empty)
 cd /home/exouser/AI-Agent-Askus/app
-python load_db.py
+DOC_COUNT=$(python3 -c "
+import chromadb
+client = chromadb.HttpClient(host='localhost', port=8000)
+total = sum(client.get_collection(c.name).count() for c in client.list_collections())
+print(total)
+" 2>/dev/null || echo "0")
+
+if [ "$DOC_COUNT" -eq "0" ]; then
+    echo "Collections empty, loading database..."
+    python load_db.py
+else
+    echo "Collections already populated ($DOC_COUNT docs), skipping load_db.py"
+fi
 
 # Start backend
 echo "Starting backend..."
